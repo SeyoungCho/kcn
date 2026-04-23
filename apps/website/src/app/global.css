@@ -1,6 +1,15 @@
 @import "tailwindcss";
-@import "fumadocs-ui/css/neutral.css";
+
+/*
+ * Tailwind v4 skips node_modules by default. Workspace packages (e.g. t-flavored) are
+ * consumed from ../../node_modules/t-flavored — opt in so their class names generate CSS.
+ * Also scan the repo registries tree for packages not yet linked as deps.
+ */
+@source "../../node_modules/@repo/t-flavored";
+@source "../../../packages/registries";
+
 @import "fumadocs-ui/css/preset.css";
+@import "fumadocs-ui/css/neutral.css";
 
 html {
   scrollbar-gutter: stable;

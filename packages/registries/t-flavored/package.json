@@ -1,0 +1,39 @@
+{
+  "name": "@repo/t-flavored",
+  "version": "1.0.0",
+  "private": true,
+  "description": "shadcn registry for t-flavored components",
+  "author": "SeyoungCho <wnl383@naver.com> (https://github.com/SeyoungCho)",
+  "license": "MIT",
+  "exports": {
+    "./ui/*": {
+      "types": "./src/components/ui/*.tsx",
+      "default": "./src/components/ui/*.tsx"
+    },
+    "./lib/utils": {
+      "types": "./src/lib/utils.ts",
+      "default": "./src/lib/utils.ts"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@base-ui/react": "catalog:",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "postcss": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
+  },
+  "volta": {
+    "node": "22.22.2"
+  }
+}

@@ -1,3 +1,19 @@
 packages:
   - "apps/*"
   - "packages/*"
+  - "packages/registries/*"
+
+catalog:
+  "@base-ui/react": ^1.4.1
+  "@tailwindcss/postcss": ^4.2.2
+  "@types/react": ^19.2.14
+  "@types/react-dom": ^19.2.3
+  class-variance-authority: ^0.7.1
+  clsx: ^2.1.1
+  postcss: ^8.5.10
+  prettier: ^3.7.4
+  react: ^19.2.5
+  react-dom: ^19.2.5
+  tailwindcss: ^4.2.2
+  turbo: ^2.9.6
+  typescript: ^5.9.3
