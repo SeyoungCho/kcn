@@ -13,6 +13,14 @@
     "./lib/utils": {
       "types": "./src/lib/utils.ts",
       "default": "./src/lib/utils.ts"
+    },
+    "./styles/global.scoped.css": {
+      "style": "./src/styles/global.scoped.css",
+      "default": "./src/styles/global.scoped.css"
+    },
+    "./styles/theme.css": {
+      "style": "./src/styles/theme.css",
+      "default": "./src/styles/theme.css"
     }
   },
   "scripts": {
@@ -31,6 +39,7 @@
     "react-dom": "catalog:",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "catalog:",
+    "tw-animate-css": "catalog:",
     "typescript": "catalog:"
   },
   "volta": {
