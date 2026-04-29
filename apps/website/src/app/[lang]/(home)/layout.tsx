@@ -1,5 +1,5 @@
 import { HomeLayout } from "fumadocs-ui/layouts/home";
-import { baseOptions } from "@/lib/layout.shared";
+import { baseOptions } from "@/components/layout.shared";
 
 export default async function Layout({
   params,
