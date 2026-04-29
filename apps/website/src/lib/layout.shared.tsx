@@ -10,6 +10,7 @@ export const i18nUI = defineI18nUI(i18n, {
   ko: {
     displayName: "한국어",
     search: "문서 검색",
+    toc: "목차",
   },
 });
 
