@@ -1,0 +1,7 @@
+{
+  "title": "t-flavored",
+  "description": "t-flavored ui kit registry",
+  "icon": "Building",
+  "root": true,
+  "pages": ["---소개---", "index", "button", "input"]
+}
