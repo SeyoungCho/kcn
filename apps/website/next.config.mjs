@@ -6,6 +6,15 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   transpilePackages: ["@repo/t-flavored"],
+  async redirects() {
+    return [
+      {
+        source: "/:lang/docs",
+        destination: "/:lang/docs/t-flavored",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default withMDX(config);
