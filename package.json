@@ -2,6 +2,9 @@
   "name": "kcn",
   "private": true,
   "pnpm": {
+    "overrides": {
+      "next-themes": "npm:@teispace/next-themes@0.3.2"
+    },
     "peerDependencyRules": {
       "allowedVersions": {
         "eslint": "10"
