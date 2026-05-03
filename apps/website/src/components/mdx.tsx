@@ -1,21 +1,19 @@
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { MDXComponents } from "mdx/types";
-import { Button as MontageButton } from "@repo/montage/ui/button";
-import { Input as MontageInput } from "@repo/montage/ui/input";
-import { Button as SeedButton } from "@repo/seed/ui/button";
-import { Input as SeedInput } from "@repo/seed/ui/input";
-import { Button as TFlavoredButton } from "@repo/t-flavored/ui/button";
-import { Input as TFlavoredInput } from "@repo/t-flavored/ui/input";
+import { mdxComponents as montageMDXComponents } from "@repo/montage/mdx";
+import { mdxComponents as seedMDXComponents } from "@repo/seed/mdx";
+import { mdxComponents as tFlavoredMDXComponents } from "@repo/t-flavored/mdx";
+
+const registryMDXComponents = {
+  ...montageMDXComponents,
+  ...seedMDXComponents,
+  ...tFlavoredMDXComponents,
+};
 
 export function getMDXComponents(components?: MDXComponents) {
   return {
     ...defaultMdxComponents,
-    MontageButton,
-    MontageInput,
-    SeedButton,
-    SeedInput,
-    TFlavoredButton,
-    TFlavoredInput,
+    ...registryMDXComponents,
     ...components,
   } satisfies MDXComponents;
 }

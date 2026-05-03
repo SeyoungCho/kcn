@@ -14,6 +14,10 @@
       "types": "./src/lib/utils.ts",
       "default": "./src/lib/utils.ts"
     },
+    "./mdx": {
+      "types": "./src/mdx.ts",
+      "default": "./src/mdx.ts"
+    },
     "./styles/global.scoped.css": {
       "style": "./src/styles/global.scoped.css",
       "default": "./src/styles/global.scoped.css"
