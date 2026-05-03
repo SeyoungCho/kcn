@@ -1,0 +1,8 @@
+{
+  "home": {
+    "title": "안녕하세요",
+    "beforeLink": "아래 링크로 ",
+    "linkLabel": "문서",
+    "afterLink": "를 열 수 있습니다."
+  }
+}

@@ -5,3 +5,5 @@ export const i18n = defineI18n({
   languages: ["en", "ko"],
   parser: "dot",
 });
+
+export type Lang = (typeof i18n.languages)[number];

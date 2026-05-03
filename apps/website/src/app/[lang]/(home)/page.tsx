@@ -1,29 +1,10 @@
 import Link from "next/link";
-import { i18n } from "@/lib/i18n";
-
-type Lang = (typeof i18n.languages)[number];
-
-const homeCopy: Record<
-  Lang,
-  { title: string; beforeLink: string; linkLabel: string; afterLink: string }
-> = {
-  en: {
-    title: "Hello World",
-    beforeLink: "You can open ",
-    linkLabel: "/docs",
-    afterLink: " and see the documentation.",
-  },
-  ko: {
-    title: "안녕하세요",
-    beforeLink: "아래 링크로 ",
-    linkLabel: "문서",
-    afterLink: "를 열 수 있습니다.",
-  },
-};
+import { getDictionary } from "@/dictionaries";
 
 export default async function HomePage(props: PageProps<"/[lang]">) {
   const { lang } = await props.params;
-  const t = homeCopy[lang as Lang] ?? homeCopy.en;
+  const dict = await getDictionary(lang);
+  const t = dict.home;
 
   return (
     <div className="flex flex-col justify-center text-center flex-1">
