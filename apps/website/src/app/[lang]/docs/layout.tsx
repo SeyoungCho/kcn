@@ -16,6 +16,14 @@ export default async function Layout({
       {...baseOptions(lang)}
       tabs={[
         {
+          title: "seed",
+          description: "seed-desc",
+          url: `/${lang}/docs/seed`,
+          icon: (
+            <Image src="/seed-logo.png" alt="seed" width={24} height={24} />
+          ),
+        },
+        {
           title: "t-flavored",
           description: "t-flavored-desc",
           url: `/${lang}/docs/t-flavored`,

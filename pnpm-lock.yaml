@@ -71,6 +71,9 @@ importers:
       '@base-ui/react':
         specifier: 'catalog:'
         version: 1.4.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@repo/seed':
+        specifier: workspace:*
+        version: link:../../packages/registries/seed
       '@repo/t-flavored':
         specifier: workspace:*
         version: link:../../packages/registries/t-flavored

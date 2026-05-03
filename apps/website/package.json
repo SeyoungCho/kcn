@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@base-ui/react": "catalog:",
+    "@repo/seed": "workspace:*",
     "@repo/t-flavored": "workspace:*",
     "clsx": "catalog:",
     "fumadocs-core": "16.8.1",
