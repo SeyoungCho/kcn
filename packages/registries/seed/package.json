@@ -1,0 +1,48 @@
+{
+  "name": "@repo/seed",
+  "version": "1.0.0",
+  "private": true,
+  "description": "shadcn registry for seed components",
+  "author": "SeyoungCho <wnl383@naver.com> (https://github.com/SeyoungCho)",
+  "license": "MIT",
+  "exports": {
+    "./ui/*": {
+      "types": "./src/components/ui/*.tsx",
+      "default": "./src/components/ui/*.tsx"
+    },
+    "./lib/utils": {
+      "types": "./src/lib/utils.ts",
+      "default": "./src/lib/utils.ts"
+    },
+    "./styles/global.scoped.css": {
+      "style": "./src/styles/global.scoped.css",
+      "default": "./src/styles/global.scoped.css"
+    },
+    "./styles/theme.css": {
+      "style": "./src/styles/theme.css",
+      "default": "./src/styles/theme.css"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@base-ui/react": "catalog:",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
+    "postcss": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "catalog:",
+    "tw-animate-css": "catalog:",
+    "typescript": "catalog:"
+  },
+  "volta": {
+    "node": "22.22.2"
+  }
+}
