@@ -16,13 +16,13 @@ export default async function Layout({
       {...baseOptions(lang)}
       tabs={[
         {
-          title: "montage",
-          description: "montage-desc",
-          url: `/${lang}/docs/montage`,
+          title: "t-flavored",
+          description: "t-flavored-desc",
+          url: `/${lang}/docs/t-flavored`,
           icon: (
             <Image
-              src="/montage-logo.png"
-              alt="montage"
+              src="/t-flavored-logo.png"
+              alt="t-flavored"
               width={24}
               height={24}
             />
@@ -37,13 +37,13 @@ export default async function Layout({
           ),
         },
         {
-          title: "t-flavored",
-          description: "t-flavored-desc",
-          url: `/${lang}/docs/t-flavored`,
+          title: "montage",
+          description: "montage-desc",
+          url: `/${lang}/docs/montage`,
           icon: (
             <Image
-              src="/t-flavored-logo.png"
-              alt="t-flavored"
+              src="/montage-logo.png"
+              alt="montage"
               width={24}
               height={24}
             />
