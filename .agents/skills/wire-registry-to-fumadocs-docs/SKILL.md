@@ -47,6 +47,7 @@ Integrate one existing registry package from `packages/registries/<registry-name
      - `description`: `<registry-name>-desc` (or current local convention)
      - `url`: `/${lang}/docs/<registry-name>`
      - icon image from `apps/website/public/<registry-name>-logo.png` when available.
+     - always add at the end of the tab list.
 
 6. Add docs content pages if absent.
    - Determine component scope first:
