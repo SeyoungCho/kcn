@@ -5,7 +5,7 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages: ["@repo/t-flavored"],
+  transpilePackages: ["@repo/montage", "@repo/t-flavored"],
   async redirects() {
     return [
       {

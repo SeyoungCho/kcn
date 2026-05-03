@@ -1,15 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@repo/montage/styles/global.scoped.css";
 @import "@repo/seed/styles/global.scoped.css";
 @import "@repo/t-flavored/styles/global.scoped.css";
 
 /*
-* Tailwind v4 skips node_modules by default. Workspace packages (e.g. seed, t-flavored) are
-* consumed from ../../node_modules/@repo/* — opt in so their class names generate CSS.
+* Tailwind v4 skips node_modules by default. Workspace packages (e.g. montage, seed, t-flavored)
+* are consumed from ../../node_modules/@repo/* — opt in so their class names generate CSS.
 * Also scan the repo registries tree for packages not yet linked as deps.
 */
 @source "../../node_modules/@repo/seed";
 @source "../../node_modules/@repo/t-flavored";
+@source "../../node_modules/@repo/montage";
 @source "../../../packages/registries";
 
 @import "fumadocs-ui/css/preset.css";
