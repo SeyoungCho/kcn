@@ -106,6 +106,48 @@
   --banner-teal: #e6faf6;
   --banner-warm-gray: #f2f0ee;
   --banner-yellow: #fffae1;
+  --gradient-fade-layer-floating-stops: #ffffff00 0%, #000000 100%;
+  --gradient-fade-layer-default-stops: #000000 0%, #ffffff00 100%;
+  --gradient-glow-magic-stops: #fef6f7 0%, #fef0e7 80%, #f9f7f5 100%;
+  --gradient-glow-magic-pressed-stops: #fbf0f2 0%, #ffe8db 80%, #f5f2ef 100%;
+  --gradient-highlight-magic-stops: #ff6600 20%, #d25aca 100%;
+  --gradient-highlight-magic-pressed-stops: #e14f00 20%, #ae58bf 100%;
+  --gradient-shimmer-magic-stops:
+    #fff9f500 0%, #fff9f5cc 46%, #fff9f5cc 54%, #fff9f500 100%;
+  --gradient-shimmer-neutral-stops:
+    #ffffff00 0%, #ffffffab 46%, #ffffffab 54%, #ffffff00 100%;
+  --gradient-fade-layer-floating: linear-gradient(
+    180deg,
+    var(--gradient-fade-layer-floating-stops)
+  );
+  --gradient-fade-layer-default: linear-gradient(
+    180deg,
+    var(--gradient-fade-layer-default-stops)
+  );
+  --gradient-glow-magic: linear-gradient(
+    90deg,
+    var(--gradient-glow-magic-stops)
+  );
+  --gradient-glow-magic-pressed: linear-gradient(
+    90deg,
+    var(--gradient-glow-magic-pressed-stops)
+  );
+  --gradient-highlight-magic: linear-gradient(
+    90deg,
+    var(--gradient-highlight-magic-stops)
+  );
+  --gradient-highlight-magic-pressed: linear-gradient(
+    90deg,
+    var(--gradient-highlight-magic-pressed-stops)
+  );
+  --gradient-shimmer-magic: linear-gradient(
+    90deg,
+    var(--gradient-shimmer-magic-stops)
+  );
+  --gradient-shimmer-neutral: linear-gradient(
+    90deg,
+    var(--gradient-shimmer-neutral-stops)
+  );
   --font-size-t1: 0.6875rem;
   --font-size-t2: 0.75rem;
   --font-size-t3: 0.8125rem;
@@ -317,4 +359,14 @@
   --banner-teal: #143633;
   --banner-warm-gray: #2f2b27;
   --banner-yellow: #3e2b00;
+  --gradient-fade-layer-floating-stops: #1d202500 0%, #000000 100%;
+  --gradient-fade-layer-default-stops: #000000 0%, #16171b00 100%;
+  --gradient-glow-magic-stops: #2d252d 0%, #3a312b 80%, #333232 100%;
+  --gradient-glow-magic-pressed-stops: #3e333e 0%, #51453e 80%, #434242 100%;
+  --gradient-highlight-magic-stops: #ff6600 20%, #d25aca 100%;
+  --gradient-highlight-magic-pressed-stops: #ff9e65 20%, #e89bee 100%;
+  --gradient-shimmer-magic-stops:
+    #fff9f500 0%, #fff9f51a 46%, #fff9f51a 54%, #fff9f500 100%;
+  --gradient-shimmer-neutral-stops:
+    #ffffff00 0%, #ffffff1a 46%, #ffffff1a 54%, #ffffff00 100%;
 }

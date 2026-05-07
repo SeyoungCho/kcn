@@ -233,6 +233,38 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
+@utility bg-gradient-fade-layer-floating {
+  background-image: var(--gradient-fade-layer-floating);
+}
+
+@utility bg-gradient-fade-layer-default {
+  background-image: var(--gradient-fade-layer-default);
+}
+
+@utility bg-gradient-glow-magic {
+  background-image: var(--gradient-glow-magic);
+}
+
+@utility bg-gradient-glow-magic-pressed {
+  background-image: var(--gradient-glow-magic-pressed);
+}
+
+@utility bg-gradient-highlight-magic {
+  background-image: var(--gradient-highlight-magic);
+}
+
+@utility bg-gradient-highlight-magic-pressed {
+  background-image: var(--gradient-highlight-magic-pressed);
+}
+
+@utility bg-gradient-shimmer-magic {
+  background-image: var(--gradient-shimmer-magic);
+}
+
+@utility bg-gradient-shimmer-neutral {
+  background-image: var(--gradient-shimmer-neutral);
+}
+
 @utility text-screen-title {
   font-size: var(--text-style-screen-title-font-size);
   line-height: var(--text-style-screen-title-line-height);
