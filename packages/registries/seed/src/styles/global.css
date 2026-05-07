@@ -148,6 +148,19 @@
     90deg,
     var(--gradient-shimmer-neutral-stops)
   );
+  --motion-ease-linear: cubic-bezier(0, 0, 1, 1);
+  --motion-ease-easing: cubic-bezier(0.35, 0, 0.35, 1);
+  --motion-ease-enter: cubic-bezier(0, 0, 0.15, 1);
+  --motion-ease-exit: cubic-bezier(0.35, 0, 1, 1);
+  --motion-ease-enter-expressive: cubic-bezier(0.03, 0.4, 0.1, 1);
+  --motion-ease-exit-expressive: cubic-bezier(0.35, 0, 0.95, 0.55);
+  --motion-duration-d1: 50ms;
+  --motion-duration-d2: 100ms;
+  --motion-duration-d3: 150ms;
+  --motion-duration-d4: 200ms;
+  --motion-duration-d5: 250ms;
+  --motion-duration-d6: 300ms;
+  --motion-duration-color-transition: var(--motion-duration-d3);
   --font-size-t1: 0.6875rem;
   --font-size-t2: 0.75rem;
   --font-size-t3: 0.8125rem;
