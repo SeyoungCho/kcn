@@ -224,6 +224,31 @@
   --radius-r5: 20px;
   --radius-r6: 24px;
   --radius-r-full: 9999px;
+  --dimension-x0_5: 2px;
+  --dimension-x1: 4px;
+  --dimension-x1_5: 6px;
+  --dimension-x2: 8px;
+  --dimension-x2_5: 10px;
+  --dimension-x3: 12px;
+  --dimension-x3_5: 14px;
+  --dimension-x4: 16px;
+  --dimension-x4_5: 18px;
+  --dimension-x5: 20px;
+  --dimension-x6: 24px;
+  --dimension-x7: 28px;
+  --dimension-x8: 32px;
+  --dimension-x9: 36px;
+  --dimension-x10: 40px;
+  --dimension-x12: 48px;
+  --dimension-x13: 52px;
+  --dimension-x14: 56px;
+  --dimension-x16: 64px;
+  --dimension-spacing-x-between-chips: var(--dimension-x2);
+  --dimension-spacing-x-global-gutter: var(--dimension-x4);
+  --dimension-spacing-y-component-default: var(--dimension-x3);
+  --dimension-spacing-y-nav-to-title: var(--dimension-x5);
+  --dimension-spacing-y-screen-bottom: var(--dimension-x14);
+  --dimension-spacing-y-between-text: var(--dimension-x1_5);
 
   --background: var(--palette-gray-00);
   --foreground: var(--palette-gray-1000);
@@ -287,7 +312,7 @@
     0px 4px 8px -1px hsl(0 0% 0% / 0.1), 0px 8px 10px -2px hsl(0 0% 0% / 0.1);
   --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
   --tracking-normal: 0em;
-  --spacing: 0.25rem;
+  --spacing: var(--dimension-x1);
 }
 
 .dark {
