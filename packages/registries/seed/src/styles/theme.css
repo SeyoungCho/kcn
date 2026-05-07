@@ -142,9 +142,74 @@
   --color-banner-warm-gray: var(--banner-warm-gray);
   --color-banner-yellow: var(--banner-yellow);
 
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-serif: var(--font-serif);
+  --text-xxs: var(--font-size-t1);
+  --text-xxs--line-height: var(--line-height-t1);
+  --text-xs: var(--font-size-t2);
+  --text-xs--line-height: var(--line-height-t2);
+  --text-sm: var(--font-size-t3);
+  --text-sm--line-height: var(--line-height-t3);
+  --text-base: var(--font-size-t4);
+  --text-base--line-height: var(--line-height-t4);
+  --text-lg: var(--font-size-t5);
+  --text-lg--line-height: var(--line-height-t5);
+  --text-xl: var(--font-size-t6);
+  --text-xl--line-height: var(--line-height-t6);
+  --text-2xl: var(--font-size-t7);
+  --text-2xl--line-height: var(--line-height-t7);
+  --text-3xl: var(--font-size-t8);
+  --text-3xl--line-height: var(--line-height-t8);
+  --text-4xl: var(--font-size-t9);
+  --text-4xl--line-height: var(--line-height-t9);
+  --text-5xl: var(--font-size-t10);
+  --text-5xl--line-height: var(--line-height-t10);
+  --text-xxs-static: var(--font-size-t1-static);
+  --text-xxs-static--line-height: var(--line-height-t1-static);
+  --text-xs-static: var(--font-size-t2-static);
+  --text-xs-static--line-height: var(--line-height-t2-static);
+  --text-sm-static: var(--font-size-t3-static);
+  --text-sm-static--line-height: var(--line-height-t3-static);
+  --text-base-static: var(--font-size-t4-static);
+  --text-base-static--line-height: var(--line-height-t4-static);
+  --text-lg-static: var(--font-size-t5-static);
+  --text-lg-static--line-height: var(--line-height-t5-static);
+  --text-xl-static: var(--font-size-t6-static);
+  --text-xl-static--line-height: var(--line-height-t6-static);
+  --text-2xl-static: var(--font-size-t7-static);
+  --text-2xl-static--line-height: var(--line-height-t7-static);
+  --text-3xl-static: var(--font-size-t8-static);
+  --text-3xl-static--line-height: var(--line-height-t8-static);
+  --text-4xl-static: var(--font-size-t9-static);
+  --text-4xl-static--line-height: var(--line-height-t9-static);
+  --text-5xl-static: var(--font-size-t10-static);
+  --text-5xl-static--line-height: var(--line-height-t10-static);
+  --leading-xxs: var(--line-height-t1);
+  --leading-xs: var(--line-height-t2);
+  --leading-sm: var(--line-height-t3);
+  --leading-base: var(--line-height-t4);
+  --leading-lg: var(--line-height-t5);
+  --leading-xl: var(--line-height-t6);
+  --leading-2xl: var(--line-height-t7);
+  --leading-3xl: var(--line-height-t8);
+  --leading-4xl: var(--line-height-t9);
+  --leading-5xl: var(--line-height-t10);
+  --leading-xxs-static: var(--line-height-t1-static);
+  --leading-xs-static: var(--line-height-t2-static);
+  --leading-sm-static: var(--line-height-t3-static);
+  --leading-base-static: var(--line-height-t4-static);
+  --leading-lg-static: var(--line-height-t5-static);
+  --leading-xl-static: var(--line-height-t6-static);
+  --leading-2xl-static: var(--line-height-t7-static);
+  --leading-3xl-static: var(--line-height-t8-static);
+  --leading-4xl-static: var(--line-height-t9-static);
+  --leading-5xl-static: var(--line-height-t10-static);
+  --font-weight-normal: 400;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+  --font-serif: var(--font-family-serif);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -159,6 +224,24 @@
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
+}
+
+@utility text-screen-title {
+  font-size: var(--text-style-screen-title-font-size);
+  line-height: var(--text-style-screen-title-line-height);
+  font-weight: var(--text-style-screen-title-font-weight);
+}
+
+@utility text-article-body {
+  font-size: var(--text-style-article-body-font-size);
+  line-height: var(--text-style-article-body-line-height);
+  font-weight: var(--text-style-article-body-font-weight);
+}
+
+@utility text-article-note {
+  font-size: var(--text-style-article-note-font-size);
+  line-height: var(--text-style-article-note-line-height);
+  font-weight: var(--text-style-article-note-font-weight);
 }
 
 @layer base {
