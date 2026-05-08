@@ -3,5 +3,5 @@
   "description": "montage ui kit registry",
   "icon": "GalleryHorizontal",
   "root": true,
-  "pages": ["---Introduction---", "index", "button", "input"]
+  "pages": ["---Overview---", "index", "button", "input"]
 }

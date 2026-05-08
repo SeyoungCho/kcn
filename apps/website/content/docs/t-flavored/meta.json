@@ -3,5 +3,5 @@
   "description": "t-flavored ui kit registry",
   "icon": "Building",
   "root": true,
-  "pages": ["---Introduction---", "index", "button", "input"]
+  "pages": ["---Overview---", "index", "button", "input"]
 }

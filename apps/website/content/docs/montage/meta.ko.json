@@ -3,5 +3,5 @@
   "description": "montage ui kit registry",
   "icon": "GalleryHorizontal",
   "root": true,
-  "pages": ["---소개---", "index", "button", "input"]
+  "pages": ["---개요---", "index", "button", "input"]
 }
