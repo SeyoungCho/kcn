@@ -76,7 +76,9 @@ description: ComponentName Component
 
 ## ComponentName (Isolated Iframe Preview)
 
-<Preview registry="<registry-name>" component="ComponentName">Click me</Preview>
+<Preview registry="<registry-name>" component="ComponentName">
+  Click me
+</Preview>
 
 <Preview
   registry="<registry-name>"
@@ -97,7 +99,9 @@ description: ComponentName 컴포넌트
 
 ## ComponentName (격리 iframe 미리보기)
 
-<Preview registry="<registry-name>" component="ComponentName">클릭</Preview>
+<Preview registry="<registry-name>" component="ComponentName">
+  클릭
+</Preview>
 
 <Preview
   registry="<registry-name>"

@@ -5,7 +5,7 @@ export const revalidate = false;
 
 export async function GET() {
   const scan = i18n.languages.flatMap((lang) =>
-    source.getPages(lang).map(getLLMText)
+    source.getPages(lang).map(getLLMText),
   );
   const scanned = await Promise.all(scan);
 

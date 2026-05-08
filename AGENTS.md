@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) or any other relevant coding agents when working with code in this repository.
 
+## General Rules
+
+### format after your work is done
+
+```zsh
+pnpm format
+```
+
 ## Repository Overview
 
 This repository is a monorepo created with Turborepo framework.
@@ -96,7 +104,10 @@ Supporting pieces:
 
 ```mdx
 {/* Component mode — single component with text children + JSON-safe props */}
-<Preview registry="seed" component="Button">Click me</Preview>
+
+<Preview registry="seed" component="Button">
+  Click me
+</Preview>
 
 <Preview
   registry="seed"
@@ -109,6 +120,7 @@ Supporting pieces:
 <Preview registry="seed" component="Input" props={{ placeholder: "Type..." }} />
 
 {/* Demo mode — pre-built page for nested elements / composition */}
+
 <Preview registry="seed" demo="button-with-icon" height={160} />
 ```
 

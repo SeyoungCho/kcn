@@ -6,7 +6,7 @@ export const revalidate = false;
 
 export async function GET(
   _req: Request,
-  { params }: RouteContext<"/[lang]/llms.mdx/docs/[[...slug]]">
+  { params }: RouteContext<"/[lang]/llms.mdx/docs/[[...slug]]">,
 ) {
   const { slug, lang } = await params;
   const page = source.getPage(slug?.slice(0, -1), lang);
@@ -24,6 +24,6 @@ export function generateStaticParams() {
     source.getPages(lang).map((page) => ({
       lang,
       slug: getPageMarkdownUrl(page).segments,
-    }))
+    })),
   );
 }

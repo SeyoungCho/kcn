@@ -42,23 +42,26 @@ src/app/
 
 ## Key Files
 
-| File                                    | Purpose                                                                                       |
-| --------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `src/lib/source.ts`                     | Fumadocs content source adapter ([`loader()`](https://fumadocs.dev/docs/headless/source-api)) |
-| `src/components/layout.shared.tsx`      | Shared layout options                                                                         |
-| `src/components/mdx.tsx`                | Registers MDX components, including `<Preview>`                                               |
-| `src/components/preview.tsx`            | The `<Preview>` MDX component (client; deferred src to avoid hydration mismatch)              |
-| `src/lib/preview.tsx`                   | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`        |
-| `src/proxy.ts`                          | i18n middleware — excludes `/preview` so iframes stay language-agnostic                       |
-| `app/global.css`                        | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes) |
-| `app/preview/<registry>/preview.css`    | Per-registry Tailwind entry; imports that registry's `global.css` only                        |
-| `next.config.mjs`                       | `transpilePackages` lists every registry; Fumadocs MDX wrapper                                |
+| File                                 | Purpose                                                                                                              |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| `src/lib/source.ts`                  | Fumadocs content source adapter ([`loader()`](https://fumadocs.dev/docs/headless/source-api))                        |
+| `src/components/layout.shared.tsx`   | Shared layout options                                                                                                |
+| `src/components/mdx.tsx`             | Registers MDX components, including `<Preview>`                                                                      |
+| `src/components/preview.tsx`         | The `<Preview>` MDX component (client; deferred src to avoid hydration mismatch)                                     |
+| `src/lib/preview.tsx`                | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`                               |
+| `src/proxy.ts`                       | i18n middleware — excludes `/preview` so iframes stay language-agnostic                                              |
+| `app/global.css`                     | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes) |
+| `app/preview/<registry>/preview.css` | Per-registry Tailwind entry; imports that registry's `global.css` only                                               |
+| `next.config.mjs`                    | `transpilePackages` lists every registry; Fumadocs MDX wrapper                                                       |
 
 ## `<Preview>` MDX Component
 
 ```mdx
 {/* Component mode — single component with text children + JSON-safe props */}
-<Preview registry="seed" component="Button">Click me</Preview>
+
+<Preview registry="seed" component="Button">
+  Click me
+</Preview>
 
 <Preview
   registry="seed"
@@ -69,9 +72,11 @@ src/app/
 </Preview>
 
 {/* Self-closing components */}
+
 <Preview registry="seed" component="Input" props={{ placeholder: "Type..." }} />
 
 {/* Demo mode — pre-built page for nested elements / composition */}
+
 <Preview registry="seed" demo="button-with-icon" height={160} />
 ```
 

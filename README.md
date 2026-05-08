@@ -84,7 +84,10 @@ Component previews in the docs site render inside **isolated iframes** under `/p
 
 ```mdx
 {/* Simple component with text label and props */}
-<Preview registry="seed" component="Button">Click me</Preview>
+
+<Preview registry="seed" component="Button">
+  Click me
+</Preview>
 
 <Preview
   registry="seed"
@@ -95,6 +98,7 @@ Component previews in the docs site render inside **isolated iframes** under `/p
 </Preview>
 
 {/* Composed preview with nested elements / icons via a demo file */}
+
 <Preview registry="seed" demo="button-with-icon" />
 ```
 

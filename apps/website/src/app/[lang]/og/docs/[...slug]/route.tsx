@@ -9,7 +9,7 @@ export const revalidate = false;
 
 export async function GET(
   _req: Request,
-  context: RouteContext<"/[lang]/og/docs/[...slug]">
+  context: RouteContext<"/[lang]/og/docs/[...slug]">,
 ) {
   const { slug, lang } = await context.params;
 
@@ -25,7 +25,7 @@ export async function GET(
     {
       width: 1200,
       height: 630,
-    }
+    },
   );
 }
 
@@ -34,6 +34,6 @@ export function generateStaticParams() {
     source.getPages(lang).map((page) => ({
       lang,
       slug: getPageImage(page).segments,
-    }))
+    })),
   );
 }

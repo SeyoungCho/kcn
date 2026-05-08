@@ -10,7 +10,7 @@ The package exports two CSS files. Pick the one that matches how you intend to r
 // packages/registries/seed/package.json — exports
 {
   "./styles/global.css": "...",
-  "./styles/theme.css": "..."
+  "./styles/theme.css": "...",
 }
 ```
 
