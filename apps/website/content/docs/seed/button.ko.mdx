@@ -9,11 +9,24 @@ description: Button 컴포넌트
 console.log("Hello World");
 ```
 
-## Seed (MDX)
+## Seed (격리 iframe 미리보기)
 
-<div data-registry="seed">
-  <SeedButton>클릭</SeedButton>
-</div>
+<Preview registry="seed" component="Button">클릭</Preview>
+
+<Preview
+  registry="seed"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  삭제
+</Preview>
+
+## 중첩 요소 (데모 파일)
+
+아이콘이나 여러 컴포넌트가 들어간 미리보기는
+`apps/website/src/app/preview/seed/demos/<slug>/page.tsx` 데모 파일을 가리킵니다:
+
+<Preview registry="seed" demo="button-with-icon" height={160} />
 
 ## 카드
 

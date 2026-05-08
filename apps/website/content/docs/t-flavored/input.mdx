@@ -9,13 +9,15 @@ description: Input Component
 console.log("Hello World");
 ```
 
-## T-flavored (MDX)
+## T-flavored (Isolated Iframe Preview)
 
-Use the tag name registered in `src/components/mdx.tsx` (`TFlavoredInput`):
+<Preview registry="t-flavored" component="Input" />
 
-<div data-registry="t-flavored">
-  <TFlavoredInput />
-</div>
+<Preview
+  registry="t-flavored"
+  component="Input"
+  props={{ placeholder: "Type something..." }}
+/>
 
 ## Cards
 

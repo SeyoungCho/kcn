@@ -9,11 +9,17 @@ description: Button 컴포넌트
 console.log("Hello World");
 ```
 
-## Montage (MDX)
+## Montage (격리 iframe 미리보기)
 
-<div data-registry="montage">
-  <MontageButton>클릭</MontageButton>
-</div>
+<Preview registry="montage" component="Button">클릭</Preview>
+
+<Preview
+  registry="montage"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  삭제
+</Preview>
 
 ## 카드
 

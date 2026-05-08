@@ -9,13 +9,15 @@ description: Input Component
 console.log("Hello World");
 ```
 
-## Montage (MDX)
+## Montage (Isolated Iframe Preview)
 
-Use the tag name registered in `src/components/mdx.tsx` (`MontageInput`):
+<Preview registry="montage" component="Input" />
 
-<div data-registry="montage">
-  <MontageInput />
-</div>
+<Preview
+  registry="montage"
+  component="Input"
+  props={{ placeholder: "Type something..." }}
+/>
 
 ## Cards
 

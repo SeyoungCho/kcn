@@ -1,0 +1,14 @@
+/*
+ * Isolated CSS for the seed registry preview iframe.
+ * This bundle is loaded ONLY in /preview/seed/* routes — completely
+ * separate from the docs site's global.css. Other registries (montage,
+ * t-flavored) are NOT imported here, so their @theme tokens cannot leak in.
+ */
+@import "@repo/seed/styles/global.css";
+
+/*
+ * Tailwind v4 skips node_modules by default. Opt-in to scan seed's source
+ * tree so its utility classes generate CSS in this bundle.
+ */
+@source "../../../../node_modules/@repo/seed";
+@source "../../../../../../packages/registries/seed";

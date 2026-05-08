@@ -14,13 +14,26 @@ Integrate one existing registry package from `packages/registries/<registry-name
 - Do not run dev servers.
 - Always skip `pnpm install`, build scripts, and dev server commands unless the user explicitly asks.
 
+## Background — Where Registry Components Render
+
+Registry components render exclusively inside per-registry preview iframes at `/preview/<registry-name>/...`. Each iframe is its own document, with its own root layout, loading ONLY that registry's CSS bundle. MDX content embeds these iframes via the `<Preview>` MDX component — it never renders registry components inline in the docs page itself.
+
+This means adding a new registry to the docs site is primarily about creating the new preview route tree (`/app/preview/<registry-name>/...`) and registering the registry's `mdxComponents` map so `<Preview>` can resolve component names against it.
+
 ## Workflow
 
 1. Discover the current pattern from existing integrated registries.
    - Read:
      - `apps/website/src/app/[lang]/docs/layout.tsx`
      - `apps/website/src/components/mdx.tsx`
+     - `apps/website/src/components/preview.tsx`
      - `apps/website/src/app/global.css`
+     - `apps/website/src/app/preview/<existing-registry>/layout.tsx`
+     - `apps/website/src/app/preview/<existing-registry>/preview.css`
+     - `apps/website/src/app/preview/<existing-registry>/[component]/page.tsx`
+     - `apps/website/src/lib/preview.tsx`
+     - `apps/website/next.config.mjs`
+     - `apps/website/src/proxy.ts`
      - `apps/website/package.json`
    - Check docs content pattern under:
      - `apps/website/content/docs/<existing-registry>/`
@@ -28,20 +41,49 @@ Integrate one existing registry package from `packages/registries/<registry-name
 
 2. Ensure website dependency is wired.
    - Add `@repo/<registry-name>: "workspace:*"` to `apps/website/package.json` dependencies when missing.
+   - Add `@repo/<registry-name>` to the `transpilePackages` array in `apps/website/next.config.mjs` when missing. All three current registries (`@repo/montage`, `@repo/seed`, `@repo/t-flavored`) appear there.
 
-3. Wire registry components for MDX usage.
+3. Ensure the registry exposes the styles entry points the iframe pattern expects.
+   - In `packages/registries/<registry-name>/package.json`, the `exports` field MUST include both of:
+     - `./styles/global.css` — full-app theme on `:root`, imported by the per-registry preview iframe CSS bundle.
+     - `./styles/theme.css` — `@theme inline` token mappings (imported transitively by `global.css`).
+   - If `./styles/global.css` is missing from `exports`, add it.
+
+4. Wire registry components for the `<Preview>` lookup map.
    - Follow the current architecture in the repo:
-     - If website consumes `@repo/<registry-name>/mdx`, export `mdxComponents` in `packages/registries/<registry-name>/src/mdx.ts` and expose it via package `exports`.
-     - If website still uses direct component imports, mirror that pattern exactly.
-   - Keep naming consistent with existing convention (example: `SeedButton`, `TFlavoredInput`, `MontageButton`).
+     - Export `mdxComponents` in `packages/registries/<registry-name>/src/mdx.ts` with keys following the registry-prefix convention (`SeedButton`, `TFlavoredInput`, `MontageButton`, ...).
+     - Expose it via package `exports` as `./mdx`.
+   - This map is the runtime lookup table consumed by `apps/website/src/app/preview/<registry-name>/[component]/page.tsx` to resolve `<Preview registry="..." component="..." />`. Every component the docs site needs to embed must be listed here.
 
-4. Wire registry styles for Tailwind/class scanning.
-   - In `apps/website/src/app/global.css`:
-     - Add `@import "@repo/<registry-name>/styles/global.scoped.css";` if missing.
-     - Add `@source "../../node_modules/@repo/<registry-name>";` if missing.
-   - Keep existing comments and ordering style consistent.
+5. Create the per-registry preview iframe route tree.
 
-5. Add docs tab entry.
+   This is the surface where `<Preview>` actually renders the component. Mirror the existing `apps/website/src/app/preview/seed/` shape:
+
+   ```
+   apps/website/src/app/preview/<registry-name>/
+   ├── preview.css                  # imports @repo/<registry-name>/styles/global.css and sets @source
+   ├── layout.tsx                   # minimal root <html>/<body>; imports ./preview.css
+   ├── [component]/
+   │   └── page.tsx                 # dynamic component preview; uses renderPreview()
+   └── demos/                       # OPTIONAL; create when a doc page needs a composed demo
+       └── <slug>/page.tsx
+   ```
+
+   Files:
+   - `preview.css`:
+     ```css
+     @import "@repo/<registry-name>/styles/global.css";
+     @source "../../../../node_modules/@repo/<registry-name>";
+     @source "../../../../../../packages/registries/<registry-name>";
+     ```
+   - `layout.tsx`: render `<html><body className="bg-background text-foreground">{children}</body></html>` and import `./preview.css`. Do NOT pull in Fumadocs providers or the docs theme.
+   - `[component]/page.tsx`: import `mdxComponents` from `@repo/<registry-name>/mdx` and call the shared `renderPreview` helper from `@/lib/preview` with the appropriate `registryPrefix` (e.g. `"Seed"`, `"Montage"`, `"TFlavored"`).
+
+6. Confirm the i18n middleware excludes `/preview` paths.
+   - `apps/website/src/proxy.ts` should already have `preview` listed in the negative-lookahead matcher group. If not, add it. The current matcher is:
+     `"/((?!api|preview|_next/static|_next/image|.*\\..*|favicon.ico).*)"`.
+
+7. Add docs tab entry.
    - In `apps/website/src/app/[lang]/docs/layout.tsx`, add a tab object:
      - `title`: `<registry-name>`
      - `description`: `<registry-name>-desc` (or current local convention)
@@ -49,7 +91,7 @@ Integrate one existing registry package from `packages/registries/<registry-name
      - icon image from `apps/website/public/<registry-name>-logo.png` when available.
      - always add at the end of the tab list.
 
-6. Add docs content pages if absent.
+8. Add docs content pages if absent.
    - Determine component scope first:
      - If the user explicitly names target components, document only those components.
      - If the user does not specify components, scan `packages/registries/<registry-name>/src/components/ui/*.tsx` and document all discovered UI components.
@@ -60,9 +102,9 @@ Integrate one existing registry package from `packages/registries/<registry-name
        - `<component-kebab>.mdx`
        - `<component-kebab>.ko.mdx`
    - Update `meta.json` and `meta.ko.json` `pages` lists to include all generated component page slugs.
-   - Reuse same structure/text style as existing docs and swap registry/component-specific identifiers.
+   - For each component page, embed the live preview via `<Preview registry="<registry-name>" component="..." />`. Defer to the `add-registry-component-docs` skill for exact MDX page shape.
 
-7. Keep changes minimal and pattern-matching.
+9. Keep changes minimal and pattern-matching.
    - Do not refactor unrelated files.
    - Do not rename existing symbols unless required for consistency.
 
@@ -76,9 +118,11 @@ Integrate one existing registry package from `packages/registries/<registry-name
 
 - State that registry wiring is complete.
 - List integration points updated:
-  - website dependency
-  - MDX component wiring
-  - global CSS import/source
+  - website dependency (`package.json`)
+  - `transpilePackages` in `next.config.mjs`
+  - registry's `package.json` exports (`./styles/global.css`, `./styles/theme.css`)
+  - MDX lookup map (`src/mdx.ts`)
+  - per-registry preview route tree (`apps/website/src/app/preview/<registry-name>/`)
   - docs layout tab
   - docs content directory
 - Explicitly mention that install/build was not run.

@@ -1,0 +1,14 @@
+/*
+ * Isolated CSS for the montage registry preview iframe.
+ * This bundle is loaded ONLY in /preview/montage/* routes — completely
+ * separate from the docs site's global.css. Other registries (seed,
+ * t-flavored) are NOT imported here, so their @theme tokens cannot leak in.
+ */
+@import "@repo/montage/styles/global.css";
+
+/*
+ * Tailwind v4 skips node_modules by default. Opt-in to scan montage's source
+ * tree so its utility classes generate CSS in this bundle.
+ */
+@source "../../../../node_modules/@repo/montage";
+@source "../../../../../../packages/registries/montage";

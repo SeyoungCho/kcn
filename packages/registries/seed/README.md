@@ -1,29 +1,38 @@
 # Seed Registry
 
-This registry adapts Seed Design tokens into Tailwind CSS v4 theme variables. Import the Seed styles, wrap previews or embedded surfaces with `data-registry="seed"` when using the scoped stylesheet, then write normal Tailwind utilities.
+This registry adapts Seed Design tokens into Tailwind CSS v4 theme variables. Import one of the styles entry points listed below, then write normal Tailwind utilities — color, typography, spacing, radius, elevation, motion, and gradient utilities are all generated from Seed tokens.
 
-## Import Styles
+## Choosing a Styles Entry Point
 
-For a full app using only Seed:
+The package exports two CSS files. Pick the one that matches how you intend to render Seed:
+
+```jsonc
+// packages/registries/seed/package.json — exports
+{
+  "./styles/global.css": "...",
+  "./styles/theme.css": "..."
+}
+```
+
+### 1. Full-app — `global.css`
+
+The standard import. Sets all token CSS variables on `:root` (and dark variants on `.dark`).
 
 ```css
-@import "@repo/seed/styles/theme.css";
 @import "@repo/seed/styles/global.css";
 ```
 
-For docs or pages that render multiple registries side by side:
+This is also what the kcn docs site loads inside its **isolated preview iframe** at `/preview/seed/...`, where Seed renders without any other registry's tokens in scope. If you need to render multiple registries in the same project, follow that iframe pattern — see `apps/website/src/app/preview/seed/` for a reference implementation.
+
+### 2. Tokens only — `theme.css`
+
+The `@theme inline` mappings without the underlying CSS variable definitions. Imported transitively by `global.css`; you usually don't import this directly unless you're authoring an alternate global stylesheet.
 
 ```css
-@import "@repo/seed/styles/global.scoped.css";
+@import "@repo/seed/styles/theme.css";
 ```
 
-Then scope Seed components:
-
-```tsx
-<div data-registry="seed">{/* Seed components and examples */}</div>
-```
-
-Dark mode follows the existing `.dark` convention.
+Dark mode follows the existing `.dark` convention across both entry points.
 
 ## Color
 

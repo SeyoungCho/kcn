@@ -9,11 +9,17 @@ description: Button Component
 console.log("Hello World");
 ```
 
-## Montage (MDX)
+## Montage (Isolated Iframe Preview)
 
-<div data-registry="montage">
-  <MontageButton>Click me</MontageButton>
-</div>
+<Preview registry="montage" component="Button">Click me</Preview>
+
+<Preview
+  registry="montage"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  Delete Me
+</Preview>
 
 ## Cards
 

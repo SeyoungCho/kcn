@@ -18,9 +18,9 @@
       "types": "./src/mdx.ts",
       "default": "./src/mdx.ts"
     },
-    "./styles/global.scoped.css": {
-      "style": "./src/styles/global.scoped.css",
-      "default": "./src/styles/global.scoped.css"
+    "./styles/global.css": {
+      "style": "./src/styles/global.css",
+      "default": "./src/styles/global.css"
     },
     "./styles/theme.css": {
       "style": "./src/styles/theme.css",

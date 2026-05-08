@@ -9,13 +9,15 @@ description: Input 컴포넌트
 console.log("Hello World");
 ```
 
-## Seed (MDX)
+## Seed (격리 iframe 미리보기)
 
-`src/components/mdx.tsx`에 등록한 태그 이름(`SeedInput`)을 사용합니다:
+<Preview registry="seed" component="Input" />
 
-<div data-registry="seed">
-  <SeedInput />
-</div>
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "내용을 입력하세요..." }}
+/>
 
 ## 카드
 

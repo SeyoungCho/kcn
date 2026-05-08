@@ -9,11 +9,17 @@ description: Button Component
 console.log("Hello World");
 ```
 
-## T-flavored (MDX)
+## T-flavored (Isolated Iframe Preview)
 
-<div data-registry="t-flavored">
-  <TFlavoredButton>Click me</TFlavoredButton>
-</div>
+<Preview registry="t-flavored" component="Button">Click me</Preview>
+
+<Preview
+  registry="t-flavored"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  Delete Me
+</Preview>
 
 ## Cards
 

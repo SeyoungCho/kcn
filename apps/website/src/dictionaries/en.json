@@ -4,5 +4,8 @@
     "beforeLink": "You can open ",
     "linkLabel": "/docs",
     "afterLink": " and see the documentation."
+  },
+  "preview": {
+    "openFullscreen": "Open fullscreen"
   }
 }

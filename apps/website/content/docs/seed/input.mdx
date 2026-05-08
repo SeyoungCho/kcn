@@ -9,13 +9,15 @@ description: Input Component
 console.log("Hello World");
 ```
 
-## Seed (MDX)
+## Seed (Isolated Iframe Preview)
 
-Use the tag name registered in `src/components/mdx.tsx` (`SeedInput`):
+<Preview registry="seed" component="Input" />
 
-<div data-registry="seed">
-  <SeedInput />
-</div>
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "Type something..." }}
+/>
 
 ## Cards
 

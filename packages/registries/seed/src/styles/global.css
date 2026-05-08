@@ -1,4 +1,3 @@
-/* Default install: full-app theme on :root. For embedding several registries (e.g. docs), import global.scoped.css and set data-registry="seed" on a wrapper. */
 @import "./theme.css";
 
 :root {

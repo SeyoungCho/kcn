@@ -1,159 +1,125 @@
-# Turborepo starter
+# kcn
 
-This Turborepo starter is maintained by the Turborepo core team.
+A Turborepo monorepo that publishes and documents multiple [shadcn/ui-style component registries](https://ui.shadcn.com/docs/registry), each with its own design tokens, color system, components, themes, and utility functions, alongside a Fumadocs-powered documentation site that showcases them side-by-side.
 
-## Using this example
+## Repository Overview
 
-Run the following command:
-
-```sh
-npx create-turbo@latest
+```text
+/ (Root)
+├── apps/
+│   └── website/              # Next.js documentation site (Fumadocs)
+└── packages/
+    ├── eslint-config/        # Shared ESLint configuration
+    ├── typescript-config/    # Shared TypeScript configuration
+    └── registries/
+        ├── seed/             # Seed Design registry
+        ├── montage/          # Montage registry
+        └── t-flavored/       # T-flavored registry
 ```
 
-## What's inside?
+The deeper architectural conventions, component-preview pipeline, and per-registry skill workflows live in [`AGENTS.md`](./AGENTS.md). Read that first if you're adding registries or docs pages.
 
-This Turborepo includes the following packages/apps:
+## Tech Stack
 
-### Apps and Packages
+**Monorepo & tooling**
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- [pnpm](https://pnpm.io/) workspaces — version pinned in `.mise.toml`
+- [Turborepo](https://turbo.build/) — task orchestration
+- [mise](https://mise.jdx.dev/) — runtime version manager (Node + pnpm)
+- Node **22+**
+- TypeScript **5.9+**
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+**Documentation site** (`apps/website`)
 
-### Utilities
+- [Next.js](https://nextjs.org/) **16**
+- [React](https://react.dev/) **19**
+- [Fumadocs](https://fumadocs.dev/docs) (core, UI, MDX pipeline)
+- [Tailwind CSS](https://tailwindcss.com/) **4**
+- MDX, [@base-ui/react](https://base-ui.com/)
 
-This Turborepo has some additional tools already setup for you:
+**Registry packages** (`packages/registries/*`)
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- React **19**, @base-ui/react, Tailwind CSS **4**
+- [class-variance-authority](https://cva.style/), `clsx`, `tailwind-merge`
+- Scoped/theme CSS per registry — workspace-imported by the docs app
 
-### Build
+## Getting Started
 
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
-```
-
-Without global `turbo`, use your package manager:
+This repo uses [mise](https://mise.jdx.dev/) to pin the Node and pnpm versions for the project. After cloning:
 
 ```sh
-cd my-turborepo
-npx turbo build
-pnpm dlx turbo build
-pnpm exec turbo build
+# 1. Install mise (https://mise.jdx.dev/getting-started.html), then:
+mise install            # downloads the Node / pnpm versions in .mise.toml
+
+# 2. Install dependencies
+pnpm install
+
+# 3. Run the docs site
+pnpm dev                # turbo run dev — runs every dev task in parallel
+# or, scope to the docs app:
+pnpm dev --filter=kcn-website
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+The docs site listens on http://localhost:3000.
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## Common Tasks
 
 ```sh
-turbo build --filter=docs
+pnpm build              # turbo run build  — builds every package/app
+pnpm lint               # turbo run lint
+pnpm format             # prettier across **/*.{ts,tsx,md}
+pnpm check-types        # turbo run check-types
 ```
 
-Without global `turbo`:
+Use Turborepo filters to scope to a single workspace:
 
 ```sh
-npx turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
+pnpm --filter @repo/seed check-types
+pnpm --filter kcn-website dev
 ```
 
-### Develop
+## Documenting a Registry Component
 
-To develop all apps and packages, run the following command:
+Component previews in the docs site render inside **isolated iframes** under `/preview/<registry>/...` so each registry's theme tokens cannot collide with the docs site or with the other registries. Docs writers embed previews with the `<Preview>` MDX component:
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
+```mdx
+{/* Simple component with text label and props */}
+<Preview registry="seed" component="Button">Click me</Preview>
 
-```sh
-cd my-turborepo
-turbo dev
+<Preview
+  registry="seed"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  Delete Me
+</Preview>
+
+{/* Composed preview with nested elements / icons via a demo file */}
+<Preview registry="seed" demo="button-with-icon" />
 ```
 
-Without global `turbo`, use your package manager:
+For the full architecture (route structure, demo files, registry wiring), see [`AGENTS.md`](./AGENTS.md). For step-by-step workflows, see the agent skills under [`.agents/skills/`](./.agents/skills/).
 
-```sh
-cd my-turborepo
-npx turbo dev
-pnpm exec turbo dev
-pnpm exec turbo dev
-```
+## Adding a Shared Dependency
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+1. **Registry** (devDep + catalog):
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+   ```sh
+   pnpm --filter @repo/<registry-name> add -D <package>@<version> --save-catalog
+   # or let the version resolve and still record in catalog:
+   pnpm --filter @repo/<registry-name> add -D <package> --save-catalog
+   ```
 
-```sh
-turbo dev --filter=web
-```
+2. **Website** (runtime, catalog specifier):
 
-Without global `turbo`:
-
-```sh
-npx turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-pnpm exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-pnpm exec turbo link
-pnpm exec turbo link
-```
+   ```sh
+   pnpm --filter kcn-website add <package>@catalog:
+   ```
 
 ## Useful Links
 
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+- [Turborepo Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
+- [Turborepo Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
+- [Fumadocs](https://fumadocs.dev)
+- [Tailwind CSS v4 — `@theme` directive](https://tailwindcss.com/docs/v4-beta#theme-customization)
+- [shadcn/ui registry model](https://ui.shadcn.com/docs/registry)

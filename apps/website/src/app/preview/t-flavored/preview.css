@@ -1,0 +1,14 @@
+/*
+ * Isolated CSS for the t-flavored registry preview iframe.
+ * This bundle is loaded ONLY in /preview/t-flavored/* routes — completely
+ * separate from the docs site's global.css. Other registries (seed,
+ * montage) are NOT imported here, so their @theme tokens cannot leak in.
+ */
+@import "@repo/t-flavored/styles/global.css";
+
+/*
+ * Tailwind v4 skips node_modules by default. Opt-in to scan t-flavored's source
+ * tree so its utility classes generate CSS in this bundle.
+ */
+@source "../../../../node_modules/@repo/t-flavored";
+@source "../../../../../../packages/registries/t-flavored";

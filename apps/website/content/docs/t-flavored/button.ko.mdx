@@ -9,11 +9,17 @@ description: Button 컴포넌트
 console.log("Hello World");
 ```
 
-## T-flavored (MDX)
+## T-flavored (격리 iframe 미리보기)
 
-<div data-registry="t-flavored">
-  <TFlavoredButton>클릭</TFlavoredButton>
-</div>
+<Preview registry="t-flavored" component="Button">클릭</Preview>
+
+<Preview
+  registry="t-flavored"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  삭제
+</Preview>
 
 ## 카드
 

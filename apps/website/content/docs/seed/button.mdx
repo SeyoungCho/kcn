@@ -9,11 +9,27 @@ description: Button Component
 console.log("Hello World");
 ```
 
-## Seed (MDX)
+## Seed (Isolated Iframe Preview)
 
-<div data-registry="seed">
-  <SeedButton>Click me</SeedButton>
-</div>
+<Preview registry="seed" component="Button">
+  Click me
+</Preview>
+
+<Preview
+  registry="seed"
+  component="Button"
+  props={{ variant: "destructive", size: "lg" }}
+>
+  Delete Me
+</Preview>
+
+## Nested Elements (Demo File)
+
+For previews that need icons, multiple components, or any nested JSX, point
+`<Preview>` at a demo file under
+`apps/website/src/app/preview/seed/demos/<slug>/page.tsx`:
+
+<Preview registry="seed" demo="button-with-icon" height={160} />
 
 ## Cards
 
