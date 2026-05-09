@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "Hello World",
+    "title": "KCN Docs",
     "beforeLink": "You can open ",
     "linkLabel": "/docs",
     "afterLink": " and see the documentation."
