@@ -539,4 +539,49 @@
     #fff9f500 0%, #fff9f51a 46%, #fff9f51a 54%, #fff9f500 100%;
   --gradient-shimmer-neutral-stops:
     #ffffff00 0%, #ffffff1a 46%, #ffffff1a 54%, #ffffff00 100%;
+
+  --background: var(--bg-layer-default);
+  --foreground: var(--fg-neutral);
+  --card: var(--bg-layer-default);
+  --card-foreground: var(--fg-neutral);
+  --popover: var(--bg-layer-floating);
+  --popover-foreground: var(--fg-neutral);
+  --primary: var(--bg-brand-solid);
+  --primary-foreground: var(--fg-neutral-inverted);
+  --secondary: var(--bg-neutral-weak);
+  --secondary-foreground: var(--fg-neutral);
+  --muted: var(--bg-layer-fill);
+  --muted-foreground: var(--fg-neutral-subtle);
+  --accent: var(--bg-brand-weak);
+  --accent-foreground: var(--fg-brand-contrast);
+  --destructive: var(--bg-critical-solid);
+  --destructive-foreground: var(--fg-neutral-inverted);
+  --border: var(--stroke-neutral-weak);
+  --input: var(--stroke-neutral-weak);
+  --ring: var(--stroke-focus-ring);
+  --chart-1: var(--palette-carrot-600);
+  --chart-2: var(--palette-blue-600);
+  --chart-3: var(--palette-green-600);
+  --chart-4: var(--palette-yellow-600);
+  --chart-5: var(--palette-purple-600);
+  --sidebar: var(--bg-layer-fill);
+  --sidebar-foreground: var(--fg-neutral);
+  --sidebar-primary: var(--bg-brand-solid);
+  --sidebar-primary-foreground: var(--fg-neutral-inverted);
+  --sidebar-accent: var(--bg-brand-weak);
+  --sidebar-accent-foreground: var(--fg-brand-contrast);
+  --sidebar-border: var(--stroke-neutral-weak);
+  --sidebar-ring: var(--stroke-focus-ring);
+  --font-family-sans:
+    -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-serif: Source Serif 4, serif;
+  --font-family-mono: JetBrains Mono, monospace;
+  --font-sans: var(--font-family-sans);
+  --font-serif: var(--font-family-serif);
+  --font-mono: var(--font-family-mono);
+  --radius: var(--radius-r2);
+  --tracking-normal: 0em;
+  --spacing: var(--dimension-x1);
 }
