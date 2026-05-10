@@ -2,6 +2,8 @@
 
 import { type ReactNode, useEffect, useState } from "react";
 import { useDictionary } from "./dictionary-provider";
+import { Tabs, TabsList, TabsTab, TabsPanel } from "@/components/ui/tabs";
+import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
 
 type Registry = "seed" | "montage" | "t-flavored";
 
@@ -182,24 +184,40 @@ export function Preview(props: PreviewProps) {
   }
 
   return (
-    <div className="my-4">
-      <iframe
-        src={src}
-        title={title}
-        className={iframeClassName}
-        style={{ height }}
-        loading="lazy"
-      />
-      <div className="mt-1 flex justify-end">
-        <a
-          href={src}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-fd-muted-foreground hover:text-fd-foreground hover:underline"
-        >
-          {openFullscreenLabel} ↗
-        </a>
-      </div>
-    </div>
+    <Tabs defaultValue="Preview">
+      <TabsList>
+        <TabsTab value="Preview">Preview</TabsTab>
+        <TabsTab value="Code">Code</TabsTab>
+      </TabsList>
+      <TabsPanel value="Preview">
+        <div className="my-4">
+          <iframe
+            src={src}
+            title={title}
+            className={iframeClassName}
+            style={{ height }}
+            loading="lazy"
+          />
+          <div className="mt-1 flex justify-end">
+            <a
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-fd-muted-foreground hover:text-fd-foreground hover:underline"
+            >
+              {openFullscreenLabel} ↗
+            </a>
+          </div>
+        </div>
+      </TabsPanel>
+      <TabsPanel value="Code">
+        <div className="my-4">
+          <DynamicCodeBlock
+            lang="tsx"
+            code={`<button onClick={() => alert("Hello World")}>Click me</button>`}
+          />
+        </div>
+      </TabsPanel>
+    </Tabs>
   );
 }
