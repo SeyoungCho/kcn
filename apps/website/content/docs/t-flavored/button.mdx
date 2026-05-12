@@ -11,15 +11,17 @@ console.log("Hello World");
 
 ## T-flavored (Isolated Iframe Preview)
 
-<Preview registry="t-flavored" component="Button">Click me</Preview>
+<div className="space-y-4">
+  <Preview registry="t-flavored" component="Button">Click me</Preview>
 
-<Preview
-  registry="t-flavored"
-  component="Button"
-  props={{ variant: "destructive", size: "lg" }}
->
-  Delete Me
-</Preview>
+  <Preview
+    registry="t-flavored"
+    component="Button"
+    props={{ variant: "destructive", size: "lg" }}
+  >
+    Delete Me
+  </Preview>
+</div>
 
 ## Cards
 
