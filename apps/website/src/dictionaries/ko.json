@@ -6,6 +6,8 @@
     "afterLink": "를 열 수 있습니다."
   },
   "preview": {
-    "openFullscreen": "전체화면으로 열기"
+    "openFullscreen": "전체화면으로 열기",
+    "preview": "미리보기",
+    "code": "코드"
   }
 }

@@ -6,6 +6,8 @@
     "afterLink": " and see the documentation."
   },
   "preview": {
-    "openFullscreen": "Open fullscreen"
+    "openFullscreen": "Open fullscreen",
+    "preview": "Preview",
+    "code": "Code"
   }
 }

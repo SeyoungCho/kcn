@@ -4,6 +4,8 @@ import { type ReactNode, useEffect, useState } from "react";
 import { useDictionary } from "./dictionary-provider";
 import { Tabs, TabsList, TabsTab, TabsPanel } from "@/components/ui/tabs";
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
+import { Maximize } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Registry = "seed" | "montage" | "t-flavored";
 
@@ -161,6 +163,8 @@ export function Preview(props: PreviewProps) {
   // accidentally rendered outside [lang]/).
   const dict = useDictionary();
   const openFullscreenLabel = dict?.preview.openFullscreen ?? "Open fullscreen";
+  const previewLabel = dict?.preview.preview ?? "Preview";
+  const codeLabel = dict?.preview.code ?? "Code";
 
   // The iframe gets the visible styling (border, radius, background); the
   // outer wrapper handles vertical spacing in the MDX flow + the trailing
@@ -185,12 +189,25 @@ export function Preview(props: PreviewProps) {
 
   return (
     <Tabs defaultValue="Preview">
-      <TabsList>
-        <TabsTab value="Preview">Preview</TabsTab>
-        <TabsTab value="Code">Code</TabsTab>
-      </TabsList>
+      <div className="flex w-full justify-between items-center">
+        <TabsList>
+          <TabsTab value="Preview">{previewLabel}</TabsTab>
+          <TabsTab value="Code">{codeLabel}</TabsTab>
+        </TabsList>
+        <Button
+          aria-label={openFullscreenLabel}
+          title={openFullscreenLabel}
+          size="icon-sm"
+          variant="ghost"
+          render={<a href={src} target="_blank" rel="noopener noreferrer" />}
+          className="hover:bg-muted"
+        >
+          <Maximize className="size-3" aria-hidden="true" />
+        </Button>
+      </div>
+
       <TabsPanel value="Preview">
-        <div className="my-4">
+        <div className="mt-1">
           <iframe
             src={src}
             title={title}
@@ -198,20 +215,10 @@ export function Preview(props: PreviewProps) {
             style={{ height }}
             loading="lazy"
           />
-          <div className="mt-1 flex justify-end">
-            <a
-              href={src}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-fd-muted-foreground hover:text-fd-foreground hover:underline"
-            >
-              {openFullscreenLabel} ↗
-            </a>
-          </div>
         </div>
       </TabsPanel>
       <TabsPanel value="Code">
-        <div className="my-4">
+        <div className="mt-1">
           <DynamicCodeBlock
             lang="tsx"
             code={`<button onClick={() => alert("Hello World")}>Click me</button>`}
