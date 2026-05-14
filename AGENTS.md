@@ -51,7 +51,7 @@ The primary objective of this project is to publish and manage multiple shadcn/u
 
 - [pnpm](https://pnpm.io/) workspaces @10.33.1
 - [Turborepo](https://turbo.build/)
-- Node **22+**
+- Node **22+** (pinned in `mise.toml` and `package.json` `engines`; run shell commands as `mise exec -- <command>` so agents use the project version)
 - TypeScript **5.9+**
 
 **Documentation site** (`apps/website`):
