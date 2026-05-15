@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 import type { ReactNode } from "react";
+import { PREVIEW_THEME_STORAGE_KEY } from "@/hooks/preview/preview-bridge";
 
 export function PreviewThemeProvider({ children }: { children: ReactNode }) {
   return (
@@ -9,7 +10,7 @@ export function PreviewThemeProvider({ children }: { children: ReactNode }) {
       attribute="class"
       defaultTheme="light"
       enableSystem={false}
-      storageKey="kcn-preview-theme"
+      storageKey={PREVIEW_THEME_STORAGE_KEY}
     >
       {children}
     </ThemeProvider>

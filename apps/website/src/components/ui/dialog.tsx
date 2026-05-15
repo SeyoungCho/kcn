@@ -75,6 +75,12 @@ export function DialogPopup({
   closeProps?: DialogPrimitive.Close.Props;
   portalProps?: DialogPrimitive.Portal.Props;
 }): React.ReactElement {
+  const {
+    className: closeClassName,
+    render: closeRender,
+    ...closeRestProps
+  } = closeProps ?? {};
+
   return (
     <DialogPortal {...portalProps}>
       <DialogBackdrop />
@@ -98,9 +104,9 @@ export function DialogPopup({
           {showCloseButton && (
             <DialogPrimitive.Close
               aria-label="Close"
-              className="absolute inset-e-2 top-2"
-              render={<Button size="icon" variant="ghost" />}
-              {...closeProps}
+              {...closeRestProps}
+              className={cn("absolute inset-e-2 top-2", closeClassName)}
+              render={closeRender ?? <Button size="icon" variant="ghost" />}
             >
               <XIcon />
             </DialogPrimitive.Close>

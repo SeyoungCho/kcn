@@ -1,11 +1,20 @@
 "use client";
 
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode } from "react";
 import { useDictionary } from "./dictionary-provider";
 import { Tabs, TabsList, TabsTab, TabsPanel } from "@/components/ui/tabs";
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
 import { Maximize } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogPopup,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
+import { usePreviewIframeBridge } from "@/hooks/preview/use-preview-iframe-bridge";
+import { usePreviewSrc } from "@/hooks/preview/use-preview-src";
 
 type Registry = "seed" | "montage" | "t-flavored";
 
@@ -73,25 +82,6 @@ interface PreviewDemoMode {
 }
 
 /**
- * Recursively flattens any React node into a plain text string.
- *
- * MDX often wraps inline text in elements (e.g. `<p>` or fragments) and adds
- * surrounding whitespace, which means `children` rarely arrives as a bare
- * string. We walk the tree, pull out any string/number leaves, and join them.
- */
-function flattenToText(node: ReactNode): string {
-  if (node == null || typeof node === "boolean") return "";
-  if (typeof node === "string") return node;
-  if (typeof node === "number") return String(node);
-  if (Array.isArray(node)) return node.map(flattenToText).join("");
-  if (typeof node === "object" && "props" in node) {
-    const element = node as { props?: { children?: ReactNode } };
-    return flattenToText(element.props?.children);
-  }
-  return "";
-}
-
-/**
  * Embeds a registry preview inside an iframe so its theme is fully isolated
  * from the docs site (and from other registries).
  *
@@ -118,6 +108,8 @@ function flattenToText(node: ReactNode): string {
  */
 export function Preview(props: PreviewProps) {
   const { registry, height = 200, className } = props;
+  const { isFullscreenOpen, previewTheme, setIsFullscreenOpen } =
+    usePreviewIframeBridge();
 
   /**
    * Compute the iframe `src` only after mount.
@@ -133,25 +125,13 @@ export function Preview(props: PreviewProps) {
    * the SSR pass renders an empty placeholder of the same dimensions, and
    * the real iframe mounts on the client where `children` is stable.
    */
-  const [src, setSrc] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    if ("demo" in props && props.demo) {
-      setSrc(`/preview/${registry}/demos/${props.demo}`);
-      return;
-    }
-
-    const childrenText = flattenToText(props.children).trim();
-    const search = new URLSearchParams();
-    if (props.props && Object.keys(props.props).length > 0) {
-      search.set("props", JSON.stringify(props.props));
-    }
-    if (childrenText) {
-      search.set("children", childrenText);
-    }
-    const qs = search.toString();
-    setSrc(`/preview/${registry}/${props.component}${qs ? `?${qs}` : ""}`);
-  }, [registry, props]);
+  const src = usePreviewSrc({
+    children: "children" in props ? props.children : undefined,
+    component: "component" in props ? props.component : undefined,
+    demo: "demo" in props ? props.demo : undefined,
+    props: "props" in props ? props.props : undefined,
+    registry,
+  });
 
   const title =
     "demo" in props && props.demo
@@ -188,22 +168,49 @@ export function Preview(props: PreviewProps) {
   }
 
   return (
-    <Tabs defaultValue="Preview">
+    <Tabs defaultValue="Preview" data-preview-theme={previewTheme}>
       <div className="flex w-full justify-between items-center">
         <TabsList>
           <TabsTab value="Preview">{previewLabel}</TabsTab>
           <TabsTab value="Code">{codeLabel}</TabsTab>
         </TabsList>
-        <Button
-          aria-label={openFullscreenLabel}
-          title={openFullscreenLabel}
-          size="icon-sm"
-          variant="ghost"
-          render={<a href={src} target="_blank" rel="noopener noreferrer" />}
-          className="hover:bg-muted"
-        >
-          <Maximize className="size-3" aria-hidden="true" />
-        </Button>
+        <Dialog open={isFullscreenOpen} onOpenChange={setIsFullscreenOpen}>
+          <DialogTrigger
+            aria-label={openFullscreenLabel}
+            title={openFullscreenLabel}
+            render={
+              <Button
+                size="icon-sm"
+                variant="ghost"
+                className="hover:bg-muted"
+              />
+            }
+          >
+            <Maximize className="size-3" aria-hidden="true" />
+          </DialogTrigger>
+          <DialogPopup
+            bottomStickOnMobile={false}
+            className={cn(
+              "row-start-1! row-end-4! h-[calc(100dvh-2rem)] max-h-none max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg p-0",
+            )}
+            closeProps={{
+              className: cn(
+                "border backdrop-blur-md transition-colors",
+                previewTheme === "light" &&
+                  "border-neutral-200/80 bg-white/85 text-neutral-700 hover:bg-neutral-100 hover:text-neutral-950 focus-visible:ring-neutral-400/40 focus-visible:ring-offset-white",
+                previewTheme === "dark" &&
+                  "border-white/10 bg-neutral-950/70 text-neutral-200 hover:bg-neutral-800/90 hover:text-white focus-visible:ring-white/30 focus-visible:ring-offset-neutral-950",
+              ),
+            }}
+          >
+            <DialogTitle className="sr-only">{title}</DialogTitle>
+            <iframe
+              src={src}
+              title={`${title} fullscreen`}
+              className="size-full border-0 bg-background"
+            />
+          </DialogPopup>
+        </Dialog>
       </div>
 
       <TabsPanel value="Preview">
