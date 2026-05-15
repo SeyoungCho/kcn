@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) or any other relevan
 
 ## General Rules
 
+### always use absolute path for imports
+
 ### format after your work is done
 
 ```zsh
