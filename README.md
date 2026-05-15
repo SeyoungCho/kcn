@@ -102,6 +102,8 @@ Component previews in the docs site render inside **isolated iframes** under `/p
 <Preview registry="seed" demo="button-with-icon" />
 ```
 
+Each preview also has a Code tab. Simple component previews generate copyable usage code from the `<Preview>` props, while composed demo previews load the matching demo file and show reader-facing imports like `@/components/ui/button`.
+
 For the full architecture (route structure, demo files, registry wiring), see [`AGENTS.md`](./AGENTS.md). For step-by-step workflows, see the agent skills under [`.agents/skills/`](./.agents/skills/).
 
 ## Adding a Shared Dependency

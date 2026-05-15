@@ -96,9 +96,14 @@ apps/website/src/app/preview/<registry-name>/
 
 Supporting pieces:
 
-- `apps/website/src/components/preview.tsx` — the `<Preview>` MDX component. Builds the iframe URL on the client (post-mount) to avoid SSR/hydration mismatches caused by MDX children differing between server and client.
+- `apps/website/src/components/preview.tsx` — the `<Preview>` MDX component. Builds the iframe URL on the client (post-mount) to avoid SSR/hydration mismatches caused by MDX children differing between server and client, and renders the Preview/Code tabs.
+- `apps/website/src/hooks/preview/use-preview-src.ts` — builds the iframe URL for component or demo mode.
+- `apps/website/src/hooks/preview/use-preview-code.ts` — builds the Code tab snippet for component mode and fetches demo file source for demo mode.
+- `apps/website/src/app/api/preview-code/route.ts` — reads demo preview files for the Code tab and rewrites internal `@repo/<registry>/ui/*` imports to user-facing `@/components/ui/*` imports before returning them.
 - `apps/website/src/lib/preview.tsx` — shared `renderPreview()` helper used by every per-registry `[component]/page.tsx`.
 - `apps/website/src/components/mdx.tsx` — registers `<Preview>` globally so MDX files don't need to import it.
+- `apps/website/src/types/preview.ts` — shared list/type guard for registries accepted by `<Preview>` and the preview-code API.
+- `apps/website/src/utils/preview/index.ts` — shared preview helpers such as MDX/React children flattening.
 - `apps/website/src/proxy.ts` — i18n middleware excludes `/preview` so the iframe URL stays language-agnostic.
 - `apps/website/next.config.mjs` — every registry must be in `transpilePackages`.
 
@@ -133,14 +138,20 @@ Supporting pieces:
 - `props` is JSON-serialized into the URL — values must be JSON-safe (no functions, no React elements). Use a demo file for richer scenarios.
 - Default iframe height is 200px; pass `height={N}` for taller previews.
 
+**Code tab behavior:**
+
+- Component mode generates a copyable usage snippet from the `component`, `props`, and plain-text `children` passed to `<Preview>`. The snippet uses user-facing imports like `@/components/ui/button`.
+- Demo mode loads the matching `apps/website/src/app/preview/<registry-name>/demos/<slug>/page.tsx` source through `/api/preview-code`. Demo files should still import registry components from `@repo/<registry-name>/ui/<component>` so they render inside the isolated iframe, but the Code tab rewrites those imports to `@/components/ui/<component>` for readers.
+
 ### Adding a New Registry
 
 When integrating a new registry into the docs site, beyond the standard MDX/CSS wiring, you must:
 
 1. Export `./styles/global.css` and `./styles/theme.css` from the registry's `package.json`.
 2. Add the registry to `transpilePackages` in `apps/website/next.config.mjs`.
-3. Create the per-registry preview route tree under `apps/website/src/app/preview/<registry-name>/` (mirror the `seed/` shape).
-4. Use a registry-prefix string like `"Seed"`, `"Montage"`, `"TFlavored"` when calling `renderPreview()`. The prefix is concatenated with the URL `[component]` segment to look up the actual component in the registry's `mdxComponents` map.
+3. Add the registry slug to `PREVIEW_REGISTRIES` in `apps/website/src/types/preview.ts`.
+4. Create the per-registry preview route tree under `apps/website/src/app/preview/<registry-name>/` (mirror the `seed/` shape).
+5. Use a registry-prefix string like `"Seed"`, `"Montage"`, `"TFlavored"` when calling `renderPreview()`. The prefix is concatenated with the URL `[component]` segment to look up the actual component in the registry's `mdxComponents` map.
 
 The registry's `mdxComponents` export (e.g. `{ SeedButton: Button, SeedInput: Input }`) is the **runtime lookup table** for the dynamic preview page. Keep it populated for every component you want to be embeddable via `<Preview>`, even though MDX content no longer references those tag names directly.
 

@@ -23,6 +23,11 @@ Component previews are rendered inside **isolated iframes** under `/preview/<reg
 
 The dynamic preview page (`apps/website/src/app/preview/<registry-name>/[component]/page.tsx`) looks up the component in the registry's `mdxComponents` export by key `<RegistryPrefix><ComponentName>`. That lookup map MUST stay populated even though MDX content no longer references those tags directly.
 
+The `<Preview>` component also renders a Code tab:
+
+- Component mode generates the snippet from `component`, `props`, and plain-text `children`, with imports like `@/components/ui/button`.
+- Demo mode loads the matching demo file source through `/api/preview-code`. Demo files should import from `@repo/<registry-name>/ui/<component>` so they render in the isolated iframe; the Code tab rewrites those imports to `@/components/ui/<component>` before showing the code.
+
 ## Workflow
 
 1. Discover the component and current docs pattern.
@@ -143,6 +148,7 @@ When a preview needs nested JSX (icons inside buttons, multiple components, layo
 ```
 
 Demo files inherit the registry's isolated theme via `apps/website/src/app/preview/<registry-name>/layout.tsx`, so any registry component imported inside them renders with the correct tokens.
+The Code tab displays this same demo file with `@repo/<registry-name>/ui/*` imports rewritten to `@/components/ui/*`, so keep demo files focused on code a reader can understand.
 
 ## Authoring Constraints — `<Preview>` API
 
@@ -150,6 +156,7 @@ Demo files inherit the registry's isolated theme via `apps/website/src/app/previ
 - In component mode, `children` must flatten to plain text. Anything richer must move into a demo file.
 - `props` is serialized to JSON in the URL — values must be JSON-safe (no functions, no React elements). Push richer scenarios into demo files.
 - Default iframe height is 200px; pass `height={N}` for taller previews.
+- The Code tab is automatic; do not add separate hardcoded code blocks for the same preview unless the page needs extra explanation.
 - Do NOT reference registry-prefixed tag names (e.g. `<SeedButton>`) directly in MDX content. Those names exist only as lookup keys in the registry's `mdxComponents` export, used by the dynamic preview page to resolve `<Preview component="..." />`. MDX content always goes through `<Preview>`.
 
 ## Response Format

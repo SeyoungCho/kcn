@@ -20,6 +20,8 @@ Registry components render exclusively inside per-registry preview iframes at `/
 
 This means adding a new registry to the docs site is primarily about creating the new preview route tree (`/app/preview/<registry-name>/...`) and registering the registry's `mdxComponents` map so `<Preview>` can resolve component names against it.
 
+The `<Preview>` component also owns the Code tab. Component previews generate copyable usage snippets from `<Preview>` props. Demo previews load the matching `apps/website/src/app/preview/<registry-name>/demos/<slug>/page.tsx` source through `/api/preview-code`, then rewrite `@repo/<registry-name>/ui/*` imports to reader-facing `@/components/ui/*` imports.
+
 ## Workflow
 
 1. Discover the current pattern from existing integrated registries.
@@ -42,6 +44,7 @@ This means adding a new registry to the docs site is primarily about creating th
 2. Ensure website dependency is wired.
    - Add `@repo/<registry-name>: "workspace:*"` to `apps/website/package.json` dependencies when missing.
    - Add `@repo/<registry-name>` to the `transpilePackages` array in `apps/website/next.config.mjs` when missing. All three current registries (`@repo/montage`, `@repo/seed`, `@repo/t-flavored`) appear there.
+   - Add `<registry-name>` to `PREVIEW_REGISTRIES` in `apps/website/src/types/preview.ts` so `<Preview>` and `/api/preview-code` accept the new registry slug.
 
 3. Ensure the registry exposes the styles entry points the iframe pattern expects.
    - In `packages/registries/<registry-name>/package.json`, the `exports` field MUST include both of:
@@ -78,6 +81,7 @@ This means adding a new registry to the docs site is primarily about creating th
      ```
    - `layout.tsx`: render `<html><body className="bg-background text-foreground">{children}</body></html>` and import `./preview.css`. Do NOT pull in Fumadocs providers or the docs theme.
    - `[component]/page.tsx`: import `mdxComponents` from `@repo/<registry-name>/mdx` and call the shared `renderPreview` helper from `@/lib/preview` with the appropriate `registryPrefix` (e.g. `"Seed"`, `"Montage"`, `"TFlavored"`).
+   - `demos/<slug>/page.tsx`: import registry components from `@repo/<registry-name>/ui/<component>` so they render with the isolated registry package. The Code tab will rewrite those imports to `@/components/ui/<component>` for readers.
 
 6. Confirm the i18n middleware excludes `/preview` paths.
    - `apps/website/src/proxy.ts` should already have `preview` listed in the negative-lookahead matcher group. If not, add it. The current matcher is:
@@ -120,6 +124,7 @@ This means adding a new registry to the docs site is primarily about creating th
 - List integration points updated:
   - website dependency (`package.json`)
   - `transpilePackages` in `next.config.mjs`
+  - `PREVIEW_REGISTRIES` in `apps/website/src/types/preview.ts`
   - registry's `package.json` exports (`./styles/global.css`, `./styles/theme.css`)
   - MDX lookup map (`src/mdx.ts`)
   - per-registry preview route tree (`apps/website/src/app/preview/<registry-name>/`)

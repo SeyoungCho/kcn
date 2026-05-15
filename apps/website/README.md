@@ -42,17 +42,22 @@ src/app/
 
 ## Key Files
 
-| File                                 | Purpose                                                                                                              |
-| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| `src/lib/source.ts`                  | Fumadocs content source adapter ([`loader()`](https://fumadocs.dev/docs/headless/source-api))                        |
-| `src/components/layout.shared.tsx`   | Shared layout options                                                                                                |
-| `src/components/mdx.tsx`             | Registers MDX components, including `<Preview>`                                                                      |
-| `src/components/preview.tsx`         | The `<Preview>` MDX component (client; deferred src to avoid hydration mismatch)                                     |
-| `src/lib/preview.tsx`                | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`                               |
-| `src/proxy.ts`                       | i18n middleware — excludes `/preview` so iframes stay language-agnostic                                              |
-| `app/global.css`                     | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes) |
-| `app/preview/<registry>/preview.css` | Per-registry Tailwind entry; imports that registry's `global.css` only                                               |
-| `next.config.mjs`                    | `transpilePackages` lists every registry; Fumadocs MDX wrapper                                                       |
+| File                                    | Purpose                                                                                                              |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `src/lib/source.ts`                     | Fumadocs content source adapter ([`loader()`](https://fumadocs.dev/docs/headless/source-api))                        |
+| `src/components/layout.shared.tsx`      | Shared layout options                                                                                                |
+| `src/components/mdx.tsx`                | Registers MDX components, including `<Preview>`                                                                      |
+| `src/components/preview.tsx`            | The `<Preview>` MDX component (client; deferred src to avoid hydration mismatch; renders Preview/Code tabs)          |
+| `src/hooks/preview/use-preview-src.ts`  | Builds iframe URLs for component and demo previews                                                                   |
+| `src/hooks/preview/use-preview-code.ts` | Builds component-mode Code tab snippets and fetches demo source for demo previews                                    |
+| `src/app/api/preview-code/route.ts`     | Reads demo preview files for the Code tab and rewrites `@repo/*/ui/*` imports to `@/components/ui/*`                 |
+| `src/lib/preview.tsx`                   | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`                               |
+| `src/types/preview.ts`                  | Shared registry list/type guard for preview components and APIs                                                      |
+| `src/utils/preview/index.ts`            | Shared preview utilities, including MDX children flattening                                                          |
+| `src/proxy.ts`                          | i18n middleware — excludes `/preview` so iframes stay language-agnostic                                              |
+| `app/global.css`                        | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes) |
+| `app/preview/<registry>/preview.css`    | Per-registry Tailwind entry; imports that registry's `global.css` only                                               |
+| `next.config.mjs`                       | `transpilePackages` lists every registry; Fumadocs MDX wrapper                                                       |
 
 ## `<Preview>` MDX Component
 
@@ -87,11 +92,18 @@ src/app/
 - `props` is JSON-serialized into the URL — values must be JSON-safe (no functions, no React elements). Push richer scenarios into demo files.
 - Default iframe height is 200px; pass `height={N}` for taller previews.
 
+The Code tab is generated from the same `<Preview>` input:
+
+- Component mode builds a usage snippet from `component`, `props`, and plain-text `children`, using imports like `@/components/ui/button`.
+- Demo mode fetches the matching `src/app/preview/<registry-name>/demos/<slug>/page.tsx` file. Demo files should import from `@repo/<registry-name>/ui/<component>` for iframe rendering, and the Code tab rewrites those imports to `@/components/ui/<component>` for readers.
+
 ## Adding a Component Preview
 
 1. Make sure the component is registered in the registry's MDX lookup map at `packages/registries/<registry-name>/src/mdx.ts`. Keys follow the `<RegistryPrefix><ComponentName>` convention (`SeedButton`, `MontageInput`, `TFlavoredButton`, ...). The dynamic preview page reads this map at runtime to resolve `<Preview component="Foo" />` → `<RegistryPrefix>Foo`.
 2. Embed the live preview in your MDX page via `<Preview registry="..." component="..." />`.
 3. For nested JSX (icons, multiple components, layout wrappers), create `src/app/preview/<registry-name>/demos/<slug>/page.tsx` and reference it with `<Preview registry="..." demo="<slug>" />`.
+
+When adding a whole new registry, also add its slug to `src/types/preview.ts` so `<Preview>` and `/api/preview-code` accept it.
 
 For step-by-step workflows, see [`add-registry-component-docs`](../../.agents/skills/add-registry-component-docs/SKILL.md) and [`wire-registry-to-fumadocs-docs`](../../.agents/skills/wire-registry-to-fumadocs-docs/SKILL.md).
 
