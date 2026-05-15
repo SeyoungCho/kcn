@@ -14,9 +14,9 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { usePreviewIframeBridge } from "@/hooks/preview/use-preview-iframe-bridge";
+import { usePreviewCode } from "@/hooks/preview/use-preview-code";
 import { usePreviewSrc } from "@/hooks/preview/use-preview-src";
-
-type Registry = "seed" | "montage" | "t-flavored";
+import { type Registry } from "@/types/preview";
 
 /**
  * Two mutually exclusive preview modes:
@@ -132,6 +132,13 @@ export function Preview(props: PreviewProps) {
     props: "props" in props ? props.props : undefined,
     registry,
   });
+  const previewCode = usePreviewCode({
+    children: "children" in props ? props.children : undefined,
+    component: "component" in props ? props.component : undefined,
+    demo: "demo" in props ? props.demo : undefined,
+    props: "props" in props ? props.props : undefined,
+    registry,
+  });
 
   const title =
     "demo" in props && props.demo
@@ -228,7 +235,12 @@ export function Preview(props: PreviewProps) {
         <div className="mt-1">
           <DynamicCodeBlock
             lang="tsx"
-            code={`<button onClick={() => alert("Hello World")}>Click me</button>`}
+            code={
+              previewCode.code ??
+              (previewCode.isLoading
+                ? "// Loading preview code..."
+                : `// ${previewCode.error ?? "Preview code is unavailable."}`)
+            }
           />
         </div>
       </TabsPanel>

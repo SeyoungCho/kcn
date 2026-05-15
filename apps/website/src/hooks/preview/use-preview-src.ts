@@ -1,8 +1,8 @@
 "use client";
 
 import { type ReactNode, useEffect, useState } from "react";
-
-type Registry = "seed" | "montage" | "t-flavored";
+import { type Registry } from "@/types/preview";
+import { flattenToText } from "@/utils/preview";
 
 interface UsePreviewSrcOptions {
   children?: ReactNode;
@@ -12,18 +12,10 @@ interface UsePreviewSrcOptions {
   registry: Registry;
 }
 
-function flattenToText(node: ReactNode): string {
-  if (node == null || typeof node === "boolean") return "";
-  if (typeof node === "string") return node;
-  if (typeof node === "number") return String(node);
-  if (Array.isArray(node)) return node.map(flattenToText).join("");
-  if (typeof node === "object" && "props" in node) {
-    const element = node as { props?: { children?: ReactNode } };
-    return flattenToText(element.props?.children);
-  }
-  return "";
-}
-
+/**
+ * Builds the iframe URL after mount so MDX children do not cause hydration
+ * mismatches between server and client renders.
+ */
 export function usePreviewSrc({
   children,
   component,
