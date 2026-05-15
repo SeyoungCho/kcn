@@ -1,5 +1,8 @@
 import "./preview.css";
 
+import { PreviewThemeProvider } from "@/components/preview/preview-theme-provider";
+import { PreviewThemeToggle } from "@/components/preview/preview-theme-toggle";
+
 /**
  * Root layout for the seed registry preview iframe.
  *
@@ -17,8 +20,13 @@ export default function SeedPreviewLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-background text-foreground">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-background text-foreground">
+        <PreviewThemeProvider>
+          <PreviewThemeToggle />
+          {children}
+        </PreviewThemeProvider>
+      </body>
     </html>
   );
 }
