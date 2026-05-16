@@ -30,7 +30,8 @@ export function ThemeSwitch({
       onClick={onToggle}
     >
       <motion.div
-        className="bg-background flex size-6 items-center justify-center rounded-full"
+        className="bg-background flex size-6 items-center justify-center
+          rounded-full"
         layout
         transition={{
           type: "spring",

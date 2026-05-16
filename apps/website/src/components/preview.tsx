@@ -198,7 +198,8 @@ export function Preview(props: PreviewProps) {
           <DialogPopup
             bottomStickOnMobile={false}
             className={cn(
-              "row-start-1! row-end-4! h-[calc(100dvh-2rem)] max-h-none max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg p-0",
+              `row-start-1! row-end-4! h-[calc(100dvh-2rem)] max-h-none
+              max-w-[calc(100vw-2rem)] overflow-hidden rounded-lg p-0`,
             )}
             closeProps={{
               className: cn(
