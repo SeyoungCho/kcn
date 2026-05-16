@@ -69,6 +69,8 @@ pnpm build              # turbo run build  — builds every package/app
 pnpm lint               # turbo run lint
 pnpm format             # prettier across **/*.{ts,tsx,md}
 pnpm check-types        # turbo run check-types
+pnpm registries:add <package-name> <options>
+# adds a dependency to every package under packages/registries/*
 ```
 
 Use Turborepo filters to scope to a single workspace:

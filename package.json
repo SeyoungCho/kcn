@@ -21,6 +21,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
+    "registries:add": "pnpm --recursive --filter \"./packages/registries/*\" --fail-if-no-match add",
     "clean:modules": "find . -name node_modules -type d -prune -exec rm -rf {} +",
     "clean:build-output": "pnpm --filter kcn-website clean"
   },

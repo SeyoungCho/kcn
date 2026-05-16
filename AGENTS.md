@@ -175,6 +175,12 @@ pnpm --filter @repo/<registry-name> add -D <package>@<version> --save-catalog
 pnpm --filter @repo/<registry-name> add -D <package> --save-catalog
 ```
 
+For a dev dependency needed by every registry package:
+
+```zsh
+pnpm registries:add -D <package> --save-catalog
+```
+
 2. Website (runtime, catalog specifier):
 
 ```zsh
