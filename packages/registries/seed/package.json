@@ -40,6 +40,7 @@
     "clsx": "catalog:",
     "postcss": "catalog:",
     "prettier": "catalog:",
+    "prettier-plugin-classnames": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

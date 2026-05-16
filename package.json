@@ -28,6 +28,7 @@
   "devDependencies": {
     "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
+    "prettier-plugin-classnames": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:"
   }

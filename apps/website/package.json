@@ -45,6 +45,7 @@
     "eslint-config-next": "16.2.6",
     "postcss": "catalog:",
     "prettier": "catalog:",
+    "prettier-plugin-classnames": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
     "tailwindcss": "catalog:",
     "tw-animate-css": "catalog:",
