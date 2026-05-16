@@ -1,4 +1,10 @@
 {
+  "tailwindCSS.experimental.configFile": {
+    "apps/website/src/app/global.css": "apps/website/src/**",
+    "packages/registries/seed/src/styles/global.css": "packages/registries/seed/**",
+    "packages/registries/montage/src/styles/global.css": "packages/registries/montage/**",
+    "packages/registries/t-flavored/src/styles/global.css": "packages/registries/t-flavored/**"
+  },
   "tailwindCSS.experimental.classRegex": [
     // ClassName으로 끝나는 모든 prop 매칭 (예: buttonClassName="...", containerClassName="...")
     ["(?:\\w+ClassName)\\s*[:=]\\s*[\"'`]([^\"'`]*)[\"'`]"],
@@ -27,8 +33,11 @@
   ],
   "tailwindCSS.classFunctions": ["cva", "cx"],
   "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascriptreact",
     "typescriptreact": "javascript",
     "html": "html",
-    "css": "css"
+    "css": "css",
+    "scss": "scss"
   }
 }
