@@ -24,5 +24,11 @@
       "(?:const|let|var)\\s+\\w*STYLES\\w*\\s*(?::[^=]+)?\\s*=\\s*\\{([^}]*)\\}",
       "['\"`]([^\"'`]*)['\"`]"
     ]
-  ]
+  ],
+  "tailwindCSS.classFunctions": ["cva", "cx"],
+  "tailwindCSS.includeLanguages": {
+    "typescriptreact": "javascript",
+    "html": "html",
+    "css": "css"
+  }
 }
