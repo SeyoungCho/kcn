@@ -1,0 +1,28 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    // ClassName으로 끝나는 모든 prop 매칭 (예: buttonClassName="...", containerClassName="...")
+    ["(?:\\w+ClassName)\\s*[:=]\\s*[\"'`]([^\"'`]*)[\"'`]"],
+    // 템플릿 리터럴 매칭
+    ["(?:\\w+ClassName|className)\\s*[:=]\\s*`([^`]*)`"],
+    // cva() 함수 호출 매칭 - 첫 번째 인자(배열)에서 클래스 문자열 추출
+    ["cva\\(([^,)]+)(?:,|\\s*\\)|\\s*\\{)", "['\"`]([^\"'`]*)['\"`]"],
+    // cva() 내 variants 객체 매칭 - variant 값에서 클래스 문자열 추출
+    ["variants:\\s*\\{([^}]*)\\}", "['\"`]([^\"'`]*)['\"`]"],
+    // className/ClassNames를 포함하는 변수명의 배열 매칭 (대소문자 구분 없음)
+    // TypeScript 타입 어노테이션 유무 모두 처리 (예: : ClassValue[])
+    [
+      "(?:const|let|var)\\s+\\w*(?:[Cc]lass[Nn]ame|[Cc]lass[Nn]ames)\\w*\\s*(?::[^=]+)?\\s*=\\s*\\[([^\\]]*)\\]",
+      "['\"`]([^\"'`]*)['\"`]"
+    ],
+    // 대체 패턴: 배열 내 문자열 리터럴 직접 매칭 (더 간단하고 안정적)
+    [
+      "\\w*(?:[Cc]lass[Nn]ame|[Cc]lass[Nn]ames)\\w*\\s*(?::[^=]+)?\\s*=\\s*\\[",
+      "['\"`]([^\"'`]*)['\"`]"
+    ],
+    // STYLES가 포함된 객체 내부의 문자열 속성 값 매칭 (예: const BUTTON_STYLES = { primary: '...' })
+    [
+      "(?:const|let|var)\\s+\\w*STYLES\\w*\\s*(?::[^=]+)?\\s*=\\s*\\{([^}]*)\\}",
+      "['\"`]([^\"'`]*)['\"`]"
+    ]
+  ]
+}
