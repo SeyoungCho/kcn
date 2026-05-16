@@ -7,8 +7,8 @@ export default async function HomePage(props: PageProps<"/[lang]">) {
   const t = dict.home;
 
   return (
-    <div className="flex flex-col justify-center text-center flex-1">
-      <h1 className="text-2xl font-bold mb-4">{t.title}</h1>
+    <div className="flex flex-1 flex-col justify-center text-center">
+      <h1 className="mb-4 text-2xl font-bold">{t.title}</h1>
       <p>
         {t.beforeLink}
         <Link href={`/${lang}/docs`} className="font-medium underline">

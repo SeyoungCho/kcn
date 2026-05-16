@@ -176,7 +176,7 @@ export function Preview(props: PreviewProps) {
 
   return (
     <Tabs defaultValue="Preview" data-preview-theme={previewTheme}>
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full items-center justify-between">
         <TabsList>
           <TabsTab value="Preview">{previewLabel}</TabsTab>
           <TabsTab value="Code">{codeLabel}</TabsTab>
@@ -214,7 +214,7 @@ export function Preview(props: PreviewProps) {
             <iframe
               src={src}
               title={`${title} fullscreen`}
-              className="size-full border-0 bg-background"
+              className="bg-background size-full border-0"
             />
           </DialogPopup>
         </Dialog>

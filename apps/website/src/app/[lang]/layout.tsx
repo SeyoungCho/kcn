@@ -18,7 +18,7 @@ export default async function Layout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex min-h-screen flex-col">
         <RootProvider i18n={i18nUI.provider(lang)}>
           <DictionaryProvider value={dictionary}>{children}</DictionaryProvider>
         </RootProvider>

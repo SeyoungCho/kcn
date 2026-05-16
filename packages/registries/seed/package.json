@@ -39,6 +39,7 @@
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "postcss": "catalog:",
+    "prettier": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

@@ -43,7 +43,7 @@ const Logo = () => {
         height={24}
         className="hidden dark:block"
       />
-      <span className="text-black text-xl font-semibold dark:text-white">
+      <span className="text-xl font-semibold text-black dark:text-white">
         K-cn
       </span>
     </div>

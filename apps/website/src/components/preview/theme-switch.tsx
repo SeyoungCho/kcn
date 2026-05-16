@@ -30,7 +30,7 @@ export function ThemeSwitch({
       onClick={onToggle}
     >
       <motion.div
-        className="flex justify-center items-center size-6 rounded-full bg-background"
+        className="bg-background flex size-6 items-center justify-center rounded-full"
         layout
         transition={{
           type: "spring",
@@ -45,7 +45,7 @@ export function ThemeSwitch({
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: 60 }}
             transition={{ duration: 0.3 }}
-            className="flex justify-center items-center size-5"
+            className="flex size-5 items-center justify-center"
           >
             {iconOn}
           </motion.div>
@@ -56,7 +56,7 @@ export function ThemeSwitch({
             animate={{ opacity: 1, rotate: 0 }}
             exit={{ opacity: 0, rotate: -60 }}
             transition={{ duration: 0.3 }}
-            className="flex justify-center items-center size-5"
+            className="flex size-5 items-center justify-center"
           >
             {iconOff}
           </motion.div>
