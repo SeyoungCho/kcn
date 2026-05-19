@@ -1,6 +1,6 @@
 # Seed Registry
 
-This registry adapts Seed Design tokens into Tailwind CSS v4 theme variables. Import one of the styles entry points listed below, then write normal Tailwind utilities — color, typography, spacing, radius, elevation, motion, and gradient utilities are all generated from Seed tokens.
+This registry adapts Seed Design tokens into Tailwind CSS v4 theme variables. Import the global styles entry point, then write normal Tailwind utilities — color, typography, spacing, radius, elevation, motion, and gradient utilities are all generated from Seed tokens.
 
 ## Choosing a Styles Entry Point
 
@@ -14,9 +14,9 @@ The package exports two CSS files. Pick the one that matches how you intend to r
 }
 ```
 
-### 1. Full-app — `global.css`
+### 1. Full app — `global.css`
 
-The standard import. Sets all token CSS variables on `:root` (and dark variants on `.dark`).
+The standard import. It loads Tailwind CSS, imports `theme.css`, wires Seed tokens into Tailwind with `@theme inline`, and applies the base layer.
 
 ```css
 @import "@repo/seed/styles/global.css";
@@ -24,9 +24,9 @@ The standard import. Sets all token CSS variables on `:root` (and dark variants 
 
 This is also what the kcn docs site loads inside its **isolated preview iframe** at `/preview/seed/...`, where Seed renders without any other registry's tokens in scope. If you need to render multiple registries in the same project, follow that iframe pattern — see `apps/website/src/app/preview/seed/` for a reference implementation.
 
-### 2. Tokens only — `theme.css`
+### 2. Theme tokens — `theme.css`
 
-The `@theme inline` mappings without the underlying CSS variable definitions. Imported transitively by `global.css`; you usually don't import this directly unless you're authoring an alternate global stylesheet.
+The underlying CSS variable definitions on `:root` and `.dark`. Imported transitively by `global.css`; you usually don't import this directly unless you're authoring an alternate global stylesheet.
 
 ```css
 @import "@repo/seed/styles/theme.css";

@@ -48,8 +48,8 @@ The `<Preview>` component also owns the Code tab. Component previews generate co
 
 3. Ensure the registry exposes the styles entry points the iframe pattern expects.
    - In `packages/registries/<registry-name>/package.json`, the `exports` field MUST include both of:
-     - `./styles/global.css` — full-app theme on `:root`, imported by the per-registry preview iframe CSS bundle.
-     - `./styles/theme.css` — `@theme inline` token mappings (imported transitively by `global.css`).
+     - `./styles/global.css` — full app entry point with Tailwind imports, `@theme inline` mappings, and base layer; imported by the per-registry preview iframe CSS bundle.
+     - `./styles/theme.css` — theme CSS variable definitions on `:root` and `.dark`, imported transitively by `global.css`.
    - If `./styles/global.css` is missing from `exports`, add it.
 
 4. Wire registry components for the `<Preview>` lookup map.
@@ -114,7 +114,7 @@ The `<Preview>` component also owns the Code tab. Component previews generate co
 
 ## Validation
 
-- Run lints/diagnostics only for touched files (for example `ReadLints`).
+- Run targeted lints, type checks, or diagnostics for touched files when practical.
 - Report unresolved module errors as expected when dependency linking is pending.
 - Provide a concise list of changed files and what was wired.
 

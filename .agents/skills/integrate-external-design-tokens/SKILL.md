@@ -23,7 +23,7 @@ External token sets often do not follow Tailwind or shadcn naming. Preserve the 
    - Identify composite tokens (gradients, shadows).
    - Record light/dark differences explicitly.
 
-3. Add source tokens to `global.css`.
+3. Add source tokens to `theme.css`.
    - Use stable CSS variable names that preserve design-system meaning, for example:
      - `--palette-carrot-600`
      - `--fg-brand`
@@ -32,8 +32,10 @@ External token sets often do not follow Tailwind or shadcn naming. Preserve the 
      - `--elevation-shadow-s2`
    - Avoid self-referencing names when a Tailwind namespace will use the same name.
    - Put dark overrides under the registry's existing dark selector.
+   - Keep shadcn semantic aliases like `--background`, `--foreground`, `--primary`, `--border`, `--ring`, and sidebar tokens in `theme.css`, pointing them at the external system's semantic tokens when there is a clear match.
 
-4. Map tokens in `theme.css` using Tailwind CSS v4 namespaces.
+4. Map tokens in `global.css` using Tailwind CSS v4 namespaces.
+   - `global.css` should import `tailwindcss`, `tw-animate-css`, and `./theme.css`, then expose tokens through `@theme inline`.
    - Colors: `--color-*` so consumers can use `bg-*`, `text-*`, `border-*`, `outline-*`.
    - Text: `--text-*` and `--text-*--line-height`.
    - Font weights: `--font-weight-*`.
@@ -50,8 +52,8 @@ External token sets often do not follow Tailwind or shadcn naming. Preserve the 
    - Prefer `@theme` over hand-written utilities for tokens that Tailwind already understands.
 
 6. Preserve shadcn compatibility.
-   - Keep aliases like `--background`, `--foreground`, `--primary`, `--border`, `--ring`, and sidebar tokens.
-   - Point these aliases at the new semantic design-system tokens when there is a clear match.
+   - Keep aliases like `--background`, `--foreground`, `--primary`, `--border`, `--ring`, and sidebar tokens defined in `theme.css`.
+   - Keep their Tailwind mappings in `global.css` so default shadcn component classes continue to resolve.
 
 ## Naming Guidance
 
@@ -69,7 +71,7 @@ The repeated prefix in classes like `bg-bg-brand-solid` is acceptable when the e
 
 ## Validation
 
-- Run Prettier on touched CSS and Markdown files.
+- Run the project formatter after edits.
 - Search for accidental self-references such as `--radius-full: var(--radius-full)`.
 - Report any tokens that were intentionally omitted or approximated.
 
