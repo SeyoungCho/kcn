@@ -6,7 +6,7 @@ import { type Registry, isRegistry } from "@/types/preview";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const slugPattern = /^[a-z0-9-]+$/;
+const demoPathPattern = /^[a-z0-9-]+(?:\/[a-z0-9-]+)?$/;
 
 function getRepoRoot() {
   return process.cwd().endsWith(path.join("apps", "website"))
@@ -31,7 +31,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: "Provide demo" }, { status: 400 });
   }
 
-  if (!slugPattern.test(demo)) {
+  if (!demoPathPattern.test(demo)) {
     return NextResponse.json({ error: "Invalid source path" }, { status: 400 });
   }
 
@@ -45,7 +45,7 @@ export async function GET(request: Request) {
     "preview",
     registry,
     "demos",
-    demo,
+    ...demo.split("/"),
     "page.tsx",
   );
 

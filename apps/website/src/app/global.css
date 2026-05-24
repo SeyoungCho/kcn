@@ -208,6 +208,17 @@ html > body[data-scroll-locked] {
   --removed-body-scroll-bar-size: 0px !important;
 }
 
+/** AutoTypeTable layout formatting */
+div[id^="type-table-button."] {
+  & > button > code {
+    flex-shrink: 0;
+  }
+
+  & > button > span {
+    padding-inline-end: 1rem;
+  }
+}
+
 @font-face {
   font-family: "GMarketSans";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")

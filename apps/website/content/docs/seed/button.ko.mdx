@@ -1,38 +1,41 @@
 ---
 title: Button
-description: Button 컴포넌트
+description: Button은 즉시 실행되는 액션에 사용합니다.
 ---
 
-## 코드 블록
+<Preview registry="seed" component="Button">
+  버튼
+</Preview>
 
-```js
-console.log("Hello World");
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/button
 ```
 
-## Seed (격리 iframe 미리보기)
+## 예제
 
-<div className="space-y-4">
-  <Preview registry="seed" component="Button">클릭</Preview>
+### 배리언트
 
-  <Preview
-    registry="seed"
-    component="Button"
-    props={{ variant: "destructive", size: "lg" }}
-  >
-    삭제
-  </Preview>
-</div>
+<Preview registry="seed" demo="button/button-variants" height={600} />
 
-## 중첩 요소 (데모 파일)
+### 크기
 
-아이콘이나 여러 컴포넌트가 들어간 미리보기는
-`apps/website/src/app/preview/seed/demos/<slug>/page.tsx` 데모 파일을 가리킵니다:
+<Preview registry="seed" demo="button/button-sizes" height={280} />
 
-<Preview registry="seed" demo="button-with-icon" height={160} />
+### 아이콘 포함
 
-## 카드
+<Preview registry="seed" demo="button/button-with-icon" height={180} />
 
-<Cards>
-  <Card title="Next.js 더 알아보기" href="https://nextjs.org/docs" />
-  <Card title="Fumadocs 더 알아보기" href="https://fumadocs.dev" />
-</Cards>
+### Disabled
+
+<Preview registry="seed" component="Button" props={{ disabled: true }}>
+  비활성화
+</Preview>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/button.ts"
+  name="MDXButtonPropsKO"
+/>

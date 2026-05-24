@@ -3,73 +3,135 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const buttonVariants = cva(
-  `group/button inline-flex shrink-0 items-center justify-center cursor-pointer
-  rounded-lg border border-transparent bg-clip-padding text-sm font-bold
-  whitespace-nowrap transition-all outline-none select-none
-  focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50
-  active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none
-  disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3
-  aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50
-  dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none
-  [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-base`,
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
-        outline: `border-border bg-background hover:bg-muted
-        hover:text-foreground aria-expanded:bg-muted
-        aria-expanded:text-foreground dark:border-input dark:bg-input/30
-        dark:hover:bg-input/50`,
-        secondary: `bg-secondary text-secondary-foreground hover:bg-secondary/80
-        aria-expanded:bg-secondary aria-expanded:text-secondary-foreground`,
-        ghost: `hover:bg-muted hover:text-foreground aria-expanded:bg-muted
-        aria-expanded:text-foreground dark:hover:bg-muted/50`,
-        destructive: `bg-destructive/10 text-destructive hover:bg-destructive/20
-        focus-visible:border-destructive/40 focus-visible:ring-destructive/20
-        dark:bg-destructive/20 dark:hover:bg-destructive/30
-        dark:focus-visible:ring-destructive/40`,
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: `h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2
-        has-data-[icon=inline-start]:pl-2`,
-        xs: `h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs
-        in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5
-        has-data-[icon=inline-start]:pl-1.5
-        [&_svg:not([class*='size-'])]:size-3`,
-        sm: `h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem]
-        in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5
-        has-data-[icon=inline-start]:pl-1.5
-        [&_svg:not([class*='size-'])]:size-3.5`,
-        lg: `h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2
-        has-data-[icon=inline-start]:pl-2`,
-        icon: "size-8",
-        "icon-xs": `size-6 rounded-[min(var(--radius-md),10px)]
-        in-data-[slot=button-group]:rounded-lg
-        [&_svg:not([class*='size-'])]:size-3`,
-        "icon-sm": `size-7 rounded-[min(var(--radius-md),12px)]
-        in-data-[slot=button-group]:rounded-lg`,
-        "icon-lg": "size-9",
-      },
+const baseClassNames = [
+  "relative inline-flex cursor-pointer items-center justify-center",
+  "box-border shrink-0 align-middle whitespace-nowrap",
+  "normal-case no-underline antialiased",
+  "outline-(length:--spacing-xxs) outline-transparent outline-offset-(--spacing-xxs)",
+  "transition-colors duration-(--duration-d3) ease-easing",
+  "focus-visible:outline-stroke-focus-ring data-[focus-visible]:outline-stroke-focus-ring",
+  "disabled:cursor-not-allowed data-[disabled]:cursor-not-allowed",
+  "[&_svg]:shrink-0",
+].join(" ");
+
+const disabledSolidClassNames = [
+  "disabled:!bg-bg-disabled data-[disabled]:!bg-bg-disabled",
+  "disabled:!text-fg-disabled data-[disabled]:!text-fg-disabled",
+  "disabled:[&_svg]:!text-fg-disabled data-[disabled]:[&_svg]:!text-fg-disabled",
+].join(" ");
+
+const disabledOutlineClassNames = [
+  "disabled:!bg-bg-transparent data-[disabled]:!bg-bg-transparent",
+  "disabled:!border-stroke-neutral-muted data-[disabled]:!border-stroke-neutral-muted",
+  "disabled:!text-fg-disabled data-[disabled]:!text-fg-disabled",
+  "disabled:[&_svg]:!text-fg-disabled data-[disabled]:[&_svg]:!text-fg-disabled",
+].join(" ");
+
+const buttonVariants = cva(baseClassNames, {
+  variants: {
+    variant: {
+      brandSolid: `border-0 bg-bg-brand-solid font-bold text-static-white
+      engaged:bg-bg-brand-solid-pressed data-loading:bg-bg-brand-solid-pressed
+      [&_svg]:text-static-white ${disabledSolidClassNames}`,
+      neutralSolid: `border-0 bg-bg-neutral-inverted font-bold
+      text-fg-neutral-inverted engaged:bg-bg-neutral-inverted-pressed
+      data-loading:bg-bg-neutral-inverted-pressed
+      [&_svg]:text-fg-neutral-inverted ${disabledSolidClassNames}`,
+      neutralWeak: `border-0 bg-bg-neutral-weak font-bold text-fg-neutral
+      engaged:bg-bg-neutral-weak-pressed data-loading:bg-bg-neutral-weak-pressed
+      [&_svg]:text-fg-neutral ${disabledSolidClassNames}`,
+      criticalSolid: `border-0 bg-bg-critical-solid font-bold text-static-white
+      engaged:bg-bg-critical-solid-pressed
+      data-loading:bg-bg-critical-solid-pressed [&_svg]:text-static-white
+      ${disabledSolidClassNames}`,
+      brandOutline: `border border-solid border-stroke-neutral-muted
+      bg-bg-transparent font-bold text-fg-brand
+      engaged:bg-bg-transparent-pressed data-loading:bg-bg-transparent
+      [&_svg]:text-fg-brand ${disabledOutlineClassNames}`,
+      neutralOutline: `border border-solid border-stroke-neutral-muted
+      bg-bg-transparent font-bold text-fg-neutral
+      engaged:bg-bg-transparent-pressed data-loading:bg-bg-transparent
+      [&_svg]:text-fg-neutral ${disabledOutlineClassNames}`,
+      ghost: `border-0 bg-bg-transparent font-bold text-fg-neutral
+      engaged:bg-bg-transparent-pressed data-loading:bg-bg-transparent-pressed
+      [&_svg]:text-fg-neutral ${disabledOutlineClassNames}`,
     },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
+    size: {
+      xs: "h-8xl rounded-full [&_svg:not([class*='size-'])]:size-2xl",
+      sm: "h-9xl rounded-md [&_svg:not([class*='size-'])]:size-2xl",
+      md: "h-10xl rounded-md [&_svg:not([class*='size-'])]:size-3xl",
+      lg: "h-13xl rounded-xl [&_svg:not([class*='size-'])]:size-[22px]",
+    },
+    layout: {
+      withText: "",
+      iconOnly: "",
     },
   },
-);
+  compoundVariants: [
+    {
+      size: "xs",
+      layout: "withText",
+      className: "gap-xs px-2xl py-sm text-sm",
+    },
+    {
+      size: "xs",
+      layout: "iconOnly",
+      className: "min-w-8xl px-sm py-sm",
+    },
+    {
+      size: "sm",
+      layout: "withText",
+      className: "gap-xs px-2xl py-md text-base",
+    },
+    {
+      size: "sm",
+      layout: "iconOnly",
+      className: "min-w-9xl px-md py-md [&_svg:not([class*='size-'])]:size-3xl",
+    },
+    {
+      size: "md",
+      layout: "withText",
+      className: "gap-sm px-3xl py-lg text-base",
+    },
+    {
+      size: "md",
+      layout: "iconOnly",
+      className:
+        "min-w-10xl px-lg py-lg [&_svg:not([class*='size-'])]:size-4xl",
+    },
+    {
+      size: "lg",
+      layout: "withText",
+      className: "gap-md px-5xl py-2xl text-xl",
+    },
+    {
+      size: "lg",
+      layout: "iconOnly",
+      className: "min-w-13xl px-2xl py-2xl",
+    },
+  ],
+  defaultVariants: {
+    variant: "brandSolid",
+    size: "md",
+    layout: "withText",
+  },
+});
+
+export type ButtonVariantProps = VariantProps<typeof buttonVariants>;
+
+export type ButtonProps = ButtonPrimitive.Props & ButtonVariantProps;
 
 function Button({
   className,
-  variant = "default",
-  size = "default",
+  variant = "brandSolid",
+  size = "md",
+  layout = "withText",
   ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+}: ButtonProps) {
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size, layout, className }))}
       {...props}
     />
   );

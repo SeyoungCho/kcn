@@ -1,41 +1,41 @@
 ---
 title: Button
-description: Button Component
+description: Buttons trigger immediate actions.
 ---
 
-## Code Block
+<Preview registry="seed" component="Button">
+  Button
+</Preview>
 
-```js
-console.log("Hello World");
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/button
 ```
 
-## Seed (Isolated Iframe Preview)
+## Examples
 
-<div className="space-y-4">
-  <Preview registry="seed" component="Button">
-    Click me
-  </Preview>
+### Variants
 
-  <Preview
-    registry="seed"
-    component="Button"
-    props={{ variant: "destructive", size: "lg" }}
-  >
-    Delete Me
-  </Preview>
-</div>
+<Preview registry="seed" demo="button/button-variants" height={360} />
 
-## Nested Elements (Demo File)
+### Sizes
 
-For previews that need icons, multiple components, or any nested JSX, point
-`<Preview>` at a demo file under
-`apps/website/src/app/preview/seed/demos/<slug>/page.tsx`:
+<Preview registry="seed" demo="button/button-sizes" height={280} />
 
-<Preview registry="seed" demo="button-with-icon" height={160} />
+### With Icon
 
-## Cards
+<Preview registry="seed" demo="button/button-with-icon" height={180} />
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+### Disabled
+
+<Preview registry="seed" component="Button" props={{ disabled: true }}>
+  Disabled
+</Preview>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/button.ts"
+  name="MDXButtonProps"
+/>

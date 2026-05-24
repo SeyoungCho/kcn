@@ -356,8 +356,8 @@
   --sidebar-border: var(--stroke-neutral-weak);
   --sidebar-ring: var(--stroke-focus-ring);
   --font-family-sans:
-    -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-serif: Source Serif 4, serif;
   --font-family-mono: JetBrains Mono, monospace;
@@ -366,7 +366,6 @@
   --font-mono: var(--font-family-mono);
   --radius: var(--radius-r2);
   --tracking-normal: 0em;
-  --spacing: var(--dimension-x1);
 }
 
 .dark {
