@@ -24,6 +24,7 @@
     "clsx": "catalog:",
     "fumadocs-core": "16.8.1",
     "fumadocs-mdx": "14.3.1",
+    "fumadocs-typescript": "^5.2.6",
     "fumadocs-ui": "16.8.1",
     "lucide-react": "^1.8.0",
     "motion": "^12.38.0",
