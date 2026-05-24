@@ -20,7 +20,7 @@ Registry components render exclusively inside per-registry preview iframes at `/
 
 This means adding a new registry to the docs site is primarily about creating the new preview route tree (`/app/preview/<registry-name>/...`) and registering the registry's `mdxComponents` map so `<Preview>` can resolve component names against it.
 
-The `<Preview>` component also owns the Code tab. Component previews generate copyable usage snippets from `<Preview>` props. Demo previews load the matching `apps/website/src/app/preview/<registry-name>/demos/<slug>/page.tsx` source through `/api/preview-code`, then rewrite `@repo/<registry-name>/ui/*` imports to reader-facing `@/components/ui/*` imports.
+The `<Preview>` component also owns the Code tab. Component previews generate copyable usage snippets from `<Preview>` props. Demo previews load the matching `apps/website/src/app/preview/<registry-name>/demos/<component-name>/<demo-name>/page.tsx` source through `/api/preview-code`, then rewrite `@repo/<registry-name>/ui/*` imports to reader-facing `@/components/ui/*` imports.
 
 ## Workflow
 
@@ -68,8 +68,10 @@ The `<Preview>` component also owns the Code tab. Component previews generate co
    ├── layout.tsx                   # minimal root <html>/<body>; imports ./preview.css
    ├── [component]/
    │   └── page.tsx                 # dynamic component preview; uses renderPreview()
-   └── demos/                       # OPTIONAL; create when a doc page needs a composed demo
-       └── <slug>/page.tsx
+   ├── demos/                       # OPTIONAL; create when a doc page needs a composed demo
+   │   └── <component-name>/<demo-name>/page.tsx
+   └── types/                       # OPTIONAL; AutoTypeTable MDX-facing API wrapper types
+       └── <component-kebab>.ts
    ```
 
    Files:
@@ -81,7 +83,8 @@ The `<Preview>` component also owns the Code tab. Component previews generate co
      ```
    - `layout.tsx`: render `<html><body className="bg-background text-foreground">{children}</body></html>` and import `./preview.css`. Do NOT pull in Fumadocs providers or the docs theme.
    - `[component]/page.tsx`: import `mdxComponents` from `@repo/<registry-name>/mdx` and call the shared `renderPreview` helper from `@/lib/preview` with the appropriate `registryPrefix` (e.g. `"Seed"`, `"Montage"`, `"TFlavored"`).
-   - `demos/<slug>/page.tsx`: import registry components from `@repo/<registry-name>/ui/<component>` so they render with the isolated registry package. The Code tab will rewrite those imports to `@/components/ui/<component>` for readers.
+   - `demos/<component-name>/<demo-name>/page.tsx`: import registry components from `@repo/<registry-name>/ui/<component>` so they render with the isolated registry package. Reference it from MDX as `<Preview registry="<registry-name>" demo="<component-name>/<demo-name>" />`. The Code tab will rewrite those imports to `@/components/ui/<component>` for readers.
+   - `types/<component-kebab>.ts`: optional MDX-facing wrapper types for `<AutoTypeTable />`. Defer to the `add-registry-component-docs` skill for the exact naming convention (`MDX<ComponentName>Props`, `MDX<ComponentName>PropsKO`, and variant prop helper types).
 
 6. Confirm the i18n middleware excludes `/preview` paths.
    - `apps/website/src/proxy.ts` should already have `preview` listed in the negative-lookahead matcher group. If not, add it. The current matcher is:
@@ -106,7 +109,7 @@ The `<Preview>` component also owns the Code tab. Component previews generate co
        - `<component-kebab>.mdx`
        - `<component-kebab>.ko.mdx`
    - Update `meta.json` and `meta.ko.json` `pages` lists to include all generated component page slugs.
-   - For each component page, embed the live preview via `<Preview registry="<registry-name>" component="..." />`. Defer to the `add-registry-component-docs` skill for exact MDX page shape.
+   - For each component page, embed the live preview via `<Preview registry="<registry-name>" component="..." />`. Defer to the `add-registry-component-docs` skill for exact MDX page shape, including Installation, Examples, API Reference, and AutoTypeTable wrapper type files.
 
 9. Keep changes minimal and pattern-matching.
    - Do not refactor unrelated files.
