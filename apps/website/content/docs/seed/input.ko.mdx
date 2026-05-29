@@ -1,29 +1,50 @@
 ---
 title: Input
-description: Input 컴포넌트
+description: 한 줄 텍스트를 입력받는 컴포넌트입니다.
 ---
 
-## 코드 블록
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "내용을 입력하세요..." }}
+/>
 
-```js
-console.log("Hello World");
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/input
 ```
 
-## Seed (격리 iframe 미리보기)
+## 예제
 
-<div className="space-y-4">
-  <Preview registry="seed" component="Input" />
+### 배리언트
 
-  <Preview
-    registry="seed"
-    component="Input"
-    props={{ placeholder: "내용을 입력하세요..." }}
-  />
-</div>
+#### 기본(outline)
 
-## 카드
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "내용을 입력하세요..." }}
+/>
 
-<Cards>
-  <Card title="Next.js 더 알아보기" href="https://nextjs.org/docs" />
-  <Card title="Fumadocs 더 알아보기" href="https://fumadocs.dev" />
-</Cards>
+#### 언더라인(underline)
+
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "내용을 입력하세요...", variant: "underline" }}
+/>
+
+### 상태
+
+### 유효하지 않은 상태(invalid)
+
+<Preview registry="seed" demo="input/input-invalid" height={280} />
+
+#### 비활성화(disabled)
+
+<Preview registry="seed" demo="input/input-disabled" height={280} />
+
+#### 읽기 전용(readOnly)
+
+<Preview registry="seed" demo="input/input-readonly" height={280} />
