@@ -18,6 +18,12 @@
   }
 }
 
+@custom-variant invalid {
+  &:is(:invalid, [data-invalid], [aria-invalid]) {
+    @slot;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
