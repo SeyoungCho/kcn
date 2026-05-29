@@ -1,5 +1,3 @@
-"use client";
-
 import { Input as InputPrimitive, type InputProps } from "@base-ui/react/input";
 import { cva, type VariantProps } from "class-variance-authority";
 
