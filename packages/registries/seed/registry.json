@@ -1,0 +1,72 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kcn-seed",
+  "homepage": "https://github.com/SeyoungCho/kcn",
+  "items": [
+    {
+      "name": "seed-style",
+      "type": "registry:style",
+      "title": "Seed Style",
+      "description": "Shared Seed design tokens, Tailwind theme wiring, and custom variants.",
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "src/styles/global.css",
+          "type": "registry:file",
+          "target": "src/app/globals.css"
+        },
+        {
+          "path": "src/styles/theme.css",
+          "type": "registry:file",
+          "target": "src/app/theme.css"
+        }
+      ],
+      "docs": "Import `@/styles/seed/global.css` from your app's global stylesheet once before using Seed components."
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Displays a Seed button or link-style action.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["@kcn-seed/seed-style"],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/button.tsx"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Displays a Seed form input field.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["@kcn-seed/seed-style"],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/input.tsx"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
+    }
+  ]
+}
