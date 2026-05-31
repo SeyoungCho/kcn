@@ -331,7 +331,7 @@
   --radius-4xl: var(--radius-r5);
   --radius-5xl: var(--radius-r6);
   --radius-full: var(--radius-r-full);
-  --spacing: var(--dimension-x1);
+
   --spacing-xxs: var(--dimension-x0_5);
   --spacing-xs: var(--dimension-x1);
   --spacing-sm: var(--dimension-x1_5);
