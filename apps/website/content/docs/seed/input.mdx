@@ -1,29 +1,50 @@
 ---
 title: Input
-description: Input Component
+description: A native input element that allows users to enter a line of text.
 ---
 
-## Code Block
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "Enter your text..." }}
+/>
 
-```js
-console.log("Hello World");
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/input
 ```
 
-## Seed (Isolated Iframe Preview)
+## Examples
 
-<div className="space-y-4">
-  <Preview registry="seed" component="Input" />
+### Variants
 
-  <Preview
-    registry="seed"
-    component="Input"
-    props={{ placeholder: "Type something..." }}
-  />
-</div>
+#### Default (outline)
 
-## Cards
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "Enter your text..." }}
+/>
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+#### Underline
+
+<Preview
+  registry="seed"
+  component="Input"
+  props={{ placeholder: "Enter your text...", variant: "underline" }}
+/>
+
+### States
+
+#### Invalid
+
+<Preview registry="seed" demo="input/input-invalid" height={280} />
+
+#### Disabled
+
+<Preview registry="seed" demo="input/input-disabled" height={280} />
+
+#### Read Only
+
+<Preview registry="seed" demo="input/input-readonly" height={280} />
