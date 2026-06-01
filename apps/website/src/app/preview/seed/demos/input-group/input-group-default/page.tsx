@@ -3,6 +3,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@repo/seed/ui/input-group";
+import { Button } from "@repo/seed/ui/button";
 import { Mail } from "lucide-react";
 
 export default function InputGroupDefaultDemo() {
@@ -12,6 +13,11 @@ export default function InputGroupDefaultDemo() {
         <InputGroupInput placeholder="Enter your email" />
         <InputGroupAddon align="inline-start">
           <Mail />
+        </InputGroupAddon>
+        <InputGroupAddon align="inline-end">
+          <Button variant="neutralOutline" size="sm">
+            제출하기
+          </Button>
         </InputGroupAddon>
       </InputGroup>
     </div>

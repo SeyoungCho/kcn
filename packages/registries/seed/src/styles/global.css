@@ -24,6 +24,14 @@
   }
 }
 
+@custom-variant has-focused-control {
+  &:has(
+    [data-slot="input-group-control"]:is(:focus, :focus-within, :focus-visible)
+  ) {
+    @slot;
+  }
+}
+
 @custom-variant has-invalid {
   &:has(:is(:invalid, [data-invalid], [aria-invalid])) {
     @slot;

@@ -16,15 +16,15 @@ const inputGroupVariants = cva(
     variants: {
       variant: {
         outline: `rounded-xl ring-1 ring-stroke-neutral-weak
-        focus-within:inset-ring-2
-        focus-within:inset-ring-stroke-neutral-contrast
+        has-focused-control:inset-ring-2
+        has-focused-control:inset-ring-stroke-neutral-contrast
         has-invalid:inset-ring-2! has-invalid:inset-ring-stroke-critical-solid!
         has-disabled:bg-bg-disabled
         has-[[data-slot=input-group-control]:read-only]:bg-bg-disabled
         has-[[data-slot=input-group-control]:read-only]:focus-within:inset-ring-0`,
         underline: `min-h-10xl
         shadow-[inset_0_-1px_0_0_var(--color-stroke-neutral-weak)]
-        focus-within:shadow-[inset_0_-2px_0_0_var(--color-stroke-neutral-contrast)]
+        has-focused-control:shadow-[inset_0_-2px_0_0_var(--color-stroke-neutral-contrast)]
         has-invalid:shadow-[inset_0_-2px_0_0_var(--color-stroke-critical-solid)]!
         has-[[data-slot=input-group-control]:read-only]:focus-within:shadow-[inset_0_-1px_0_0_var(--color-stroke-neutral-weak)]`,
       },
