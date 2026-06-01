@@ -3,5 +3,5 @@
   "description": "seed ui kit registry",
   "icon": "Sprout",
   "root": true,
-  "pages": ["---Overview---", "index", "button", "input"]
+  "pages": ["---Overview---", "index", "button", "input", "input-group"]
 }
