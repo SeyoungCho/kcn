@@ -105,7 +105,11 @@ Supporting pieces:
 - `apps/website/src/types/preview.ts` — shared list/type guard for registries accepted by `<Preview>` and the preview-code API.
 - `apps/website/src/utils/preview/index.ts` — shared preview helpers such as MDX/React children flattening.
 - `apps/website/src/proxy.ts` — i18n middleware excludes `/preview` so the iframe URL stays language-agnostic.
-- `apps/website/next.config.mjs` — every registry must be in `transpilePackages`.
+- `apps/website/loaders/registry-preview-imports.cjs` — preview-only transform that rewrites consumer-facing imports from registry source files (such as `@/components/ui/textarea`) to the matching workspace registry package (such as `@repo/seed/ui/textarea`) while bundling the docs app.
+- `apps/website/src/types/registry-preview-aliases.d.ts` — registry-neutral type declarations for consumer-facing component aliases referenced by registry source files. These declarations are type-checking shims only; runtime resolution is handled by the preview import transform.
+- `apps/website/next.config.mjs` — every registry must be in `transpilePackages`; its Turbopack and webpack rules apply the preview-only registry import transform.
+
+Registry component source files are also the consumer-facing shadcn snippets. Keep imports such as `@/components/ui/textarea` in that source. Do not add registry implementations under `apps/website/src/components/ui/` to make previews compile: that would make previews from different registries resolve to the same docs-site component. When a registry source file introduces a new `@/components/ui/*` import, add a registry-neutral declaration to `apps/website/src/types/registry-preview-aliases.d.ts` if the website type check needs one.
 
 ### MDX Authoring API
 

@@ -28,6 +28,8 @@ The `<Preview>` component also renders a Code tab:
 - Component mode generates the snippet from `component`, `props`, and plain-text `children`, with imports like `@/components/ui/button`.
 - Demo mode loads the matching demo file source through `/api/preview-code`. Demo files should import from `@repo/<registry-name>/ui/<component>` so they render in the isolated iframe; the Code tab rewrites those imports to `@/components/ui/<component>` before showing the code.
 
+Registry component source files remain consumer-facing shadcn snippets. Keep imports such as `@/components/ui/textarea` intact in those source files. During docs bundling, `apps/website/loaders/registry-preview-imports.cjs` rewrites consumer-facing component imports to the matching workspace registry package so previews remain registry-isolated. Do not add registry implementations under `apps/website/src/components/ui/` just to satisfy preview resolution. If the website type check needs a declaration for a new consumer-facing component alias, add a registry-neutral shim to `apps/website/src/types/registry-preview-aliases.d.ts`.
+
 ## Workflow
 
 1. Discover the component and current docs pattern.

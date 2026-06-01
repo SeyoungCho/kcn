@@ -42,22 +42,24 @@ src/app/
 
 ## Key Files
 
-| File                                    | Purpose                                                                                                              |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `src/lib/source.ts`                     | Fumadocs content source adapter ([`loader()`](https://fumadocs.dev/docs/headless/source-api))                        |
-| `src/components/layout.shared.tsx`      | Shared layout options                                                                                                |
-| `src/components/mdx.tsx`                | Registers MDX components, including `<Preview>`                                                                      |
-| `src/components/preview.tsx`            | The `<Preview>` MDX component (client; deferred src to avoid hydration mismatch; renders Preview/Code tabs)          |
-| `src/hooks/preview/use-preview-src.ts`  | Builds iframe URLs for component and demo previews                                                                   |
-| `src/hooks/preview/use-preview-code.ts` | Builds component-mode Code tab snippets and fetches demo source for demo previews                                    |
-| `src/app/api/preview-code/route.ts`     | Reads demo preview files for the Code tab and rewrites `@repo/*/ui/*` imports to `@/components/ui/*`                 |
-| `src/lib/preview.tsx`                   | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`                               |
-| `src/types/preview.ts`                  | Shared registry list/type guard for preview components and APIs                                                      |
-| `src/utils/preview/index.ts`            | Shared preview utilities, including MDX children flattening                                                          |
-| `src/proxy.ts`                          | i18n middleware — excludes `/preview` so iframes stay language-agnostic                                              |
-| `app/global.css`                        | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes) |
-| `app/preview/<registry>/preview.css`    | Per-registry Tailwind entry; imports that registry's `global.css` only                                               |
-| `next.config.mjs`                       | `transpilePackages` lists every registry; Fumadocs MDX wrapper                                                       |
+| File                                      | Purpose                                                                                                              |
+| ----------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `src/lib/source.ts`                       | Fumadocs content source adapter ([`loader()`](https://fumadocs.dev/docs/headless/source-api))                        |
+| `src/components/layout.shared.tsx`        | Shared layout options                                                                                                |
+| `src/components/mdx.tsx`                  | Registers MDX components, including `<Preview>`                                                                      |
+| `src/components/preview.tsx`              | The `<Preview>` MDX component (client; deferred src to avoid hydration mismatch; renders Preview/Code tabs)          |
+| `src/hooks/preview/use-preview-src.ts`    | Builds iframe URLs for component and demo previews                                                                   |
+| `src/hooks/preview/use-preview-code.ts`   | Builds component-mode Code tab snippets and fetches demo source for demo previews                                    |
+| `src/app/api/preview-code/route.ts`       | Reads demo preview files for the Code tab and rewrites `@repo/*/ui/*` imports to `@/components/ui/*`                 |
+| `src/lib/preview.tsx`                     | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`                               |
+| `src/types/preview.ts`                    | Shared registry list/type guard for preview components and APIs                                                      |
+| `src/types/registry-preview-aliases.d.ts` | Type-checking shims for consumer-facing `@/components/ui/*` imports used inside registry source files                |
+| `src/utils/preview/index.ts`              | Shared preview utilities, including MDX children flattening                                                          |
+| `src/proxy.ts`                            | i18n middleware — excludes `/preview` so iframes stay language-agnostic                                              |
+| `app/global.css`                          | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes) |
+| `app/preview/<registry>/preview.css`      | Per-registry Tailwind entry; imports that registry's `global.css` only                                               |
+| `loaders/registry-preview-imports.cjs`    | Preview-only transform from consumer aliases such as `@/components/ui/*` to the matching `@repo/<registry>/ui/*`     |
+| `next.config.mjs`                         | Lists transpiled registries and applies the preview-only transform for Turbopack and webpack                         |
 
 ## `<Preview>` MDX Component
 
@@ -104,6 +106,8 @@ The Code tab is generated from the same `<Preview>` input:
 3. For nested JSX (icons, multiple components, layout wrappers), create `src/app/preview/<registry-name>/demos/<slug>/page.tsx` and reference it with `<Preview registry="..." demo="<slug>" />`.
 
 When adding a whole new registry, also add its slug to `src/types/preview.ts` so `<Preview>` and `/api/preview-code` accept it.
+
+Registry source files remain consumer-facing shadcn snippets, so imports such as `@/components/ui/textarea` should stay intact. While the docs app bundles previews, `loaders/registry-preview-imports.cjs` rewrites those imports to the matching workspace package (`@repo/seed/ui/textarea`, `@repo/montage/ui/textarea`, and so on). Do not create shared docs-site component implementations under `src/components/ui/` just to satisfy preview resolution. Add a registry-neutral declaration to `src/types/registry-preview-aliases.d.ts` when a new consumer-facing component alias needs a website type-checking shim.
 
 For step-by-step workflows, see [`add-registry-component-docs`](../../.agents/skills/add-registry-component-docs/SKILL.md) and [`wire-registry-to-fumadocs-docs`](../../.agents/skills/wire-registry-to-fumadocs-docs/SKILL.md).
 
