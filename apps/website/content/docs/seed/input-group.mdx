@@ -1,13 +1,9 @@
 ---
 title: Input Group
-description: Displays an input with inline or block addons.
+description: Displays an input/textarea with inline or block addons.
 ---
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-default"
-  height={180}
-/>
+<Preview registry="seed" demo="input-group/input-group-default" height={180} />
 
 ## Installation
 
@@ -17,31 +13,34 @@ npx shadcn@latest add @kcn-seed/input-group
 
 ## Examples
 
+### Variants
+
+<Preview registry="seed" demo="input-group/input-group-variants" height={260} />
+
+### Sizes
+
+<Preview registry="seed" demo="input-group/input-group-sizes" height={260} />
+
 ### Addons
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-addons"
-  height={260}
-/>
+<Preview registry="seed" demo="input-group/input-group-addons" height={260} />
 
-### Button
+### States
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-button"
-  height={180}
-/>
+<Preview registry="seed" demo="input-group/input-group-states" height={320} />
 
 ### Textarea
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-textarea"
-  height={240}
-/>
+<Preview registry="seed" demo="input-group/input-group-textarea" height={360} />
 
 ## API Reference
+
+### InputGroup
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/input-group.ts"
+  name="MDXInputGroupProps"
+/>
 
 ### InputGroupAddon
 

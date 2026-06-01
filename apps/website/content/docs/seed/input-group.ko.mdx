@@ -1,13 +1,9 @@
 ---
 title: Input Group
-description: 입력 요소에 인라인 또는 블록 addon을 함께 표시합니다.
+description: 입력/텍스트 영역 요소에 prefix 혹은 suffix 애드온을 함께 표시합니다.
 ---
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-default"
-  height={180}
-/>
+<Preview registry="seed" demo="input-group/input-group-default" height={180} />
 
 ## 설치
 
@@ -17,31 +13,34 @@ npx shadcn@latest add @kcn-seed/input-group
 
 ## 예제
 
+### 배리언트
+
+<Preview registry="seed" demo="input-group/input-group-variants" height={260} />
+
+### 크기
+
+<Preview registry="seed" demo="input-group/input-group-sizes" height={260} />
+
 ### Addon
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-addons"
-  height={260}
-/>
+<Preview registry="seed" demo="input-group/input-group-addons" height={260} />
 
-### 버튼
+### 상태
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-button"
-  height={180}
-/>
+<Preview registry="seed" demo="input-group/input-group-states" height={320} />
 
 ### Textarea
 
-<Preview
-  registry="seed"
-  demo="input-group/input-group-textarea"
-  height={240}
-/>
+<Preview registry="seed" demo="input-group/input-group-textarea" height={360} />
 
 ## API Reference
+
+### InputGroup
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/input-group.ts"
+  name="MDXInputGroupPropsKO"
+/>
 
 ### InputGroupAddon
 

@@ -4,26 +4,29 @@ import {
   InputGroupInput,
   InputGroupText,
 } from "@repo/seed/ui/input-group";
-import { DollarSign } from "lucide-react";
+import { Search } from "lucide-react";
 
-export default function InputGroupAddonsDemo() {
+export default function InputGroupSizesDemo() {
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="flex w-full max-w-[384px] flex-col gap-3">
-        <InputGroup>
-          <InputGroupInput placeholder="example.com" />
+        <InputGroup size="md">
+          <InputGroupInput placeholder="Medium input group" />
           <InputGroupAddon align="inline-start">
-            <InputGroupText>https://</InputGroupText>
+            <Search />
+          </InputGroupAddon>
+          <InputGroupAddon align="inline-end">
+            <InputGroupText>md</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
 
-        <InputGroup>
-          <InputGroupInput placeholder="0.00" />
+        <InputGroup size="lg">
+          <InputGroupInput placeholder="Large input group" />
           <InputGroupAddon align="inline-start">
-            <DollarSign />
+            <Search />
           </InputGroupAddon>
           <InputGroupAddon align="inline-end">
-            <InputGroupText>USD</InputGroupText>
+            <InputGroupText>lg</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
       </div>
