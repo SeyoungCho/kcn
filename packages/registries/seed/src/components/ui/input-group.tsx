@@ -309,10 +309,13 @@ function InputGroupTextarea({
   return (
     <Textarea
       data-slot="input-group-control"
+      size={size}
       className={cn(
         inputGroupControlVariants({ variant, size }),
         inputGroupTextareaVariants({ size }),
-        "rounded-none shadow-none ring-0 focus-visible:ring-0",
+        `rounded-none bg-transparent shadow-none ring-0
+        focus-visible:inset-ring-0! invalid:inset-ring-0!
+        disabled:bg-transparent read-only:bg-transparent`,
         className,
       )}
       {...props}
