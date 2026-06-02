@@ -22,6 +22,7 @@ export type MDXInputGroupProps = {
   size?: InputGroupVariantProps["size"];
   /**
    * Additional class names applied to the input group.
+   * @remarks `string`
    */
   className?: InputGroupProps["className"];
 };
@@ -41,6 +42,7 @@ export type MDXInputGroupPropsKO = {
   size?: InputGroupVariantProps["size"];
   /**
    * Input Group에 적용할 추가 클래스 이름입니다.
+   * @remarks `string`
    */
   className?: InputGroupProps["className"];
 };

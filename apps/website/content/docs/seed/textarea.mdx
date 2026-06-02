@@ -1,0 +1,66 @@
+---
+title: Textarea
+description: A native textarea element that allows users to enter multiline text.
+---
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ placeholder: "Enter your message..." }}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/textarea
+```
+
+## Examples
+
+### Sizes
+
+<div className="space-y-4">
+  <Preview
+    registry="seed"
+    component="Textarea"
+    props={{ placeholder: "Medium textarea", size: "md" }}
+  />
+  <Preview
+    registry="seed"
+    component="Textarea"
+    props={{ placeholder: "Large textarea", size: "lg" }}
+  />
+</div>
+
+### States
+
+#### Invalid
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ "data-invalid": true, placeholder: "Enter your message..." }}
+/>
+
+#### Disabled
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ disabled: true, placeholder: "Enter your message..." }}
+/>
+
+#### Read Only
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ readOnly: true, placeholder: "Enter your message..." }}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/textarea.ts"
+  name="MDXTextareaProps"
+/>

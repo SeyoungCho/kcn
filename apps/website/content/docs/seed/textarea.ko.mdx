@@ -1,0 +1,66 @@
+---
+title: Textarea
+description: 여러 줄 텍스트를 입력받는 컴포넌트입니다.
+---
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ placeholder: "내용을 입력하세요..." }}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/textarea
+```
+
+## 예제
+
+### 크기
+
+<div className="space-y-4">
+  <Preview
+    registry="seed"
+    component="Textarea"
+    props={{ placeholder: "Medium textarea", size: "md" }}
+  />
+  <Preview
+    registry="seed"
+    component="Textarea"
+    props={{ placeholder: "Large textarea", size: "lg" }}
+  />
+</div>
+
+### 상태
+
+#### 오류(invalid)
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ "data-invalid": true, placeholder: "내용을 입력하세요..." }}
+/>
+
+#### 비활성화(disabled)
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ disabled: true, placeholder: "내용을 입력하세요..." }}
+/>
+
+#### 읽기 전용(readOnly)
+
+<Preview
+  registry="seed"
+  component="Textarea"
+  props={{ readOnly: true, placeholder: "내용을 입력하세요..." }}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/textarea.ts"
+  name="MDXTextareaPropsKO"
+/>
