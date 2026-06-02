@@ -70,8 +70,8 @@ Registry component source files remain consumer-facing shadcn snippets. Keep imp
    - Define the final English type as `MDX<ComponentName>Props`, usually as an intersection of the MDX variant props and the component's base props subset.
    - Define the final Korean type as `MDX<ComponentName>PropsKO`, using Korean JSDoc comments and the `KO` suffix.
    - If the component has no separate primitive/base props, the final MDX props type can just extend/intersect the MDX variant props plus any explicitly documented attributes/props.
-   - Use JSDoc `@remarks` with backticks to control the collapsed Type column for unions, for example `@remarks \`"withText" | "iconOnly"\``.
-   - Use `@default` for documented default values.
+   - Add JSDoc `@remarks` with backticks to every documented prop whenever a useful public type can be stated. Prefer an explicit collapsed Type column for unions, booleans, strings, and other readable types, for example `@remarks \`"withText" | "iconOnly"\``, `@remarks \`boolean\``, or `@remarks \`string\``. Omit it only when a concise public type would be misleading.
+   - Add `@default` whenever the component, primitive, or browser behavior provides a meaningful runtime default, including defaults such as `false` for documented boolean state props. Omit it only when no meaningful default exists, such as an optional placeholder or class name.
    - In MDX, `path` is relative to the website project directory (`apps/website` cwd), not relative to the MDX file. Use `path="src/app/preview/<registry-name>/types/<component-kebab>.ts"`.
    - In English MDX, pass `name="MDX<ComponentName>Props"`.
    - In Korean MDX, pass `name="MDX<ComponentName>PropsKO"`.
