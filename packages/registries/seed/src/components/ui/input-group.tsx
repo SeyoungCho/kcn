@@ -10,8 +10,8 @@ import { Textarea } from "@/components/ui/textarea";
 const inputGroupVariants = cva(
   `group/input-group relative flex w-full min-w-0 items-center overflow-hidden
   transition-shadow duration-(--duration-d2) ease-easing
-  has-[>[data-align=block-end]]:flex-col
-  has-[>[data-align=block-start]]:flex-col`,
+  has-[>[data-align=block-start]]:flex-col has-[>[data-align=block-start]]:gap-0
+  has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-end]]:gap-0`,
   {
     variants: {
       variant: {
@@ -110,8 +110,8 @@ const inputGroupAddonVariants = cva(
       align: {
         "inline-start": "order-first",
         "inline-end": "order-last",
-        "block-start": "order-first w-full justify-start",
-        "block-end": "order-last w-full justify-start",
+        "block-start": "order-first w-full justify-start [.border-b]:pb-sm",
+        "block-end": "order-last w-full justify-start [.border-t]:pt-sm pb-3xl",
       },
       variant: {
         outline: "",
@@ -287,14 +287,18 @@ function InputGroupInput({ className, ...props }: InputProps) {
   );
 }
 
-const inputGroupTextareaVariants = cva("", {
-  variants: {
-    size: {
-      md: "min-h-[90px] py-[11px]",
-      lg: "min-h-[95px] py-2xl",
+const inputGroupTextareaVariants = cva(
+  `group-has-data-[align=block-start]/input-group:pt-md
+  group-has-data-[align=block-end]/input-group:pb-md`,
+  {
+    variants: {
+      size: {
+        md: "min-h-[90px] py-[11px]",
+        lg: "min-h-[95px] py-2xl",
+      },
     },
   },
-});
+);
 
 function InputGroupTextarea({
   className,
