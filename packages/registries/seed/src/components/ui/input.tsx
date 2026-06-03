@@ -39,12 +39,12 @@ const inputVariants = cva(baseClassNames, {
     {
       variant: "outline",
       size: "md",
-      class: "min-h-10xl text-base",
+      class: "h-10xl text-base",
     },
     {
       variant: "outline",
       size: "lg",
-      class: "min-h-13xl text-lg",
+      class: "h-13xl text-lg",
     },
   ],
   defaultVariants: {
