@@ -106,6 +106,8 @@ Component previews in the docs site render inside **isolated iframes** under `/p
 
 Each preview also has a Code tab. Simple component previews generate copyable usage code from the `<Preview>` props, while composed demo previews load the matching demo file and show reader-facing imports like `@/components/ui/button`.
 
+Previews follow the active docs language: `<Preview>` forwards it to the iframe as a `?lang=` search param, and demo pages localize their static labels from `src/dictionaries/{en,ko}.json` (via `usePreviewDictionary`). The Code tab stays copy-paste clean — the preview-code API resolves those dictionary references back to plain literal strings for the active language.
+
 For the full architecture (route structure, demo files, registry wiring), see [`AGENTS.md`](./AGENTS.md). For step-by-step workflows, see the agent skills under [`.agents/skills/`](./.agents/skills/).
 
 ## Adding a Shared Dependency

@@ -1,0 +1,78 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from, triggered by a button.
+---
+
+<Preview registry="seed" demo="select/select-default" height={600} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/select
+```
+
+## Examples
+
+### Sizes
+
+<Preview registry="seed" demo="select/select-sizes" height={400} />
+
+### States
+
+#### Disabled
+
+The whole select is disabled through the root `disabled` prop.
+
+<Preview registry="seed" demo="select/select-disabled" height={400} />
+
+#### Invalid
+
+Apply the `data-invalid` attribute to the trigger to render the error state.
+
+<Preview registry="seed" demo="select/select-invalid" height={400} />
+
+### Formatting the value
+
+By default, `<SelectValue>` renders the raw `value`.
+
+#### Using the `items` prop
+
+Passing the `items` prop to `<Select>` renders the matching label for the selected value instead of the raw value.
+
+<Preview registry="seed" demo="select/select-format-items" height={400} />
+
+#### Passing a function as `<SelectValue>` children
+
+Pass a function as the children of `<SelectValue>` to render a formatted value.
+
+<Preview registry="seed" demo="select/select-format-function" height={400} />
+
+## API Reference
+
+### Select
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/select.ts"
+  name="MDXSelectProps"
+/>
+
+### SelectTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/select.ts"
+  name="MDXSelectTriggerProps"
+/>
+
+### SelectContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/select.ts"
+  name="MDXSelectContentProps"
+/>
+
+### SelectItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/select.ts"
+  name="MDXSelectItemProps"
+/>

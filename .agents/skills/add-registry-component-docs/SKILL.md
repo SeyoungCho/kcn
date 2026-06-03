@@ -196,6 +196,28 @@ When a preview needs nested JSX (icons inside buttons, multiple components, layo
 Demo files inherit the registry's isolated theme via `apps/website/src/app/preview/<registry-name>/layout.tsx`, so any registry component imported inside them renders with the correct tokens.
 The Code tab displays this same demo file with `@repo/<registry-name>/ui/*` imports rewritten to `@/components/ui/*`, so keep demo files focused on code a reader can understand.
 
+**Localize demo labels.** Demo previews follow the parent docs language automatically (`<Preview>` forwards it as a `?lang=` search param; each registry preview `layout.tsx` mounts `PreviewDictionaryProvider`). Do not hardcode user-facing strings in a demo:
+
+1. Add them to the `demos` section of `apps/website/src/dictionaries/{en,ko}.json` (keep both locales in sync; the `Dictionary` type is derived from `en.json`).
+2. Make the demo a `"use client"` component that reads the dictionary via the hook, then use `t.*` for every label. Keep the binding named `t` and assigned on one line so the Code-tab transform can resolve it:
+
+   ```tsx
+   "use client";
+   
+   import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
+   
+   export default function Demo() {
+     const t = usePreviewDictionary().demos.<component>;
+     return /* ...use t.* for labels... */;
+   }
+   ```
+
+   Each demo stays a single file — function-children demos (e.g. `select/select-format-function`) remain inline with no server/client split.
+
+**The Code tab stays copy-paste clean automatically.** `/api/preview-code` strips the `usePreviewDictionary` import + `const t = …` line and resolves every `t.<path>` to the literal dictionary value for the active language (`{t.fruits.apple}` → `{"Apple"}`; dynamic `t.variants[variant]` → `{…}[variant]`). So write demos with `t.*`; the reader still sees plain literal strings.
+
+Locale-neutral tokens (units, URLs, currency/size codes) may stay literal.
+
 ## Authoring Constraints — `<Preview>` API
 
 - `component` and `demo` are mutually exclusive. TypeScript enforces this in `apps/website/src/components/preview.tsx`.

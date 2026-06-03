@@ -9,5 +9,79 @@
     "openFullscreen": "전체화면으로 열기",
     "preview": "미리보기",
     "code": "코드"
+  },
+  "demos": {
+    "button": {
+      "iconButtonLabel": "{size} 아이콘 버튼",
+      "variants": {
+        "brandSolid": "브랜드 솔리드",
+        "neutralSolid": "뉴트럴 솔리드",
+        "neutralWeak": "뉴트럴 위크",
+        "criticalSolid": "크리티컬 솔리드",
+        "brandOutline": "브랜드 아웃라인",
+        "neutralOutline": "뉴트럴 아웃라인",
+        "ghost": "고스트"
+      },
+      "states": {
+        "hover": "호버",
+        "pressed": "누름",
+        "loading": "로딩 중",
+        "disabled": "비활성화",
+        "dataDisabled": "데이터 비활성화",
+        "focusVisible": "포커스 표시"
+      },
+      "withIcon": {
+        "like": "좋아요",
+        "add": "추가",
+        "delete": "삭제"
+      }
+    },
+    "input": {
+      "placeholder": "플레이스홀더 텍스트"
+    },
+    "inputGroup": {
+      "emailPlaceholder": "이메일을 입력하세요",
+      "submit": "제출하기",
+      "mediumPlaceholder": "중간 크기 인풋 그룹",
+      "largePlaceholder": "큰 크기 인풋 그룹",
+      "invalidPlaceholder": "오류 인풋 그룹",
+      "invalid": "오류",
+      "disabledPlaceholder": "비활성화 인풋 그룹",
+      "disabled": "비활성화",
+      "readOnlyPlaceholder": "읽기 전용 인풋 그룹",
+      "readOnly": "읽기 전용",
+      "outlinePlaceholder": "아웃라인 인풋 그룹",
+      "outline": "아웃라인",
+      "underlinePlaceholder": "언더라인 인풋 그룹",
+      "underline": "언더라인",
+      "titlePlaceholder": "제목과 설명을 입력하세요",
+      "description": "설명",
+      "messagePlaceholder": "메시지를 입력하세요"
+    },
+    "select": {
+      "fruitsLabel": "과일",
+      "fruits": {
+        "apple": "사과",
+        "banana": "바나나",
+        "blueberry": "블루베리",
+        "mango": "망고"
+      },
+      "placeholder": "과일을 선택하세요",
+      "disabledPlaceholder": "비활성화 셀렉트",
+      "invalidPlaceholder": "오류 셀렉트",
+      "largePlaceholder": "큰 셀렉트",
+      "mediumPlaceholder": "중간 셀렉트",
+      "themePlaceholder": "테마 선택",
+      "themes": {
+        "system": "시스템 기본값",
+        "light": "라이트",
+        "dark": "다크"
+      },
+      "fonts": {
+        "monospace": "모노스페이스",
+        "serif": "세리프",
+        "sans-serif": "산세리프"
+      }
+    }
   }
 }

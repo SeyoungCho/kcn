@@ -3,5 +3,14 @@
   "description": "seed ui kit registry",
   "icon": "Sprout",
   "root": true,
-  "pages": ["---개요---", "index", "button", "input", "textarea", "input-group"]
+  "pages": [
+    "---개요---",
+    "index",
+    "---컴포넌트---",
+    "button",
+    "input",
+    "textarea",
+    "input-group",
+    "select"
+  ]
 }

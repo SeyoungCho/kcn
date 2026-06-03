@@ -6,9 +6,11 @@
   "pages": [
     "---Overview---",
     "index",
+    "---Components---",
     "button",
     "input",
     "textarea",
-    "input-group"
+    "input-group",
+    "select"
   ]
 }

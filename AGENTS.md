@@ -97,14 +97,17 @@ apps/website/src/app/preview/<registry-name>/
 Supporting pieces:
 
 - `apps/website/src/components/preview.tsx` — the `<Preview>` MDX component. Builds the iframe URL on the client (post-mount) to avoid SSR/hydration mismatches caused by MDX children differing between server and client, and renders the Preview/Code tabs.
-- `apps/website/src/hooks/preview/use-preview-src.ts` — builds the iframe URL for component or demo mode.
-- `apps/website/src/hooks/preview/use-preview-code.ts` — builds the Code tab snippet for component mode and fetches demo file source for demo mode.
-- `apps/website/src/app/api/preview-code/route.ts` — reads demo preview files for the Code tab and rewrites internal `@repo/<registry>/ui/*` imports to user-facing `@/components/ui/*` imports before returning them.
+- `apps/website/src/hooks/preview/use-preview-src.ts` — builds the iframe URL for component or demo mode, and forwards the active docs language (from the parent `[lang]/docs` route, read via `useParams`) as a `lang` search param so the isolated iframe can localize.
+- `apps/website/src/components/preview/preview-dictionary-provider.tsx` — client `PreviewDictionaryProvider` (reads the forwarded `?lang=` via `useSearchParams`, resolves the dictionary) + `usePreviewDictionary()` hook. Mounted in each registry preview `layout.tsx` (inside a `<Suspense>`), so demo client components can localize their labels.
+- `apps/website/src/dictionaries/client.ts` — client-safe `getClientDictionary(lang)` used by the provider (the server-only `getDictionary` can't be imported into client components).
+- `apps/website/src/hooks/preview/use-preview-code.ts` — builds the Code tab snippet for component mode and fetches demo file source for demo mode, forwarding the active `lang` so the demo source is resolved to that language.
+- `apps/website/src/app/api/preview-code/route.ts` — reads demo preview files for the Code tab, rewrites `@repo/<registry>/ui/*` → `@/components/ui/*`, AND inlines i18n for copy-paste: it strips the `usePreviewDictionary` import + `const t = …` line and resolves every `t.<path>` reference to the literal value from the requested language's dictionary (longest-existing-prefix, so `t.variants[variant]` → `{…}[variant]`).
 - `apps/website/src/lib/preview.tsx` — shared `renderPreview()` helper used by every per-registry `[component]/page.tsx`.
 - `apps/website/src/components/mdx.tsx` — registers `<Preview>` globally so MDX files don't need to import it.
 - `apps/website/src/types/preview.ts` — shared list/type guard for registries accepted by `<Preview>` and the preview-code API.
 - `apps/website/src/utils/preview/index.ts` — shared preview helpers such as MDX/React children flattening.
-- `apps/website/src/proxy.ts` — i18n middleware excludes `/preview` so the iframe URL stays language-agnostic.
+- `apps/website/src/proxy.ts` — i18n middleware excludes `/preview`, so preview routes have no `[lang]` segment. The active language is instead forwarded by `<Preview>` as a `?lang=` search param (see `use-preview-src.ts` / `preview-dictionary-provider.tsx`).
+- `apps/website/src/dictionaries/{en,ko}.json` — the `demos` section holds the static labels rendered inside demo previews (fruit names, placeholders, variant/state labels). The `Dictionary` type is derived from `en.json`, so both locales must stay in sync.
 - `apps/website/loaders/registry-preview-imports.cjs` — preview-only transform that rewrites consumer-facing imports from registry source files (such as `@/components/ui/textarea`) to the matching workspace registry package (such as `@repo/seed/ui/textarea`) while bundling the docs app.
 - `apps/website/src/types/registry-preview-aliases.d.ts` — registry-neutral type declarations for consumer-facing component aliases referenced by registry source files. These declarations are type-checking shims only; runtime resolution is handled by the preview import transform.
 - `apps/website/next.config.mjs` — every registry must be in `transpilePackages`; its Turbopack and webpack rules apply the preview-only registry import transform.
@@ -168,6 +171,28 @@ For previews that need nested JSX (icons inside buttons, multiple components, la
 3. Reference it from MDX as `<Preview registry="<registry-name>" demo="<slug>" />`.
 
 Demo files automatically inherit the registry's isolated theme via the parent `layout.tsx`.
+
+**i18n in demos.** Demo previews follow the parent docs language automatically (`<Preview>` forwards it as `?lang=`, and each registry preview `layout.tsx` mounts `PreviewDictionaryProvider`). Localize a demo's static labels instead of hardcoding them:
+
+1. Add the strings to the `demos` section of `apps/website/src/dictionaries/{en,ko}.json` (keep both locales in sync; the `Dictionary` type is derived from `en.json`).
+2. Make the demo a `"use client"` component that reads the dictionary via the hook, then use `t.*` for every user-facing label:
+
+   ```tsx
+   "use client";
+   
+   import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
+   
+   export default function Demo() {
+     const t = usePreviewDictionary().demos.<component>;
+     return /* ...use t.* for labels... */;
+   }
+   ```
+
+   This keeps each demo a single file, so function-children demos (e.g. `select/select-format-function`) stay inline with no server/client split.
+
+**Code tab stays copy-paste clean.** Do NOT worry that `usePreviewDictionary`/`t.*` will leak into the Code tab. `/api/preview-code` strips the hook import + `const t = …` line and resolves every `t.<path>` to the literal dictionary value for the active language (so `<SelectItem>{t.fruits.apple}</SelectItem>` shows `{"Apple"}`, and `t.variants[variant]` shows `{…}[variant]`). Always reference labels through the single `const t = usePreviewDictionary().demos.<section>;` binding named `t` so the transform can resolve them.
+
+Locale-neutral tokens (units, URLs like `https://`, currency codes, size codes such as `md`/`lg`) can stay literal.
 
 ### Adding a shared dependency
 

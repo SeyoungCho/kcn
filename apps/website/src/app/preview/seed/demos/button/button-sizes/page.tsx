@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@repo/seed/ui/button";
 import { Book } from "lucide-react";
+import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
 const sizes = [
   ["xs", "xs"],
@@ -9,6 +12,8 @@ const sizes = [
 ] as const;
 
 export default function ButtonSizesDemo() {
+  const t = usePreviewDictionary().demos.button;
+
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="flex flex-col flex-wrap items-center justify-center gap-3">
@@ -28,7 +33,7 @@ export default function ButtonSizesDemo() {
           {sizes.map(([size]) => (
             <Button
               key={`${size}-icon`}
-              aria-label={`${size} icon button`}
+              aria-label={t.iconButtonLabel.replace("{size}", size)}
               layout="iconOnly"
               size={size}
             >

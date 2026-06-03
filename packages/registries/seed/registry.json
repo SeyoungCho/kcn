@@ -106,6 +106,26 @@
           "target": "@lib/utils.ts"
         }
       ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Displays a Seed select field.",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["@kcn-seed/seed-style"],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/select.tsx"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "type": "registry:lib",
+          "target": "@lib/utils.ts"
+        }
+      ]
     }
   ]
 }

@@ -9,5 +9,79 @@
     "openFullscreen": "Open fullscreen",
     "preview": "Preview",
     "code": "Code"
+  },
+  "demos": {
+    "button": {
+      "iconButtonLabel": "{size} icon button",
+      "variants": {
+        "brandSolid": "Brand solid",
+        "neutralSolid": "Neutral solid",
+        "neutralWeak": "Neutral weak",
+        "criticalSolid": "Critical solid",
+        "brandOutline": "Brand outline",
+        "neutralOutline": "Neutral outline",
+        "ghost": "Ghost"
+      },
+      "states": {
+        "hover": "Hover",
+        "pressed": "Pressed",
+        "loading": "Loading",
+        "disabled": "Disabled",
+        "dataDisabled": "Data disabled",
+        "focusVisible": "Focus visible"
+      },
+      "withIcon": {
+        "like": "Like",
+        "add": "Add",
+        "delete": "Delete"
+      }
+    },
+    "input": {
+      "placeholder": "placeholder text"
+    },
+    "inputGroup": {
+      "emailPlaceholder": "Enter your email",
+      "submit": "Submit",
+      "mediumPlaceholder": "Medium input group",
+      "largePlaceholder": "Large input group",
+      "invalidPlaceholder": "Invalid input group",
+      "invalid": "Invalid",
+      "disabledPlaceholder": "Disabled input group",
+      "disabled": "Disabled",
+      "readOnlyPlaceholder": "Read only input group",
+      "readOnly": "Read only",
+      "outlinePlaceholder": "Outline input group",
+      "outline": "Outline",
+      "underlinePlaceholder": "Underline input group",
+      "underline": "Underline",
+      "titlePlaceholder": "Write a title and description",
+      "description": "Description",
+      "messagePlaceholder": "Write a message"
+    },
+    "select": {
+      "fruitsLabel": "Fruits",
+      "fruits": {
+        "apple": "Apple",
+        "banana": "Banana",
+        "blueberry": "Blueberry",
+        "mango": "Mango"
+      },
+      "placeholder": "Select a fruit",
+      "disabledPlaceholder": "Disabled select",
+      "invalidPlaceholder": "Invalid select",
+      "largePlaceholder": "Large select",
+      "mediumPlaceholder": "Medium select",
+      "themePlaceholder": "Select theme",
+      "themes": {
+        "system": "System default",
+        "light": "Light",
+        "dark": "Dark"
+      },
+      "fonts": {
+        "monospace": "Monospace",
+        "serif": "Serif",
+        "sans-serif": "Sans-serif"
+      }
+    }
   }
 }

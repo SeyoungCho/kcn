@@ -1,3 +1,5 @@
+"use client";
+
 import {
   InputGroup,
   InputGroupAddon,
@@ -5,13 +7,15 @@ import {
   InputGroupText,
 } from "@repo/seed/ui/input-group";
 import { Search } from "lucide-react";
+import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
 export default function InputGroupSizesDemo() {
+  const t = usePreviewDictionary().demos.inputGroup;
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="flex w-full max-w-[384px] flex-col gap-3">
         <InputGroup size="md">
-          <InputGroupInput placeholder="Medium input group" />
+          <InputGroupInput placeholder={t.mediumPlaceholder} />
           <InputGroupAddon align="inline-start">
             <Search />
           </InputGroupAddon>
@@ -21,7 +25,7 @@ export default function InputGroupSizesDemo() {
         </InputGroup>
 
         <InputGroup size="lg">
-          <InputGroupInput placeholder="Large input group" />
+          <InputGroupInput placeholder={t.largePlaceholder} />
           <InputGroupAddon align="inline-start">
             <Search />
           </InputGroupAddon>

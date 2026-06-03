@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode, useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { type Registry } from "@/types/preview";
 import { flattenToText } from "@/utils/preview";
 
@@ -85,6 +86,8 @@ export function usePreviewCode({
   const [state, setState] = useState<PreviewCodeState>({
     isLoading: false,
   });
+  const params = useParams();
+  const lang = typeof params.lang === "string" ? params.lang : undefined;
 
   useEffect(() => {
     if (component) {
@@ -105,6 +108,9 @@ export function usePreviewCode({
     } else {
       setState({ isLoading: false });
       return;
+    }
+    if (lang) {
+      search.set("lang", lang);
     }
 
     const controller = new AbortController();
@@ -138,7 +144,7 @@ export function usePreviewCode({
       });
 
     return () => controller.abort();
-  }, [children, component, demo, props, registry]);
+  }, [children, component, demo, props, registry, lang]);
 
   return state;
 }

@@ -209,7 +209,7 @@ html > body[data-scroll-locked] {
 }
 
 /** AutoTypeTable layout formatting */
-div[id^="type-table-button."] {
+div[id^="type-table-"] {
   & > button > code {
     flex-shrink: 0;
   }
