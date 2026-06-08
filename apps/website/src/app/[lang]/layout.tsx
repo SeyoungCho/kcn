@@ -4,6 +4,7 @@ import { i18n } from "@/lib/i18n";
 import { i18nUI } from "@/components/layout.shared";
 import { getDictionary } from "@/dictionaries";
 import { DictionaryProvider } from "@/components/dictionary-provider";
+import { ThemeContinuity } from "@/components/theme-continuity";
 
 export function generateStaticParams() {
   return i18n.languages.map((lang) => ({ lang }));
@@ -20,7 +21,10 @@ export default async function Layout({
     <html lang={lang} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
         <RootProvider i18n={i18nUI.provider(lang)}>
-          <DictionaryProvider value={dictionary}>{children}</DictionaryProvider>
+          <DictionaryProvider value={dictionary}>
+            <ThemeContinuity />
+            {children}
+          </DictionaryProvider>
         </RootProvider>
       </body>
     </html>
