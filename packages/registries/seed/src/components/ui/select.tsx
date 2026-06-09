@@ -77,7 +77,7 @@ function SelectGroup({
   return (
     <SelectPrimitive.Group
       data-slot="select-group"
-      className={cn("scroll-my-xs p-xs", className)}
+      className={cn("scroll-my-xs p-xs flex flex-col gap-xs", className)}
       {...props}
     >
       {children}
@@ -177,10 +177,16 @@ function SelectContent({
           {...props}
         >
           <SelectScrollUpButton />
-          <SelectPrimitive.List>{children}</SelectPrimitive.List>
+          <SelectPrimitive.List
+            className="flex flex-col gap-xs
+              has-[>_[data-slot=select-group]]:gap-0"
+          >
+            {children}
+          </SelectPrimitive.List>
           <SelectScrollDownButton />
         </SelectPrimitive.Popup>
       </SelectPrimitive.Positioner>
+      s
     </SelectPrimitive.Portal>
   );
 }

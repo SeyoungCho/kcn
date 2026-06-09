@@ -3,9 +3,7 @@
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@repo/seed/ui/select";
@@ -21,13 +19,10 @@ export default function SelectDefaultDemo() {
           <SelectValue placeholder={t.placeholder} />
         </SelectTrigger>
         <SelectContent>
-          <SelectGroup>
-            <SelectLabel>{t.fruitsLabel}</SelectLabel>
-            <SelectItem value="apple">{t.fruits.apple}</SelectItem>
-            <SelectItem value="banana">{t.fruits.banana}</SelectItem>
-            <SelectItem value="blueberry">{t.fruits.blueberry}</SelectItem>
-            <SelectItem value="mango">{t.fruits.mango}</SelectItem>
-          </SelectGroup>
+          <SelectItem value="apple">{t.fruits.apple}</SelectItem>
+          <SelectItem value="banana">{t.fruits.banana}</SelectItem>
+          <SelectItem value="blueberry">{t.fruits.blueberry}</SelectItem>
+          <SelectItem value="mango">{t.fruits.mango}</SelectItem>
         </SelectContent>
       </Select>
     </div>
