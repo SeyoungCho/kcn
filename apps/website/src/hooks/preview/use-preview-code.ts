@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useState } from "react";
 import { useParams } from "next/navigation";
 import { type Registry } from "@/types/preview";
 import { flattenToText } from "@/utils/preview";
@@ -17,6 +17,12 @@ interface PreviewCodeState {
   code?: string;
   error?: string;
   isLoading: boolean;
+}
+
+interface DemoCodeResult {
+  code?: string;
+  error?: string;
+  requestUrl: string;
 }
 
 function componentToFileName(component: string) {
@@ -83,40 +89,31 @@ export function usePreviewCode({
   props,
   registry,
 }: UsePreviewCodeOptions): PreviewCodeState {
-  const [state, setState] = useState<PreviewCodeState>({
-    isLoading: false,
-  });
+  const [demoResult, setDemoResult] = useState<DemoCodeResult>();
   const params = useParams();
   const lang = typeof params.lang === "string" ? params.lang : undefined;
+  const componentCode = component
+    ? buildComponentPreviewCode({
+        children,
+        component,
+        props,
+      })
+    : undefined;
+  const requestUrl = useMemo(() => {
+    if (!demo) return undefined;
+
+    const search = new URLSearchParams({ registry, demo });
+    if (lang) search.set("lang", lang);
+
+    return `/api/preview-code?${search.toString()}`;
+  }, [demo, lang, registry]);
 
   useEffect(() => {
-    if (component) {
-      setState({
-        code: buildComponentPreviewCode({
-          children,
-          component,
-          props,
-        }),
-        isLoading: false,
-      });
-      return;
-    }
-
-    const search = new URLSearchParams({ registry });
-    if (demo) {
-      search.set("demo", demo);
-    } else {
-      setState({ isLoading: false });
-      return;
-    }
-    if (lang) {
-      search.set("lang", lang);
-    }
+    if (!requestUrl) return;
 
     const controller = new AbortController();
-    setState({ isLoading: true });
 
-    fetch(`/api/preview-code?${search.toString()}`, {
+    fetch(requestUrl, {
       signal: controller.signal,
     })
       .then(async (response) => {
@@ -129,22 +126,34 @@ export function usePreviewCode({
           throw new Error(payload.error ?? "Failed to load preview code");
         }
 
-        setState({ code: payload.code ?? "", isLoading: false });
+        setDemoResult({ code: payload.code ?? "", requestUrl });
       })
       .catch((error: unknown) => {
         if (controller.signal.aborted) return;
 
-        setState({
+        setDemoResult({
           error:
             error instanceof Error
               ? error.message
               : "Failed to load preview code",
-          isLoading: false,
+          requestUrl,
         });
       });
 
     return () => controller.abort();
-  }, [children, component, demo, props, registry, lang]);
+  }, [requestUrl]);
 
-  return state;
+  if (componentCode) {
+    return { code: componentCode, isLoading: false };
+  }
+
+  if (!requestUrl) {
+    return { isLoading: false };
+  }
+
+  if (demoResult?.requestUrl !== requestUrl) {
+    return { isLoading: true };
+  }
+
+  return { ...demoResult, isLoading: false };
 }

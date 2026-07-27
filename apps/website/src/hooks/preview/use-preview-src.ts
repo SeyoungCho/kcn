@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useEffect, useState } from "react";
+import { type ReactNode, useMemo, useSyncExternalStore } from "react";
 import { useParams } from "next/navigation";
 import { type Registry } from "@/types/preview";
 import { flattenToText } from "@/utils/preview";
@@ -29,20 +29,24 @@ export function usePreviewSrc({
   props,
   registry,
 }: UsePreviewSrcOptions) {
-  const [src, setSrc] = useState<string | undefined>(undefined);
   const params = useParams();
   const lang = typeof params.lang === "string" ? params.lang : undefined;
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
-  useEffect(() => {
+  return useMemo(() => {
+    if (!mounted) return undefined;
+
     if (demo) {
       const qs = lang ? `?lang=${encodeURIComponent(lang)}` : "";
-      setSrc(`/preview/${registry}/demos/${demo}${qs}`);
-      return;
+      return `/preview/${registry}/demos/${demo}${qs}`;
     }
 
     if (!component) {
-      setSrc(undefined);
-      return;
+      return undefined;
     }
 
     const childrenText = flattenToText(children).trim();
@@ -57,8 +61,6 @@ export function usePreviewSrc({
       search.set("lang", lang);
     }
     const qs = search.toString();
-    setSrc(`/preview/${registry}/${component}${qs ? `?${qs}` : ""}`);
-  }, [children, component, demo, props, registry, lang]);
-
-  return src;
+    return `/preview/${registry}/${component}${qs ? `?${qs}` : ""}`;
+  }, [children, component, demo, lang, mounted, props, registry]);
 }

@@ -2,18 +2,18 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { ThemeSwitch } from "@/components/preview/theme-switch";
 import { usePreviewIframeMessenger } from "@/hooks/preview/use-preview-iframe-messenger";
 import type { PreviewTheme } from "@/hooks/preview/preview-bridge";
 
 export function PreviewThemeToggle() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const { resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const darkMode = mounted && resolvedTheme === "dark";
   const previewTheme: PreviewTheme = darkMode ? "dark" : "light";
