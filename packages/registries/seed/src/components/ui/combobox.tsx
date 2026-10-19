@@ -47,10 +47,18 @@ function ComboboxChips({ className, ...props }: ComboboxChipsProps) {
   );
 }
 
-export type ComboboxChipProps = ComboboxPrimitive.Chip.Props;
+export type ComboboxChipProps = ComboboxPrimitive.Chip.Props & {
+  /** 빼기(×) 버튼의 이름 — 안 주면 글자 칩은 '사과 빼기', 아니면 '빼기' */
+  removeLabel?: string;
+};
 
 /** 고른 것 하나 — 끝의 ×(또는 Backspace · Delete)로 뺀다 */
-function ComboboxChip({ className, children, ...props }: ComboboxChipProps) {
+function ComboboxChip({
+  className,
+  children,
+  removeLabel,
+  ...props
+}: ComboboxChipProps) {
   return (
     <ComboboxPrimitive.Chip
       data-slot="combobox-chip"
@@ -69,7 +77,10 @@ function ComboboxChip({ className, children, ...props }: ComboboxChipProps) {
         className="m-0 flex size-x5 shrink-0 cursor-pointer items-center
           justify-center rounded-r1 border-none bg-transparent p-0 text-inherit
           [--icon-size:12px] hovered:bg-bg-transparent-pressed"
-        aria-label={typeof children === "string" ? `${children} 빼기` : "빼기"}
+        aria-label={
+          removeLabel ??
+          (typeof children === "string" ? `${children} 빼기` : "빼기")
+        }
       >
         <Icon svg={<IconXmarkLine />} />
       </ComboboxPrimitive.ChipRemove>

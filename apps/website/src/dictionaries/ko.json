@@ -103,7 +103,8 @@
       },
       "dismissible": {
         "description": "읽은 뒤에는 이 도움말을 닫을 수 있어요.",
-        "reset": "다시 보기"
+        "reset": "다시 보기",
+        "closeLabel": "닫기"
       }
     },
     "snackbar": {
@@ -360,7 +361,14 @@
         "shipping": "배송 중",
         "refunded": "환불됨"
       },
-      "customers": ["김지우", "이민준", "박서연", "최도윤", "정하은", "강시우"],
+      "customers": [
+        "김지우",
+        "이민준",
+        "박서연",
+        "최도윤",
+        "정하은",
+        "강시우"
+      ],
       "items": [
         "무선 이어폰",
         "높이 조절 책상",
@@ -391,7 +399,18 @@
         "name": "이름",
         "joined": "가입일"
       },
-      "member": "회원"
+      "member": "회원",
+      "locale": "ko-KR",
+      "labels": {
+        "rootAriaLabel": "표 페이지 탐색",
+        "pageRangeAriaLabel": "표시 범위",
+        "pageSizeAriaLabel": "페이지당 표시 개수",
+        "previousPageAriaLabel": "이전 페이지",
+        "nextPageAriaLabel": "다음 페이지",
+        "pageSizeSuffix": "씩 보기"
+      },
+      "total": "/ 총 {total}개",
+      "pageSize": "{size}개"
     },
     "chipTabs": {
       "tabs": {
@@ -467,6 +486,12 @@
         "invalid": "오류",
         "errorMessage": "파일을 하나 이상 첨부해 주세요.",
         "disabled": "비활성"
+      },
+      "labels": {
+        "selectFile": "파일 선택",
+        "dropFile": "또는 여기로 드래그해서 업로드",
+        "retry": "재시도",
+        "removeFile": "파일 제거"
       }
     },
     "datePicker": {
@@ -607,6 +632,10 @@
         "title": "홈",
         "description": "메뉴 오른쪽 위의 버튼을 누르면 메뉴를 접고 펼칠 수 있어요.",
         "collapsedDescription": "아이콘에 마우스를 올리면 이름이나 하위 메뉴가 보여요."
+      },
+      "trigger": {
+        "open": "사이드바 열기",
+        "close": "사이드바 닫기"
       }
     },
     "layout": {
@@ -630,7 +659,11 @@
         "brand": "당근 비즈니스",
         "home": "홈",
         "orders": "주문",
-        "settings": "설정"
+        "settings": "설정",
+        "trigger": {
+          "open": "사이드바 열기",
+          "close": "사이드바 닫기"
+        }
       }
     },
     "checkbox": {
@@ -741,7 +774,8 @@
         "invalid": "오류",
         "disabled": "비활성",
         "readOnly": "읽기 전용"
-      }
+      },
+      "clearLabel": "지우기"
     },
     "combobox": {
       "label": "과일",
@@ -757,7 +791,8 @@
         "orange": "오렌지",
         "peach": "복숭아",
         "strawberry": "딸기"
-      }
+      },
+      "removeChip": "{item} 빼기"
     },
     "dialog": {
       "open": "프로필 수정",

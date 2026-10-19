@@ -117,6 +117,17 @@ export interface SnackbarProviderProps {
   strategy?: SnackbarStrategy;
 }
 
+const noopSubscribe = () => () => {};
+
+/** 브라우저에서 그리는 중인지 — 서버와 하이드레이션 첫 그림에서는 false 라 body 포털을 그 뒤에 붙인다 */
+function useIsClient() {
+  return React.useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  );
+}
+
 function SnackbarProvider({
   children,
   pauseOnInteraction = true,
@@ -129,6 +140,7 @@ function SnackbarProvider({
   const visibleDuration = currentSnackbar?.timeout ?? 4000;
   const removeDelay = currentSnackbar?.removeDelay ?? 200;
   const visible = state === "active" || state === "persist";
+  const isClient = useIsClient();
 
   React.useEffect(() => {
     if (state === "inactive") {
@@ -176,26 +188,27 @@ function SnackbarProvider({
   return (
     <SnackbarContext.Provider value={value}>
       {children}
-      {createPortal(
-        <div
-          data-slot="snackbar-region"
-          role="region"
-          aria-live="polite"
-          tabIndex={-1}
-          className={cn(
-            "fixed z-2147483647 flex flex-col items-center p-x2",
-            `right-[env(safe-area-inset-right,0px)]
-            bottom-[calc(env(safe-area-inset-bottom,0px)+var(--snackbar-region-offset,0px))]
-            left-[env(safe-area-inset-left,0px)]`,
-            "transition-[bottom] duration-d4 ease-easing",
-            // 비어 있을 때는 뒤의 화면을 누를 수 있게 비켜 준다.
-            !currentSnackbar && "pointer-events-none",
-          )}
-        >
-          {currentSnackbar?.render()}
-        </div>,
-        document.body,
-      )}
+      {isClient &&
+        createPortal(
+          <div
+            data-slot="snackbar-region"
+            role="region"
+            aria-live="polite"
+            tabIndex={-1}
+            className={cn(
+              "fixed z-2147483647 flex flex-col items-center p-x2",
+              `right-[env(safe-area-inset-right,0px)]
+              bottom-[calc(env(safe-area-inset-bottom,0px)+var(--snackbar-region-offset,0px))]
+              left-[env(safe-area-inset-left,0px)]`,
+              "transition-[bottom] duration-d4 ease-easing",
+              // 비어 있을 때는 뒤의 화면을 누를 수 있게 비켜 준다.
+              !currentSnackbar && "pointer-events-none",
+            )}
+          >
+            {currentSnackbar?.render()}
+          </div>,
+          document.body,
+        )}
     </SnackbarContext.Provider>
   );
 }

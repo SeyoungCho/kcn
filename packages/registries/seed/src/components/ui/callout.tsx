@@ -214,6 +214,8 @@ export interface DismissibleCalloutProps extends CalloutProps {
   defaultOpen?: boolean;
   /** 닫기를 눌렀을 때 */
   onDismiss?: () => void;
+  /** 닫기(×) 버튼의 이름 */
+  closeLabel?: string;
 }
 
 /** 닫을 수 있는 알림 상자 — 끝에 닫기(×) 버튼이 붙는다. */
@@ -227,6 +229,7 @@ function DismissibleCallout({
   open: openProp,
   defaultOpen = true,
   onDismiss,
+  closeLabel = "닫기",
   ...props
 }: DismissibleCalloutProps) {
   const [openState, setOpenState] = React.useState(defaultOpen);
@@ -251,7 +254,7 @@ function DismissibleCallout({
       <button
         ref={scaleFeedbackRef}
         type="button"
-        aria-label="닫기"
+        aria-label={closeLabel}
         data-slot="callout-close"
         className={cn(
           scaleFeedbackClassName,

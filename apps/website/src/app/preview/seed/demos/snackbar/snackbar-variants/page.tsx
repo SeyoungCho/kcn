@@ -1,6 +1,5 @@
 "use client";
 
-import * as React from "react";
 import { ActionButton } from "@repo/seed/ui/action-button";
 import {
   Snackbar,
@@ -36,18 +35,7 @@ function SnackbarTriggers() {
   );
 }
 
-// SnackbarProvider portals into document.body while rendering, so mount it on the client only.
-const subscribe = () => () => {};
-
 export default function SnackbarVariantsDemo() {
-  const isClient = React.useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false,
-  );
-
-  if (!isClient) return null;
-
   return (
     <SnackbarProvider>
       <div className="flex min-h-screen items-center justify-center p-8">

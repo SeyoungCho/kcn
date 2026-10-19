@@ -25,6 +25,7 @@ export default function FieldButtonDefaultDemo() {
           values={values}
           onValuesChange={setValues}
           showClearButton={selected}
+          clearLabel={t.clearLabel}
           buttonProps={{
             "aria-label": selected ? `${t.label}: ${t.value}` : t.label,
             // A real app would open a date picker here.

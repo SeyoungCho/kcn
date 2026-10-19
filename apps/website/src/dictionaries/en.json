@@ -103,7 +103,8 @@
       },
       "dismissible": {
         "description": "You can hide this tip once you have read it.",
-        "reset": "Show again"
+        "reset": "Show again",
+        "closeLabel": "Close"
       }
     },
     "snackbar": {
@@ -398,7 +399,18 @@
         "name": "Name",
         "joined": "Joined"
       },
-      "member": "Member"
+      "member": "Member",
+      "locale": "en-US",
+      "labels": {
+        "rootAriaLabel": "Table pagination",
+        "pageRangeAriaLabel": "Rows shown",
+        "pageSizeAriaLabel": "Rows per page",
+        "previousPageAriaLabel": "Previous page",
+        "nextPageAriaLabel": "Next page",
+        "pageSizeSuffix": "per page"
+      },
+      "total": "of {total}",
+      "pageSize": "{size}"
     },
     "chipTabs": {
       "tabs": {
@@ -474,6 +486,12 @@
         "invalid": "Invalid",
         "errorMessage": "Attach at least one file.",
         "disabled": "Disabled"
+      },
+      "labels": {
+        "selectFile": "Choose file",
+        "dropFile": "or drag files here to upload",
+        "retry": "Retry",
+        "removeFile": "Remove file"
       }
     },
     "datePicker": {
@@ -614,6 +632,10 @@
         "title": "Home",
         "description": "Press the button at the top right of the menu to collapse or expand it.",
         "collapsedDescription": "Hover an icon to see its name, or its submenu."
+      },
+      "trigger": {
+        "open": "Expand sidebar",
+        "close": "Collapse sidebar"
       }
     },
     "layout": {
@@ -637,7 +659,11 @@
         "brand": "Daangn Business",
         "home": "Home",
         "orders": "Orders",
-        "settings": "Settings"
+        "settings": "Settings",
+        "trigger": {
+          "open": "Expand sidebar",
+          "close": "Collapse sidebar"
+        }
       }
     },
     "checkbox": {
@@ -748,7 +774,8 @@
         "invalid": "Invalid",
         "disabled": "Disabled",
         "readOnly": "Read only"
-      }
+      },
+      "clearLabel": "Clear"
     },
     "combobox": {
       "label": "Fruit",
@@ -764,7 +791,8 @@
         "orange": "Orange",
         "peach": "Peach",
         "strawberry": "Strawberry"
-      }
+      },
+      "removeChip": "Remove {item}"
     },
     "dialog": {
       "open": "Edit profile",

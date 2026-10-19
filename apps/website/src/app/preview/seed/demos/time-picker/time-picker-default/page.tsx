@@ -7,16 +7,8 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 const pad = (value: number) => String(value).padStart(2, "0");
 
-const subscribe = () => () => {};
-
 export default function TimePickerDefaultDemo() {
   const t = usePreviewDictionary().demos.timePicker;
-  // Node and browsers can format the Korean day period differently, so render after hydration.
-  const isClient = React.useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false,
-  );
   const [value, setValue] = React.useState<TimePickerValue>({
     hour: 9,
     minute: 30,
@@ -28,14 +20,12 @@ export default function TimePickerDefaultDemo() {
         p-8"
     >
       <div className="w-full max-w-[320px]">
-        {isClient && (
-          <TimePicker
-            locale={t.locale}
-            aria-label={t.label}
-            value={value}
-            onValueChange={setValue}
-          />
-        )}
+        <TimePicker
+          locale={t.locale}
+          aria-label={t.label}
+          value={value}
+          onValueChange={setValue}
+        />
       </div>
       <p className="text-t4 text-fg-neutral-subtle tabular-nums">
         {t.selected}: {pad(value.hour)}:{pad(value.minute)}

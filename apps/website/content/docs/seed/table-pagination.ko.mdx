@@ -19,6 +19,8 @@ npx shadcn@latest add @kcn-seed/table-pagination
 
 `TablePagination` 은 늘 한 줄입니다 — 내용보다 좁아질 수 있으면 `overflow-x-auto` 상자로 감싸세요. 한 쪽의 줄 수를 바꾸면 첫 쪽으로 돌아갑니다. 줄이 줄어 지금 쪽이 범위를 벗어나면 고쳐진 쪽으로 `onValueChange` 가 `reason: "constraint"` 와 함께 불립니다.
 
+보이는 글과 `aria-label` 은 한국어가 기본입니다. 다른 말로 쓰려면 `labels` 로 바꾸고(`range` · `total` · `pageSize` 함수는 `locale` 로 적은 숫자를 받습니다), 숫자 표기는 `locale` 로 정하세요.
+
 같은 셈으로 다른 모양을 만들려면 `useTablePagination` 을 쓰세요.
 
 ## 예제

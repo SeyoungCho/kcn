@@ -17,6 +17,7 @@ export default function CalloutDismissibleDemo() {
             tone="warning"
             description={t.dismissible.description}
             onDismiss={() => setOpen(false)}
+            closeLabel={t.dismissible.closeLabel}
           />
         ) : (
           <div className="flex justify-center">

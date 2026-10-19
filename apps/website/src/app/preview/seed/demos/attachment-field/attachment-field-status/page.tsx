@@ -36,6 +36,12 @@ export default function AttachmentFieldStatusDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="w-full max-w-[600px]">
         <AttachmentField
+          labels={{
+            selectFile: t.labels.selectFile,
+            dropFile: t.labels.dropFile,
+            retry: t.labels.retry,
+            removeFile: t.labels.removeFile,
+          }}
           label={t.statuses.label}
           description={t.statuses.description}
           maxFiles={5}

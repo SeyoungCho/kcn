@@ -15,6 +15,8 @@ npx shadcn@latest add @kcn-seed/combobox
 
 `Combobox` holds the options (`items`) and the value. Inside it, `ComboboxInputGroup` wraps the `ComboboxInput`, and `ComboboxContent` holds `ComboboxEmpty` and a `ComboboxList` whose child is a function that renders one `ComboboxItem` per filtered option. Pass `itemToStringLabel` when values are not the text you want shown and filtered on. The input has no visible label, so give it an `aria-label`.
 
+A chip's remove button is labeled `<text> 빼기` by default; pass `removeLabel` to `ComboboxChip` for other languages.
+
 ## Examples
 
 ### Multiple

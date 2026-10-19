@@ -14,16 +14,8 @@ const members = ["kim", "lee", "park", "choi"] as const;
 
 type Member = (typeof members)[number];
 
-const subscribe = () => () => {};
-
 export default function FloatingToolbarWithSelectionDemo() {
   const t = usePreviewDictionary().demos.floatingToolbar;
-  // FloatingToolbar portals to document.body, so open it only after hydration.
-  const isClient = React.useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false,
-  );
   const [selected, setSelected] = React.useState<Member[]>(["kim", "park"]);
 
   const toggle = (member: Member, checked: boolean) =>
@@ -46,7 +38,7 @@ export default function FloatingToolbarWithSelectionDemo() {
         ))}
       </div>
       <FloatingToolbar
-        open={isClient && selected.length > 0}
+        open={selected.length > 0}
         onDismiss={() => setSelected([])}
         closeLabel={t.closeLabel}
         aria-label={t.toolbarLabel}

@@ -19,6 +19,19 @@ const DEFAULT_ARIA_LABELS = {
   en: { root: "Select time", period: "AM/PM", hour: "Hour", minute: "Minute" },
   ja: { root: "時刻を選択", period: "午前/午後", hour: "時", minute: "分" },
 };
+// 오전 · 오후 표기는 Intl 에 맡기지 않고 고정한다 — ICU 판마다 다르다(Node 22 의 ICU 78 은 ko-KR 도 "AM").
+// 서버와 브라우저가 다르게 그리면 하이드레이션이 어긋난다. 표에 없는 언어만 Intl 을 쓴다.
+const DEFAULT_PERIOD_LABELS: Record<string, TimePickerPeriodLabels> = {
+  ko: { am: "오전", pm: "오후" },
+  en: { am: "AM", pm: "PM" },
+  ja: { am: "午前", pm: "午後" },
+};
+
+/** 오전 · 오후 열에 보이는 글 */
+export interface TimePickerPeriodLabels {
+  am: string;
+  pm: string;
+}
 
 export interface TimePickerValue {
   /** 24시간으로 적은 시(0 ~ 23) */
@@ -52,6 +65,8 @@ export interface TimePickerProps extends Omit<
   minuteStep?: MinuteStep;
   /** 오전 · 오후와 숫자의 표기, 열의 순서를 정한다(기본 ko-KR) */
   locale?: string | string[];
+  /** 오전 · 오후 열에 보이는 글(기본은 locale 을 따른다 — 한국어 오전 · 오후) */
+  periodLabels?: TimePickerPeriodLabels;
   /** 오전 · 오후 열을 읽어 주는 이름 */
   periodAriaLabel?: string;
   /** 시 열을 읽어 주는 이름 */
@@ -117,6 +132,10 @@ function createFormats(localeKey: string) {
     minimumIntegerDigits: 2,
     useGrouping: false,
   });
+  const fixedPeriodLabels =
+    DEFAULT_PERIOD_LABELS[
+      new Intl.Locale(dateTime.resolvedOptions().locale).language
+    ];
   const dayPeriod = (at: number, fallback: string) =>
     dateTime
       .formatToParts(formatDate(at))
@@ -134,10 +153,10 @@ function createFormats(localeKey: string) {
 
   return {
     order,
-    periodOptions: [
-      { value: "am", label: dayPeriod(1, "AM") },
-      { value: "pm", label: dayPeriod(13, "PM") },
-    ],
+    periodLabels: fixedPeriodLabels ?? {
+      am: dayPeriod(1, "AM"),
+      pm: dayPeriod(13, "PM"),
+    },
     hourOptions: Array.from({ length: 12 }, (_, index) => ({
       value: String(index + 1),
       label: hour.format(index + 1),
@@ -173,6 +192,7 @@ function TimePicker({
   minuteStep = DEFAULT_MINUTE_STEP,
   locale = DEFAULT_LOCALE,
   disabled = false,
+  periodLabels,
   periodAriaLabel,
   hourAriaLabel,
   minuteAriaLabel,
@@ -210,13 +230,23 @@ function TimePicker({
     [formats, minuteStep],
   );
 
+  const periodAmLabel = periodLabels?.am ?? formats.periodLabels.am;
+  const periodPmLabel = periodLabels?.pm ?? formats.periodLabels.pm;
+  const periodOptions = React.useMemo(
+    () => [
+      { value: "am", label: periodAmLabel },
+      { value: "pm", label: periodPmLabel },
+    ],
+    [periodAmLabel, periodPmLabel],
+  );
+
   const defaultAriaLabels = getDefaultAriaLabels(locale);
   const period = getPeriod(value.hour);
 
   const columns: Record<TimePickerColumnType, Omit<WheelPickerColumn, "id">> = {
     period: {
       "aria-label": periodAriaLabel ?? defaultAriaLabels.period,
-      options: formats.periodOptions,
+      options: periodOptions,
       value: period,
       onValueChange: (next: string) => {
         if (next !== period)

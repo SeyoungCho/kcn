@@ -17,6 +17,17 @@ import { cn } from "@/lib/utils";
 
 const DRAG_THRESHOLD = 4;
 
+const noopSubscribe = () => () => {};
+
+/** 브라우저에서 그리는 중인지 — 서버와 하이드레이션 첫 그림에서는 false 라 body 포털을 그 뒤에 붙인다 */
+function useIsClient() {
+  return React.useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  );
+}
+
 /** 막대 없이 옆으로 밀기 — 휠을 옆으로 돌리고, 마우스로 잡아 끈다. 끈 뒤의 누름은 삼킨다 */
 function useDragScroll<T extends HTMLElement>() {
   const drag = React.useRef<{
@@ -149,6 +160,7 @@ function FloatingToolbar({
   if (open && !present) setPresent(true);
   const box = useMainBox(present);
   const scroll = useDragScroll<HTMLDivElement>();
+  const isClient = useIsClient();
 
   React.useEffect(() => {
     if (!open || !onDismiss) return;
@@ -167,7 +179,7 @@ function FloatingToolbar({
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [open, onDismiss]);
 
-  if (!present || typeof document === "undefined") return null;
+  if (!present || !isClient) return null;
 
   return createPortal(
     <div

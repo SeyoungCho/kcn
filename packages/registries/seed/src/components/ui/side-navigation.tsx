@@ -273,12 +273,19 @@ function SideNavigationInset({
 export type SideNavigationTriggerProps = Omit<
   React.ComponentProps<"button">,
   "children"
->;
+> & {
+  /** 접혔을 때 버튼의 이름(펼치기) */
+  openLabel?: string;
+  /** 펼쳐졌을 때 버튼의 이름(접기) */
+  closeLabel?: string;
+};
 
 /** 접기 · 펼치기 버튼 — 메뉴의 오른쪽 위에 놓인다. */
 function SideNavigationTrigger({
   className,
   onClick,
+  openLabel = "사이드바 열기",
+  closeLabel = "사이드바 닫기",
   ...props
 }: SideNavigationTriggerProps) {
   const { collapsed, setCollapsed } = useSideNavigationContext();
@@ -287,7 +294,7 @@ function SideNavigationTrigger({
       type="button"
       data-slot="side-navigation-trigger"
       data-side-navigation-state={useNavigationState()}
-      aria-label={collapsed ? "사이드바 열기" : "사이드바 닫기"}
+      aria-label={collapsed ? openLabel : closeLabel}
       className={cn(
         `absolute top-x3 right-x3 inline-flex min-h-x10 min-w-x10 cursor-pointer
         items-center justify-center rounded-[8px] border-none bg-transparent

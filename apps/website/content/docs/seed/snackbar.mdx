@@ -23,7 +23,7 @@ snackbar.create({
 });
 ```
 
-`SnackbarProvider` portals into `document.body` while it renders, so in server-rendered apps (such as Next.js) mount it on the client only.
+`SnackbarProvider` portals its region into `document.body` once it mounts on the client, so it is safe to render on the server (such as in Next.js).
 
 ## Examples
 

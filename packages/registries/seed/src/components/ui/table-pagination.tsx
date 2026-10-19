@@ -351,17 +351,34 @@ function useTablePagination(props: UseTablePaginationProps) {
 
 // ── 화면 ─────────────────────────────────────────────────────────────────────
 
-const numberFormatter = new Intl.NumberFormat("ko-KR");
-const tablePaginationText = {
+const DEFAULT_LOCALE = "ko-KR";
+
+/** 화면에 보이고 읽어 주는 글 — 숫자는 locale 로 적은 글로 받는다 */
+export interface TablePaginationLabels {
+  rootAriaLabel: string;
+  pageRangeAriaLabel: string;
+  pageSizeAriaLabel: string;
+  previousPageAriaLabel: string;
+  nextPageAriaLabel: string;
+  /** 범위 선택지 · 전체 수를 모를 때의 범위 — '1-10' */
+  range: (start: string, end: string) => string;
+  /** 범위 옆의 전체 수 — '/ 총 120개' */
+  total: (totalItems: string) => string;
+  /** 쪽당 줄 수 선택지 — '10개' */
+  pageSize: (size: string) => string;
+  /** 쪽당 줄 수 상자 옆의 글 — '씩 보기' */
+  pageSizeSuffix: string;
+}
+
+const DEFAULT_LABELS: TablePaginationLabels = {
   rootAriaLabel: "표 페이지 탐색",
   pageRangeAriaLabel: "표시 범위",
   pageSizeAriaLabel: "페이지당 표시 개수",
   previousPageAriaLabel: "이전 페이지",
   nextPageAriaLabel: "다음 페이지",
-  range: (start: number, end: number) =>
-    `${numberFormatter.format(start)}-${numberFormatter.format(end)}`,
-  total: (totalItems: number) => `/ 총 ${numberFormatter.format(totalItems)}개`,
-  pageSize: (size: number) => `${numberFormatter.format(size)}개`,
+  range: (start, end) => `${start}-${end}`,
+  total: (totalItems) => `/ 총 ${totalItems}개`,
+  pageSize: (size) => `${size}개`,
   pageSizeSuffix: "씩 보기",
 };
 
@@ -373,8 +390,12 @@ type DistributiveOmit<T, K extends PropertyKey> = T extends unknown
   ? Omit<T, K>
   : never;
 
-export type TablePaginationProps = UseTablePaginationProps &
-  DistributiveOmit<
+export type TablePaginationProps = UseTablePaginationProps & {
+  /** 보이고 읽어 주는 글 — 준 것만 바꾼다(기본 한국어) */
+  labels?: Partial<TablePaginationLabels>;
+  /** 숫자를 적는 방식 @default "ko-KR" */
+  locale?: string | string[];
+} & DistributiveOmit<
     React.ComponentProps<"div">,
     keyof UseTablePaginationProps | "children" | "role"
   >;
@@ -391,9 +412,25 @@ function TablePagination(props: TablePaginationProps) {
     hasPreviousPage: _hasPreviousPage,
     hasNextPage: _hasNextPage,
     currentPageItemCount: _currentPageItemCount,
+    labels: labelsProp,
+    locale = DEFAULT_LOCALE,
     className,
     ...rootProps
   } = props;
+  const localeKey = Intl.getCanonicalLocales(locale).join(",");
+  const numberFormatter = React.useMemo(
+    () => new Intl.NumberFormat(localeKey === "" ? [] : localeKey.split(",")),
+    [localeKey],
+  );
+  const labels = { ...DEFAULT_LABELS, ...labelsProp };
+  const tablePaginationText = {
+    ...labels,
+    range: (start: number, end: number) =>
+      labels.range(numberFormatter.format(start), numberFormatter.format(end)),
+    total: (totalItems: number) =>
+      labels.total(numberFormatter.format(totalItems)),
+    pageSize: (size: number) => labels.pageSize(numberFormatter.format(size)),
+  };
   const pagination = useTablePagination(props);
   const previousDisabled = pagination.disabled || !pagination.hasPreviousPage;
   const nextDisabled = pagination.disabled || !pagination.hasNextPage;

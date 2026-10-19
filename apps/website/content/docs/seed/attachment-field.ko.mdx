@@ -21,6 +21,8 @@ npx shadcn@latest add @kcn-seed/attachment-field
 
 올리기는 부품이 하지 않습니다. 새로 받은 파일은 `onFileAccept` 로 `updateFileEntryStatus(id, details)` 도우미와 함께 옵니다 — 여기서 올리기를 시작하고 항목의 상태를 `pending` · `uploading`(0 ~ 100 의 `progress` 는 골라서) · `success` · `error` 로 넘기세요.
 
+버튼과 안내 글은 한국어가 기본입니다. `AttachmentField` · `AttachmentDisplayField` 에 `labels`(`selectFile` · `dropFile` · `retry` · `removeFile`)를 주면 바꿀 수 있습니다.
+
 ## 예제
 
 ### 사진

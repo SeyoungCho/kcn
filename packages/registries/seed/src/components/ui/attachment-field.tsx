@@ -32,10 +32,29 @@ import { cn } from "@/lib/utils";
 //   AttachmentField        — <input type="file"> 로 고르는 칸(AttachmentInput · AttachmentDropzone 을 안에 놓는다)
 //   AttachmentDisplayField — 고르는 창을 바깥(앱의 사진 고르기 등)이 열고, 고른 것(썸네일 주소)을 addEntries 로 넣는 칸
 
-const LABEL_SELECT_FILE = "파일 선택";
-const LABEL_DROP_FILE = "또는 여기로 드래그해서 업로드";
-const LABEL_RETRY = "재시도";
-const LABEL_REMOVE_FILE = "파일 제거";
+/** 칸 안의 버튼 · 안내 글 — AttachmentField · AttachmentDisplayField 의 labels 로 바꾼다 */
+export interface AttachmentFieldLabels {
+  /** 고르는 버튼의 글 · 이름 */
+  selectFile: string;
+  /** 끌어 놓는 칸의 안내 글 */
+  dropFile: string;
+  /** 올리기에 실패한 항목의 다시 하기 버튼 */
+  retry: string;
+  /** 항목 지우기 버튼의 이름 */
+  removeFile: string;
+}
+
+const DEFAULT_LABELS: AttachmentFieldLabels = {
+  selectFile: "파일 선택",
+  dropFile: "또는 여기로 드래그해서 업로드",
+  retry: "재시도",
+  removeFile: "파일 제거",
+};
+
+const AttachmentLabelsContext =
+  React.createContext<AttachmentFieldLabels>(DEFAULT_LABELS);
+
+const useAttachmentLabels = () => React.useContext(AttachmentLabelsContext);
 
 export type AttachmentStatusDetails =
   | { status: "pending" }
@@ -255,6 +274,7 @@ function AttachmentItemRetryButton({
   type: ItemType;
   onClick: () => void;
 }) {
+  const labels = useAttachmentLabels();
   const { scaleFeedbackRef, scaleFeedbackClassName } =
     useScaleFeedback<HTMLButtonElement>();
   return (
@@ -278,7 +298,7 @@ function AttachmentItemRetryButton({
       )}
     >
       <Icon svg={<IconArrowClockwiseCircularFill />} />
-      {LABEL_RETRY}
+      {labels.retry}
     </button>
   );
 }
@@ -290,6 +310,7 @@ function AttachmentItemRemoveButton({
   disabled: boolean;
   onClick: () => void;
 }) {
+  const labels = useAttachmentLabels();
   const { scaleFeedbackRef, scaleFeedbackClassName } =
     useScaleFeedback<HTMLButtonElement>();
   return (
@@ -297,7 +318,7 @@ function AttachmentItemRemoveButton({
       ref={scaleFeedbackRef}
       type="button"
       data-slot="attachment-item-remove"
-      aria-label={LABEL_REMOVE_FILE}
+      aria-label={labels.removeFile}
       disabled={disabled}
       onClick={onClick}
       className={cn(
@@ -443,6 +464,28 @@ function AttachmentItemName({
         {shown}
       </span>
     </span>
+  );
+}
+
+function AttachmentLabelsProvider({
+  labels,
+  children,
+}: {
+  labels: Partial<AttachmentFieldLabels> | undefined;
+  children: React.ReactNode;
+}) {
+  const { selectFile, dropFile, retry, removeFile } = labels ?? {};
+  const value = React.useMemo(
+    () => ({
+      selectFile: selectFile ?? DEFAULT_LABELS.selectFile,
+      dropFile: dropFile ?? DEFAULT_LABELS.dropFile,
+      retry: retry ?? DEFAULT_LABELS.retry,
+      removeFile: removeFile ?? DEFAULT_LABELS.removeFile,
+    }),
+    [selectFile, dropFile, retry, removeFile],
+  );
+  return (
+    <AttachmentLabelsContext value={value}>{children}</AttachmentLabelsContext>
   );
 }
 
@@ -754,6 +797,8 @@ export interface AttachmentFieldProps
   rootProps?: React.HTMLAttributes<HTMLDivElement>;
   /** 숨은 <input type="file"> */
   ref?: React.Ref<HTMLInputElement>;
+  /** 칸 안의 버튼 · 안내 글 — 준 것만 바꾼다(기본 한국어) */
+  labels?: Partial<AttachmentFieldLabels>;
 }
 
 /** 파일을 고르는 칸 — 이름표 · 설명 · 오류까지. 안에 AttachmentInput(누르는 칸) 또는 AttachmentDropzone(끌어 놓는 칸)을 놓는다. */
@@ -785,6 +830,7 @@ function AttachmentField({
   onFileAccept,
   onFileReject,
   preventDocumentDrop,
+  labels,
   className,
   ...props
 }: AttachmentFieldProps) {
@@ -811,59 +857,61 @@ function AttachmentField({
 
   return (
     <AttachmentInputContext value={field}>
-      <Field
-        {...rootProps}
-        ref={fieldRef}
-        required={required}
-        disabled={disabled}
-        invalid={invalid}
-        readOnly={readOnly}
-        name={name}
-      >
-        {label || indicator ? (
-          <FieldHeader>
-            <FieldLabel weight={labelWeight}>
-              {label}
-              {showRequiredIndicator ? <FieldRequiredIndicator /> : null}
-              {indicator ? (
-                <FieldIndicatorText>{indicator}</FieldIndicatorText>
-              ) : null}
-            </FieldLabel>
-          </FieldHeader>
-        ) : null}
-        <div
-          data-slot="attachment-input"
-          {...field.stateProps}
-          className={cn(INPUT_ROOT, className)}
-          {...props}
+      <AttachmentLabelsProvider labels={labels}>
+        <Field
+          {...rootProps}
+          ref={fieldRef}
+          required={required}
+          disabled={disabled}
+          invalid={invalid}
+          readOnly={readOnly}
+          name={name}
         >
-          <AttachmentFocusTarget />
-          {children}
-          <input
-            ref={inputRef}
-            data-slot="attachment-input-hidden-input"
-            {...field.hiddenInputProps}
-            {...inputProps}
-            className="sr-only"
-          />
-        </div>
-        {description || showError ? (
-          <FieldFooter>
-            {/* 오류가 보이는 동안 설명은 화면에서만 감춘다(읽어 주는 기기에는 남긴다). */}
-            {description ? (
-              <FieldDescription className={showError ? "sr-only" : undefined}>
-                {description}
-              </FieldDescription>
-            ) : null}
-            {showError ? (
-              <FieldErrorMessage>
-                <PrefixIcon svg={<IconExclamationmarkCircleFill />} />
-                {errorMessage}
-              </FieldErrorMessage>
-            ) : null}
-          </FieldFooter>
-        ) : null}
-      </Field>
+          {label || indicator ? (
+            <FieldHeader>
+              <FieldLabel weight={labelWeight}>
+                {label}
+                {showRequiredIndicator ? <FieldRequiredIndicator /> : null}
+                {indicator ? (
+                  <FieldIndicatorText>{indicator}</FieldIndicatorText>
+                ) : null}
+              </FieldLabel>
+            </FieldHeader>
+          ) : null}
+          <div
+            data-slot="attachment-input"
+            {...field.stateProps}
+            className={cn(INPUT_ROOT, className)}
+            {...props}
+          >
+            <AttachmentFocusTarget />
+            {children}
+            <input
+              ref={inputRef}
+              data-slot="attachment-input-hidden-input"
+              {...field.hiddenInputProps}
+              {...inputProps}
+              className="sr-only"
+            />
+          </div>
+          {description || showError ? (
+            <FieldFooter>
+              {/* 오류가 보이는 동안 설명은 화면에서만 감춘다(읽어 주는 기기에는 남긴다). */}
+              {description ? (
+                <FieldDescription className={showError ? "sr-only" : undefined}>
+                  {description}
+                </FieldDescription>
+              ) : null}
+              {showError ? (
+                <FieldErrorMessage>
+                  <PrefixIcon svg={<IconExclamationmarkCircleFill />} />
+                  {errorMessage}
+                </FieldErrorMessage>
+              ) : null}
+            </FieldFooter>
+          ) : null}
+        </Field>
+      </AttachmentLabelsProvider>
     </AttachmentInputContext>
   );
 }
@@ -956,6 +1004,7 @@ function renderFileEntries(
 /** 누르는 칸(80×80, 지금 개수 / 최대 개수) 옆으로 항목을 늘어놓는다. 넘치면 옆으로 민다. */
 function AttachmentInput({ children, onRetry, ref }: AttachmentInputProps) {
   const context = useAttachmentInputContext();
+  const labels = useAttachmentLabels();
   const { ref: triggerRef, ...triggerProps } = context.triggerProps;
   const { scaleFeedbackRef, scaleFeedbackClassName } =
     useScaleFeedback<HTMLButtonElement>(triggerRef);
@@ -970,7 +1019,7 @@ function AttachmentInput({ children, onRetry, ref }: AttachmentInputProps) {
       <button
         ref={scaleFeedbackRef}
         data-slot="attachment-input-trigger"
-        aria-label={LABEL_SELECT_FILE}
+        aria-label={labels.selectFile}
         {...triggerProps}
         className={cn(scaleFeedbackClassName, TRIGGER)}
       >
@@ -1008,6 +1057,7 @@ export type AttachmentDropzoneProps = Omit<AttachmentInputProps, "ref">;
 /** 끌어 놓는 칸(점선 상자, '파일 선택' 버튼) 아래로 항목을 늘어놓는다. */
 function AttachmentDropzone({ children, onRetry }: AttachmentDropzoneProps) {
   const context = useAttachmentInputContext();
+  const labels = useAttachmentLabels();
   return (
     <>
       <div
@@ -1031,7 +1081,7 @@ function AttachmentDropzone({ children, onRetry }: AttachmentDropzoneProps) {
           {...context.triggerProps}
         >
           <PrefixIcon svg={<IconArrowUpBracketDownFill />} />
-          {LABEL_SELECT_FILE}
+          {labels.selectFile}
         </ActionButton>
         {/* 칸이 꺼져도 안내 글의 색은 그대로 둔다(SEED 와 같다) */}
         <div
@@ -1039,7 +1089,7 @@ function AttachmentDropzone({ children, onRetry }: AttachmentDropzoneProps) {
           className="text-center text-t4 leading-(--font-size-t4) font-medium
             text-fg-neutral-subtle"
         >
-          {LABEL_DROP_FILE}
+          {labels.dropFile}
         </div>
       </div>
       <div
@@ -1228,6 +1278,8 @@ export interface AttachmentDisplayFieldProps extends Omit<
   /** AttachmentDisplay */
   children?: React.ReactNode;
   ref?: React.Ref<HTMLDivElement>;
+  /** 칸 안의 버튼 · 안내 글 — 준 것만 바꾼다(기본 한국어) */
+  labels?: Partial<AttachmentFieldLabels>;
 }
 
 /** 바깥이 고른 사진을 보여 주는 칸 — 이름표 · 설명 · 오류까지. 안에 AttachmentDisplay 를 놓는다. */
@@ -1246,6 +1298,7 @@ function AttachmentDisplayField({
   errorMessage,
   showRequiredIndicator,
   children,
+  labels,
   ...props
 }: AttachmentDisplayFieldProps) {
   const [entries, setEntries] = useEntries(
@@ -1321,46 +1374,48 @@ function AttachmentDisplayField({
 
   return (
     <AttachmentDisplayContext value={context}>
-      <Field
-        disabled={disabled}
-        invalid={invalid}
-        readOnly={readOnly}
-        {...props}
-      >
-        {label || indicator ? (
-          <FieldHeader>
-            <FieldLabel weight={labelWeight}>
-              {label}
-              {showRequiredIndicator ? <FieldRequiredIndicator /> : null}
-              {indicator ? (
-                <FieldIndicatorText>{indicator}</FieldIndicatorText>
-              ) : null}
-            </FieldLabel>
-          </FieldHeader>
-        ) : null}
-        <div
-          data-slot="attachment-input"
-          {...stateProps}
-          className={INPUT_ROOT}
+      <AttachmentLabelsProvider labels={labels}>
+        <Field
+          disabled={disabled}
+          invalid={invalid}
+          readOnly={readOnly}
+          {...props}
         >
-          {children}
-        </div>
-        {description || showError ? (
-          <FieldFooter>
-            {description ? (
-              <FieldDescription className={showError ? "sr-only" : undefined}>
-                {description}
-              </FieldDescription>
-            ) : null}
-            {showError ? (
-              <FieldErrorMessage>
-                <PrefixIcon svg={<IconExclamationmarkCircleFill />} />
-                {errorMessage}
-              </FieldErrorMessage>
-            ) : null}
-          </FieldFooter>
-        ) : null}
-      </Field>
+          {label || indicator ? (
+            <FieldHeader>
+              <FieldLabel weight={labelWeight}>
+                {label}
+                {showRequiredIndicator ? <FieldRequiredIndicator /> : null}
+                {indicator ? (
+                  <FieldIndicatorText>{indicator}</FieldIndicatorText>
+                ) : null}
+              </FieldLabel>
+            </FieldHeader>
+          ) : null}
+          <div
+            data-slot="attachment-input"
+            {...stateProps}
+            className={INPUT_ROOT}
+          >
+            {children}
+          </div>
+          {description || showError ? (
+            <FieldFooter>
+              {description ? (
+                <FieldDescription className={showError ? "sr-only" : undefined}>
+                  {description}
+                </FieldDescription>
+              ) : null}
+              {showError ? (
+                <FieldErrorMessage>
+                  <PrefixIcon svg={<IconExclamationmarkCircleFill />} />
+                  {errorMessage}
+                </FieldErrorMessage>
+              ) : null}
+            </FieldFooter>
+          ) : null}
+        </Field>
+      </AttachmentLabelsProvider>
     </AttachmentDisplayContext>
   );
 }
@@ -1392,6 +1447,7 @@ function AttachmentDisplay({
 }: AttachmentDisplayProps) {
   const context = useAttachmentDisplayContext();
   const field = useFieldContext();
+  const labels = useAttachmentLabels();
   const { scaleFeedbackRef, scaleFeedbackClassName } =
     useScaleFeedback<HTMLButtonElement>();
   const triggerDisabled =
@@ -1424,7 +1480,7 @@ function AttachmentDisplay({
         ref={mergedTriggerRef}
         type="button"
         data-slot="attachment-input-trigger"
-        aria-label={LABEL_SELECT_FILE}
+        aria-label={labels.selectFile}
         aria-describedby={field?.describedBy}
         aria-invalid={context.invalid || undefined}
         disabled={triggerDisabled}

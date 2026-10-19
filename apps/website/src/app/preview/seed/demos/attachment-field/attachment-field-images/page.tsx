@@ -31,6 +31,12 @@ export default function AttachmentFieldImagesDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="w-full max-w-[420px]">
         <AttachmentField
+          labels={{
+            selectFile: t.labels.selectFile,
+            dropFile: t.labels.dropFile,
+            retry: t.labels.retry,
+            removeFile: t.labels.removeFile,
+          }}
           label={t.images.label}
           description={t.images.description}
           accept="image/*"

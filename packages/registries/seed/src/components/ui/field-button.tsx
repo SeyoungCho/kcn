@@ -120,6 +120,8 @@ export interface FieldButtonControlProps extends Omit<
   suffix?: React.ReactNode;
   /** 지우기 버튼 — disabled · readOnly 이면 보이지 않는다. onValuesChange 를 같이 준다 */
   showClearButton?: boolean;
+  /** 지우기 버튼의 이름 */
+  clearLabel?: string;
   /** 칸 상자(button)에 붙는 것 — onClick 과, 누르면 무엇이 열리는지 · 지금 값이 무엇인지 알려 주는 aria-label */
   buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
   /** 칸 상자(button) */
@@ -141,6 +143,7 @@ function FieldButtonControl({
   suffixIcon,
   suffix,
   showClearButton,
+  clearLabel = "지우기",
   buttonProps,
   buttonRef,
   className,
@@ -226,7 +229,7 @@ function FieldButtonControl({
             ref={scaleFeedbackRef}
             type="button"
             data-slot="field-button-clear"
-            aria-label="지우기"
+            aria-label={clearLabel}
             hidden={disabled || readOnly}
             disabled={disabled || readOnly}
             onClick={() => onValuesChange?.([])}

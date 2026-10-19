@@ -38,7 +38,10 @@ export default function SideNavigationDefaultDemo() {
               >
                 {t.brand}
               </div>
-              <SideNavigationTrigger />
+              <SideNavigationTrigger
+                openLabel={t.trigger.open}
+                closeLabel={t.trigger.close}
+              />
             </SideNavigationHeader>
             <SideNavigationContent>
               <SideNavigationGroup

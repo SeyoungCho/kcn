@@ -44,7 +44,15 @@ export default function ComboboxMultipleDemo() {
               <ComboboxValue>
                 {(selected: Fruit[]) =>
                   selected.map((fruit) => (
-                    <ComboboxChip key={fruit}>{t.fruits[fruit]}</ComboboxChip>
+                    <ComboboxChip
+                      key={fruit}
+                      removeLabel={t.removeChip.replace(
+                        "{item}",
+                        t.fruits[fruit],
+                      )}
+                    >
+                      {t.fruits[fruit]}
+                    </ComboboxChip>
                   ))
                 }
               </ComboboxValue>

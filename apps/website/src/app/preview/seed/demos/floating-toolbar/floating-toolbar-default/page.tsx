@@ -14,16 +14,8 @@ import {
 } from "@repo/seed/ui/floating-toolbar";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const subscribe = () => () => {};
-
 export default function FloatingToolbarDefaultDemo() {
   const t = usePreviewDictionary().demos.floatingToolbar;
-  // FloatingToolbar portals to document.body, so open it only after hydration.
-  const isClient = React.useSyncExternalStore(
-    subscribe,
-    () => true,
-    () => false,
-  );
   const [open, setOpen] = React.useState(true);
 
   return (
@@ -36,7 +28,7 @@ export default function FloatingToolbarDefaultDemo() {
         {t.show}
       </ActionButton>
       <FloatingToolbar
-        open={open && isClient}
+        open={open}
         onDismiss={() => setOpen(false)}
         closeLabel={t.closeLabel}
         aria-label={t.toolbarLabel}

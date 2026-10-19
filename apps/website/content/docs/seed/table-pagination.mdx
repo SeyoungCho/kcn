@@ -19,7 +19,7 @@ npx shadcn@latest add @kcn-seed/table-pagination
 
 `TablePagination` always stays on one line; wrap it in an `overflow-x-auto` container if it may be narrower than its content. Changing the page size returns to the first page. If the current page falls out of range (for example after rows are removed), it is clamped and `onValueChange` is called with `reason: "constraint"`.
 
-The built-in labels (`n개씩 보기`, `/ 총 n개`, button `aria-label`s) are in Korean. Edit them in `tablePaginationText` inside the copied component if you need another language.
+The built-in labels (`n개씩 보기`, `/ 총 n개`, button `aria-label`s) are in Korean. Pass `labels` to override any of them (the `range`, `total`, and `pageSize` functions receive numbers already formatted for `locale`), and `locale` to change the number format.
 
 Use `useTablePagination` to build a custom layout with the same logic.
 

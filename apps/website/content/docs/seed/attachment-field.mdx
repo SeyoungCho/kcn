@@ -21,6 +21,8 @@ npx shadcn@latest add @kcn-seed/attachment-field
 
 The field never uploads anything. New files arrive in `onFileAccept` with an `updateFileEntryStatus(id, details)` helper — start the upload there and move each entry through `pending`, `uploading` (with an optional `progress` from 0 to 100), `success`, or `error`.
 
+The built-in button and hint text are Korean; pass `labels` (`selectFile`, `dropFile`, `retry`, `removeFile`) to `AttachmentField` or `AttachmentDisplayField` to override them.
+
 ## Examples
 
 ### Images

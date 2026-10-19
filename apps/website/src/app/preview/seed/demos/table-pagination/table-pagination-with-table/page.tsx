@@ -56,6 +56,17 @@ export default function TablePaginationWithTableDemo() {
         <div className="overflow-x-auto">
           <TablePagination
             totalItems={TOTAL}
+            locale={t.locale}
+            labels={{
+              rootAriaLabel: t.labels.rootAriaLabel,
+              pageRangeAriaLabel: t.labels.pageRangeAriaLabel,
+              pageSizeAriaLabel: t.labels.pageSizeAriaLabel,
+              previousPageAriaLabel: t.labels.previousPageAriaLabel,
+              nextPageAriaLabel: t.labels.nextPageAriaLabel,
+              pageSizeSuffix: t.labels.pageSizeSuffix,
+              total: (total) => t.total.replace("{total}", total),
+              pageSize: (size) => t.pageSize.replace("{size}", size),
+            }}
             value={value}
             onValueChange={setValue}
           />
