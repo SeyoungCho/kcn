@@ -1,0 +1,45 @@
+---
+title: Text Field
+description: A labeled input or textarea with helper text, error message, affixes, and a character counter.
+---
+
+<Preview registry="seed" demo="text-field/text-field-default" height={240} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/text-field
+```
+
+## Usage
+
+`TextField` renders the label, description, error message, and counter around the control you pass as children — `TextFieldInput` or `TextFieldTextarea`. Compose `TextFieldRoot` with the `Field` parts directly when you need a custom layout.
+
+## Examples
+
+### Variants and Sizes
+
+<Preview registry="seed" demo="text-field/text-field-variants" height={360} />
+
+### States
+
+`errorMessage` shows only while `invalid` is set.
+
+<Preview registry="seed" demo="text-field/text-field-states" height={420} />
+
+### Prefix and Suffix
+
+<Preview registry="seed" demo="text-field/text-field-affixes" height={260} />
+
+### Textarea with Character Count
+
+`maxGraphemeCount` counts user-perceived characters (emoji and combined Hangul count as one). It does not cut the value — read `slicedValue` from `onValueChange` if you want to enforce the limit.
+
+<Preview registry="seed" demo="text-field/text-field-textarea" height={280} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/text-field.ts"
+  name="MDXTextFieldProps"
+/>

@@ -70,7 +70,7 @@ The primary objective of this project is to publish and manage multiple shadcn/u
 - React **19**
 - @base-ui/react
 - Tailwind CSS **4**
-- [class-variance-authority](https://cva.style/), `clsx`, `tailwind-merge`, scoped/theme CSS for each registry—workspace packages imported by the docs app.
+- [class-variance-authority](https://cva.style/), [`cn`](https://github.com/shadcn-ui/cn) (replaces `clsx` + `tailwind-merge`; montage and t-flavored import `cn` from `"cn"` directly, seed re-exports a `createCn` instance from `@/lib/utils` that knows its token scales), scoped/theme CSS for each registry—workspace packages imported by the docs app.
 
 ## More on registries
 
@@ -108,11 +108,11 @@ Supporting pieces:
 - `apps/website/src/utils/preview/index.ts` — shared preview helpers such as MDX/React children flattening.
 - `apps/website/src/proxy.ts` — i18n middleware excludes `/preview`, so preview routes have no `[lang]` segment. The active language is instead forwarded by `<Preview>` as a `?lang=` search param (see `use-preview-src.ts` / `preview-dictionary-provider.tsx`).
 - `apps/website/src/dictionaries/{en,ko}.json` — the `demos` section holds the static labels rendered inside demo previews (fruit names, placeholders, variant/state labels). The `Dictionary` type is derived from `en.json`, so both locales must stay in sync.
-- `apps/website/loaders/registry-preview-imports.cjs` — preview-only transform that rewrites consumer-facing imports from registry source files (such as `@/components/ui/textarea`) to the matching workspace registry package (such as `@repo/seed/ui/textarea`) while bundling the docs app.
-- `apps/website/src/types/registry-preview-aliases.d.ts` — registry-neutral type declarations for consumer-facing component aliases referenced by registry source files. These declarations are type-checking shims only; runtime resolution is handled by the preview import transform.
+- `apps/website/loaders/registry-preview-imports.cjs` — preview-only transform that rewrites consumer-facing imports from registry source files (`@/components/ui/<x>` and `@/lib/<x>`) to the matching workspace registry package (`@repo/<registry>/ui/<x>`, `@repo/<registry>/lib/<x>`) while bundling the docs app. Registry packages must export `./ui/*` and `./lib/*`.
+- `apps/website/tsconfig.json` — maps `@/components/ui/*` to `packages/registries/seed/src/components/ui/*` and falls back from `apps/website/src/lib/*` to `packages/registries/seed/src/lib/*`, so the website type check resolves the consumer-facing aliases inside registry sources. Only seed uses cross-component aliases today; if another registry starts importing `@/components/ui/*` or `@/lib/<hook>` from its own files, this single mapping can no longer type both — revisit it then (for example with per-registry declaration builds).
 - `apps/website/next.config.mjs` — every registry must be in `transpilePackages`; its Turbopack and webpack rules apply the preview-only registry import transform.
 
-Registry component source files are also the consumer-facing shadcn snippets. Keep imports such as `@/components/ui/textarea` in that source. Do not add registry implementations under `apps/website/src/components/ui/` to make previews compile: that would make previews from different registries resolve to the same docs-site component. When a registry source file introduces a new `@/components/ui/*` import, add a registry-neutral declaration to `apps/website/src/types/registry-preview-aliases.d.ts` if the website type check needs one.
+Registry component source files are also the consumer-facing shadcn snippets. Keep imports such as `@/components/ui/icon` and `@/lib/utils` in that source. The docs site's own UI lives in `apps/website/src/components/docs-ui/` (import it as `@/components/docs-ui/*`); `@/components/ui/*` is reserved for registry snippets. Never add components under `apps/website/src/components/ui/`.
 
 ### MDX Authoring API
 

@@ -7,10 +7,8 @@
     "---Overview---",
     "index",
     "---Components---",
-    "button",
-    "input",
-    "textarea",
-    "input-group",
+    "action-button",
+    "text-field",
     "select"
   ]
 }

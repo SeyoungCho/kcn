@@ -10,9 +10,9 @@
       "types": "./src/components/ui/*.tsx",
       "default": "./src/components/ui/*.tsx"
     },
-    "./lib/utils": {
-      "types": "./src/lib/utils.ts",
-      "default": "./src/lib/utils.ts"
+    "./lib/*": {
+      "types": "./src/lib/*.ts",
+      "default": "./src/lib/*.ts"
     },
     "./mdx": {
       "types": "./src/mdx.ts",
@@ -32,19 +32,21 @@
   },
   "devDependencies": {
     "@base-ui/react": "catalog:",
+    "@base-ui/utils": "catalog:",
+    "@karrotmarket/react-monochrome-icon": "catalog:",
+    "@ncdai/react-wheel-picker": "catalog:",
     "@repo/typescript-config": "workspace:*",
     "@tailwindcss/postcss": "catalog:",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "class-variance-authority": "catalog:",
-    "clsx": "catalog:",
+    "cn": "catalog:",
     "postcss": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-classnames": "catalog:",
     "prettier-plugin-tailwindcss": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "tailwind-merge": "^3.5.0",
     "tailwindcss": "catalog:",
     "tw-animate-css": "catalog:",
     "typescript": "catalog:"

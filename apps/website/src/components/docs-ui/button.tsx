@@ -5,7 +5,7 @@ import { useRender } from "@base-ui/react/use-render";
 import { cva, type VariantProps } from "class-variance-authority";
 import type * as React from "react";
 import { cn } from "@/lib/utils";
-import { Spinner } from "@/components/ui/spinner";
+import { Spinner } from "@/components/docs-ui/spinner";
 
 export const buttonVariants = cva(
   `relative inline-flex shrink-0 cursor-pointer items-center justify-center

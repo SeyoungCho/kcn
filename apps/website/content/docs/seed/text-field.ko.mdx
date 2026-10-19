@@ -1,0 +1,45 @@
+---
+title: Text Field
+description: 이름표 · 도움말 · 오류 메시지 · 앞뒤 붙임 · 글자 수를 갖춘 입력 칸과 여러 줄 입력 칸입니다.
+---
+
+<Preview registry="seed" demo="text-field/text-field-default" height={240} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/text-field
+```
+
+## 사용법
+
+`TextField` 는 자식으로 받은 `TextFieldInput` 또는 `TextFieldTextarea` 둘레에 이름표 · 도움말 · 오류 메시지 · 글자 수를 그립니다. 배치를 직접 짜야 하면 `TextFieldRoot` 와 `Field` 부품을 조합하세요.
+
+## 예제
+
+### 배리언트와 크기
+
+<Preview registry="seed" demo="text-field/text-field-variants" height={360} />
+
+### 상태
+
+`errorMessage` 는 `invalid` 일 때만 보입니다.
+
+<Preview registry="seed" demo="text-field/text-field-states" height={420} />
+
+### 앞뒤 붙임
+
+<Preview registry="seed" demo="text-field/text-field-affixes" height={260} />
+
+### 글자 수가 있는 여러 줄 입력
+
+`maxGraphemeCount` 는 사람이 보는 글자 단위(이모지 · 조합된 한글은 한 글자)로 셉니다. 값을 자르지는 않습니다 — 상한을 지키려면 `onValueChange` 의 `slicedValue` 를 쓰세요.
+
+<Preview registry="seed" demo="text-field/text-field-textarea" height={280} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/text-field.ts"
+  name="MDXTextFieldPropsKO"
+/>

@@ -56,12 +56,12 @@ src/app/
 | `src/app/api/preview-code/route.ts`                      | Code tab source: rewrites `@repo/*/ui/*` → `@/components/ui/*` and inlines `usePreviewDictionary` `t.*` refs to literals for the active language |
 | `src/lib/preview.tsx`                                    | Server-side `renderPreview()` helper used by every per-registry `[component]/page.tsx`                                                           |
 | `src/types/preview.ts`                                   | Shared registry list/type guard for preview components and APIs                                                                                  |
-| `src/types/registry-preview-aliases.d.ts`                | Type-checking shims for consumer-facing `@/components/ui/*` imports used inside registry source files                                            |
+| `tsconfig.json` `paths`                                  | Types consumer-facing `@/components/ui/*` and `@/lib/*` imports inside registry sources against seed's source tree                               |
 | `src/utils/preview/index.ts`                             | Shared preview utilities, including MDX children flattening                                                                                      |
 | `src/proxy.ts`                                           | i18n middleware — excludes `/preview` (no `[lang]` segment); language reaches demos via the `?lang=` search param                                |
 | `app/global.css`                                         | Docs-page Tailwind entry; theme tokens for the docs site itself (no registry imports — registries render in iframes)                             |
 | `app/preview/<registry>/preview.css`                     | Per-registry Tailwind entry; imports that registry's `global.css` only                                                                           |
-| `loaders/registry-preview-imports.cjs`                   | Preview-only transform from consumer aliases such as `@/components/ui/*` to the matching `@repo/<registry>/ui/*`                                 |
+| `loaders/registry-preview-imports.cjs`                   | Preview-only transform from `@/components/ui/*` and `@/lib/*` to the matching `@repo/<registry>/ui/*` and `@repo/<registry>/lib/*`               |
 | `next.config.mjs`                                        | Lists transpiled registries and applies the preview-only transform for Turbopack and webpack                                                     |
 
 ## `<Preview>` MDX Component
@@ -110,7 +110,7 @@ The Code tab is generated from the same `<Preview>` input:
 
 When adding a whole new registry, also add its slug to `src/types/preview.ts` so `<Preview>` and `/api/preview-code` accept it.
 
-Registry source files remain consumer-facing shadcn snippets, so imports such as `@/components/ui/textarea` should stay intact. While the docs app bundles previews, `loaders/registry-preview-imports.cjs` rewrites those imports to the matching workspace package (`@repo/seed/ui/textarea`, `@repo/montage/ui/textarea`, and so on). Do not create shared docs-site component implementations under `src/components/ui/` just to satisfy preview resolution. Add a registry-neutral declaration to `src/types/registry-preview-aliases.d.ts` when a new consumer-facing component alias needs a website type-checking shim.
+Registry source files remain consumer-facing shadcn snippets, so imports such as `@/components/ui/icon` and `@/lib/utils` should stay intact. While the docs app bundles previews, `loaders/registry-preview-imports.cjs` rewrites those imports to the matching workspace package (`@repo/seed/ui/icon`, `@repo/seed/lib/utils`, and so on). The docs site's own UI lives in `src/components/docs-ui/`; `src/components/ui/` stays empty so `@/components/ui/*` can resolve to registry sources for type checking (see `tsconfig.json` `paths`).
 
 For step-by-step workflows, see [`add-registry-component-docs`](../../.agents/skills/add-registry-component-docs/SKILL.md) and [`wire-registry-to-fumadocs-docs`](../../.agents/skills/wire-registry-to-fumadocs-docs/SKILL.md).
 

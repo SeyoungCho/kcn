@@ -1,0 +1,46 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from, triggered by a button.
+---
+
+<Preview registry="seed" demo="select/select-default" height={420} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/select
+```
+
+## Usage
+
+`Select` is the bare select. `SelectRoot` wraps it with a label, description, and error message. Values are always arrays (`value={["apple"]}`), for single and `multiple` selection alike. The trigger shows the selected item's `label` automatically.
+
+## Examples
+
+### Sizes
+
+<Preview registry="seed" demo="select/select-sizes" height={360} />
+
+### States
+
+<Preview registry="seed" demo="select/select-states" height={440} />
+
+## API Reference
+
+### Select
+
+<AutoTypeTable path="src/app/preview/seed/types/select.ts" name="MDXSelectProps" />
+
+### SelectTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/select.ts"
+  name="MDXSelectTriggerProps"
+/>
+
+### SelectItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/select.ts"
+  name="MDXSelectItemProps"
+/>

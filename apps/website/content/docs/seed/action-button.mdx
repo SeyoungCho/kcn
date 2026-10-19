@@ -1,0 +1,43 @@
+---
+title: Action Button
+description: Buttons trigger immediate actions.
+---
+
+<Preview registry="seed" component="ActionButton">
+  Button
+</Preview>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/action-button
+```
+
+## Examples
+
+### Variants
+
+<Preview registry="seed" demo="action-button/action-button-variants" height={360} />
+
+### Sizes
+
+<Preview registry="seed" demo="action-button/action-button-sizes" height={200} />
+
+### With Icon
+
+Wrap an icon in `PrefixIcon` (or `SuffixIcon`) so it picks up the size the button sets. For an icon-only button, set `layout="iconOnly"`, wrap the icon in `Icon`, and give the button an `aria-label`.
+
+<Preview registry="seed" demo="action-button/action-button-with-icon" height={200} />
+
+### States
+
+`loading` shows a progress indicator and blocks presses while keeping the button focusable.
+
+<Preview registry="seed" demo="action-button/action-button-states" height={200} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/action-button.ts"
+  name="MDXActionButtonProps"
+/>

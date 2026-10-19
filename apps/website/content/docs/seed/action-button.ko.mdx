@@ -1,0 +1,43 @@
+---
+title: Action Button
+description: Action Button은 즉시 실행되는 액션에 사용합니다.
+---
+
+<Preview registry="seed" component="ActionButton">
+  버튼
+</Preview>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/action-button
+```
+
+## 예제
+
+### 배리언트
+
+<Preview registry="seed" demo="action-button/action-button-variants" height={600} />
+
+### 크기
+
+<Preview registry="seed" demo="action-button/action-button-sizes" height={200} />
+
+### 아이콘 포함
+
+아이콘을 `PrefixIcon`(또는 `SuffixIcon`)으로 감싸면 버튼이 정한 크기를 따릅니다. 아이콘만 있는 버튼은 `layout="iconOnly"` 를 주고 아이콘을 `Icon` 으로 감싼 뒤 `aria-label` 을 달아 주세요.
+
+<Preview registry="seed" demo="action-button/action-button-with-icon" height={200} />
+
+### 상태
+
+`loading` 은 진행 표시를 보여 주고 누르기를 막지만 초점은 남겨 둡니다.
+
+<Preview registry="seed" demo="action-button/action-button-states" height={200} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/action-button.ts"
+  name="MDXActionButtonPropsKO"
+/>

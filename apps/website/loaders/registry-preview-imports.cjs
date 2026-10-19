@@ -14,8 +14,5 @@ module.exports = function registryPreviewImports(source) {
 
   return source
     .replace(/(["'])@\/components\/ui\//g, `$1@repo/${registry}/ui/`)
-    .replace(
-      /(["'])@\/lib\/utils\1/g,
-      `$1@repo/${registry}/lib/utils$1`,
-    );
+    .replace(/(["'])@\/lib\//g, `$1@repo/${registry}/lib/`);
 };

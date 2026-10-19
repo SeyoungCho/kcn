@@ -2,16 +2,16 @@
 
 import { type ReactNode } from "react";
 import { useDictionary } from "./dictionary-provider";
-import { Tabs, TabsList, TabsTab, TabsPanel } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTab, TabsPanel } from "@/components/docs-ui/tabs";
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
 import { Maximize } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/docs-ui/button";
 import {
   Dialog,
   DialogPopup,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from "@/components/docs-ui/dialog";
 import { cn } from "@/lib/utils";
 import { usePreviewIframeBridge } from "@/hooks/preview/use-preview-iframe-bridge";
 import { usePreviewCode } from "@/hooks/preview/use-preview-code";

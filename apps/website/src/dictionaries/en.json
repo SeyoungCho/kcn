@@ -11,8 +11,8 @@
     "code": "Code"
   },
   "demos": {
-    "button": {
-      "iconButtonLabel": "{size} icon button",
+    "actionButton": {
+      "label": "Button",
       "variants": {
         "brandSolid": "Brand solid",
         "neutralSolid": "Neutral solid",
@@ -22,65 +22,66 @@
         "neutralOutline": "Neutral outline",
         "ghost": "Ghost"
       },
-      "states": {
-        "hover": "Hover",
-        "pressed": "Pressed",
-        "loading": "Loading",
-        "disabled": "Disabled",
-        "dataDisabled": "Data disabled",
-        "focusVisible": "Focus visible"
+      "sizes": {
+        "xsmall": "X-small",
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large"
       },
       "withIcon": {
-        "like": "Like",
         "add": "Add",
+        "search": "Search",
         "delete": "Delete"
+      },
+      "iconOnly": "Add item",
+      "states": {
+        "loading": "Loading",
+        "disabled": "Disabled"
       }
     },
-    "input": {
-      "placeholder": "placeholder text"
-    },
-    "inputGroup": {
-      "emailPlaceholder": "Enter your email",
-      "submit": "Submit",
-      "mediumPlaceholder": "placeholder",
-      "largePlaceholder": "placeholder",
-      "invalidPlaceholder": "placeholder",
-      "invalid": "Invalid",
-      "disabledPlaceholder": "placeholder",
-      "disabled": "Disabled",
-      "readOnlyPlaceholder": "placeholder",
-      "readOnly": "Read only",
-      "outlinePlaceholder": "placeholder",
-      "outline": "Outline",
-      "underlinePlaceholder": "placeholder",
-      "underline": "Underline",
-      "titlePlaceholder": "Write a description",
-      "description": "Description",
-      "messagePlaceholder": "Write a message"
+    "textField": {
+      "label": "Email",
+      "placeholder": "name@example.com",
+      "description": "We'll only use it to reply to you.",
+      "errorMessage": "Enter a valid email address.",
+      "variants": {
+        "outline": "Outline",
+        "underline": "Underline"
+      },
+      "sizes": {
+        "large": "Large",
+        "medium": "Medium"
+      },
+      "states": {
+        "invalid": "Invalid",
+        "disabled": "Disabled",
+        "readOnly": "Read only"
+      },
+      "priceLabel": "Price",
+      "priceSuffix": "won",
+      "searchPlaceholder": "Search",
+      "bioLabel": "Bio",
+      "bioPlaceholder": "Tell us about yourself"
     },
     "select": {
-      "fruitsLabel": "Fruits",
+      "label": "Fruit",
+      "placeholder": "Select a fruit",
+      "description": "Pick the one you like most.",
+      "errorMessage": "Select a fruit.",
       "fruits": {
         "apple": "Apple",
         "banana": "Banana",
         "blueberry": "Blueberry",
         "mango": "Mango"
       },
-      "placeholder": "Select a fruit",
-      "disabledPlaceholder": "Disabled select",
-      "invalidPlaceholder": "Invalid select",
-      "largePlaceholder": "Large select",
-      "mediumPlaceholder": "Medium select",
-      "themePlaceholder": "Select theme",
-      "themes": {
-        "system": "System default",
-        "light": "Light",
-        "dark": "Dark"
+      "sizes": {
+        "large": "Large",
+        "medium": "Medium"
       },
-      "fonts": {
-        "monospace": "Monospace",
-        "serif": "Serif",
-        "sans-serif": "Sans-serif"
+      "states": {
+        "invalid": "Invalid",
+        "disabled": "Disabled",
+        "readOnly": "Read only"
       }
     }
   }

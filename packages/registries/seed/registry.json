@@ -9,10 +9,7 @@
       "title": "Seed Style",
       "description": "Shared Seed design tokens, Tailwind theme wiring, and custom variants.",
       "dependencies": [
-        "tw-animate-css",
-        "class-variance-authority",
-        "clsx",
-        "tailwind-merge"
+        "tw-animate-css"
       ],
       "files": [
         {
@@ -29,18 +26,14 @@
       "docs": "Import `@/styles/seed/global.css` from your app's global stylesheet once before using Seed components."
     },
     {
-      "name": "button",
-      "type": "registry:ui",
-      "title": "Button",
-      "description": "Displays a Seed button or link-style action.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["@kcn-seed/seed-style"],
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "Utils",
+      "description": "The cn helper, configured with Seed's token scales so class merging keeps them apart.",
+      "dependencies": [
+        "cn"
+      ],
       "files": [
-        {
-          "path": "src/components/ui/button.tsx",
-          "type": "registry:ui",
-          "target": "@ui/button.tsx"
-        },
         {
           "path": "src/lib/utils.ts",
           "type": "registry:lib",
@@ -49,61 +42,937 @@
       ]
     },
     {
-      "name": "input",
+      "name": "accordion",
       "type": "registry:ui",
-      "title": "Input",
-      "description": "Displays a Seed form input field.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["@kcn-seed/seed-style"],
+      "title": "Accordion",
+      "description": "SEED Design accordion built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
       "files": [
         {
-          "path": "src/components/ui/input.tsx",
+          "path": "src/components/ui/accordion.tsx",
           "type": "registry:ui",
-          "target": "@ui/input.tsx"
+          "target": "@ui/accordion.tsx"
         },
         {
-          "path": "src/lib/utils.ts",
+          "path": "src/lib/use-scale-feedback.ts",
           "type": "registry:lib",
-          "target": "@lib/utils.ts"
+          "target": "@lib/use-scale-feedback.ts"
         }
       ]
     },
     {
-      "name": "textarea",
+      "name": "action-button",
       "type": "registry:ui",
-      "title": "Textarea",
-      "description": "Displays a Seed multiline text input field.",
-      "registryDependencies": ["@kcn-seed/seed-style"],
+      "title": "Action Button",
+      "description": "SEED Design action button built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/loading-indicator",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
       "files": [
         {
-          "path": "src/components/ui/textarea.tsx",
+          "path": "src/components/ui/action-button.tsx",
           "type": "registry:ui",
-          "target": "@ui/textarea.tsx"
+          "target": "@ui/action-button.tsx"
         },
         {
-          "path": "src/lib/utils.ts",
+          "path": "src/lib/use-scale-feedback.ts",
           "type": "registry:lib",
-          "target": "@lib/utils.ts"
+          "target": "@lib/use-scale-feedback.ts"
         }
       ]
     },
     {
-      "name": "input-group",
+      "name": "affix-icon",
       "type": "registry:ui",
-      "title": "Input Group",
-      "description": "Displays an input with inline or block addons.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["@kcn-seed/seed-style", "@kcn-seed/textarea"],
+      "title": "Affix Icon",
+      "description": "SEED Design affix icon built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
       "files": [
         {
-          "path": "src/components/ui/input-group.tsx",
+          "path": "src/components/ui/affix-icon.tsx",
           "type": "registry:ui",
-          "target": "@ui/input-group.tsx"
+          "target": "@ui/affix-icon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "SEED Design alert dialog built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/alert-dialog.tsx"
         },
         {
-          "path": "src/lib/utils.ts",
+          "path": "src/lib/use-retained-while-closed.ts",
           "type": "registry:lib",
-          "target": "@lib/utils.ts"
+          "target": "@lib/use-retained-while-closed.ts"
+        }
+      ]
+    },
+    {
+      "name": "attachment-field",
+      "type": "registry:ui",
+      "title": "Attachment Field",
+      "description": "SEED Design attachment field built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/field",
+        "@kcn-seed/icon",
+        "@kcn-seed/progress-circle",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/attachment-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/attachment-field.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "SEED Design avatar built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "SEED Design badge built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "@ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "bottom-sheet",
+      "type": "registry:ui",
+      "title": "Bottom Sheet",
+      "description": "SEED Design bottom sheet built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/bottom-sheet.tsx",
+          "type": "registry:ui",
+          "target": "@ui/bottom-sheet.tsx"
+        },
+        {
+          "path": "src/lib/use-drawer-swipe-release.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-drawer-swipe-release.ts"
+        },
+        {
+          "path": "src/lib/use-retained-while-closed.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-retained-while-closed.ts"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "callout",
+      "type": "registry:ui",
+      "title": "Callout",
+      "description": "SEED Design callout built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/callout.tsx",
+          "type": "registry:ui",
+          "target": "@ui/callout.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "SEED Design checkbox built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/fieldset",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/checkbox.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "chip-tabs",
+      "type": "registry:ui",
+      "title": "Chip Tabs",
+      "description": "SEED Design chip tabs built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/chip-tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chip-tabs.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "chip",
+      "type": "registry:ui",
+      "title": "Chip",
+      "description": "SEED Design chip built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/chip.tsx",
+          "type": "registry:ui",
+          "target": "@ui/chip.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "SEED Design combobox built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui",
+          "target": "@ui/combobox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "SEED Design command built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "@ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "content-placeholder",
+      "type": "registry:ui",
+      "title": "Content Placeholder",
+      "description": "SEED Design content placeholder built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/content-placeholder.tsx",
+          "type": "registry:ui",
+          "target": "@ui/content-placeholder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "Date Picker",
+      "description": "SEED Design date picker built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils",
+        "@kcn-seed/wheel-picker"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/date-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/date-picker.tsx"
+        },
+        {
+          "path": "src/lib/date-picker.ts",
+          "type": "registry:lib",
+          "target": "@lib/date-picker.ts"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "SEED Design dialog built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/dialog.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        },
+        {
+          "path": "src/lib/use-retained-while-closed.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-retained-while-closed.ts"
+        }
+      ]
+    },
+    {
+      "name": "divider",
+      "type": "registry:ui",
+      "title": "Divider",
+      "description": "SEED Design divider built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/divider.tsx",
+          "type": "registry:ui",
+          "target": "@ui/divider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field-button",
+      "type": "registry:ui",
+      "title": "Field Button",
+      "description": "SEED Design field button built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/field",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/field-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field-button.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "SEED Design field built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "fieldset",
+      "type": "registry:ui",
+      "title": "Fieldset",
+      "description": "SEED Design fieldset built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/fieldset.tsx",
+          "type": "registry:ui",
+          "target": "@ui/fieldset.tsx"
+        }
+      ]
+    },
+    {
+      "name": "floating-toolbar",
+      "type": "registry:ui",
+      "title": "Floating Toolbar",
+      "description": "SEED Design floating toolbar built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/divider",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/floating-toolbar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/floating-toolbar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "help-bubble",
+      "type": "registry:ui",
+      "title": "Help Bubble",
+      "description": "SEED Design help bubble built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/help-bubble.tsx",
+          "type": "registry:ui",
+          "target": "@ui/help-bubble.tsx"
+        }
+      ]
+    },
+    {
+      "name": "icon",
+      "type": "registry:ui",
+      "title": "Icon",
+      "description": "SEED Design icon built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/icon.tsx",
+          "type": "registry:ui",
+          "target": "@ui/icon.tsx"
+        }
+      ]
+    },
+    {
+      "name": "identity-placeholder",
+      "type": "registry:ui",
+      "title": "Identity Placeholder",
+      "description": "SEED Design identity placeholder built on Base UI and Tailwind CSS.",
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/identity-placeholder.tsx",
+          "type": "registry:ui",
+          "target": "@ui/identity-placeholder.tsx"
+        }
+      ]
+    },
+    {
+      "name": "image-frame",
+      "type": "registry:ui",
+      "title": "Image Frame",
+      "description": "SEED Design image frame built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/image-frame.tsx",
+          "type": "registry:ui",
+          "target": "@ui/image-frame.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "layout",
+      "type": "registry:ui",
+      "title": "Layout",
+      "description": "SEED Design layout built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/layout.tsx",
+          "type": "registry:ui",
+          "target": "@ui/layout.tsx"
+        }
+      ]
+    },
+    {
+      "name": "list",
+      "type": "registry:ui",
+      "title": "List",
+      "description": "SEED Design list built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/checkbox",
+        "@kcn-seed/divider",
+        "@kcn-seed/icon",
+        "@kcn-seed/radio-group",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/list.tsx",
+          "type": "registry:ui",
+          "target": "@ui/list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "loading-indicator",
+      "type": "registry:ui",
+      "title": "Loading Indicator",
+      "description": "SEED Design loading indicator built on Base UI and Tailwind CSS.",
+      "registryDependencies": [
+        "@kcn-seed/progress-circle",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/loading-indicator.tsx",
+          "type": "registry:ui",
+          "target": "@ui/loading-indicator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "SEED Design menu built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/menu.tsx"
+        },
+        {
+          "path": "src/lib/open-on-release.ts",
+          "type": "registry:lib",
+          "target": "@lib/open-on-release.ts"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "SEED Design navigation menu built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "@ui/navigation-menu.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "pagination-button",
+      "type": "registry:ui",
+      "title": "Pagination Button",
+      "description": "SEED Design pagination button built on Base UI and Tailwind CSS.",
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pagination-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "SEED Design popover built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@base-ui/utils",
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "@ui/popover.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "progress-circle",
+      "type": "registry:ui",
+      "title": "Progress Circle",
+      "description": "SEED Design progress circle built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/progress-circle.tsx",
+          "type": "registry:ui",
+          "target": "@ui/progress-circle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "SEED Design radio group built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/fieldset",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/radio-group.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "responsive-dialog",
+      "type": "registry:ui",
+      "title": "Responsive Dialog",
+      "description": "SEED Design responsive dialog built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/bottom-sheet",
+        "@kcn-seed/dialog",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/responsive-dialog.tsx",
+          "type": "registry:ui",
+          "target": "@ui/responsive-dialog.tsx"
+        },
+        {
+          "path": "src/lib/use-media-query.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-media-query.ts"
+        }
+      ]
+    },
+    {
+      "name": "result-section",
+      "type": "registry:ui",
+      "title": "Result Section",
+      "description": "SEED Design result section built on Base UI and Tailwind CSS.",
+      "registryDependencies": [
+        "@kcn-seed/action-button",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/result-section.tsx",
+          "type": "registry:ui",
+          "target": "@ui/result-section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "SEED Design segmented control built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/segmented-control.tsx",
+          "type": "registry:ui",
+          "target": "@ui/segmented-control.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
         }
       ]
     },
@@ -111,9 +980,19 @@
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
-      "description": "Displays a Seed select field.",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["@kcn-seed/seed-style"],
+      "description": "SEED Design select built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/field",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
       "files": [
         {
           "path": "src/components/ui/select.tsx",
@@ -121,9 +1000,304 @@
           "target": "@ui/select.tsx"
         },
         {
-          "path": "src/lib/utils.ts",
+          "path": "src/lib/open-on-release.ts",
           "type": "registry:lib",
-          "target": "@lib/utils.ts"
+          "target": "@lib/open-on-release.ts"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "side-navigation",
+      "type": "registry:ui",
+      "title": "Side Navigation",
+      "description": "SEED Design side navigation built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/help-bubble",
+        "@kcn-seed/icon",
+        "@kcn-seed/navigation-menu",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/side-navigation.tsx",
+          "type": "registry:ui",
+          "target": "@ui/side-navigation.tsx"
+        }
+      ]
+    },
+    {
+      "name": "side-panel",
+      "type": "registry:ui",
+      "title": "Side Panel",
+      "description": "SEED Design side panel built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/side-panel.tsx",
+          "type": "registry:ui",
+          "target": "@ui/side-panel.tsx"
+        },
+        {
+          "path": "src/lib/use-drawer-swipe-release.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-drawer-swipe-release.ts"
+        },
+        {
+          "path": "src/lib/use-retained-while-closed.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-retained-while-closed.ts"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "SEED Design skeleton built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "@ui/skeleton.tsx"
+        }
+      ]
+    },
+    {
+      "name": "snackbar",
+      "type": "registry:ui",
+      "title": "Snackbar",
+      "description": "SEED Design snackbar built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/snackbar.tsx",
+          "type": "registry:ui",
+          "target": "@ui/snackbar.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "SEED Design switch built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "@ui/switch.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "table-pagination",
+      "type": "registry:ui",
+      "title": "Table Pagination",
+      "description": "SEED Design table pagination built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/pagination-button",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/select",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/table-pagination.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table-pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "SEED Design table built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/utils"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "@ui/table.tsx"
+        },
+        {
+          "path": "src/lib/use-scroll-edges.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scroll-edges.ts"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "SEED Design tabs built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tabs.tsx"
+        },
+        {
+          "path": "src/lib/use-scale-feedback.ts",
+          "type": "registry:lib",
+          "target": "@lib/use-scale-feedback.ts"
+        }
+      ]
+    },
+    {
+      "name": "tag-group",
+      "type": "registry:ui",
+      "title": "Tag Group",
+      "description": "SEED Design tag group built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tag-group.tsx",
+          "type": "registry:ui",
+          "target": "@ui/tag-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "text-field",
+      "type": "registry:ui",
+      "title": "Text Field",
+      "description": "SEED Design text field built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@karrotmarket/react-monochrome-icon",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/affix-icon",
+        "@kcn-seed/field",
+        "@kcn-seed/icon",
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/text-field.tsx",
+          "type": "registry:ui",
+          "target": "@ui/text-field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "time-picker",
+      "type": "registry:ui",
+      "title": "Time Picker",
+      "description": "SEED Design time picker built on Base UI and Tailwind CSS.",
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils",
+        "@kcn-seed/wheel-picker"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/time-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/time-picker.tsx"
+        }
+      ]
+    },
+    {
+      "name": "wheel-picker",
+      "type": "registry:ui",
+      "title": "Wheel Picker",
+      "description": "SEED Design wheel picker built on Base UI and Tailwind CSS.",
+      "dependencies": [
+        "@ncdai/react-wheel-picker"
+      ],
+      "registryDependencies": [
+        "@kcn-seed/seed-style",
+        "@kcn-seed/utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/wheel-picker.tsx",
+          "type": "registry:ui",
+          "target": "@ui/wheel-picker.tsx"
         }
       ]
     }

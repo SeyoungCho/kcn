@@ -1,82 +1,26 @@
+/*
+ * Tailwind CSS 4 의 입구 — 토큰(theme.css)을 Tailwind 클래스로 잇는다.
+ *
+ * - 부품은 테두리(border-solid) · 여백 · 글꼴 같은 바탕값을 클래스로 직접 적는다 — Tailwind 의 기본 리셋(preflight)을 끈 앱에서도 같은 모양이 나온다.
+ * - 아래 theme 블록의 `reference` 는 Tailwind 가 같은 이름의 변수를 다시 내보내지 않게 한다(값은 theme.css 의 :root 가 이미 갖고 있다).
+ * - 주석에 Tailwind 지시어를 골뱅이(@)와 함께 쓰지 않는다 — 에디터의 Tailwind 확장(IntelliSense)이 주석 속 것도 지시어로 읽어
+ *   그 아래 전체를 문법 오류('{ expected')로 표시한다(빌드와는 상관없다).
+ */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./theme.css";
 
+/* 어두운 모드 — shadcn(Tailwind v4)의 문법 그대로. 문서 뿌리의 .dark(theme.css) 아래에서 dark: 가 걸린다.
+   색은 토큰이 어두운 값으로 바뀌어 따라오므로, dark: 는 토큰만으로 안 되는 곳에만 쓴다. */
 @custom-variant dark (&:is(.dark *));
 
-@custom-variant engaged {
-  @media (hover: hover) and (pointer: fine) {
-    &:is(:hover, [data-hover]) {
-      @slot;
-    }
-  }
+@theme inline reference {
+  /* 색 — Tailwind 기본 색은 쓰지 않는다 */
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
 
-  @media not all and (hover: hover) and (pointer: fine) {
-    &:is(:active, [data-active]) {
-      @slot;
-    }
-  }
-}
-
-@custom-variant invalid {
-  &:is(:invalid, [data-invalid], [aria-invalid]) {
-    @slot;
-  }
-}
-
-@custom-variant has-focused-control {
-  &:has(
-    [data-slot="input-group-control"]:is(:focus, :focus-within, :focus-visible)
-  ) {
-    @slot;
-  }
-}
-
-@custom-variant has-invalid {
-  &:has(:is(:invalid, [data-invalid], [aria-invalid])) {
-    @slot;
-  }
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-layer-basement: var(--bg-layer-basement);
-  --color-layer-default: var(--bg-layer-default);
-  --color-layer-default-pressed: var(--bg-layer-default-pressed);
-  --color-layer-fill: var(--bg-layer-fill);
-  --color-layer-floating: var(--bg-layer-floating);
-  --color-layer-floating-pressed: var(--bg-layer-floating-pressed);
+  /* 시맨틱 색: text-fg-neutral · bg-bg-brand-solid · border-stroke-neutral-weak */
   --color-fg-brand: var(--fg-brand);
   --color-fg-brand-contrast: var(--fg-brand-contrast);
   --color-fg-critical: var(--fg-critical);
@@ -88,6 +32,12 @@
   --color-fg-neutral-inverted: var(--fg-neutral-inverted);
   --color-fg-neutral-muted: var(--fg-neutral-muted);
   --color-fg-neutral-subtle: var(--fg-neutral-subtle);
+  --color-fg-on-brand-solid: var(--fg-on-brand-solid);
+  --color-fg-on-critical-solid: var(--fg-on-critical-solid);
+  --color-fg-on-informative-solid: var(--fg-on-informative-solid);
+  --color-fg-on-neutral-solid: var(--fg-on-neutral-solid);
+  --color-fg-on-positive-solid: var(--fg-on-positive-solid);
+  --color-fg-on-warning-solid: var(--fg-on-warning-solid);
   --color-fg-placeholder: var(--fg-placeholder);
   --color-fg-positive: var(--fg-positive);
   --color-fg-positive-contrast: var(--fg-positive-contrast);
@@ -106,12 +56,20 @@
   --color-bg-informative-solid-pressed: var(--bg-informative-solid-pressed);
   --color-bg-informative-weak: var(--bg-informative-weak);
   --color-bg-informative-weak-pressed: var(--bg-informative-weak-pressed);
+  --color-bg-layer-basement: var(--bg-layer-basement);
+  --color-bg-layer-default: var(--bg-layer-default);
+  --color-bg-layer-default-pressed: var(--bg-layer-default-pressed);
+  --color-bg-layer-floating: var(--bg-layer-floating);
+  --color-bg-layer-floating-pressed: var(--bg-layer-floating-pressed);
   --color-bg-magic-weak: var(--bg-magic-weak);
   --color-bg-neutral-inverted: var(--bg-neutral-inverted);
   --color-bg-neutral-inverted-pressed: var(--bg-neutral-inverted-pressed);
+  --color-bg-neutral-muted: var(--bg-neutral-muted);
   --color-bg-neutral-solid: var(--bg-neutral-solid);
+  --color-bg-neutral-solid-pressed: var(--bg-neutral-solid-pressed);
   --color-bg-neutral-solid-muted: var(--bg-neutral-solid-muted);
   --color-bg-neutral-solid-muted-pressed: var(--bg-neutral-solid-muted-pressed);
+  --color-bg-neutral-subtle: var(--bg-neutral-subtle);
   --color-bg-neutral-weak: var(--bg-neutral-weak);
   --color-bg-neutral-weak-alpha: var(--bg-neutral-weak-alpha);
   --color-bg-neutral-weak-alpha-pressed: var(--bg-neutral-weak-alpha-pressed);
@@ -124,6 +82,10 @@
   --color-bg-positive-weak-pressed: var(--bg-positive-weak-pressed);
   --color-bg-transparent: var(--bg-transparent);
   --color-bg-transparent-pressed: var(--bg-transparent-pressed);
+  --color-bg-transparent-selected: var(--bg-transparent-selected);
+  --color-bg-transparent-selected-pressed: var(
+    --bg-transparent-selected-pressed
+  );
   --color-bg-warning-solid: var(--bg-warning-solid);
   --color-bg-warning-solid-pressed: var(--bg-warning-solid-pressed);
   --color-bg-warning-weak: var(--bg-warning-weak);
@@ -132,6 +94,7 @@
   --color-stroke-brand-weak: var(--stroke-brand-weak);
   --color-stroke-critical-solid: var(--stroke-critical-solid);
   --color-stroke-critical-weak: var(--stroke-critical-weak);
+  --color-stroke-focus-ring: var(--stroke-focus-ring);
   --color-stroke-informative-solid: var(--stroke-informative-solid);
   --color-stroke-informative-weak: var(--stroke-informative-weak);
   --color-stroke-neutral-contrast: var(--stroke-neutral-contrast);
@@ -143,8 +106,8 @@
   --color-stroke-positive-weak: var(--stroke-positive-weak);
   --color-stroke-warning-solid: var(--stroke-warning-solid);
   --color-stroke-warning-weak: var(--stroke-warning-weak);
-  --color-stroke-focus-ring: var(--stroke-focus-ring);
 
+  /* 팔레트: bg-gray-100 · text-carrot-600 · bg-static-black-alpha-500 */
   --color-gray-00: var(--palette-gray-00);
   --color-gray-100: var(--palette-gray-100);
   --color-gray-200: var(--palette-gray-200);
@@ -250,8 +213,163 @@
   --color-banner-warm-gray: var(--banner-warm-gray);
   --color-banner-yellow: var(--banner-yellow);
 
-  --text-xxs: var(--font-size-t1);
-  --text-xxs--line-height: var(--line-height-t1);
+  /* shadcn 이 쓰는 색 이름 */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* 치수: p-x4 · gap-x1_5 · h-x10 · size-x6 (숫자 눈금 p-4 = 16px 도 같은 4px 단위라 그대로 쓴다) */
+  --spacing-x0\.5: var(--dimension-x0_5);
+  --spacing-x1: var(--dimension-x1);
+  --spacing-x1\.5: var(--dimension-x1_5);
+  --spacing-x2: var(--dimension-x2);
+  --spacing-x2\.5: var(--dimension-x2_5);
+  --spacing-x3: var(--dimension-x3);
+  --spacing-x3\.5: var(--dimension-x3_5);
+  --spacing-x4: var(--dimension-x4);
+  --spacing-x4\.5: var(--dimension-x4_5);
+  --spacing-x5: var(--dimension-x5);
+  --spacing-x6: var(--dimension-x6);
+  --spacing-x7: var(--dimension-x7);
+  --spacing-x8: var(--dimension-x8);
+  --spacing-x9: var(--dimension-x9);
+  --spacing-x10: var(--dimension-x10);
+  --spacing-x12: var(--dimension-x12);
+  --spacing-x13: var(--dimension-x13);
+  --spacing-x14: var(--dimension-x14);
+  --spacing-x16: var(--dimension-x16);
+  --spacing-x-between-chips: var(--dimension-spacing-x-between-chips);
+  --spacing-x-global-gutter: var(--dimension-spacing-x-global-gutter);
+  --spacing-y-component-default: var(--dimension-spacing-y-component-default);
+  --spacing-y-nav-to-title: var(--dimension-spacing-y-nav-to-title);
+  --spacing-y-screen-bottom: var(--dimension-spacing-y-screen-bottom);
+  --spacing-y-between-text: var(--dimension-spacing-y-between-text);
+
+  /* 콘텐츠 폭: max-w-page · w-page (크기 클래스만 — 여백 눈금은 위 spacing 사용) */
+  --container-page: var(--dimension-page);
+
+  /* 모서리: rounded-r2 · rounded-full. sm · md · lg … 는 shadcn 부품이 쓰는 이름이다 */
+  --radius-r0\.5: var(--radius-r0_5);
+  --radius-r1: var(--radius-r1);
+  --radius-r1\.5: var(--radius-r1_5);
+  --radius-r2: var(--radius-r2);
+  --radius-r2\.5: var(--radius-r2_5);
+  --radius-r3: var(--radius-r3);
+  --radius-r3\.5: var(--radius-r3_5);
+  --radius-r4: var(--radius-r4);
+  --radius-r5: var(--radius-r5);
+  --radius-r6: var(--radius-r6);
+  --radius-full: var(--radius-full);
+  --radius-xs: var(--radius-r1);
+  --radius-sm: var(--radius-r1_5);
+  --radius-md: var(--radius-r2);
+  --radius-lg: var(--radius-r2_5);
+  --radius-xl: var(--radius-r3);
+  --radius-2xl: var(--radius-r4);
+  --radius-3xl: var(--radius-r5);
+  --radius-4xl: var(--radius-r6);
+
+  /* 글자: text-t4(크기 + 줄 높이) · text-t4-static · leading-t4. xs · sm · base … 는 shadcn 부품이 쓰는 이름이다 */
+  --text-t1: var(--font-size-t1);
+  --text-t1--line-height: var(--line-height-t1);
+  --text-t2: var(--font-size-t2);
+  --text-t2--line-height: var(--line-height-t2);
+  --text-t3: var(--font-size-t3);
+  --text-t3--line-height: var(--line-height-t3);
+  --text-t4: var(--font-size-t4);
+  --text-t4--line-height: var(--line-height-t4);
+  --text-t5: var(--font-size-t5);
+  --text-t5--line-height: var(--line-height-t5);
+  --text-t6: var(--font-size-t6);
+  --text-t6--line-height: var(--line-height-t6);
+  --text-t7: var(--font-size-t7);
+  --text-t7--line-height: var(--line-height-t7);
+  --text-t8: var(--font-size-t8);
+  --text-t8--line-height: var(--line-height-t8);
+  --text-t9: var(--font-size-t9);
+  --text-t9--line-height: var(--line-height-t9);
+  --text-t10: var(--font-size-t10);
+  --text-t10--line-height: var(--line-height-t10);
+  --text-t11: var(--font-size-t11);
+  --text-t11--line-height: var(--line-height-t11);
+  --text-t12: var(--font-size-t12);
+  --text-t12--line-height: var(--line-height-t12);
+  --text-t13: var(--font-size-t13);
+  --text-t13--line-height: var(--line-height-t13);
+  --text-t14: var(--font-size-t14);
+  --text-t14--line-height: var(--line-height-t14);
+  --text-t1-static: var(--font-size-t1-static);
+  --text-t1-static--line-height: var(--line-height-t1-static);
+  --text-t2-static: var(--font-size-t2-static);
+  --text-t2-static--line-height: var(--line-height-t2-static);
+  --text-t3-static: var(--font-size-t3-static);
+  --text-t3-static--line-height: var(--line-height-t3-static);
+  --text-t4-static: var(--font-size-t4-static);
+  --text-t4-static--line-height: var(--line-height-t4-static);
+  --text-t5-static: var(--font-size-t5-static);
+  --text-t5-static--line-height: var(--line-height-t5-static);
+  --text-t6-static: var(--font-size-t6-static);
+  --text-t6-static--line-height: var(--line-height-t6-static);
+  --text-t7-static: var(--font-size-t7-static);
+  --text-t7-static--line-height: var(--line-height-t7-static);
+  --text-t8-static: var(--font-size-t8-static);
+  --text-t8-static--line-height: var(--line-height-t8-static);
+  --text-t9-static: var(--font-size-t9-static);
+  --text-t9-static--line-height: var(--line-height-t9-static);
+  --text-t10-static: var(--font-size-t10-static);
+  --text-t10-static--line-height: var(--line-height-t10-static);
+  --text-t11-static: var(--font-size-t11-static);
+  --text-t11-static--line-height: var(--line-height-t11-static);
+  --text-t12-static: var(--font-size-t12-static);
+  --text-t12-static--line-height: var(--line-height-t12-static);
+  --text-t13-static: var(--font-size-t13-static);
+  --text-t13-static--line-height: var(--line-height-t13-static);
+  --text-t14-static: var(--font-size-t14-static);
+  --text-t14-static--line-height: var(--line-height-t14-static);
+  --leading-t1: var(--line-height-t1);
+  --leading-t2: var(--line-height-t2);
+  --leading-t3: var(--line-height-t3);
+  --leading-t4: var(--line-height-t4);
+  --leading-t5: var(--line-height-t5);
+  --leading-t6: var(--line-height-t6);
+  --leading-t7: var(--line-height-t7);
+  --leading-t8: var(--line-height-t8);
+  --leading-t9: var(--line-height-t9);
+  --leading-t10: var(--line-height-t10);
+  --leading-t11: var(--line-height-t11);
+  --leading-t12: var(--line-height-t12);
+  --leading-t13: var(--line-height-t13);
+  --leading-t14: var(--line-height-t14);
+  --leading-t1-static: var(--line-height-t1-static);
+  --leading-t2-static: var(--line-height-t2-static);
+  --leading-t3-static: var(--line-height-t3-static);
+  --leading-t4-static: var(--line-height-t4-static);
+  --leading-t5-static: var(--line-height-t5-static);
+  --leading-t6-static: var(--line-height-t6-static);
+  --leading-t7-static: var(--line-height-t7-static);
+  --leading-t8-static: var(--line-height-t8-static);
+  --leading-t9-static: var(--line-height-t9-static);
+  --leading-t10-static: var(--line-height-t10-static);
+  --leading-t11-static: var(--line-height-t11-static);
+  --leading-t12-static: var(--line-height-t12-static);
+  --leading-t13-static: var(--line-height-t13-static);
+  --leading-t14-static: var(--line-height-t14-static);
   --text-xs: var(--font-size-t2);
   --text-xs--line-height: var(--line-height-t2);
   --text-sm: var(--font-size-t3);
@@ -270,168 +388,220 @@
   --text-4xl--line-height: var(--line-height-t9);
   --text-5xl: var(--font-size-t10);
   --text-5xl--line-height: var(--line-height-t10);
-  --text-xxs-static: var(--font-size-t1-static);
-  --text-xxs-static--line-height: var(--line-height-t1-static);
-  --text-xs-static: var(--font-size-t2-static);
-  --text-xs-static--line-height: var(--line-height-t2-static);
-  --text-sm-static: var(--font-size-t3-static);
-  --text-sm-static--line-height: var(--line-height-t3-static);
-  --text-base-static: var(--font-size-t4-static);
-  --text-base-static--line-height: var(--line-height-t4-static);
-  --text-lg-static: var(--font-size-t5-static);
-  --text-lg-static--line-height: var(--line-height-t5-static);
-  --text-xl-static: var(--font-size-t6-static);
-  --text-xl-static--line-height: var(--line-height-t6-static);
-  --text-2xl-static: var(--font-size-t7-static);
-  --text-2xl-static--line-height: var(--line-height-t7-static);
-  --text-3xl-static: var(--font-size-t8-static);
-  --text-3xl-static--line-height: var(--line-height-t8-static);
-  --text-4xl-static: var(--font-size-t9-static);
-  --text-4xl-static--line-height: var(--line-height-t9-static);
-  --text-5xl-static: var(--font-size-t10-static);
-  --text-5xl-static--line-height: var(--line-height-t10-static);
-  --leading-xxs: var(--line-height-t1);
-  --leading-xs: var(--line-height-t2);
-  --leading-sm: var(--line-height-t3);
-  --leading-base: var(--line-height-t4);
-  --leading-lg: var(--line-height-t5);
-  --leading-xl: var(--line-height-t6);
-  --leading-2xl: var(--line-height-t7);
-  --leading-3xl: var(--line-height-t8);
-  --leading-4xl: var(--line-height-t9);
-  --leading-5xl: var(--line-height-t10);
-  --leading-xxs-static: var(--line-height-t1-static);
-  --leading-xs-static: var(--line-height-t2-static);
-  --leading-sm-static: var(--line-height-t3-static);
-  --leading-base-static: var(--line-height-t4-static);
-  --leading-lg-static: var(--line-height-t5-static);
-  --leading-xl-static: var(--line-height-t6-static);
-  --leading-2xl-static: var(--line-height-t7-static);
-  --leading-3xl-static: var(--line-height-t8-static);
-  --leading-4xl-static: var(--line-height-t9-static);
-  --leading-5xl-static: var(--line-height-t10-static);
-  --font-weight-normal: 400;
   --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
+  --font-sans: var(--font-family);
+
+  /* 움직임: duration-d3 · ease-easing */
+  --transition-duration-d1: var(--motion-duration-d1);
+  --transition-duration-d2: var(--motion-duration-d2);
+  --transition-duration-d3: var(--motion-duration-d3);
+  --transition-duration-d4: var(--motion-duration-d4);
+  --transition-duration-d5: var(--motion-duration-d5);
+  --transition-duration-d6: var(--motion-duration-d6);
+  --transition-duration-color-transition: var(
+    --motion-duration-color-transition
+  );
+  --transition-duration-pressed-scale: var(--motion-duration-pressed-scale);
   --ease-linear: var(--motion-ease-linear);
   --ease-easing: var(--motion-ease-easing);
   --ease-enter: var(--motion-ease-enter);
   --ease-exit: var(--motion-ease-exit);
   --ease-enter-expressive: var(--motion-ease-enter-expressive);
   --ease-exit-expressive: var(--motion-ease-exit-expressive);
-  --duration-d1: var(--motion-duration-d1);
-  --duration-d2: var(--motion-duration-d2);
-  --duration-d3: var(--motion-duration-d3);
-  --duration-d4: var(--motion-duration-d4);
-  --duration-d5: var(--motion-duration-d5);
-  --duration-d6: var(--motion-duration-d6);
-  --duration-color-transition: var(--motion-duration-color-transition);
+  --ease-pressed-scale: var(--motion-ease-pressed-scale);
   --default-transition-duration: var(--motion-duration-d3);
   --default-transition-timing-function: var(--motion-ease-easing);
 
-  --font-sans: var(--font-family-sans);
-  --font-mono: var(--font-family-mono);
-  --font-serif: var(--font-family-serif);
-
-  --radius-xxs: var(--radius-r0_5);
-  --radius-xs: var(--radius-r1);
-  --radius-sm: var(--radius-r1_5);
-  --radius-md: var(--radius-r2);
-  --radius-lg: var(--radius-r2_5);
-  --radius-xl: var(--radius-r3);
-  --radius-2xl: var(--radius-r3_5);
-  --radius-3xl: var(--radius-r4);
-  --radius-4xl: var(--radius-r5);
-  --radius-5xl: var(--radius-r6);
-  --radius-full: var(--radius-r-full);
-
-  --spacing-xxs: var(--dimension-x0_5);
-  --spacing-xs: var(--dimension-x1);
-  --spacing-sm: var(--dimension-x1_5);
-  --spacing-md: var(--dimension-x2);
-  --spacing-lg: var(--dimension-x2_5);
-  --spacing-xl: var(--dimension-x3);
-  --spacing-2xl: var(--dimension-x3_5);
-  --spacing-3xl: var(--dimension-x4);
-  --spacing-4xl: var(--dimension-x4_5);
-  --spacing-5xl: var(--dimension-x5);
-  --spacing-6xl: var(--dimension-x6);
-  --spacing-7xl: var(--dimension-x7);
-  --spacing-8xl: var(--dimension-x8);
-  --spacing-9xl: var(--dimension-x9);
-  --spacing-10xl: var(--dimension-x10);
-  --spacing-12xl: var(--dimension-x12);
-  --spacing-13xl: var(--dimension-x13);
-  --spacing-14xl: var(--dimension-x14);
-  --spacing-16xl: var(--dimension-x16);
-  --spacing-between-chips: var(--dimension-spacing-x-between-chips);
-  --spacing-global-gutter: var(--dimension-spacing-x-global-gutter);
-  --spacing-component-default: var(--dimension-spacing-y-component-default);
-  --spacing-nav-to-title: var(--dimension-spacing-y-nav-to-title);
-  --spacing-screen-bottom: var(--dimension-spacing-y-screen-bottom);
-  --spacing-between-text: var(--dimension-spacing-y-between-text);
-
+  /* 그림자: shadow-s1 */
   --shadow-s1: var(--elevation-shadow-s1);
   --shadow-s2: var(--elevation-shadow-s2);
   --shadow-s3: var(--elevation-shadow-s3);
+  --shadow-xs: var(--elevation-shadow-s1);
+  --shadow-sm: var(--elevation-shadow-s1);
+  --shadow-md: var(--elevation-shadow-s2);
+  --shadow-lg: var(--elevation-shadow-s3);
+
+  /* 화면 폭의 경계 — max-mobile: = 767px 이하, max-tablet: = 1024px 이하, max-dialog: = 640px 이하 */
+  --breakpoint-dialog: 641px;
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1025px;
 }
 
-@utility bg-gradient-fade-layer-floating {
-  background-image: var(--gradient-fade-layer-floating);
-}
+/* ── 바탕 ─────────────────────────────────────────────────────────────────── */
 
-@utility bg-gradient-fade-layer-default {
-  background-image: var(--gradient-fade-layer-default);
-}
-
-@utility bg-gradient-glow-magic {
-  background-image: var(--gradient-glow-magic);
-}
-
-@utility bg-gradient-glow-magic-pressed {
-  background-image: var(--gradient-glow-magic-pressed);
-}
-
-@utility bg-gradient-highlight-magic {
-  background-image: var(--gradient-highlight-magic);
-}
-
-@utility bg-gradient-highlight-magic-pressed {
-  background-image: var(--gradient-highlight-magic-pressed);
-}
-
-@utility bg-gradient-shimmer-magic {
-  background-image: var(--gradient-shimmer-magic);
-}
-
-@utility bg-gradient-shimmer-neutral {
-  background-image: var(--gradient-shimmer-neutral);
-}
-
-@utility text-screen-title {
-  font-size: var(--text-style-screen-title-font-size);
-  line-height: var(--text-style-screen-title-line-height);
-  font-weight: var(--text-style-screen-title-font-weight);
-}
-
-@utility text-article-body {
-  font-size: var(--text-style-article-body-font-size);
-  line-height: var(--text-style-article-body-line-height);
-  font-weight: var(--text-style-article-body-font-weight);
-}
-
-@utility text-article-note {
-  font-size: var(--text-style-article-note-font-size);
-  line-height: var(--text-style-article-note-line-height);
-  font-weight: var(--text-style-article-note-font-weight);
-}
-
+/* 부품의 버튼 · 입력은 브라우저의 기본 글꼴 대신 둘레의 글꼴을 쓴다 — body 에 따로 그려지는 메뉴 · 창에도 닿게 부품(data-slot) 안을 잡는다.
+   리셋(preflight)이 없는 앱에서도 같게 한곳에 둔다. 층(base)이라 부품 · 화면이 정한 값이 늘 이긴다. data-slot 이 없는 요소에는 닿지 않는다. */
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  :where([data-slot]) :where(button, input, select, textarea),
+  :where(button, input, select, textarea):where([data-slot]) {
+    font-family: inherit;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  /* 스크롤 막대 — 앱 전체(body 로 뜨는 창 · 목록 포함)를 사이드 메뉴의 막대처럼: 얇게, 막대는 옅은 회색, 바탕은 투명.
+     우선순위 0(:where) + 층(base)이라 부품 · 화면이 클래스로 정한 값(scrollbar-none · scrollbar-auto …)이 늘 이긴다.
+     크롬은 표준 속성(scrollbar-width · scrollbar-color)이 auto 가 아니면 ::-webkit-scrollbar 모양을 무시한다 — 웹킷 막대로 따로 그리려는 상자는
+     두 속성을 auto 로 되돌린다(표 틀이 세로 막대만 숨기는 것처럼). 막대 자리를 늘 비워 두는 일(scrollbar-gutter)은 스크롤하는 상자가 저마다 한다. */
+  :where(*) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-neutral-weak-alpha) transparent;
+  }
+}
+
+/* ── 상태 ─────────────────────────────────────────────────────────────────── */
+
+/* 누르는 중 — SEED 는 :active 와 [data-active] 를 같이 본다 */
+@custom-variant pressed (&:is(:active, [data-active]));
+
+/* 마우스를 올렸을 때 — 터치 기기에서는 걸리지 않게 */
+@custom-variant hovered {
+  @media (hover: hover) and (pointer: fine) {
+    &:is(:hover, [data-hover]) {
+      @slot;
+    }
+  }
+}
+
+/* 손을 댔을 때 — 마우스가 있는 기기에서는 올렸을 때, 터치 기기에서는 누르는 중. SEED 의 버튼 · 줄이 바탕색을 바꾸는 조건이다 */
+@custom-variant engaged {
+  @media (hover: hover) and (pointer: fine) {
+    &:is(:hover, [data-hover]) {
+      @slot;
+    }
+  }
+
+  @media not all and (hover: hover) and (pointer: fine) {
+    &:is(:active, [data-active]) {
+      @slot;
+    }
+  }
+}
+
+/* 키보드로 초점이 왔을 때 */
+@custom-variant focused (&:is(:focus-visible, [data-focus-visible]));
+
+@custom-variant invalid (&:is(:invalid, [data-invalid], [aria-invalid="true"]));
+
+/* shadcn 부품이 쓰는 상태 이름 — Base UI 의 속성(data-open · data-checked …)에 맞춘다 */
+@custom-variant data-open (&:where([data-state="open"], [data-open]:not([data-open="false"])));
+@custom-variant data-closed (&:where([data-state="closed"], [data-closed]:not([data-closed="false"])));
+@custom-variant data-checked (&:where([data-state="checked"], [data-checked]:not([data-checked="false"])));
+@custom-variant data-unchecked (&:where([data-state="unchecked"], [data-unchecked]:not([data-unchecked="false"])));
+@custom-variant data-selected (&:where([data-selected]:not([data-selected="false"])));
+@custom-variant data-disabled (&:where(:disabled, [data-disabled]:not([data-disabled="false"])));
+@custom-variant data-loading (&:where([data-loading]:not([data-loading="false"])));
+
+/* ── 움직임(@keyframes) ───────────────────────────────────────────────────────
+   SEED 의 것을 이름까지 그대로 옮겼다 — 갤러리가 animation-name 을 원본과 견준다. 부품에서는 animate-[rotate_1.2s_…] 처럼 쓴다. */
+@keyframes seed-enter {
+  from {
+    opacity: var(--seed-enter-opacity, 1);
+    transform: translate3d(
+        var(--seed-enter-translate-x, 0),
+        var(--seed-enter-translate-y, 0),
+        0
+      )
+      scale3d(
+        var(--seed-enter-scale, 1),
+        var(--seed-enter-scale, 1),
+        var(--seed-enter-scale, 1)
+      )
+      rotate(var(--seed-enter-rotate, 0));
+  }
+}
+
+@keyframes seed-exit {
+  to {
+    opacity: var(--seed-exit-opacity, 1);
+    transform: translate3d(
+        var(--seed-exit-translate-x, 0),
+        var(--seed-exit-translate-y, 0),
+        0
+      )
+      scale3d(
+        var(--seed-exit-scale, 1),
+        var(--seed-exit-scale, 1),
+        var(--seed-exit-scale, 1)
+      )
+      rotate(var(--seed-exit-rotate, 0));
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide-x {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes progress-circle-head {
+  0% {
+    stroke-dasharray: 0 1000%;
+  }
+
+  75% {
+    stroke-dasharray: var(--circumference), 1000%;
+  }
+
+  100% {
+    stroke-dasharray: var(--circumference), 1000%;
+  }
+}
+
+@keyframes progress-circle-tail {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  33.33% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: calc(var(--circumference) * -1);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes drawer-slide-from-bottom {
+  from {
+    transform: translate3d(0, var(--initial-transform, 100%), 0);
+  }
+
+  to {
+    transform: translate3d(0, var(--snap-point-height, 0), 0);
+  }
+}
+
+@keyframes drawer-slide-to-bottom {
+  to {
+    transform: translate3d(0, var(--initial-transform, 100%), 0);
   }
 }
