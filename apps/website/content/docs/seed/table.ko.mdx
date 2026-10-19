@@ -1,0 +1,47 @@
+---
+title: Table
+description: 둥근 테두리 틀 안에서 밀리는 데이터 표로, 머리글이 위에 붙어 있고 열을 고정할 수 있습니다.
+---
+
+<Preview registry="seed" demo="table/table-default" height={360} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/table
+```
+
+## 사용법
+
+짜임은 shadcn 의 표와 같습니다: `Table` · `TableHeader` · `TableBody` · `TableFooter` · `TableRow` · `TableHead` · `TableCell` · `TableCaption`. `Table` 은 `<table>` 을 스크롤 틀로 감쌉니다 — 높이는 감싸지 말고 `containerClassName` 으로 주세요. 밀면 머리글이 위에 붙어 있고, 가려진 내용이 있는 가장자리에 옅은 그림자가 나타납니다. `TableCaption` 은 화면에는 보이지 않고 화면 낭독기만 읽습니다.
+
+## 예제
+
+### 열 고정과 누를 수 있는 줄
+
+한 열의 `TableHead` 와 모든 `TableCell` 에 `pin` 을 주면 옆으로 밀어도 그 열이 보이고, 경계 칸에 `pinEdge` 를 주면 그곳에 그림자를 그립니다. 같은 쪽에 여러 열을 고정하면 `pinOffset` 을 씁니다. `clickable` 을 주면 줄에 손가락 모양과 마우스를 올렸을 때의 바탕이 생깁니다.
+
+<Preview registry="seed" demo="table/table-pinned-columns" height={360} />
+
+## API 레퍼런스
+
+### Table
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table.ts"
+  name="MDXTablePropsKO"
+/>
+
+### TableRow
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table.ts"
+  name="MDXTableRowPropsKO"
+/>
+
+### TableHead / TableCell
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table.ts"
+  name="MDXTableCellPropsKO"
+/>

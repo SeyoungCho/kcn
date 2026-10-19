@@ -1,0 +1,58 @@
+---
+title: Radio Group
+description: Lets the user pick exactly one option from a set.
+---
+
+<Preview registry="seed" demo="radio-group/radio-group-default" height={280} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/radio-group
+```
+
+## Usage
+
+`RadioGroup` holds the value and renders the label, description, and error message. Put one `RadioGroupItem` per option inside it; `tone` and `size` are set per item.
+
+## Examples
+
+### Horizontal
+
+`className` goes on the element that holds the options, so `flex-row` lays them out in a row.
+
+<Preview
+  registry="seed"
+  demo="radio-group/radio-group-horizontal"
+  height={160}
+/>
+
+### Tones and Sizes
+
+<Preview
+  registry="seed"
+  demo="radio-group/radio-group-tones-sizes"
+  height={200}
+/>
+
+### States
+
+`errorMessage` shows only while `invalid` is set. `disabled` works on the whole group or on a single item.
+
+<Preview registry="seed" demo="radio-group/radio-group-states" height={460} />
+
+## API Reference
+
+### RadioGroup
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/radio-group.ts"
+  name="MDXRadioGroupProps"
+/>
+
+### RadioGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/radio-group.ts"
+  name="MDXRadioGroupItemProps"
+/>

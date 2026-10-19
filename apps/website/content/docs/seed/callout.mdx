@@ -1,0 +1,57 @@
+---
+title: Callout
+description: Highlights information or a caution the user should notice on the screen.
+---
+
+<Preview registry="seed" demo="callout/callout-default" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/callout
+```
+
+## Usage
+
+The file exports three components: `Callout` (static), `ActionableCallout` (the whole box is a button and ends with a chevron), and `DismissibleCallout` (ends with a close button). `title`, `description`, and the optional link run together on one line.
+
+## Examples
+
+### Tones
+
+<Preview registry="seed" demo="callout/callout-tones" height={480} />
+
+### Actionable
+
+<Preview registry="seed" demo="callout/callout-actionable" height={160} />
+
+### Dismissible
+
+`DismissibleCallout` hides itself when closed. Pass `open` to control it yourself.
+
+<Preview registry="seed" demo="callout/callout-dismissible" height={160} />
+
+## API Reference
+
+### Callout
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/callout.ts"
+  name="MDXCalloutProps"
+/>
+
+### ActionableCallout
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/callout.ts"
+  name="MDXActionableCalloutProps"
+/>
+
+### DismissibleCallout
+
+Accepts every `Callout` prop, plus:
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/callout.ts"
+  name="MDXDismissibleCalloutProps"
+/>

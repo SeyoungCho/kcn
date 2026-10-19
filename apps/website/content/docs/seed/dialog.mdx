@@ -1,0 +1,46 @@
+---
+title: Dialog
+description: A window centered over the page for focused tasks like forms and confirmations.
+---
+
+<Preview registry="seed" demo="dialog/dialog-default" height={480} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/dialog
+```
+
+## Usage
+
+`DialogRoot` holds the open state and `DialogTrigger` opens it. `DialogContent` draws the window with an optional `title`, `description`, and close button; put the content in `DialogBody` (it scrolls when long) and the buttons in `DialogFooter`. `DialogAction` is an `ActionButton` that closes the dialog when pressed. Pressing outside doesn't close the dialog unless you set `closeOnInteractOutside`.
+
+## Examples
+
+### Sizes
+
+From 768px up, `medium` is 480px wide and `large` is 800px wide. Narrower screens use 90% of the width.
+
+<Preview registry="seed" demo="dialog/dialog-sizes" height={480} />
+
+### Scrollable Body
+
+When the content is taller than the dialog, only `DialogBody` scrolls — the header and footer stay visible.
+
+<Preview registry="seed" demo="dialog/dialog-scrollable" height={560} />
+
+## API Reference
+
+### DialogRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/dialog.ts"
+  name="MDXDialogProps"
+/>
+
+### DialogContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/dialog.ts"
+  name="MDXDialogContentProps"
+/>

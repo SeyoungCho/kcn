@@ -1,0 +1,54 @@
+---
+title: Command
+description: 입력한 글자로 목록을 거르고 화살표 키와 Enter 로 고르는 명령 팔레트입니다.
+---
+
+<Preview registry="seed" demo="command/command-default" height={560} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/command
+```
+
+## 사용법
+
+`Command` 는 목록을 늘 펼쳐 둔 Base UI Autocomplete 입니다. 데이터는 `items`(낱 배열 또는 `{ value, items }` 묶음)로 넘기고, `CommandList` 의 함수 자식으로 그립니다 — 묶음이면 `CommandGroup` 안에 `CommandGroupLabel` 과 `CommandCollection` 을 놓습니다. 맞는 항목이 없으면 `CommandEmpty` 가 보입니다. 강조는 늘 한 항목에 있고, Enter 를 치면 그 항목의 `onClick` 이 불립니다.
+
+## 예제
+
+### 창
+
+`CommandDialog` 는 팔레트를 화면 위쪽의 모달 창에 띄웁니다. 바깥을 누르거나 Esc 로 닫힙니다. 이 예제는 ⌘K / Ctrl+K 로도 열고 닫습니다.
+
+<Preview registry="seed" demo="command/command-dialog" height={560} />
+
+## API 레퍼런스
+
+### Command
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandPropsKO"
+/>
+
+### CommandInput
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandInputPropsKO"
+/>
+
+### CommandItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandItemPropsKO"
+/>
+
+### CommandDialog
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandDialogPropsKO"
+/>

@@ -1,0 +1,35 @@
+---
+title: Layout
+description: The page frame that fills the screen height and centers the content at a width set by its density.
+---
+
+<Preview registry="seed" demo="layout/layout-default" height={400} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/layout
+```
+
+## Usage
+
+`Layout` fills the screen height (`h-screen`) and scrolls. `LayoutContent` centers the page body and limits its width according to the `density` of the surrounding `Layout`. The limits apply from 768px wide screens, so narrow previews show the content at full width. Both accept `render` to change the rendered element (for example `render={<main />}`).
+
+## Examples
+
+### With Side Navigation
+
+Put a Side Navigation and its inset inside `Layout` to build an app shell.
+
+<Preview
+  registry="seed"
+  demo="layout/layout-with-side-navigation"
+  height={520}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/layout-props.ts"
+  name="MDXLayoutProps"
+/>

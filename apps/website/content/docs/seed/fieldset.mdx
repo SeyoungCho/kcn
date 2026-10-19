@@ -1,0 +1,42 @@
+---
+title: Fieldset
+description: The building blocks for grouping several controls under one label, with helper text or an error message.
+---
+
+<Preview registry="seed" demo="fieldset/fieldset-default" height={300} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/fieldset
+```
+
+## Usage
+
+`Fieldset` is the frame that `CheckboxGroup` and `RadioGroup` are built from, styled like `Field`. Use it to group other controls, such as switches. Put `FieldsetHeader` (with `FieldsetLabel`, `FieldsetRequiredIndicator`, `FieldsetIndicatorText`), your controls, and `FieldsetFooter` (with `FieldsetDescription` or `FieldsetErrorMessage`) inside it.
+
+`Fieldset` is a plain `div` and does not wire up accessibility for you: give it `role="group"` and point `aria-labelledby` and `aria-describedby` at the label and messages.
+
+## Examples
+
+### Required and Error
+
+<Preview registry="seed" demo="fieldset/fieldset-states" height={240} />
+
+## API Reference
+
+### Group Props
+
+`CheckboxGroup` and `RadioGroup` take these props and render them with `FieldsetHeading` and `FieldsetMessages`.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/fieldset.ts"
+  name="MDXFieldsetProps"
+/>
+
+### FieldsetLabel
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/fieldset.ts"
+  name="MDXFieldsetLabelProps"
+/>

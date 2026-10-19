@@ -1,0 +1,50 @@
+---
+title: Field Button
+description: A button styled like an input that opens a picker, dialog, or sheet and shows the chosen value.
+---
+
+<Preview
+  registry="seed"
+  demo="field-button/field-button-default"
+  height={240}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/field-button
+```
+
+## Usage
+
+`FieldButton` renders the label, description, and error message around the field; `FieldButtonControl` is the field alone, for use without a label or inside your own `Field`. Put `FieldButtonValue` (the chosen value) or `FieldButtonPlaceholder` inside as children. Both are visual only, so pass an `aria-label` that names the field and its value through `buttonProps`, together with the `onClick` that opens your picker.
+
+Pressing the label focuses the button without opening anything. `values` are submitted with a form as hidden inputs.
+
+## Examples
+
+### Sizes
+
+<Preview registry="seed" demo="field-button/field-button-sizes" height={220} />
+
+### States
+
+`errorMessage` shows only while `invalid` is set. `readOnly` can't be pressed but still submits its values; `disabled` submits nothing.
+
+<Preview registry="seed" demo="field-button/field-button-states" height={460} />
+
+## API Reference
+
+### FieldButton
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field-button.ts"
+  name="MDXFieldButtonProps"
+/>
+
+### FieldButtonControl
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field-button.ts"
+  name="MDXFieldButtonControlProps"
+/>

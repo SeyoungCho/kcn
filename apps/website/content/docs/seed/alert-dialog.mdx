@@ -1,0 +1,46 @@
+---
+title: Alert Dialog
+description: A dialog that interrupts the user to confirm an important action and closes only when they answer.
+---
+
+<Preview
+  registry="seed"
+  demo="alert-dialog/alert-dialog-default"
+  height={400}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/alert-dialog
+```
+
+## Usage
+
+Compose `AlertDialogContent` from `AlertDialogHeader` (with `AlertDialogTitle` and `AlertDialogDescription`) and `AlertDialogFooter`. `AlertDialogAction` is an `ActionButton` that closes the dialog when pressed. Pressing outside never closes an alert dialog; focus starts on the dialog itself, so pressing Enter right after it opens doesn't trigger an action.
+
+## Examples
+
+### Single Action
+
+<Preview
+  registry="seed"
+  demo="alert-dialog/alert-dialog-single-action"
+  height={360}
+/>
+
+## API Reference
+
+### AlertDialogRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/alert-dialog.ts"
+  name="MDXAlertDialogProps"
+/>
+
+### AlertDialogContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/alert-dialog.ts"
+  name="MDXAlertDialogContentProps"
+/>

@@ -1,0 +1,45 @@
+---
+title: Time Picker
+description: A 12-hour time picker with AM/PM, hour, and minute wheels.
+---
+
+<Preview registry="seed" demo="time-picker/time-picker-default" height={340} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/time-picker
+```
+
+## Usage
+
+The wheels show a 12-hour clock, but the value is always 24-hour `{ hour, minute }` with no separate AM/PM field. Turning the hour past 11 flips AM and PM.
+
+## Examples
+
+### Minute Step
+
+`minuteStep` sets the minute interval (1, 5, 10, 15, or 30). Values off the interval snap to the nearest step.
+
+<Preview
+  registry="seed"
+  demo="time-picker/time-picker-minute-step"
+  height={300}
+/>
+
+### Locale
+
+`locale` sets the AM/PM labels, the number format, and the column order.
+
+<Preview registry="seed" demo="time-picker/time-picker-locale" height={340} />
+
+### Disabled
+
+<Preview registry="seed" demo="time-picker/time-picker-disabled" height={300} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/time-picker.ts"
+  name="MDXTimePickerProps"
+/>

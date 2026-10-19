@@ -700,7 +700,11 @@ function SideNavigationGroup({ ref, label, items }: SideNavigationGroupProps) {
           );
         }
         return flyout ? (
-          <FlyoutItem key={key} item={item} value={`${groupId}:${key}`} />
+          <FlyoutItem
+            key={key}
+            item={item}
+            value={`${groupId}:${String(key)}`}
+          />
         ) : (
           <CollapsibleItem key={key} item={item} />
         );

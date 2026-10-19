@@ -1,0 +1,37 @@
+---
+title: Divider
+description: A thin line that separates content horizontally or vertically.
+---
+
+<Preview registry="seed" demo="divider/divider-default" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/divider
+```
+
+## Usage
+
+The default `<hr>` is announced as a separator. If the line is purely decorative, render it with `as="div"`; to announce a non-`hr` element, add `role="separator"`.
+
+## Examples
+
+### Vertical
+
+A vertical divider takes its height from the element — give it a height or put it in a stretched flex row.
+
+<Preview registry="seed" demo="divider/divider-vertical" height={160} />
+
+### Inset, Color, and Thickness
+
+`inset` leaves 16px at both ends. `color` takes a token name such as `"palette.gray200"` or any CSS color.
+
+<Preview registry="seed" demo="divider/divider-styles" height={260} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/divider.ts"
+  name="MDXDividerProps"
+/>

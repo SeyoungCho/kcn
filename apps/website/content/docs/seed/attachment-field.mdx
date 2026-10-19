@@ -1,0 +1,101 @@
+---
+title: Attachment Field
+description: A labeled field that collects files, shows each one as an item, and tracks its upload status.
+---
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-default"
+  height={260}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/attachment-field
+```
+
+## Usage
+
+`AttachmentField` adds the label, description, and error message, and holds the entries. Put `AttachmentInput` (an 80×80 picker button with items beside it) or `AttachmentDropzone` (a drop area with items below it) inside.
+
+The field never uploads anything. New files arrive in `onFileAccept` with an `updateFileEntryStatus(id, details)` helper — start the upload there and move each entry through `pending`, `uploading` (with an optional `progress` from 0 to 100), `success`, or `error`.
+
+## Examples
+
+### Images
+
+When every type in `accept` is an image, items render as thumbnails and the picker shows a camera icon.
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-images"
+  height={260}
+/>
+
+### Dropzone
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-dropzone"
+  height={360}
+/>
+
+### Upload Status
+
+Uploading items show a progress circle. Pass `onRetry` to show a retry button on failed items.
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-status"
+  height={260}
+/>
+
+### Display Field
+
+Use `AttachmentDisplayField` when your app opens its own picker (such as a native photo picker). `onTriggerClick` receives `addEntries`, which takes entries with a `thumbnailUrl`.
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-display"
+  height={260}
+/>
+
+## API Reference
+
+### AttachmentField
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentFieldProps"
+/>
+
+### AttachmentInput
+
+`AttachmentDropzone` takes the same props.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentInputProps"
+/>
+
+### AttachmentInputItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentInputItemProps"
+/>
+
+### AttachmentDisplayField
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentDisplayFieldProps"
+/>
+
+### AttachmentDisplay
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentDisplayProps"
+/>

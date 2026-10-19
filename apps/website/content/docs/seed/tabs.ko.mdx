@@ -1,0 +1,51 @@
+---
+title: Tabs
+description: 글자 탭 줄과 미끄러지는 밑줄로 관련된 화면을 오갑니다.
+---
+
+<Preview registry="seed" demo="tabs/tabs-default" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/tabs
+```
+
+## 사용법
+
+`TabsRoot` > `TabsList` > `TabsTrigger` 로 짜고, 탭마다 같은 `value` 의 `TabsContent` 를 둡니다. `triggerLayout` · `size` 는 묶음에 주면 줄과 모든 탭에 적용됩니다. 화살표 키로 옮기면 바로 그 탭이 골라집니다.
+
+## 예제
+
+### 탭 배치
+
+`"fill"` 은 폭을 똑같이 나누고, `"hug"` 는 글자만큼만 차지하며 넘치면 옆으로 밉니다.
+
+<Preview registry="seed" demo="tabs/tabs-layouts" height={220} />
+
+### 크기와 비활성
+
+<Preview registry="seed" demo="tabs/tabs-sizes" height={220} />
+
+## API 레퍼런스
+
+### TabsRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tabs.ts"
+  name="MDXTabsPropsKO"
+/>
+
+### TabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tabs.ts"
+  name="MDXTabsTriggerProps"
+/>
+
+### TabsContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tabs.ts"
+  name="MDXTabsContentProps"
+/>

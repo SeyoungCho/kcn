@@ -1,0 +1,72 @@
+---
+title: Navigation Menu
+description: Opens a submenu next to a button on hover or press, with only one menu open at a time.
+---
+
+<Preview
+  registry="seed"
+  demo="navigation-menu/navigation-menu-default"
+  height={360}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/navigation-menu
+```
+
+## Usage
+
+`NavigationMenuProvider` tracks which menu is open, so only one is open at a time and moving to a neighbor swaps instantly without waiting for `openDelay`. Each `NavigationMenuRoot` pairs one `NavigationMenuTrigger` with its `NavigationMenuContent` and renders no element of its own. Items are plain buttons (`NavigationMenuItem`) and close the menu when pressed. Pass `render` to `NavigationMenuTrigger` to use your own button.
+
+## Examples
+
+### Groups
+
+Wrap items in `NavigationMenuGroup` with a `NavigationMenuGroupLabel`. Consecutive groups are separated by a divider.
+
+<Preview
+  registry="seed"
+  demo="navigation-menu/navigation-menu-groups"
+  height={480}
+/>
+
+### Columns
+
+Set `columns` on `NavigationMenuContent` and wrap the group's items in `NavigationMenuGroupItems` so long menus fit without scrolling.
+
+<Preview
+  registry="seed"
+  demo="navigation-menu/navigation-menu-columns"
+  height={420}
+/>
+
+## API Reference
+
+### NavigationMenuProvider
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuProps"
+/>
+
+### NavigationMenuRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuRootProps"
+/>
+
+### NavigationMenuContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuContentProps"
+/>
+
+### NavigationMenuItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuItemProps"
+/>

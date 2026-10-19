@@ -1,0 +1,48 @@
+---
+title: Checkbox
+description: Lets the user turn an option on or off, alone or as part of a group.
+---
+
+<Preview registry="seed" demo="checkbox/checkbox-default" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/checkbox
+```
+
+## Examples
+
+### Variants and Tones
+
+<Preview registry="seed" demo="checkbox/checkbox-variants" height={200} />
+
+### Sizes
+
+<Preview registry="seed" demo="checkbox/checkbox-sizes" height={160} />
+
+### States
+
+<Preview registry="seed" demo="checkbox/checkbox-states" height={260} />
+
+### Group
+
+`CheckboxGroup` adds a label, description, and error message around a column of checkboxes. Each checkbox keeps its own value. Use `indeterminate` for a "select all" box when only some items are checked.
+
+<Preview registry="seed" demo="checkbox/checkbox-group" height={320} />
+
+## API Reference
+
+### Checkbox
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/checkbox.ts"
+  name="MDXCheckboxProps"
+/>
+
+### CheckboxGroup
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/checkbox.ts"
+  name="MDXCheckboxGroupProps"
+/>

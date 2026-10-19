@@ -1,0 +1,57 @@
+---
+title: Date Picker
+description: A calendar for picking a single date, a date range, or several dates.
+---
+
+<Preview registry="seed" demo="date-picker/date-picker-default" height={500} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/date-picker
+```
+
+## Usage
+
+Dates are plain `{ year, month, day }` objects (`month` runs from 1 to 12) with no time or time zone. Press the month title to jump to another year and month with a wheel. `DatePicker` shows one month; `TwoMonthDatePicker` shows two side by side.
+
+## Examples
+
+### Range
+
+With `selectionMode="range"`, the value is `{ start, end? }` — `end` is missing while only the start is picked.
+
+<Preview registry="seed" demo="date-picker/date-picker-range" height={460} />
+
+### Multiple
+
+With `selectionMode="multiple"`, the value is an array of dates.
+
+<Preview registry="seed" demo="date-picker/date-picker-multiple" height={460} />
+
+### Two Months
+
+<Preview
+  registry="seed"
+  demo="date-picker/date-picker-two-months"
+  height={460}
+/>
+
+### Constraints
+
+Every function in `constraints` must return `true` for a date to be pickable. `dateOnOrAfter` and `dateOnOrBefore` cover min and max dates; any `(date) => boolean` works for the rest. Unavailable dates are struck through.
+
+<Preview
+  registry="seed"
+  demo="date-picker/date-picker-constraints"
+  height={460}
+/>
+
+## API Reference
+
+`TwoMonthDatePicker` takes the same props.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/date-picker.ts"
+  name="MDXDatePickerProps"
+/>

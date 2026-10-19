@@ -1,0 +1,50 @@
+---
+title: Floating Toolbar
+description: A pill-shaped toolbar that floats at the bottom of the screen with actions for the current selection.
+---
+
+<Preview
+  registry="seed"
+  demo="floating-toolbar/floating-toolbar-default"
+  height={240}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/floating-toolbar
+```
+
+## Usage
+
+`FloatingToolbar` is rendered into `document.body` and centered over the page's `main` element (or the whole viewport when there is none), so tables and scroll containers don't clip it. Fill it with `FloatingToolbarLabel`, `FloatingToolbarSeparator`, and `FloatingToolbarButton`. Passing `onDismiss` adds a close button beside the toolbar and closes it on Escape. When the actions don't fit, the toolbar scrolls sideways — by wheel or by dragging with the mouse. The default `closeLabel` is Korean, so pass your own for other languages.
+
+## Examples
+
+### With Selection
+
+Open the toolbar while something is selected, and clear the selection in `onDismiss`.
+
+<Preview
+  registry="seed"
+  demo="floating-toolbar/floating-toolbar-with-selection"
+  height={280}
+/>
+
+## API Reference
+
+### FloatingToolbar
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/floating-toolbar.ts"
+  name="MDXFloatingToolbarProps"
+/>
+
+### FloatingToolbarButton
+
+An `ActionButton` that defaults to `variant="ghost"` and `size="small"`, and accepts every `ActionButton` prop.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/floating-toolbar.ts"
+  name="MDXFloatingToolbarButtonProps"
+/>

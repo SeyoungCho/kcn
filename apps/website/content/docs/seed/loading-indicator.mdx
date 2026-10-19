@@ -1,0 +1,27 @@
+---
+title: Loading Indicator
+description: Shows a busy state inside a button while keeping the button's width.
+---
+
+<Preview
+  registry="seed"
+  demo="loading-indicator/loading-indicator-default"
+  height={220}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/loading-indicator
+```
+
+## Usage
+
+`LoadingIndicator` is the building block behind `ActionButton`'s `loading` prop. It hides its children without removing them, so the parent keeps its width, and draws a `ProgressCircle` on top. The parent does the positioning and styling: it must be `relative` and center its content (a centered flex), and it sets the circle through `--progress-size`, `--progress-thickness`, `--progress-track-color`, and `--progress-range-color`.
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/loading-indicator.ts"
+  name="MDXLoadingIndicatorProps"
+/>

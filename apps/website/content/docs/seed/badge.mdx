@@ -1,0 +1,39 @@
+---
+title: Badge
+description: A small label that highlights a status or attribute.
+---
+
+<Preview registry="seed" component="Badge">
+  Badge
+</Preview>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/badge
+```
+
+## Examples
+
+### Variants and Tones
+
+Combine a `variant` (`solid`, `weak`, `outline`) with a `tone`.
+
+<Preview registry="seed" demo="badge/badge-variants" height={240} />
+
+### Sizes
+
+<Preview registry="seed" demo="badge/badge-sizes" height={160} />
+
+### With Icon
+
+Pass an icon element to `prefix`; it is sized to match the badge.
+
+<Preview registry="seed" demo="badge/badge-with-icon" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/badge.ts"
+  name="MDXBadgeProps"
+/>

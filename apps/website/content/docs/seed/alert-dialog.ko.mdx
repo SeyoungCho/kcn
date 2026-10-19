@@ -1,0 +1,46 @@
+---
+title: Alert Dialog
+description: 중요한 일을 하기 전에 확인을 받는 창으로, 답을 골라야 닫힙니다.
+---
+
+<Preview
+  registry="seed"
+  demo="alert-dialog/alert-dialog-default"
+  height={400}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/alert-dialog
+```
+
+## 사용법
+
+`AlertDialogContent` 안에 `AlertDialogHeader`(`AlertDialogTitle` · `AlertDialogDescription`)와 `AlertDialogFooter` 를 넣습니다. `AlertDialogAction` 은 누르면 창이 닫히는 `ActionButton` 입니다. 확인 창은 바깥을 눌러도 닫히지 않습니다. 열리면 첫 버튼이 아니라 창 자체에 초점이 가서, 열자마자 Enter 를 눌러도 동작이 실행되지 않습니다.
+
+## 예제
+
+### 버튼 하나
+
+<Preview
+  registry="seed"
+  demo="alert-dialog/alert-dialog-single-action"
+  height={360}
+/>
+
+## API 레퍼런스
+
+### AlertDialogRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/alert-dialog.ts"
+  name="MDXAlertDialogPropsKO"
+/>
+
+### AlertDialogContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/alert-dialog.ts"
+  name="MDXAlertDialogContentPropsKO"
+/>

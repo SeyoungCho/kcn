@@ -1,0 +1,72 @@
+---
+title: Navigation Menu
+description: 버튼에 마우스를 올리거나 누르면 옆에 하위 메뉴가 뜨고, 한 번에 하나만 열립니다.
+---
+
+<Preview
+  registry="seed"
+  demo="navigation-menu/navigation-menu-default"
+  height={360}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/navigation-menu
+```
+
+## 사용법
+
+`NavigationMenuProvider` 가 어느 메뉴가 열렸는지 쥐고 있어, 한 번에 하나만 열리고 옆의 메뉴로 옮겨 가면 `openDelay` 를 기다리지 않고 바로 바뀝니다. `NavigationMenuRoot` 는 `NavigationMenuTrigger` 하나와 그 `NavigationMenuContent` 를 묶을 뿐 요소를 만들지 않습니다. 줄(`NavigationMenuItem`)은 그냥 버튼이고, 누르면 메뉴가 닫힙니다. 직접 만든 버튼을 쓰려면 `NavigationMenuTrigger` 에 `render` 를 주세요.
+
+## 예제
+
+### 묶음
+
+줄을 `NavigationMenuGroup` 으로 감싸고 `NavigationMenuGroupLabel` 로 이름을 붙입니다. 이어지는 묶음 사이에는 선이 그어집니다.
+
+<Preview
+  registry="seed"
+  demo="navigation-menu/navigation-menu-groups"
+  height={480}
+/>
+
+### 여러 단
+
+`NavigationMenuContent` 에 `columns` 를 주고 묶음의 줄을 `NavigationMenuGroupItems` 로 감싸면, 줄이 많아도 스크롤 없이 한눈에 보입니다.
+
+<Preview
+  registry="seed"
+  demo="navigation-menu/navigation-menu-columns"
+  height={420}
+/>
+
+## API 레퍼런스
+
+### NavigationMenuProvider
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuPropsKO"
+/>
+
+### NavigationMenuRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuRootPropsKO"
+/>
+
+### NavigationMenuContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuContentPropsKO"
+/>
+
+### NavigationMenuItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/navigation-menu.ts"
+  name="MDXNavigationMenuItemPropsKO"
+/>

@@ -1,0 +1,37 @@
+---
+title: Identity Placeholder
+description: A silhouette that stands in for a missing profile or business photo.
+---
+
+<Preview
+  registry="seed"
+  demo="identity-placeholder/identity-placeholder-default"
+  height={160}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/identity-placeholder
+```
+
+## Usage
+
+`IdentityPlaceholder` fills its parent, so the parent sets the size and shape. It is usually passed as an `Avatar`'s `fallback`.
+
+## Examples
+
+### As an Avatar Fallback
+
+<Preview
+  registry="seed"
+  demo="identity-placeholder/identity-placeholder-avatar"
+  height={180}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/identity-placeholder.ts"
+  name="MDXIdentityPlaceholderProps"
+/>

@@ -1,0 +1,49 @@
+---
+title: Progress Circle
+description: A circular indicator for indeterminate or determinate progress.
+---
+
+<Preview registry="seed" component="ProgressCircle" />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/progress-circle
+```
+
+## Examples
+
+### Tones
+
+Use `staticWhite` on dark or colored backgrounds.
+
+<Preview
+  registry="seed"
+  demo="progress-circle/progress-circle-tones"
+  height={200}
+/>
+
+### Sizes
+
+<Preview
+  registry="seed"
+  demo="progress-circle/progress-circle-sizes"
+  height={180}
+/>
+
+### Value
+
+Pass `value` (between `minValue` and `maxValue`) to show determinate progress. Without it, the circle spins.
+
+<Preview
+  registry="seed"
+  demo="progress-circle/progress-circle-value"
+  height={200}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/progress-circle.ts"
+  name="MDXProgressCircleProps"
+/>

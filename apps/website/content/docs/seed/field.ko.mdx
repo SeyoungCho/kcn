@@ -1,0 +1,49 @@
+---
+title: Field
+description: 이름표가 있는 입력 칸의 바탕 부품 — 이름표 줄, 칸, 그리고 도움말 · 오류 메시지 · 글자 수입니다.
+---
+
+<Preview registry="seed" demo="field/field-default" height={240} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/field
+```
+
+## 사용법
+
+`Field` 는 `TextField` 와 `FieldButton` 이 쓰는 틀이에요. 배치를 직접 짜야 할 때 바로 써요. 안에 `FieldHeader`(`FieldLabel` · `FieldRequiredIndicator` · `FieldIndicatorText`), `TextFieldRoot` 나 `FieldButtonControl` 같은 칸, `FieldFooter`(`FieldDescription` · `FieldErrorMessage` · `FieldCharacterCount`)를 놓아요.
+
+`Field` 에 준 `required` · `disabled` · `invalid` · `readOnly` 는 모든 부품과 칸에 내려가요. 이름표는 칸과 이어지고, 실제로 그려진 도움말 · 오류 메시지만 `aria-describedby` 에 들어가요.
+
+## 예제
+
+### 상태
+
+`TextField` 와 달리 `Field` 는 오류 메시지를 대신 숨기거나 보여 주지 않아요 — 오류일 때만 `FieldErrorMessage` 를 그려요.
+
+<Preview registry="seed" demo="field/field-states" height={440} />
+
+## API 레퍼런스
+
+### Field
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field.ts"
+  name="MDXFieldPropsKO"
+/>
+
+### FieldLabel
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field.ts"
+  name="MDXFieldLabelPropsKO"
+/>
+
+### FieldCharacterCount
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field.ts"
+  name="MDXFieldCharacterCountPropsKO"
+/>

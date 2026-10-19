@@ -1,0 +1,91 @@
+---
+title: List
+description: 앞 자리 · 제목 · 설명 · 뒤 자리를 가진 줄을 세로로 쌓은 목록입니다.
+---
+
+<Preview registry="seed" demo="list/list-default" height={420} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/list
+```
+
+## 사용법
+
+`List` 는 `ul` 을 그립니다. 줄은 하는 일에 맞춰 고릅니다.
+
+- `ListItem` — 누를 수 없는 줄. `suffix` 에 넣은 버튼만 누를 수 있습니다.
+- `ListButtonItem` — 줄 전체가 버튼(`render={<a href="…" />}` 를 주면 링크).
+- `ListCheckItem` — 줄 전체가 체크박스. 목록을 `render={<fieldset />}` 로 감싸고 `ListCheckmark` 로 상태를 보여 줍니다.
+- `ListRadioItem` — 줄 전체가 라디오. 목록을 `render={<ListRadioGroup … />}` 로 감싸고 `ListRadiomark` 로 상태를 보여 줍니다.
+
+`ListHeader` 는 목록 바로 위에, `ListDivider` 는 줄 사이에 놓습니다. `ListButtonItem` 의 `prefix` · `suffix` 에 따로 누를 것을 넣으면 그 요소에 `position: relative` 를 줘야 줄의 버튼 위로 올라옵니다.
+
+## 예제
+
+### 켜고 끄는 줄
+
+<Preview registry="seed" demo="list/list-check" height={340} />
+
+### 하나만 고르는 줄
+
+<Preview registry="seed" demo="list/list-radio" height={300} />
+
+## API 레퍼런스
+
+### List
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListPropsKO"
+/>
+
+### ListItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListItemPropsKO"
+/>
+
+### ListButtonItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListButtonItemPropsKO"
+/>
+
+### ListCheckItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListCheckItemPropsKO"
+/>
+
+### ListRadioItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListRadioItemPropsKO"
+/>
+
+### ListCheckmark
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListCheckmarkPropsKO"
+/>
+
+### ListRadiomark
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListRadiomarkProps"
+/>
+
+### ListHeader
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListHeaderPropsKO"
+/>

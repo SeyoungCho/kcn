@@ -1,0 +1,57 @@
+---
+title: Callout
+description: 화면 안에서 알아 둘 것이나 조심할 것을 알립니다.
+---
+
+<Preview registry="seed" demo="callout/callout-default" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/callout
+```
+
+## 사용법
+
+`Callout`(그냥 알림 상자), `ActionableCallout`(통째로 누르는 버튼, 끝에 `>` 가 붙음), `DismissibleCallout`(끝에 닫기 버튼이 붙음) 세 가지를 내보냅니다. `title` · `description` · 링크는 한 줄로 이어집니다.
+
+## 예제
+
+### 색조
+
+<Preview registry="seed" demo="callout/callout-tones" height={480} />
+
+### 누르는 콜아웃
+
+<Preview registry="seed" demo="callout/callout-actionable" height={160} />
+
+### 닫을 수 있는 콜아웃
+
+`DismissibleCallout` 은 닫으면 스스로 사라집니다. 직접 다루려면 `open` 을 주세요.
+
+<Preview registry="seed" demo="callout/callout-dismissible" height={160} />
+
+## API 레퍼런스
+
+### Callout
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/callout.ts"
+  name="MDXCalloutPropsKO"
+/>
+
+### ActionableCallout
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/callout.ts"
+  name="MDXActionableCalloutPropsKO"
+/>
+
+### DismissibleCallout
+
+`Callout` 의 props 를 모두 받고, 여기에 더해:
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/callout.ts"
+  name="MDXDismissibleCalloutPropsKO"
+/>

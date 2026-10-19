@@ -1,0 +1,46 @@
+---
+title: Bottom Sheet
+description: 화면 아래에서 올라오고, 끌어내려 닫을 수 있는 시트입니다.
+---
+
+<Preview
+  registry="seed"
+  demo="bottom-sheet/bottom-sheet-default"
+  height={420}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/bottom-sheet
+```
+
+## 사용법
+
+`BottomSheetContent` 는 `title` · `description` · 닫기 버튼을 갖춘 시트를 그립니다. 내용은 `BottomSheetBody` 에, 버튼은 `BottomSheetFooter` 에 넣으세요. 높이의 1/4 넘게(또는 빠르게) 끌어내리면 닫히고, `closeOnInteractOutside` 를 `false` 로 두지 않으면 바깥을 눌러도 닫힙니다. 닫히는 버튼 부품은 따로 없으니, 내 버튼에서 닫으려면 `open` 을 제어하세요.
+
+## 예제
+
+### 손잡이
+
+<Preview
+  registry="seed"
+  demo="bottom-sheet/bottom-sheet-with-handle"
+  height={420}
+/>
+
+## API 레퍼런스
+
+### BottomSheetRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/bottom-sheet.ts"
+  name="MDXBottomSheetPropsKO"
+/>
+
+### BottomSheetContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/bottom-sheet.ts"
+  name="MDXBottomSheetContentPropsKO"
+/>

@@ -1,0 +1,37 @@
+---
+title: Identity Placeholder
+description: 프로필이나 가게 사진이 없을 때 대신 놓는 그림입니다.
+---
+
+<Preview
+  registry="seed"
+  demo="identity-placeholder/identity-placeholder-default"
+  height={160}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/identity-placeholder
+```
+
+## 사용법
+
+`IdentityPlaceholder` 는 부모의 크기를 다 채우므로, 크기와 모양은 부모가 정합니다. 보통 `Avatar` 의 `fallback` 으로 줍니다.
+
+## 예제
+
+### 아바타 대체 그림
+
+<Preview
+  registry="seed"
+  demo="identity-placeholder/identity-placeholder-avatar"
+  height={180}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/identity-placeholder.ts"
+  name="MDXIdentityPlaceholderPropsKO"
+/>

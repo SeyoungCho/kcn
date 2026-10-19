@@ -1,0 +1,64 @@
+---
+title: Side Navigation
+description: A sidebar menu that collapses to icons (56px) and expands to show labels (240px).
+---
+
+<Preview
+  registry="seed"
+  demo="side-navigation/side-navigation-default"
+  height={560}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/side-navigation
+```
+
+## Usage
+
+`SideNavigationProvider` holds the collapsed state; read or change it from anywhere inside (for example a button in the top bar) with `useSideNavigationContext()`. The menu also collapses on its own when the screen narrows past 1280px and expands when it widens again. Inside `SideNavigationRoot`, place `SideNavigationHeader` (with `SideNavigationTrigger` for the collapse button), a scrolling `SideNavigationContent` of `SideNavigationGroup`s, and an optional `SideNavigationFooter`. Put the page next to it in `SideNavigationInset`.
+
+A group item with `items` is a parent: expanded, it opens its submenu inline; collapsed, the submenu opens beside it as a Navigation Menu.
+
+## Examples
+
+### Collapsed
+
+Collapsed, only icons remain. Hovering an item shows its name in a tooltip, and parents open their submenu beside the menu.
+
+<Preview
+  registry="seed"
+  demo="side-navigation/side-navigation-collapsed"
+  height={560}
+/>
+
+## API Reference
+
+### SideNavigationProvider
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/side-navigation.ts"
+  name="MDXSideNavigationProps"
+/>
+
+### SideNavigationRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/side-navigation.ts"
+  name="MDXSideNavigationRootProps"
+/>
+
+### SideNavigationGroup
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/side-navigation.ts"
+  name="MDXSideNavigationGroupProps"
+/>
+
+### SideNavigationItemButton
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/side-navigation.ts"
+  name="MDXSideNavigationItemButtonProps"
+/>

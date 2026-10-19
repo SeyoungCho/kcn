@@ -1,0 +1,101 @@
+---
+title: Attachment Field
+description: 파일을 받아 항목으로 쌓고, 항목마다 올리기 상태를 보여 주는 칸입니다.
+---
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-default"
+  height={260}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/attachment-field
+```
+
+## 사용법
+
+`AttachmentField` 는 이름표 · 도움말 · 오류 메시지를 더하고 항목을 쥡니다. 안에 `AttachmentInput`(80×80 고르는 버튼 옆으로 항목을 늘어놓는 칸) 또는 `AttachmentDropzone`(끌어 놓는 칸 아래로 항목을 늘어놓는 칸)을 놓습니다.
+
+올리기는 부품이 하지 않습니다. 새로 받은 파일은 `onFileAccept` 로 `updateFileEntryStatus(id, details)` 도우미와 함께 옵니다 — 여기서 올리기를 시작하고 항목의 상태를 `pending` · `uploading`(0 ~ 100 의 `progress` 는 골라서) · `success` · `error` 로 넘기세요.
+
+## 예제
+
+### 사진
+
+`accept` 의 종류가 모두 그림이면 항목을 썸네일로 그리고, 고르는 버튼에 카메라 아이콘이 나옵니다.
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-images"
+  height={260}
+/>
+
+### 끌어 놓는 칸
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-dropzone"
+  height={360}
+/>
+
+### 올리기 상태
+
+올리는 중인 항목에는 진행 표시가 나옵니다. `onRetry` 를 주면 실패한 항목에 재시도 버튼이 나옵니다.
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-status"
+  height={260}
+/>
+
+### 보여 주기 칸
+
+앱이 고르는 창(기기의 사진 고르기 등)을 직접 열 때는 `AttachmentDisplayField` 를 씁니다. `onTriggerClick` 이 받는 `addEntries` 로 `thumbnailUrl` 이 있는 항목을 넣습니다.
+
+<Preview
+  registry="seed"
+  demo="attachment-field/attachment-field-display"
+  height={260}
+/>
+
+## API 레퍼런스
+
+### AttachmentField
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentFieldPropsKO"
+/>
+
+### AttachmentInput
+
+`AttachmentDropzone` 도 같은 props 를 받습니다.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentInputPropsKO"
+/>
+
+### AttachmentInputItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentInputItemPropsKO"
+/>
+
+### AttachmentDisplayField
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentDisplayFieldPropsKO"
+/>
+
+### AttachmentDisplay
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/attachment-field.ts"
+  name="MDXAttachmentDisplayPropsKO"
+/>

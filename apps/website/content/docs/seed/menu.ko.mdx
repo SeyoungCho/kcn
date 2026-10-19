@@ -1,0 +1,54 @@
+---
+title: Menu
+description: 트리거 버튼을 누르면 열리는 동작 목록입니다.
+---
+
+<Preview registry="seed" demo="menu/menu-default" height={420} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/menu
+```
+
+## 사용법
+
+자리 잡는 값과 `size` 는 `MenuRoot` 에 줍니다. `MenuContent` 안에서 항목을 `MenuGroup` 으로 묶으면 이어지는 묶음 사이에 구분선이 생기고, `MenuGroupLabel` 로 묶음에 제목을 붙입니다. `MenuItem` 은 `label` · `description` · 아이콘을 받습니다. 지우기처럼 되돌릴 수 없는 일에는 `tone="critical"` 을 쓰세요.
+
+## 예제
+
+### 묶음과 하나 고르기
+
+`MenuRadioGroup` 과 `MenuRadioItem` 으로 하나를 고르게 합니다. 고른 항목에는 체크가 붙고, 바뀐 것을 바로 보도록 메뉴는 닫히지 않습니다.
+
+<Preview registry="seed" demo="menu/menu-radio-group" height={480} />
+
+## API 레퍼런스
+
+### MenuRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuPropsKO"
+/>
+
+### MenuContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuContentPropsKO"
+/>
+
+### MenuItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuItemPropsKO"
+/>
+
+### MenuRadioItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuRadioItemPropsKO"
+/>

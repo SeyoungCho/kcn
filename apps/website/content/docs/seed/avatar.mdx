@@ -1,0 +1,33 @@
+---
+title: Avatar
+description: Shows a person's or store's profile photo in a circle, with a fallback when there is no photo.
+---
+
+<Preview registry="seed" demo="avatar/avatar-default" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/avatar
+```
+
+## Examples
+
+### Sizes
+
+`size` is the diameter in px.
+
+<Preview registry="seed" demo="avatar/avatar-sizes" height={200} />
+
+### Fallback
+
+`fallback` shows while there is no `src`, while the image is loading, and when it fails. Pass an `IdentityPlaceholder` (`identity="person"` or `"business"`) with a `label` for screen readers.
+
+<Preview registry="seed" demo="avatar/avatar-fallback" height={200} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/avatar.ts"
+  name="MDXAvatarProps"
+/>

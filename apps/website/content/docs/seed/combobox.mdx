@@ -1,0 +1,40 @@
+---
+title: Combobox
+description: An input that filters a list of options as the user types, for picking one or several.
+---
+
+<Preview registry="seed" demo="combobox/combobox-default" height={460} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/combobox
+```
+
+## Usage
+
+`Combobox` holds the options (`items`) and the value. Inside it, `ComboboxInputGroup` wraps the `ComboboxInput`, and `ComboboxContent` holds `ComboboxEmpty` and a `ComboboxList` whose child is a function that renders one `ComboboxItem` per filtered option. Pass `itemToStringLabel` when values are not the text you want shown and filtered on. The input has no visible label, so give it an `aria-label`.
+
+## Examples
+
+### Multiple
+
+With `multiple`, put `ComboboxChips` in the input group and render one `ComboboxChip` per value with `ComboboxValue`. Chips are removed with their × button, or with Backspace and Delete.
+
+<Preview registry="seed" demo="combobox/combobox-multiple" height={460} />
+
+## API Reference
+
+### Combobox
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/combobox.ts"
+  name="MDXComboboxProps"
+/>
+
+### ComboboxContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/combobox.ts"
+  name="MDXComboboxContentProps"
+/>

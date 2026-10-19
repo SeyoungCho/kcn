@@ -1,0 +1,40 @@
+---
+title: Popover
+description: A floating panel anchored to a trigger for extra information or quick actions.
+---
+
+<Preview registry="seed" demo="popover/popover-default" height={440} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/popover
+```
+
+## Usage
+
+Positioning props (`placement`, `gutter`, …) go on `PopoverRoot`. `PopoverContent` draws the panel with an optional `title`, `description`, and close button; put content in `PopoverBody` and buttons in `PopoverFooter`. `PopoverAction` is an `ActionButton` that closes the popover when pressed.
+
+## Examples
+
+### Placement
+
+If there isn't room on the chosen side, the popover flips to the opposite side.
+
+<Preview registry="seed" demo="popover/popover-placements" height={400} />
+
+## API Reference
+
+### PopoverRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/popover.ts"
+  name="MDXPopoverProps"
+/>
+
+### PopoverContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/popover.ts"
+  name="MDXPopoverContentProps"
+/>

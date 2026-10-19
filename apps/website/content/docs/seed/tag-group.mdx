@@ -1,0 +1,48 @@
+---
+title: Tag Group
+description: A line of short metadata items — location, time, counts — separated by dots.
+---
+
+<Preview registry="seed" demo="tag-group/tag-group-default" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/tag-group
+```
+
+## Usage
+
+`TagGroupRoot` places a separator between its `TagGroupItem` children. The `size`, `weight`, and `tone` set on the root apply to every item; set them on an item to override just that one.
+
+## Examples
+
+### Sizes, Weights, and Tones
+
+<Preview registry="seed" demo="tag-group/tag-group-sizes" height={220} />
+
+### With Icon
+
+<Preview registry="seed" demo="tag-group/tag-group-with-icon" height={180} />
+
+### Truncate
+
+With `truncate`, the group stays on one line and cuts overflowing items with an ellipsis. Without it, items wrap.
+
+<Preview registry="seed" demo="tag-group/tag-group-truncate" height={200} />
+
+## API Reference
+
+### TagGroupRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tag-group.ts"
+  name="MDXTagGroupRootProps"
+/>
+
+### TagGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tag-group.ts"
+  name="MDXTagGroupItemProps"
+/>

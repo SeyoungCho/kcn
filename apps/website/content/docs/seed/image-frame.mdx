@@ -1,0 +1,55 @@
+---
+title: Image Frame
+description: Fits an image into a fixed-ratio, rounded frame with a fallback and optional overlays.
+---
+
+<Preview registry="seed" demo="image-frame/image-frame-default" height={340} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/image-frame
+```
+
+## Usage
+
+`ImageFrame` sizes itself by its width and `ratio`; the image is cropped to cover the frame. Place overlays as children inside `ImageFrameFloater`, then use `ImageFrameIndicator` for counts, `ImageFrameIcon` for white icons, and `ImageFrameReactionButton` for a like toggle.
+
+## Examples
+
+### Ratios
+
+<Preview registry="seed" demo="image-frame/image-frame-ratios" height={260} />
+
+### Overlays
+
+<Preview registry="seed" demo="image-frame/image-frame-floaters" height={400} />
+
+### Fallback
+
+`fallback` shows while the image loads and when it fails to load.
+
+<Preview registry="seed" demo="image-frame/image-frame-fallback" height={340} />
+
+## API Reference
+
+### ImageFrame
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/image-frame.ts"
+  name="MDXImageFrameProps"
+/>
+
+### ImageFrameFloater
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/image-frame.ts"
+  name="MDXImageFrameFloaterProps"
+/>
+
+### ImageFrameReactionButton
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/image-frame.ts"
+  name="MDXImageFrameReactionButtonProps"
+/>

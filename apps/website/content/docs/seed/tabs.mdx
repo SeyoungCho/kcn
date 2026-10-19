@@ -1,0 +1,48 @@
+---
+title: Tabs
+description: Switches between related views with a row of text tabs and a sliding underline.
+---
+
+<Preview registry="seed" demo="tabs/tabs-default" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/tabs
+```
+
+## Usage
+
+Compose `TabsRoot` > `TabsList` > `TabsTrigger`, with one `TabsContent` per trigger sharing its `value`. `triggerLayout` and `size` go on the root and apply to the list and every tab. Arrow keys select the focused tab right away.
+
+## Examples
+
+### Trigger Layout
+
+`"fill"` splits the width evenly; `"hug"` sizes each tab to its text and lets the list scroll sideways.
+
+<Preview registry="seed" demo="tabs/tabs-layouts" height={220} />
+
+### Sizes and Disabled
+
+<Preview registry="seed" demo="tabs/tabs-sizes" height={220} />
+
+## API Reference
+
+### TabsRoot
+
+<AutoTypeTable path="src/app/preview/seed/types/tabs.ts" name="MDXTabsProps" />
+
+### TabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tabs.ts"
+  name="MDXTabsTriggerProps"
+/>
+
+### TabsContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tabs.ts"
+  name="MDXTabsContentProps"
+/>

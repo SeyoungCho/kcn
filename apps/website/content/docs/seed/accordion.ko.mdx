@@ -1,0 +1,60 @@
+---
+title: Accordion
+description: 제목 줄을 누르면 내용이 접히고 펴지는 목록입니다.
+---
+
+<Preview registry="seed" demo="accordion/accordion-default" height={360} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/accordion
+```
+
+## 사용법
+
+`AccordionItem` 마다 `AccordionTrigger`(제목 줄 — `title`, 그리고 필요하면 `description` · `prefix` · `suffixIcon`)와 `AccordionContent` 를 넣습니다. 항목은 `Accordion` 의 `variant` · `size` 를 물려받습니다. 펼친 항목은 항목 `value` 의 배열(`values` · `defaultValues`)로 다룹니다. `AccordionContent` 에는 안쪽 여백이 없으니 안에 넣는 것에 주세요.
+
+## 예제
+
+### 상자로 나누기
+
+`variant="separated"` 를 주면 항목마다 테두리를 두른 상자가 됩니다.
+
+<Preview registry="seed" demo="accordion/accordion-separated" height={420} />
+
+### 여러 개 펼치기 · 앞 아이콘 · 설명
+
+`multiple` 을 주면 여러 항목을 같이 펼 수 있습니다. 비활성화한 항목은 접고 펼 수 없습니다.
+
+<Preview registry="seed" demo="accordion/accordion-multiple" height={480} />
+
+## API 레퍼런스
+
+### Accordion
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionPropsKO"
+/>
+
+### AccordionItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionItemProps"
+/>
+
+### AccordionTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionTriggerPropsKO"
+/>
+
+### AccordionContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionContentProps"
+/>

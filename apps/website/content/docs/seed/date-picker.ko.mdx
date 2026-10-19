@@ -1,0 +1,57 @@
+---
+title: Date Picker
+description: 날짜 하나, 기간, 여러 날짜를 고르는 달력입니다.
+---
+
+<Preview registry="seed" demo="date-picker/date-picker-default" height={500} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/date-picker
+```
+
+## 사용법
+
+날짜는 시각과 시간대가 없는 `{ year, month, day }` 객체입니다(`month` 는 1 ~ 12). 달 제목을 누르면 휠로 해와 달을 골라 옮겨 갈 수 있습니다. `DatePicker` 는 한 달을, `TwoMonthDatePicker` 는 두 달을 나란히 보여 줍니다.
+
+## 예제
+
+### 기간
+
+`selectionMode="range"` 면 값은 `{ start, end? }` 입니다 — 시작일만 고른 동안에는 `end` 가 없습니다.
+
+<Preview registry="seed" demo="date-picker/date-picker-range" height={460} />
+
+### 여러 날짜
+
+`selectionMode="multiple"` 이면 값은 날짜 배열입니다.
+
+<Preview registry="seed" demo="date-picker/date-picker-multiple" height={460} />
+
+### 두 달
+
+<Preview
+  registry="seed"
+  demo="date-picker/date-picker-two-months"
+  height={460}
+/>
+
+### 고를 수 있는 날
+
+`constraints` 의 함수가 모두 `true` 를 돌려줘야 그 날을 고를 수 있습니다. 처음 · 마지막 날은 `dateOnOrAfter` · `dateOnOrBefore` 로, 나머지는 `(date) => boolean` 으로 정합니다. 고를 수 없는 날에는 줄이 그어집니다.
+
+<Preview
+  registry="seed"
+  demo="date-picker/date-picker-constraints"
+  height={460}
+/>
+
+## API 레퍼런스
+
+`TwoMonthDatePicker` 도 같은 props 를 받습니다.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/date-picker.ts"
+  name="MDXDatePickerPropsKO"
+/>

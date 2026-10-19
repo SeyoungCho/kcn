@@ -1,0 +1,56 @@
+---
+title: Segmented Control
+description: Lets the user pick one of two or three options, with a sliding indicator behind the selected one.
+---
+
+<Preview
+  registry="seed"
+  demo="segmented-control/segmented-control-default"
+  height={160}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/segmented-control
+```
+
+## Usage
+
+`SegmentedControl` is a radio group; each `SegmentedControlItem` is one option. Give the group an accessible name with `aria-label` or `aria-labelledby`.
+
+## Examples
+
+### Controlled
+
+<Preview
+  registry="seed"
+  demo="segmented-control/segmented-control-controlled"
+  height={200}
+/>
+
+### Disabled
+
+Disable a single item, or the whole group.
+
+<Preview
+  registry="seed"
+  demo="segmented-control/segmented-control-disabled"
+  height={220}
+/>
+
+## API Reference
+
+### SegmentedControl
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/segmented-control.ts"
+  name="MDXSegmentedControlProps"
+/>
+
+### SegmentedControlItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/segmented-control.ts"
+  name="MDXSegmentedControlItemProps"
+/>

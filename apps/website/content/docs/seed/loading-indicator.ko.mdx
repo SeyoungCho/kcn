@@ -1,0 +1,27 @@
+---
+title: Loading Indicator
+description: 버튼의 폭은 그대로 둔 채 버튼 안에 '처리 중'을 보여 줍니다.
+---
+
+<Preview
+  registry="seed"
+  demo="loading-indicator/loading-indicator-default"
+  height={220}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/loading-indicator
+```
+
+## 사용법
+
+`LoadingIndicator` 는 `ActionButton` 의 `loading` 이 쓰는 부품입니다. 내용은 자리를 남긴 채 안 보이게만 해서 부모의 폭이 바뀌지 않게 하고, 그 위에 `ProgressCircle` 을 겹쳐 그립니다. 자리와 모양은 부모의 몫입니다. 부모는 `relative` 이면서 가운데 정렬인 flex 여야 하고, `--progress-size` · `--progress-thickness` · `--progress-track-color` · `--progress-range-color` 로 원의 크기와 색을 정합니다.
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/loading-indicator.ts"
+  name="MDXLoadingIndicatorPropsKO"
+/>

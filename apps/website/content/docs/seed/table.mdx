@@ -1,0 +1,47 @@
+---
+title: Table
+description: A data table in a rounded, scrollable frame with a sticky header and pinnable columns.
+---
+
+<Preview registry="seed" demo="table/table-default" height={360} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/table
+```
+
+## Usage
+
+The parts follow shadcn's table anatomy: `Table`, `TableHeader`, `TableBody`, `TableFooter`, `TableRow`, `TableHead`, `TableCell`, and `TableCaption`. `Table` wraps the `<table>` in a scroll container — set its height with `containerClassName` instead of wrapping it. The header sticks to the top while scrolling, and a fade appears at edges where content is hidden. `TableCaption` is visually hidden and read by screen readers only.
+
+## Examples
+
+### Pinned Columns and Clickable Rows
+
+Set `pin` on the `TableHead` and every `TableCell` of a column to keep it visible while scrolling sideways, and `pinEdge` on the boundary cell to draw a fade there. Use `pinOffset` when several columns are pinned to the same side. `clickable` gives a row a pointer cursor and a hover background.
+
+<Preview registry="seed" demo="table/table-pinned-columns" height={360} />
+
+## API Reference
+
+### Table
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table.ts"
+  name="MDXTableProps"
+/>
+
+### TableRow
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table.ts"
+  name="MDXTableRowProps"
+/>
+
+### TableHead / TableCell
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table.ts"
+  name="MDXTableCellProps"
+/>

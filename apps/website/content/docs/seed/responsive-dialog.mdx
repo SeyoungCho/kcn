@@ -1,0 +1,36 @@
+---
+title: Responsive Dialog
+description: A dialog on wide screens that turns into a bottom sheet on narrow ones.
+---
+
+<Preview
+  registry="seed"
+  demo="responsive-dialog/responsive-dialog-default"
+  height={520}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/responsive-dialog
+```
+
+## Usage
+
+From 768px up it renders a `Dialog`; at 767px and below it renders a `BottomSheet`. If the width crosses that line while it's open, it stays open and switches form. The parts mirror the dialog's: `ResponsiveDialogTrigger`, `ResponsiveDialogContent`, `ResponsiveDialogBody`, `ResponsiveDialogFooter`, and `ResponsiveDialogAction`, a button that closes it. Pass form-specific options through `dialogRootProps` and `bottomSheetRootProps`. The form follows the preview's own width, so resize the window to see both.
+
+## API Reference
+
+### ResponsiveDialogRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/responsive-dialog.ts"
+  name="MDXResponsiveDialogProps"
+/>
+
+### ResponsiveDialogContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/responsive-dialog.ts"
+  name="MDXResponsiveDialogContentProps"
+/>

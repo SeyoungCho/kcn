@@ -1,0 +1,40 @@
+---
+title: Help Bubble
+description: A small speech bubble with an arrow that explains an element, opened by pressing or hovering.
+---
+
+<Preview registry="seed" demo="help-bubble/help-bubble-default" height={240} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/help-bubble
+```
+
+## Usage
+
+For a bubble opened by pressing, compose `HelpBubbleRoot` and `HelpBubbleTrigger` with `HelpBubblePositioner` › `HelpBubbleContent` › `HelpBubbleArrow` (with `HelpBubbleArrowTip`) and `HelpBubbleBody` (with `HelpBubbleTitle` and `HelpBubbleDescription`). It doesn't take focus when it opens, so it can open together with the page via `defaultOpen`.
+
+## Examples
+
+### Tooltip
+
+`HelpBubbleTooltipTrigger` wraps a single element and shows the bubble on hover or focus, with `title` and `description` as props. Wrap several in `HelpBubbleTooltipDelayGroup` so moving between them opens the next one without waiting.
+
+<Preview registry="seed" demo="help-bubble/help-bubble-tooltip" height={240} />
+
+## API Reference
+
+### HelpBubbleRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/help-bubble.ts"
+  name="MDXHelpBubbleProps"
+/>
+
+### HelpBubbleTooltipTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/help-bubble.ts"
+  name="MDXHelpBubbleTooltipTriggerProps"
+/>

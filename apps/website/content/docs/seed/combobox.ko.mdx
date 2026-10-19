@@ -1,0 +1,40 @@
+---
+title: Combobox
+description: 친 글자로 항목 목록을 걸러 하나나 여럿을 고르는 입력칸입니다.
+---
+
+<Preview registry="seed" demo="combobox/combobox-default" height={460} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/combobox
+```
+
+## 사용법
+
+`Combobox` 가 항목(`items`)과 값을 들어요. 안에서 `ComboboxInputGroup` 이 `ComboboxInput` 을 감싸고, `ComboboxContent` 에는 `ComboboxEmpty` 와 `ComboboxList` 를 놓아요. `ComboboxList` 의 children 은 걸러진 항목마다 `ComboboxItem` 을 하나씩 그리는 함수예요. 값이 화면에 보이고 거르는 데 쓸 글이 아니면 `itemToStringLabel` 을 줘요. 입력칸에는 보이는 이름표가 없으니 `aria-label` 을 줘요.
+
+## 예제
+
+### 여럿 고르기
+
+`multiple` 일 때는 입력칸 틀에 `ComboboxChips` 를 놓고, `ComboboxValue` 로 값마다 `ComboboxChip` 을 하나씩 그려요. 칩은 × 버튼이나 Backspace · Delete 로 빼요.
+
+<Preview registry="seed" demo="combobox/combobox-multiple" height={460} />
+
+## API 레퍼런스
+
+### Combobox
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/combobox.ts"
+  name="MDXComboboxPropsKO"
+/>
+
+### ComboboxContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/combobox.ts"
+  name="MDXComboboxContentPropsKO"
+/>

@@ -1,0 +1,54 @@
+---
+title: Command
+description: A command palette that filters a list as you type and picks with the arrow keys and Enter.
+---
+
+<Preview registry="seed" demo="command/command-default" height={560} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/command
+```
+
+## Usage
+
+`Command` is a Base UI Autocomplete whose list is always open. Pass the data through `items` (flat, or groups of `{ value, items }`) and render it with a function child of `CommandList` — for groups, render `CommandGroup` with `CommandGroupLabel` and a `CommandCollection`. `CommandEmpty` shows when nothing matches. One item is always highlighted, and pressing Enter calls its `onClick`.
+
+## Examples
+
+### Dialog
+
+`CommandDialog` puts the palette in a modal near the top of the screen. It closes on an outside click or Esc. This demo also toggles it with ⌘K / Ctrl+K.
+
+<Preview registry="seed" demo="command/command-dialog" height={560} />
+
+## API Reference
+
+### Command
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandProps"
+/>
+
+### CommandInput
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandInputProps"
+/>
+
+### CommandItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandItemProps"
+/>
+
+### CommandDialog
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/command.ts"
+  name="MDXCommandDialogProps"
+/>

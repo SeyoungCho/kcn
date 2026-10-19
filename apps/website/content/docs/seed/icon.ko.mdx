@@ -1,0 +1,48 @@
+---
+title: Icon
+description: SVG 아이콘 요소에 크기와 색을 입힙니다. 직접 주거나 놓인 부품이 정한 값을 따릅니다.
+---
+
+<Preview registry="seed" demo="icon/icon-default" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/icon
+```
+
+## 사용법
+
+`Icon` 은 `svg` 로 준 요소(`<IconHeartLine />` 등)를 감싸는 요소 없이 그대로 그립니다. 크기와 색은 부모 부품이 `--icon-size` · `--icon-color` 로 정하고, `size` · `color` 를 주면 그 값이 이깁니다. `PrefixIcon` · `SuffixIcon`(`affix-icon`)은 `ActionButton` 같은 부품 안에서 글자 앞뒤에 놓는 아이콘으로, 크기 · 색 · 여백을 부모가 정합니다.
+
+## 예제
+
+### 크기
+
+`size` 에는 치수 토큰, `"full"`, 또는 px 숫자를 줍니다.
+
+<Preview registry="seed" demo="icon/icon-sizes" height={180} />
+
+### 색
+
+<Preview registry="seed" demo="icon/icon-colors" height={180} />
+
+### 앞 · 뒤 아이콘
+
+<Preview registry="seed" demo="icon/icon-affix" height={160} />
+
+## API 레퍼런스
+
+### Icon
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/icon-props.ts"
+  name="MDXIconPropsKO"
+/>
+
+### PrefixIcon / SuffixIcon
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/icon-props.ts"
+  name="MDXAffixIconPropsKO"
+/>

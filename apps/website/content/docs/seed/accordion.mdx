@@ -1,0 +1,60 @@
+---
+title: Accordion
+description: A stack of headings that expand and collapse their content.
+---
+
+<Preview registry="seed" demo="accordion/accordion-default" height={360} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/accordion
+```
+
+## Usage
+
+Each `AccordionItem` holds an `AccordionTrigger` (the heading row, with `title` and optional `description`, `prefix`, `suffixIcon`) and an `AccordionContent`. Items inherit `variant` and `size` from `Accordion`. Expanded items are tracked as an array of item `value`s (`values` / `defaultValues`). `AccordionContent` has no padding of its own — add it to what you put inside.
+
+## Examples
+
+### Separated
+
+`variant="separated"` puts each item in its own bordered box.
+
+<Preview registry="seed" demo="accordion/accordion-separated" height={420} />
+
+### Multiple, with Prefix and Description
+
+`multiple` lets several items stay open. A disabled item can't be toggled.
+
+<Preview registry="seed" demo="accordion/accordion-multiple" height={480} />
+
+## API Reference
+
+### Accordion
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionProps"
+/>
+
+### AccordionItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionItemProps"
+/>
+
+### AccordionTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionTriggerProps"
+/>
+
+### AccordionContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/accordion.ts"
+  name="MDXAccordionContentProps"
+/>

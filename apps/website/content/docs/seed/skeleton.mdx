@@ -1,0 +1,33 @@
+---
+title: Skeleton
+description: A shimmering placeholder for content that is still loading.
+---
+
+<Preview registry="seed" demo="skeleton/skeleton-default" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/skeleton
+```
+
+## Usage
+
+`width` and `height` take a dimension token (`"x12"`), `"full"`, a px number, or any CSS value. When a skeleton stands in for a line of text, set `height` to that text's line-height token, such as `"lineHeight.t4"`.
+
+## Examples
+
+### Radius
+
+<Preview registry="seed" demo="skeleton/skeleton-radius" height={180} />
+
+### Tones
+
+<Preview registry="seed" demo="skeleton/skeleton-tones" height={320} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/skeleton.ts"
+  name="MDXSkeletonProps"
+/>

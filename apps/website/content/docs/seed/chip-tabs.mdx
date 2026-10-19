@@ -1,0 +1,45 @@
+---
+title: Chip Tabs
+description: Tabs shown as a horizontally scrolling row of chips, each switching the content below.
+---
+
+<Preview registry="seed" demo="chip-tabs/chip-tabs-default" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/chip-tabs
+```
+
+## Usage
+
+Compose `ChipTabsRoot` > `ChipTabsList` > `ChipTabsTrigger`, with one `ChipTabsContent` per trigger sharing its `value`. `variant` and `size` go on the root and apply to every chip. Arrow keys select the focused chip right away.
+
+## Examples
+
+### Variants and Sizes
+
+<Preview registry="seed" demo="chip-tabs/chip-tabs-variants" height={280} />
+
+## API Reference
+
+### ChipTabsRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip-tabs.ts"
+  name="MDXChipTabsProps"
+/>
+
+### ChipTabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip-tabs.ts"
+  name="MDXChipTabsTriggerProps"
+/>
+
+### ChipTabsContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip-tabs.ts"
+  name="MDXChipTabsContentProps"
+/>

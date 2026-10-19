@@ -1,0 +1,37 @@
+---
+title: Divider
+description: 내용을 가로나 세로로 나누는 가는 선입니다.
+---
+
+<Preview registry="seed" demo="divider/divider-default" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/divider
+```
+
+## 사용법
+
+기본 `<hr>` 은 구분선으로 읽힙니다. 꾸밈일 뿐이면 `as="div"` 로 그리고, `hr` 이 아닌 요소를 읽히게 하려면 `role="separator"` 를 주세요.
+
+## 예제
+
+### 세로
+
+세로 구분선의 높이는 요소가 정합니다 — 높이를 주거나, 늘어나는 flex 줄 안에 넣으세요.
+
+<Preview registry="seed" demo="divider/divider-vertical" height={160} />
+
+### 띄우기 · 색 · 굵기
+
+`inset` 은 양 끝을 16px 씩 띄웁니다. `color` 에는 `"palette.gray200"` 같은 토큰 이름이나 CSS 색을 줍니다.
+
+<Preview registry="seed" demo="divider/divider-styles" height={260} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/divider.ts"
+  name="MDXDividerPropsKO"
+/>

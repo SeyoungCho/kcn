@@ -1,0 +1,48 @@
+---
+title: Icon
+description: Applies size and color to an SVG icon element, either directly or from the component it sits in.
+---
+
+<Preview registry="seed" demo="icon/icon-default" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/icon
+```
+
+## Usage
+
+`Icon` renders the element you pass as `svg` (such as `<IconHeartLine />`) without adding a wrapper. Its size and color come from the parent component through `--icon-size` and `--icon-color`; `size` and `color` override them. `PrefixIcon` and `SuffixIcon` (from `affix-icon`) are for icons before or after text inside components like `ActionButton` — the parent sets their size, color, and spacing.
+
+## Examples
+
+### Sizes
+
+`size` takes a dimension token, `"full"`, or a number in px.
+
+<Preview registry="seed" demo="icon/icon-sizes" height={180} />
+
+### Colors
+
+<Preview registry="seed" demo="icon/icon-colors" height={180} />
+
+### Prefix and Suffix Icons
+
+<Preview registry="seed" demo="icon/icon-affix" height={160} />
+
+## API Reference
+
+### Icon
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/icon-props.ts"
+  name="MDXIconProps"
+/>
+
+### PrefixIcon / SuffixIcon
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/icon-props.ts"
+  name="MDXAffixIconProps"
+/>

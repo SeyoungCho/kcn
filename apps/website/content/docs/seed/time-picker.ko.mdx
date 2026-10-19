@@ -1,0 +1,45 @@
+---
+title: Time Picker
+description: 오전 · 오후, 시, 분 휠을 돌려 시각을 고르는 12시간제 시각 고르기입니다.
+---
+
+<Preview registry="seed" demo="time-picker/time-picker-default" height={340} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/time-picker
+```
+
+## 사용법
+
+휠은 12시간제로 보이지만 값은 오전 · 오후를 따로 두지 않고 늘 24시간으로 적은 `{ hour, minute }` 입니다. 시를 11 에서 넘기면 오전 · 오후가 바뀝니다.
+
+## 예제
+
+### 분 간격
+
+`minuteStep` 은 분 열의 간격(1 · 5 · 10 · 15 · 30)입니다. 간격에 맞지 않는 값은 가장 가까운 값으로 맞춥니다.
+
+<Preview
+  registry="seed"
+  demo="time-picker/time-picker-minute-step"
+  height={300}
+/>
+
+### 로캘
+
+`locale` 은 오전 · 오후 표기, 숫자 표기, 열의 순서를 정합니다.
+
+<Preview registry="seed" demo="time-picker/time-picker-locale" height={340} />
+
+### 비활성
+
+<Preview registry="seed" demo="time-picker/time-picker-disabled" height={300} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/time-picker.ts"
+  name="MDXTimePickerPropsKO"
+/>

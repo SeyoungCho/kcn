@@ -1,0 +1,51 @@
+---
+title: Menu
+description: A list of actions that opens from a trigger button.
+---
+
+<Preview registry="seed" demo="menu/menu-default" height={420} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/menu
+```
+
+## Usage
+
+Positioning and `size` go on `MenuRoot`. Inside `MenuContent`, group items with `MenuGroup` — consecutive groups are separated by a divider, and `MenuGroupLabel` titles a group. `MenuItem` takes a `label`, optional `description`, and icons; use `tone="critical"` for destructive actions.
+
+## Examples
+
+### Groups and Radio Items
+
+`MenuRadioGroup` with `MenuRadioItem` lets the user pick one option; the selected item shows a check, and the menu stays open so the change is visible right away.
+
+<Preview registry="seed" demo="menu/menu-radio-group" height={480} />
+
+## API Reference
+
+### MenuRoot
+
+<AutoTypeTable path="src/app/preview/seed/types/menu.ts" name="MDXMenuProps" />
+
+### MenuContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuContentProps"
+/>
+
+### MenuItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuItemProps"
+/>
+
+### MenuRadioItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/menu.ts"
+  name="MDXMenuRadioItemProps"
+/>

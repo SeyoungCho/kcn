@@ -1,0 +1,68 @@
+---
+title: Chip
+description: 필터를 켜고 끄거나, 하나를 고르거나, 동작을 실행하는 작은 알약 모양 컨트롤입니다.
+---
+
+<Preview registry="seed" demo="chip/chip-default" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/chip
+```
+
+## 사용법
+
+모양이 같은 칩이 세 가지 있습니다. `ToggleChip` 은 체크박스처럼 켜고 끄고, `RadioChipRoot` 안의 `RadioChipItem` 은 여럿 가운데 하나를 고르며, `ButtonChip` 은 그냥 버튼입니다. 안에 `ChipLabel` · `ChipPrefixIcon` · `ChipSuffixIcon` 을 넣으면 칩의 `variant` · `size` 를 물려받습니다.
+
+## 예제
+
+### 모양
+
+<Preview registry="seed" demo="chip/chip-variants" height={240} />
+
+### 크기
+
+<Preview registry="seed" demo="chip/chip-sizes" height={160} />
+
+### 아이콘과 함께
+
+`Icon` 을 `ChipPrefixIcon` 이나 `ChipSuffixIcon` 으로 감쌉니다. 아이콘만 있는 칩은 `layout="iconOnly"` 로 두고 `inputProps` 로 읽는 이름을 주세요.
+
+<Preview registry="seed" demo="chip/chip-with-icon" height={160} />
+
+### 라디오 칩
+
+`RadioChipRoot` 는 배치를 정하지 않습니다 — 항목 배치는 `className` 으로 줍니다.
+
+<Preview registry="seed" demo="chip/chip-radio" height={180} />
+
+## API 레퍼런스
+
+### ToggleChip
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXToggleChipPropsKO"
+/>
+
+### ButtonChip
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXButtonChipProps"
+/>
+
+### RadioChipRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXRadioChipRootProps"
+/>
+
+### RadioChipItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXRadioChipItemProps"
+/>

@@ -1,0 +1,46 @@
+---
+title: Dialog
+description: 양식 입력이나 확인처럼 집중해야 하는 일을 위해 화면 가운데에 뜨는 창입니다.
+---
+
+<Preview registry="seed" demo="dialog/dialog-default" height={480} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/dialog
+```
+
+## 사용법
+
+`DialogRoot` 가 열림 상태를 쥐고 `DialogTrigger` 가 창을 엽니다. `DialogContent` 는 `title` · `description` · 닫기 버튼을 갖춘 창을 그립니다. 내용은 `DialogBody`(길면 여기만 스크롤됩니다)에, 버튼은 `DialogFooter` 에 넣으세요. `DialogAction` 은 누르면 창이 닫히는 `ActionButton` 입니다. `closeOnInteractOutside` 를 주지 않으면 바깥을 눌러도 닫히지 않습니다.
+
+## 예제
+
+### 크기
+
+768px 이상에서 `medium` 은 480px, `large` 는 800px 폭입니다. 그보다 좁은 화면에서는 화면의 90% 입니다.
+
+<Preview registry="seed" demo="dialog/dialog-sizes" height={480} />
+
+### 스크롤되는 본문
+
+내용이 창보다 길면 `DialogBody` 만 스크롤되고 머리와 버튼 줄은 늘 보입니다.
+
+<Preview registry="seed" demo="dialog/dialog-scrollable" height={560} />
+
+## API 레퍼런스
+
+### DialogRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/dialog.ts"
+  name="MDXDialogPropsKO"
+/>
+
+### DialogContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/dialog.ts"
+  name="MDXDialogContentPropsKO"
+/>

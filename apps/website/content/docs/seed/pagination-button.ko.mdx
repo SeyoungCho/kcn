@@ -1,0 +1,37 @@
+---
+title: Pagination Button
+description: 이전 쪽이나 다음 쪽으로 옮기는, 아이콘만 있는 버튼입니다.
+---
+
+<Preview
+  registry="seed"
+  demo="pagination-button/pagination-button-default"
+  height={160}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/pagination-button
+```
+
+## 사용법
+
+`children` 으로 아이콘 요소 하나를 주면 버튼이 크기와 색을 입힙니다. 아이콘만 있는 버튼이라 늘 `aria-label` 을 주세요.
+
+## 예제
+
+### 쪽 표시와 함께
+
+<Preview
+  registry="seed"
+  demo="pagination-button/pagination-button-with-indicator"
+  height={160}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/pagination-button.ts"
+  name="MDXPaginationButtonPropsKO"
+/>

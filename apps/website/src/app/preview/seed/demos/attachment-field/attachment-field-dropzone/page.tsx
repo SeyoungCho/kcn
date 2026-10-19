@@ -1,0 +1,48 @@
+"use client";
+
+import {
+  AttachmentDropzone,
+  AttachmentField,
+} from "@repo/seed/ui/attachment-field";
+import type { AttachmentStatusDetails } from "@repo/seed/ui/attachment-field";
+import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
+
+// Stand-in for a real upload: reports progress, then success.
+function simulateUpload(
+  id: string,
+  update: (id: string, details: AttachmentStatusDetails) => void,
+) {
+  let progress = 0;
+  const timer = setInterval(() => {
+    progress += 20;
+    if (progress >= 100) {
+      clearInterval(timer);
+      update(id, { status: "success" });
+    } else {
+      update(id, { status: "uploading", progress });
+    }
+  }, 300);
+}
+
+export default function AttachmentFieldDropzoneDemo() {
+  const t = usePreviewDictionary().demos.attachmentField;
+
+  return (
+    <div className="flex min-h-screen items-center justify-center p-8">
+      <div className="w-full max-w-[420px]">
+        <AttachmentField
+          label={t.dropzone.label}
+          description={t.dropzone.description}
+          accept=".pdf,application/pdf"
+          maxFiles={3}
+          onFileAccept={(entries, { updateFileEntryStatus }) => {
+            for (const entry of entries)
+              simulateUpload(entry.id, updateFileEntryStatus);
+          }}
+        >
+          <AttachmentDropzone />
+        </AttachmentField>
+      </div>
+    </div>
+  );
+}

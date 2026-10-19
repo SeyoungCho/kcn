@@ -1,0 +1,42 @@
+---
+title: Fieldset
+description: 여러 입력 부품을 이름표 하나로 묶고 도움말 · 오류 메시지를 두르는 바탕 부품입니다.
+---
+
+<Preview registry="seed" demo="fieldset/fieldset-default" height={300} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/fieldset
+```
+
+## 사용법
+
+`Fieldset` 은 `CheckboxGroup` 과 `RadioGroup` 이 쓰는 틀로, 모양은 `Field` 와 같아요. 스위치처럼 다른 부품을 묶을 때 써요. 안에 `FieldsetHeader`(`FieldsetLabel` · `FieldsetRequiredIndicator` · `FieldsetIndicatorText`), 묶을 부품, `FieldsetFooter`(`FieldsetDescription` 이나 `FieldsetErrorMessage`)를 놓아요.
+
+`Fieldset` 은 그냥 `div` 라서 접근성을 대신 이어 주지 않아요. `role="group"` 을 주고, `aria-labelledby` · `aria-describedby` 로 이름표와 아래 글을 가리켜요.
+
+## 예제
+
+### 필수와 오류
+
+<Preview registry="seed" demo="fieldset/fieldset-states" height={240} />
+
+## API 레퍼런스
+
+### 묶음 속성
+
+`CheckboxGroup` 과 `RadioGroup` 은 이 속성을 받아 `FieldsetHeading` · `FieldsetMessages` 로 그려요.
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/fieldset.ts"
+  name="MDXFieldsetPropsKO"
+/>
+
+### FieldsetLabel
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/fieldset.ts"
+  name="MDXFieldsetLabelPropsKO"
+/>

@@ -1,0 +1,57 @@
+---
+title: Snackbar
+description: A brief message at the bottom of the screen about the result of an action.
+---
+
+<Preview registry="seed" demo="snackbar/snackbar-default" height={240} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/snackbar
+```
+
+## Usage
+
+Wrap your app in `SnackbarProvider` once. Then call `create({ render: () => <Snackbar … /> })` from `useSnackbarAdapter()` to show one. Only one snackbar shows at a time: by default a new one replaces the current one (`strategy="immediate"`), and `"queued"` waits for it to finish. The timer pauses while the pointer is over the snackbar or it has keyboard focus.
+
+```tsx
+const snackbar = useSnackbarAdapter();
+
+snackbar.create({
+  render: () => <Snackbar message="Moved to trash." actionLabel="Undo" />,
+});
+```
+
+`SnackbarProvider` portals into `document.body` while it renders, so in server-rendered apps (such as Next.js) mount it on the client only.
+
+## Examples
+
+### Variants
+
+<Preview registry="seed" demo="snackbar/snackbar-variants" height={240} />
+
+## API Reference
+
+### Snackbar
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/snackbar.ts"
+  name="MDXSnackbarProps"
+/>
+
+### SnackbarProvider
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/snackbar.ts"
+  name="MDXSnackbarProviderProps"
+/>
+
+### useSnackbarAdapter
+
+Returns `{ visible, create, dismiss }`. `create` takes:
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/snackbar.ts"
+  name="MDXCreateSnackbarOptions"
+/>

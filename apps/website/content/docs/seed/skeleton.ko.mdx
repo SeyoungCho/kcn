@@ -1,0 +1,33 @@
+---
+title: Skeleton
+description: 불러오는 중인 내용의 자리를 반짝이는 윤곽으로 채웁니다.
+---
+
+<Preview registry="seed" demo="skeleton/skeleton-default" height={180} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/skeleton
+```
+
+## 사용법
+
+`width` · `height` 는 치수 토큰(`"x12"`) · `"full"` · px 숫자 · CSS 값을 받습니다. 글 한 줄 대신 놓을 때는 `height` 에 그 글의 줄 높이 토큰(`"lineHeight.t4"` 처럼)을 주세요.
+
+## 예제
+
+### 둥글기
+
+<Preview registry="seed" demo="skeleton/skeleton-radius" height={180} />
+
+### 색조
+
+<Preview registry="seed" demo="skeleton/skeleton-tones" height={320} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/skeleton.ts"
+  name="MDXSkeletonPropsKO"
+/>

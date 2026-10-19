@@ -1,0 +1,35 @@
+---
+title: Layout
+description: 화면 높이를 채우고, 밀도에 따라 본문 폭을 묶어 가운데에 놓는 화면의 틀입니다.
+---
+
+<Preview registry="seed" demo="layout/layout-default" height={400} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/layout
+```
+
+## 사용법
+
+`Layout` 은 화면 높이(`h-screen`)를 채우고 안에서 스크롤합니다. `LayoutContent` 는 본문을 가운데에 놓고, 바깥 `Layout` 의 `density` 에 따라 폭을 묶습니다. 폭 제한은 768px 이상 화면부터 걸리므로 좁은 미리보기에서는 본문이 꽉 찹니다. 둘 다 `render` 로 그려질 요소를 바꿀 수 있습니다(예: `render={<main />}`).
+
+## 예제
+
+### 사이드 메뉴와 함께
+
+`Layout` 안에 Side Navigation 과 그 옆 본문을 넣으면 앱의 틀이 됩니다.
+
+<Preview
+  registry="seed"
+  demo="layout/layout-with-side-navigation"
+  height={520}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/layout-props.ts"
+  name="MDXLayoutPropsKO"
+/>

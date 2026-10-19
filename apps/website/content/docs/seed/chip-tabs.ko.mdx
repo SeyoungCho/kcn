@@ -1,0 +1,45 @@
+---
+title: Chip Tabs
+description: 옆으로 미는 칩 줄로 된 탭으로, 칩마다 아래 내용을 바꿉니다.
+---
+
+<Preview registry="seed" demo="chip-tabs/chip-tabs-default" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/chip-tabs
+```
+
+## 사용법
+
+`ChipTabsRoot` > `ChipTabsList` > `ChipTabsTrigger` 로 짜고, 칩마다 같은 `value` 의 `ChipTabsContent` 를 둡니다. `variant` · `size` 는 묶음에 주면 모든 칩에 적용됩니다. 화살표 키로 옮기면 바로 그 칩이 골라집니다.
+
+## 예제
+
+### 모양과 크기
+
+<Preview registry="seed" demo="chip-tabs/chip-tabs-variants" height={280} />
+
+## API 레퍼런스
+
+### ChipTabsRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip-tabs.ts"
+  name="MDXChipTabsPropsKO"
+/>
+
+### ChipTabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip-tabs.ts"
+  name="MDXChipTabsTriggerProps"
+/>
+
+### ChipTabsContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip-tabs.ts"
+  name="MDXChipTabsContentProps"
+/>

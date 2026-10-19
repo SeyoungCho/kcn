@@ -1,0 +1,49 @@
+---
+title: Field
+description: The building blocks behind labeled inputs — label row, control, and helper text, error message, or character count.
+---
+
+<Preview registry="seed" demo="field/field-default" height={240} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/field
+```
+
+## Usage
+
+`Field` is the frame that `TextField` and `FieldButton` are built from. Use it directly when you need a custom layout. Put `FieldHeader` (with `FieldLabel`, `FieldRequiredIndicator`, `FieldIndicatorText`), a control such as `TextFieldRoot` or `FieldButtonControl`, and `FieldFooter` (with `FieldDescription`, `FieldErrorMessage`, `FieldCharacterCount`) inside it.
+
+`required`, `disabled`, `invalid`, and `readOnly` set on `Field` flow down to every part and to the control. The label is linked to the control, and only the description and error message that are actually rendered are added to `aria-describedby`.
+
+## Examples
+
+### States
+
+Unlike `TextField`, `Field` does not hide or show the error message for you — render `FieldErrorMessage` only while the field is invalid.
+
+<Preview registry="seed" demo="field/field-states" height={440} />
+
+## API Reference
+
+### Field
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field.ts"
+  name="MDXFieldProps"
+/>
+
+### FieldLabel
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field.ts"
+  name="MDXFieldLabelProps"
+/>
+
+### FieldCharacterCount
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field.ts"
+  name="MDXFieldCharacterCountProps"
+/>

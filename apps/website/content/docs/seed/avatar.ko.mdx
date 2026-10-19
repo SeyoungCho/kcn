@@ -1,0 +1,33 @@
+---
+title: Avatar
+description: 사람이나 가게의 프로필 사진을 동그랗게 보여 주고, 사진이 없으면 대신할 것을 보여 줍니다.
+---
+
+<Preview registry="seed" demo="avatar/avatar-default" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/avatar
+```
+
+## 예제
+
+### 크기
+
+`size` 는 지름(px)입니다.
+
+<Preview registry="seed" demo="avatar/avatar-sizes" height={200} />
+
+### 사진이 없을 때
+
+`fallback` 은 `src` 가 없을 때, 사진을 읽는 중일 때, 읽지 못했을 때 보입니다. `IdentityPlaceholder`(`identity="person"` · `"business"`)에 화면 낭독기용 `label` 을 줘서 넣으세요.
+
+<Preview registry="seed" demo="avatar/avatar-fallback" height={200} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/avatar.ts"
+  name="MDXAvatarPropsKO"
+/>

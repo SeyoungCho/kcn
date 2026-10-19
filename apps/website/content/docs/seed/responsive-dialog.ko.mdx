@@ -1,0 +1,36 @@
+---
+title: Responsive Dialog
+description: 넓은 화면에서는 창으로, 좁은 화면에서는 바텀 시트로 바뀌는 창입니다.
+---
+
+<Preview
+  registry="seed"
+  demo="responsive-dialog/responsive-dialog-default"
+  height={520}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/responsive-dialog
+```
+
+## 사용법
+
+768px 이상에서는 `Dialog` 를, 767px 이하에서는 `BottomSheet` 를 그립니다. 열려 있는 동안 폭이 경계를 넘으면 열린 채로 다른 모양으로 바뀝니다. 부품은 창과 같습니다 — `ResponsiveDialogTrigger` · `ResponsiveDialogContent` · `ResponsiveDialogBody` · `ResponsiveDialogFooter`, 그리고 누르면 닫히는 버튼 `ResponsiveDialogAction`. 한쪽 모양에만 줄 값은 `dialogRootProps` · `bottomSheetRootProps` 로 넘기세요. 모양은 미리보기 자체의 폭을 따르니 창 크기를 바꿔 두 모양을 확인해 보세요.
+
+## API 레퍼런스
+
+### ResponsiveDialogRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/responsive-dialog.ts"
+  name="MDXResponsiveDialogPropsKO"
+/>
+
+### ResponsiveDialogContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/responsive-dialog.ts"
+  name="MDXResponsiveDialogContentPropsKO"
+/>

@@ -1,0 +1,47 @@
+---
+title: Content Placeholder
+description: Fills the spot of a missing image with a gray panel and an illustration.
+---
+
+<Preview
+  registry="seed"
+  demo="content-placeholder/content-placeholder-default"
+  height={240}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/content-placeholder
+```
+
+## Usage
+
+`ContentPlaceholder` fills its parent, so size it with a wrapper such as an image frame or a card's thumbnail slot. The illustration is half the panel's height, up to 160px. It is decorative; give the panel `role="img"` and an `aria-label` when it needs a name.
+
+## Examples
+
+### Types
+
+<Preview
+  registry="seed"
+  demo="content-placeholder/content-placeholder-types"
+  height={440}
+/>
+
+### Custom Illustration
+
+Pass an `svg` or `img` element as `children` to replace the preset.
+
+<Preview
+  registry="seed"
+  demo="content-placeholder/content-placeholder-custom"
+  height={260}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/content-placeholder.ts"
+  name="MDXContentPlaceholderProps"
+/>

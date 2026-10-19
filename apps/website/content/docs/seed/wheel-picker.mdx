@@ -1,0 +1,58 @@
+---
+title: Wheel Picker
+description: Scrollable wheels for picking a value from one or more columns.
+---
+
+<Preview
+  registry="seed"
+  demo="wheel-picker/wheel-picker-default"
+  height={340}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/wheel-picker
+```
+
+## Usage
+
+Pass every column through `columns` — each one has its own `id`, `options`, and value (`value` / `onValueChange` or `defaultValue`). Wheels respond to dragging, the mouse wheel, arrow keys, and typing. Give the picker and each column an `aria-label`.
+
+## Examples
+
+### Columns
+
+`loop` joins the last item to the first so the column turns endlessly.
+
+<Preview
+  registry="seed"
+  demo="wheel-picker/wheel-picker-columns"
+  height={300}
+/>
+
+### Sizes
+
+<Preview registry="seed" demo="wheel-picker/wheel-picker-sizes" height={320} />
+
+### States
+
+`disabled` blocks focus and changes; `readOnly` keeps the wheel focusable but blocks changes.
+
+<Preview registry="seed" demo="wheel-picker/wheel-picker-states" height={320} />
+
+## API Reference
+
+### WheelPicker
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/wheel-picker.ts"
+  name="MDXWheelPickerProps"
+/>
+
+### Column
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/wheel-picker.ts"
+  name="MDXWheelPickerColumnProps"
+/>

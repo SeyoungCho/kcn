@@ -1,0 +1,55 @@
+---
+title: Image Frame
+description: 사진을 정해진 비율 · 둥근 모서리 틀에 맞춰 보여 주고, 대신할 것과 위에 얹을 것을 함께 다룹니다.
+---
+
+<Preview registry="seed" demo="image-frame/image-frame-default" height={340} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/image-frame
+```
+
+## 사용법
+
+`ImageFrame` 은 폭과 `ratio` 로 크기가 정해지고, 사진은 틀을 덮도록 잘립니다. 위에 얹을 것은 자식으로 `ImageFrameFloater` 안에 넣고, 개수는 `ImageFrameIndicator`, 흰 아이콘은 `ImageFrameIcon`, 좋아요 버튼은 `ImageFrameReactionButton` 을 씁니다.
+
+## 예제
+
+### 비율
+
+<Preview registry="seed" demo="image-frame/image-frame-ratios" height={260} />
+
+### 위에 얹기
+
+<Preview registry="seed" demo="image-frame/image-frame-floaters" height={400} />
+
+### 사진을 못 읽었을 때
+
+`fallback` 은 사진을 읽는 중일 때와 읽지 못했을 때 보입니다.
+
+<Preview registry="seed" demo="image-frame/image-frame-fallback" height={340} />
+
+## API 레퍼런스
+
+### ImageFrame
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/image-frame.ts"
+  name="MDXImageFramePropsKO"
+/>
+
+### ImageFrameFloater
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/image-frame.ts"
+  name="MDXImageFrameFloaterPropsKO"
+/>
+
+### ImageFrameReactionButton
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/image-frame.ts"
+  name="MDXImageFrameReactionButtonPropsKO"
+/>

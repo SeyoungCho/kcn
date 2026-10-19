@@ -1,0 +1,53 @@
+---
+title: Table Pagination
+description: Pagination controls for a table — rows per page, the visible range, and previous/next buttons.
+---
+
+<Preview
+  registry="seed"
+  demo="table-pagination/table-pagination-default"
+  height={360}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/table-pagination
+```
+
+## Usage
+
+`TablePagination` always stays on one line; wrap it in an `overflow-x-auto` container if it may be narrower than its content. Changing the page size returns to the first page. If the current page falls out of range (for example after rows are removed), it is clamped and `onValueChange` is called with `reason: "constraint"`.
+
+The built-in labels (`n개씩 보기`, `/ 총 n개`, button `aria-label`s) are in Korean. Edit them in `tablePaginationText` inside the copied component if you need another language.
+
+Use `useTablePagination` to build a custom layout with the same logic.
+
+## Examples
+
+### Unknown Total
+
+When the total row count is unknown (cursor-based APIs), omit `totalItems` and pass `hasPreviousPage` / `hasNextPage` from the server. The range select is replaced by plain range text.
+
+<Preview
+  registry="seed"
+  demo="table-pagination/table-pagination-unknown-total"
+  height={360}
+/>
+
+### With a Table
+
+Control `value` and slice the rows for the current page.
+
+<Preview
+  registry="seed"
+  demo="table-pagination/table-pagination-with-table"
+  height={640}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table-pagination.ts"
+  name="MDXTablePaginationProps"
+/>

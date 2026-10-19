@@ -1,0 +1,50 @@
+---
+title: Field Button
+description: 입력 칸 모양의 버튼으로, 누르면 고르는 창이나 시트를 열고 고른 값을 보여 줍니다.
+---
+
+<Preview
+  registry="seed"
+  demo="field-button/field-button-default"
+  height={240}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/field-button
+```
+
+## 사용법
+
+`FieldButton` 은 칸에 이름표 · 도움말 · 오류 메시지를 둘러요. 이름표 없이 쓰거나 직접 짠 `Field` 안에 놓을 때는 칸만 있는 `FieldButtonControl` 을 써요. children 으로 고른 값(`FieldButtonValue`)이나 안내 글(`FieldButtonPlaceholder`)을 넣어요. 둘 다 화면에만 보이므로, 칸 이름과 값을 알려 주는 `aria-label` 을 고르는 창을 여는 `onClick` 과 함께 `buttonProps` 로 줘요.
+
+이름표를 누르면 버튼에 초점만 가고 아무것도 열리지 않아요. `values` 는 숨은 input 으로 폼에 실려요.
+
+## 예제
+
+### 크기
+
+<Preview registry="seed" demo="field-button/field-button-sizes" height={220} />
+
+### 상태
+
+`errorMessage` 는 `invalid` 일 때만 보여요. `readOnly` 는 누를 수 없지만 값은 보내고, `disabled` 는 아무것도 보내지 않아요.
+
+<Preview registry="seed" demo="field-button/field-button-states" height={460} />
+
+## API 레퍼런스
+
+### FieldButton
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field-button.ts"
+  name="MDXFieldButtonPropsKO"
+/>
+
+### FieldButtonControl
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/field-button.ts"
+  name="MDXFieldButtonControlPropsKO"
+/>

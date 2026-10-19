@@ -84,6 +84,794 @@
         "readOnly": "읽기 전용"
       }
     },
+    "callout": {
+      "title": "알려 드려요",
+      "description": "승인되면 이웃에게 게시글이 보여요.",
+      "link": "자세히 보기",
+      "tones": {
+        "neutral": "중립",
+        "informative": "안내",
+        "positive": "긍정",
+        "warning": "주의",
+        "critical": "위험",
+        "magic": "매직"
+      },
+      "toneDescription": "상황을 설명하는 짧은 메시지예요.",
+      "actionable": {
+        "title": "새 기능",
+        "description": "새로워진 검색을 써 보세요."
+      },
+      "dismissible": {
+        "description": "읽은 뒤에는 이 도움말을 닫을 수 있어요.",
+        "reset": "다시 보기"
+      }
+    },
+    "snackbar": {
+      "trigger": "스낵바 띄우기",
+      "message": "휴지통으로 옮겼어요.",
+      "action": "되돌리기",
+      "undone": "되돌렸어요.",
+      "variants": {
+        "default": "기본",
+        "positive": "긍정",
+        "critical": "위험"
+      },
+      "messages": {
+        "default": "설정을 저장했어요.",
+        "positive": "결제가 끝났어요.",
+        "critical": "네트워크에 연결하지 못했어요."
+      }
+    },
+    "loadingIndicator": {
+      "label": "변경 사항 저장",
+      "idle": "기본",
+      "loading": "처리 중",
+      "toggle": "처리 중 바꾸기"
+    },
+    "progressCircle": {
+      "tones": {
+        "neutral": "중립",
+        "brand": "브랜드",
+        "staticWhite": "흰색 고정"
+      },
+      "sizes": {
+        "24": "24",
+        "40": "40"
+      }
+    },
+    "skeleton": {
+      "radius": {
+        "0": "0",
+        "8": "8",
+        "16": "16",
+        "full": "full"
+      },
+      "tones": {
+        "neutral": "중립",
+        "magic": "매직"
+      }
+    },
+    "resultSection": {
+      "title": "검색 결과가 없어요",
+      "description": "다른 검색어를 입력하거나\n맞춤법을 확인해 보세요.",
+      "primaryAction": "검색어 지우기",
+      "secondaryAction": "카테고리 둘러보기",
+      "medium": {
+        "title": "아직 아무것도 없어요",
+        "description": "저장한 항목이 여기에 보여요."
+      }
+    },
+    "contentPlaceholder": {
+      "label": "사진 없음",
+      "custom": "동영상 없음"
+    },
+    "identityPlaceholder": {
+      "person": "프로필 사진 없음",
+      "business": "가게 사진 없음"
+    },
+    "avatar": {
+      "alt": "프로필 사진",
+      "noPhoto": "프로필 사진 없음",
+      "noStorePhoto": "가게 사진 없음",
+      "brokenAlt": "불러오지 못한 사진"
+    },
+    "icon": {
+      "colors": {
+        "neutral": "기본",
+        "brand": "브랜드",
+        "critical": "위험"
+      },
+      "affix": {
+        "add": "추가",
+        "next": "다음"
+      }
+    },
+    "badge": {
+      "tones": {
+        "neutral": "기본",
+        "brand": "브랜드",
+        "informative": "안내",
+        "positive": "긍정",
+        "warning": "주의",
+        "critical": "위험"
+      },
+      "sizes": {
+        "medium": "중간",
+        "large": "크게"
+      },
+      "withIcon": {
+        "verified": "인증됨",
+        "new": "새 글",
+        "popular": "인기"
+      }
+    },
+    "chip": {
+      "label": "칩",
+      "variants": {
+        "solid": "솔리드",
+        "outlineStrong": "진한 테두리",
+        "outlineWeak": "옅은 테두리"
+      },
+      "sizes": {
+        "large": "큼",
+        "medium": "보통",
+        "small": "작음"
+      },
+      "withIcon": {
+        "liked": "관심",
+        "nearby": "내 근처",
+        "sort": "정렬",
+        "favorite": "즐겨찾기"
+      },
+      "categories": {
+        "all": "전체",
+        "clothing": "의류",
+        "furniture": "가구",
+        "electronics": "전자기기",
+        "books": "도서"
+      },
+      "categoryLabel": "카테고리",
+      "disabled": "비활성"
+    },
+    "divider": {
+      "above": "최근 본 항목",
+      "below": "나를 위한 추천",
+      "links": {
+        "terms": "이용약관",
+        "privacy": "개인정보",
+        "help": "도움말"
+      },
+      "default": "기본",
+      "inset": "양옆 띄우기",
+      "thick": "굵기 8 · 다른 색"
+    },
+    "paginationButton": {
+      "previous": "이전 쪽",
+      "next": "다음 쪽",
+      "pageIndicator": "{total}쪽 중 {page}쪽"
+    },
+    "imageFrame": {
+      "alt": "산 풍경",
+      "brokenAlt": "불러오지 못한 사진",
+      "ratios": {
+        "square": "1 : 1",
+        "standard": "4 : 3",
+        "wide": "16 : 9"
+      },
+      "badge": "예약 중",
+      "like": "좋아요"
+    },
+    "floatingToolbar": {
+      "toolbarLabel": "고른 회원에 할 일",
+      "selected": "3명 고름",
+      "selectedCount": "{count}명 고름",
+      "edit": "수정",
+      "download": "내려받기",
+      "block": "차단",
+      "closeLabel": "선택 해제",
+      "show": "도구 줄 보이기",
+      "members": {
+        "kim": "김민지",
+        "lee": "이준호",
+        "park": "박서연",
+        "choi": "최도현"
+      }
+    },
+    "list": {
+      "header": "설정",
+      "items": {
+        "notifications": {
+          "title": "알림",
+          "detail": "채팅 · 키워드 · 활동"
+        },
+        "account": {
+          "title": "계정",
+          "detail": "이름 · 전화번호 · 이메일"
+        },
+        "privacy": {
+          "title": "개인정보",
+          "detail": "차단한 사용자 · 공개 범위"
+        },
+        "help": {
+          "title": "고객센터"
+        }
+      },
+      "on": "켜짐",
+      "check": {
+        "label": "관심 분야",
+        "options": {
+          "digital": {
+            "title": "디지털기기",
+            "detail": "휴대폰 · 노트북 · 카메라"
+          },
+          "furniture": {
+            "title": "가구",
+            "detail": "책상 · 의자 · 수납장"
+          },
+          "books": {
+            "title": "도서"
+          },
+          "tickets": {
+            "title": "티켓",
+            "detail": "지금은 고를 수 없어요"
+          }
+        }
+      },
+      "radio": {
+        "label": "거래 방법",
+        "options": {
+          "pickup": {
+            "title": "직접 만나서 거래",
+            "detail": "가까운 곳에서 판매자를 만나요"
+          },
+          "parcel": {
+            "title": "택배 거래",
+            "detail": "2~3일 안에 도착해요"
+          },
+          "quick": {
+            "title": "당일 배송",
+            "detail": "우리 동네에서는 쓸 수 없어요"
+          }
+        }
+      }
+    },
+    "segmentedControl": {
+      "label": "기간",
+      "options": {
+        "day": "일",
+        "week": "주",
+        "month": "월"
+      },
+      "selected": "고른 값:",
+      "disabledLabel": "비활성 기간"
+    },
+    "table": {
+      "caption": "최근 주문",
+      "columns": {
+        "order": "주문",
+        "customer": "고객",
+        "item": "상품",
+        "status": "상태",
+        "date": "날짜",
+        "amount": "금액"
+      },
+      "status": {
+        "paid": "결제 완료",
+        "shipping": "배송 중",
+        "refunded": "환불됨"
+      },
+      "customers": ["김지우", "이민준", "박서연", "최도윤", "정하은", "강시우"],
+      "items": [
+        "무선 이어폰",
+        "높이 조절 책상",
+        "캠핑 의자",
+        "기계식 키보드",
+        "커피 그라인더",
+        "책상 조명"
+      ]
+    },
+    "tagGroup": {
+      "location": "서초동",
+      "time": "3분 전",
+      "views": "조회 12",
+      "verified": "인증됨",
+      "rating": "4.8",
+      "reviews": "후기 128개",
+      "long": "서울특별시 강남구 역삼동",
+      "tones": {
+        "neutralSubtle": "옅은 기본",
+        "neutral": "기본",
+        "brand": "브랜드"
+      }
+    },
+    "tablePagination": {
+      "caption": "회원 목록",
+      "columns": {
+        "id": "번호",
+        "name": "이름",
+        "joined": "가입일"
+      },
+      "member": "회원"
+    },
+    "chipTabs": {
+      "tabs": {
+        "all": "전체",
+        "popular": "인기",
+        "recent": "최신",
+        "nearby": "내 근처"
+      },
+      "content": {
+        "all": "모든 글을 보여 줍니다.",
+        "popular": "이번 주 관심을 가장 많이 받은 글이에요.",
+        "recent": "지난 24시간 동안 올라온 글이에요.",
+        "nearby": "3km 안에 있는 글이에요."
+      }
+    },
+    "accordion": {
+      "items": {
+        "shipping": {
+          "title": "배송은 얼마나 걸리나요?",
+          "content": "대부분 2~3 영업일 안에 도착해요. 주문 상세 화면에서 배송 상황을 볼 수 있어요."
+        },
+        "returns": {
+          "title": "반품할 수 있나요?",
+          "content": "네. 쓰지 않은 상품이라면 받은 날부터 7일 안에 반품을 신청할 수 있어요."
+        },
+        "payment": {
+          "title": "어떤 결제 수단을 쓸 수 있나요?",
+          "content": "카드 · 계좌 이체 · 당근페이를 쓸 수 있어요."
+        }
+      },
+      "descriptions": {
+        "shipping": "배송 기간과 배송 조회",
+        "returns": "반품 · 환불 규정",
+        "payment": "카드 · 이체 등"
+      },
+      "disabled": "준비 중"
+    },
+    "tabs": {
+      "tabs": {
+        "posts": "게시글",
+        "reviews": "후기",
+        "likes": "관심",
+        "following": "팔로잉",
+        "followers": "팔로워",
+        "settings": "설정"
+      },
+      "content": {
+        "posts": "내가 쓴 글이에요.",
+        "reviews": "내가 받은 후기예요.",
+        "likes": "관심을 표시한 글이에요."
+      }
+    },
+    "attachmentField": {
+      "label": "첨부 파일",
+      "description": "파일은 3개까지, 하나에 10MB까지 올릴 수 있어요.",
+      "images": {
+        "label": "사진",
+        "description": "사진은 5장까지 올릴 수 있어요."
+      },
+      "dropzone": {
+        "label": "서류",
+        "description": "PDF 파일만 올릴 수 있어요."
+      },
+      "statuses": {
+        "label": "올리기 상태",
+        "description": "올리는 중 · 실패(재시도) · 올린 파일이에요."
+      },
+      "display": {
+        "label": "상품 사진",
+        "description": "카메라를 누르면 예시 사진이 들어가요."
+      },
+      "states": {
+        "invalid": "오류",
+        "errorMessage": "파일을 하나 이상 첨부해 주세요.",
+        "disabled": "비활성"
+      }
+    },
+    "datePicker": {
+      "locale": "ko-KR",
+      "label": "날짜 선택",
+      "rangeLabel": "기간 선택",
+      "multipleLabel": "날짜 여러 개 선택",
+      "selected": "고른 날짜",
+      "none": "없음"
+    },
+    "timePicker": {
+      "locale": "ko-KR",
+      "label": "시간 선택",
+      "selected": "고른 시각",
+      "states": {
+        "disabled": "비활성"
+      }
+    },
+    "wheelPicker": {
+      "fruitLabel": "과일",
+      "fruits": {
+        "apple": "사과",
+        "banana": "바나나",
+        "blueberry": "블루베리",
+        "mango": "망고",
+        "orange": "오렌지",
+        "peach": "복숭아",
+        "strawberry": "딸기"
+      },
+      "selected": "고른 값",
+      "columns": {
+        "label": "걸리는 시간",
+        "hours": "시간",
+        "minutes": "분",
+        "hourUnit": "시간",
+        "minuteUnit": "분"
+      },
+      "sizes": {
+        "small": "작게",
+        "medium": "중간"
+      },
+      "states": {
+        "disabled": "비활성",
+        "readOnly": "읽기 전용"
+      }
+    },
+    "command": {
+      "placeholder": "명령을 입력하거나 검색하세요...",
+      "empty": "맞는 결과가 없어요.",
+      "groups": {
+        "suggestions": "추천",
+        "settings": "설정"
+      },
+      "items": {
+        "calendar": "달력",
+        "search": "검색",
+        "newPost": "새 글 쓰기",
+        "profile": "프로필",
+        "notifications": "알림",
+        "settings": "설정"
+      },
+      "footer": {
+        "navigate": "이동",
+        "select": "고르기",
+        "close": "닫기"
+      },
+      "dialog": {
+        "trigger": "명령 팔레트 열기",
+        "ariaLabel": "명령 팔레트"
+      }
+    },
+    "navigationMenu": {
+      "brand": "당근 비즈니스",
+      "menus": {
+        "products": "제품",
+        "services": "전체 서비스",
+        "categories": "카테고리"
+      },
+      "products": {
+        "ads": {
+          "label": "광고",
+          "description": "가게 근처 이웃에게 알려요."
+        },
+        "coupons": {
+          "label": "쿠폰",
+          "description": "할인으로 손님을 다시 불러요."
+        },
+        "insights": {
+          "label": "통계",
+          "description": "소식이 얼마나 읽혔는지 봐요."
+        }
+      },
+      "groups": {
+        "marketing": "마케팅",
+        "management": "관리",
+        "ads": "광고",
+        "coupons": "쿠폰",
+        "posts": "소식",
+        "orders": "주문",
+        "customers": "고객",
+        "settlement": "정산"
+      },
+      "categories": {
+        "label": "카테고리별로 보기",
+        "digital": "디지털기기",
+        "furniture": "가구",
+        "kids": "유아동",
+        "clothing": "의류",
+        "books": "도서",
+        "sports": "스포츠",
+        "beauty": "뷰티",
+        "pets": "반려동물",
+        "plants": "식물",
+        "games": "게임",
+        "tickets": "티켓",
+        "others": "기타"
+      }
+    },
+    "sideNavigation": {
+      "brand": "당근 비즈니스",
+      "groups": {
+        "store": "가게",
+        "marketing": "마케팅"
+      },
+      "items": {
+        "home": "홈",
+        "orders": "주문",
+        "customers": "고객",
+        "reviews": "후기",
+        "ads": "광고",
+        "campaigns": "캠페인",
+        "reports": "보고서",
+        "billing": "결제",
+        "coupons": "쿠폰",
+        "settings": "설정"
+      },
+      "content": {
+        "title": "홈",
+        "description": "메뉴 오른쪽 위의 버튼을 누르면 메뉴를 접고 펼칠 수 있어요.",
+        "collapsedDescription": "아이콘에 마우스를 올리면 이름이나 하위 메뉴가 보여요."
+      }
+    },
+    "layout": {
+      "title": "주문",
+      "description": "지난 7일 동안 들어온 주문이에요.",
+      "orders": {
+        "first": {
+          "name": "당근 케이크",
+          "status": "준비 중"
+        },
+        "second": {
+          "name": "아이스 아메리카노",
+          "status": "준비 완료"
+        },
+        "third": {
+          "name": "크루아상 세트",
+          "status": "가져감"
+        }
+      },
+      "navigation": {
+        "brand": "당근 비즈니스",
+        "home": "홈",
+        "orders": "주문",
+        "settings": "설정"
+      }
+    },
+    "checkbox": {
+      "label": "이용 약관에 동의합니다",
+      "variants": {
+        "square": "사각형",
+        "ghost": "고스트"
+      },
+      "tones": {
+        "brand": "브랜드",
+        "neutral": "뉴트럴"
+      },
+      "sizes": {
+        "medium": "중간",
+        "large": "크게"
+      },
+      "states": {
+        "indeterminate": "일부 선택",
+        "disabled": "비활성",
+        "disabledChecked": "비활성 · 선택됨",
+        "invalid": "오류"
+      },
+      "group": {
+        "label": "관심사",
+        "description": "원하는 만큼 고르세요.",
+        "selectAll": "모두 선택",
+        "items": {
+          "sports": "스포츠",
+          "music": "음악",
+          "travel": "여행"
+        }
+      }
+    },
+    "radioGroup": {
+      "label": "배송 방법",
+      "description": "주문을 받을 방법을 고르세요.",
+      "errorMessage": "배송 방법을 골라 주세요.",
+      "options": {
+        "standard": "일반 배송",
+        "express": "빠른 배송",
+        "pickup": "매장 픽업"
+      },
+      "tones": {
+        "brand": "브랜드",
+        "neutral": "뉴트럴"
+      },
+      "sizes": {
+        "medium": "중간",
+        "large": "크게"
+      },
+      "states": {
+        "invalid": "오류",
+        "disabled": "비활성",
+        "disabledItem": "항목 하나 비활성"
+      }
+    },
+    "switch": {
+      "label": "푸시 알림",
+      "tones": {
+        "brand": "브랜드",
+        "neutral": "뉴트럴"
+      },
+      "states": {
+        "disabled": "비활성",
+        "disabledChecked": "비활성 · 켜짐"
+      }
+    },
+    "field": {
+      "label": "자기소개",
+      "indicator": "선택",
+      "placeholder": "자신을 소개해 주세요",
+      "description": "프로필에 보여요.",
+      "errorMessage": "닉네임을 입력해 주세요.",
+      "states": {
+        "invalid": "닉네임",
+        "disabled": "비활성",
+        "readOnly": "읽기 전용"
+      },
+      "readOnlyValue": "당근"
+    },
+    "fieldset": {
+      "label": "알림",
+      "indicator": "선택",
+      "description": "받을 소식을 고르세요.",
+      "requiredLabel": "약관 동의",
+      "errorMessage": "계속하려면 둘 다 동의해 주세요.",
+      "items": {
+        "chat": "채팅 메시지",
+        "marketing": "마케팅",
+        "news": "동네 소식"
+      },
+      "agreements": {
+        "terms": "서비스 이용 약관",
+        "privacy": "개인정보 처리방침"
+      }
+    },
+    "fieldButton": {
+      "label": "픽업 날짜",
+      "placeholder": "날짜를 고르세요",
+      "description": "칸을 누르면 날짜를 고를 수 있어요.",
+      "value": "2026년 10월 19일 (월)",
+      "errorMessage": "픽업 날짜를 골라 주세요.",
+      "sizes": {
+        "large": "크게",
+        "medium": "중간"
+      },
+      "states": {
+        "invalid": "오류",
+        "disabled": "비활성",
+        "readOnly": "읽기 전용"
+      }
+    },
+    "combobox": {
+      "label": "과일",
+      "placeholder": "과일 검색",
+      "multiplePlaceholder": "과일 추가",
+      "empty": "찾는 과일이 없어요.",
+      "fruits": {
+        "apple": "사과",
+        "banana": "바나나",
+        "blueberry": "블루베리",
+        "grape": "포도",
+        "mango": "망고",
+        "orange": "오렌지",
+        "peach": "복숭아",
+        "strawberry": "딸기"
+      }
+    },
+    "dialog": {
+      "open": "프로필 수정",
+      "title": "프로필 수정",
+      "description": "여기서 정한 닉네임과 사진이 이웃에게 보여요.",
+      "body": "알아보기 쉬운 닉네임을 골라 주세요. 30일이 지나면 다시 바꿀 수 있어요.",
+      "cancel": "취소",
+      "save": "저장",
+      "sizes": {
+        "medium": "Medium",
+        "large": "Large"
+      },
+      "sizeBody": "768px 이상에서 medium 창은 480px, large 창은 800px 폭입니다.",
+      "scrollable": {
+        "open": "약관 보기",
+        "title": "서비스 이용약관",
+        "paragraph": "이 약관은 서비스를 어떻게 이용할 수 있는지, 나눠 주신 정보를 어떻게 다루는지, 문제가 생기면 어떻게 되는지를 설명합니다. 계속하기 전에 꼼꼼히 읽어 주세요.",
+        "agree": "동의"
+      }
+    },
+    "alertDialog": {
+      "delete": {
+        "open": "게시글 삭제",
+        "title": "게시글을 삭제할까요?",
+        "description": "삭제한 게시글은 되돌릴 수 없어요.",
+        "cancel": "취소",
+        "confirm": "삭제"
+      },
+      "notice": {
+        "open": "알림 보기",
+        "title": "업로드 완료",
+        "description": "사진 3장을 모두 올렸어요.",
+        "confirm": "확인"
+      }
+    },
+    "responsiveDialog": {
+      "open": "거래 장소 정하기",
+      "title": "거래 장소 정하기",
+      "description": "768px 이상에서는 창으로, 그보다 좁으면 바텀 시트로 보여요.",
+      "body": "역 출구나 가게 입구처럼 서로 찾기 쉬운 곳을 골라 주세요.",
+      "cancel": "취소",
+      "confirm": "확인"
+    },
+    "bottomSheet": {
+      "default": {
+        "open": "시트 열기",
+        "title": "알림을 켤까요?",
+        "description": "누군가 내 게시글에 답하면 알려 드려요.",
+        "confirm": "켜기"
+      },
+      "handle": {
+        "open": "정렬",
+        "title": "정렬 기준",
+        "options": {
+          "latest": "최신순",
+          "popular": "인기순",
+          "nearby": "가까운순"
+        }
+      }
+    },
+    "sidePanel": {
+      "open": "패널 열기",
+      "title": "필터",
+      "description": "목록을 좁혀 보세요.",
+      "body": "모든 필터에 맞는 항목만 보여요. 초기화하기 전까지 필터는 그대로 남아요.",
+      "reset": "초기화",
+      "apply": "적용",
+      "directions": {
+        "left": "왼쪽에서",
+        "right": "오른쪽에서"
+      }
+    },
+    "popover": {
+      "open": "배송 안내",
+      "title": "배송",
+      "description": "오후 2시 전에 주문하면 그날 보내 드려요.",
+      "body": "보통 영업일 기준 1–2일 걸려요. 주문 내역에서 배송 상황을 볼 수 있어요.",
+      "confirm": "확인",
+      "placements": {
+        "top": "위",
+        "bottom": "아래"
+      },
+      "placementTitle": "뜨는 자리"
+    },
+    "menu": {
+      "open": "더 보기",
+      "items": {
+        "edit": "수정",
+        "copy": "링크 복사",
+        "notify": "알림",
+        "notifyDescription": "새 댓글이 달리면 알려 드려요",
+        "delete": "삭제"
+      },
+      "groups": {
+        "open": "옵션",
+        "post": "게시글",
+        "sort": "정렬 기준",
+        "options": {
+          "latest": "최신순",
+          "popular": "인기순",
+          "nearby": "가까운순"
+        }
+      }
+    },
+    "helpBubble": {
+      "trigger": "매너온도란?",
+      "title": "매너온도",
+      "description": "이웃이 남긴 후기에 따라 오르는 점수예요.",
+      "tooltip": {
+        "trigger": "올리거나 초점을 주세요",
+        "title": "임시 저장됨",
+        "description": "임시 저장한 글은 30일 동안 남아요."
+      }
+    },
     "tFlavored": {
       "button": {
         "label": "버튼",

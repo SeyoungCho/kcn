@@ -1,0 +1,46 @@
+---
+title: Bottom Sheet
+description: A sheet that slides up from the bottom of the screen and can be swiped down to close.
+---
+
+<Preview
+  registry="seed"
+  demo="bottom-sheet/bottom-sheet-default"
+  height={420}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/bottom-sheet
+```
+
+## Usage
+
+`BottomSheetContent` draws the sheet with an optional `title`, `description`, and close button; put content in `BottomSheetBody` and buttons in `BottomSheetFooter`. Swiping the sheet down more than a quarter of its height (or quickly) closes it, and so does pressing outside unless `closeOnInteractOutside` is `false`. There's no built-in action button — control `open` to close the sheet from your own buttons.
+
+## Examples
+
+### With Handle
+
+<Preview
+  registry="seed"
+  demo="bottom-sheet/bottom-sheet-with-handle"
+  height={420}
+/>
+
+## API Reference
+
+### BottomSheetRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/bottom-sheet.ts"
+  name="MDXBottomSheetProps"
+/>
+
+### BottomSheetContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/bottom-sheet.ts"
+  name="MDXBottomSheetContentProps"
+/>

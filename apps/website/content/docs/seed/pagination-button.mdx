@@ -1,0 +1,37 @@
+---
+title: Pagination Button
+description: An icon-only button for moving to the previous or next page.
+---
+
+<Preview
+  registry="seed"
+  demo="pagination-button/pagination-button-default"
+  height={160}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/pagination-button
+```
+
+## Usage
+
+Pass a single icon element as `children`; the button sizes and colors it. Since the button shows only an icon, always give it an `aria-label`.
+
+## Examples
+
+### With Page Indicator
+
+<Preview
+  registry="seed"
+  demo="pagination-button/pagination-button-with-indicator"
+  height={160}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/pagination-button.ts"
+  name="MDXPaginationButtonProps"
+/>

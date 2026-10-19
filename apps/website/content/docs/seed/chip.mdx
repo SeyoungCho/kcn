@@ -1,0 +1,68 @@
+---
+title: Chip
+description: Compact pill-shaped controls for toggling filters, picking one option, or triggering an action.
+---
+
+<Preview registry="seed" demo="chip/chip-default" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/chip
+```
+
+## Usage
+
+There are three kinds of chip that share one look: `ToggleChip` turns on and off like a checkbox, `RadioChipItem` inside `RadioChipRoot` picks one of several, and `ButtonChip` is a plain button. Put `ChipLabel`, `ChipPrefixIcon`, and `ChipSuffixIcon` inside — they inherit the chip's `variant` and `size`.
+
+## Examples
+
+### Variants
+
+<Preview registry="seed" demo="chip/chip-variants" height={240} />
+
+### Sizes
+
+<Preview registry="seed" demo="chip/chip-sizes" height={160} />
+
+### With Icon
+
+Wrap an `Icon` in `ChipPrefixIcon` or `ChipSuffixIcon`. For an icon-only chip, set `layout="iconOnly"` and give it an accessible name through `inputProps`.
+
+<Preview registry="seed" demo="chip/chip-with-icon" height={160} />
+
+### Radio Chips
+
+`RadioChipRoot` sets no layout — arrange the items with `className`.
+
+<Preview registry="seed" demo="chip/chip-radio" height={180} />
+
+## API Reference
+
+### ToggleChip
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXToggleChipProps"
+/>
+
+### ButtonChip
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXButtonChipProps"
+/>
+
+### RadioChipRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXRadioChipRootProps"
+/>
+
+### RadioChipItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/chip.ts"
+  name="MDXRadioChipItemProps"
+/>

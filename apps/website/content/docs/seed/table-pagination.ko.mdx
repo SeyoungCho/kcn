@@ -1,0 +1,51 @@
+---
+title: Table Pagination
+description: 표 아래의 쪽 나눔 — 한 쪽의 줄 수, 보이는 범위, 이전 · 다음 버튼을 보여 줍니다.
+---
+
+<Preview
+  registry="seed"
+  demo="table-pagination/table-pagination-default"
+  height={360}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/table-pagination
+```
+
+## 사용법
+
+`TablePagination` 은 늘 한 줄입니다 — 내용보다 좁아질 수 있으면 `overflow-x-auto` 상자로 감싸세요. 한 쪽의 줄 수를 바꾸면 첫 쪽으로 돌아갑니다. 줄이 줄어 지금 쪽이 범위를 벗어나면 고쳐진 쪽으로 `onValueChange` 가 `reason: "constraint"` 와 함께 불립니다.
+
+같은 셈으로 다른 모양을 만들려면 `useTablePagination` 을 쓰세요.
+
+## 예제
+
+### 전체 수를 모를 때
+
+전체 줄 수를 모르면(커서 기반 API 등) `totalItems` 를 빼고, 서버가 알려 주는 `hasPreviousPage` · `hasNextPage` 를 줍니다. 범위 선택 대신 범위 글자만 보입니다.
+
+<Preview
+  registry="seed"
+  demo="table-pagination/table-pagination-unknown-total"
+  height={360}
+/>
+
+### 표와 함께
+
+`value` 를 제어하고 지금 쪽의 줄만 잘라 보여 줍니다.
+
+<Preview
+  registry="seed"
+  demo="table-pagination/table-pagination-with-table"
+  height={640}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/table-pagination.ts"
+  name="MDXTablePaginationPropsKO"
+/>

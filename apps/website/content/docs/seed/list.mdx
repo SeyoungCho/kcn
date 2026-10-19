@@ -1,0 +1,88 @@
+---
+title: List
+description: A vertical stack of rows with leading, title, detail, and trailing slots.
+---
+
+<Preview registry="seed" demo="list/list-default" height={420} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/list
+```
+
+## Usage
+
+`List` renders a `ul`. Pick the row that matches the interaction:
+
+- `ListItem` — a static row; only controls placed in `suffix` are interactive.
+- `ListButtonItem` — the whole row is a button (or a link with `render={<a href="…" />}`).
+- `ListCheckItem` — the whole row is a checkbox. Wrap the list with `render={<fieldset />}` and show the state with `ListCheckmark`.
+- `ListRadioItem` — the whole row is a radio. Wrap the list with `render={<ListRadioGroup … />}` and show the state with `ListRadiomark`.
+
+Put `ListHeader` right above the list and `ListDivider` between rows. Interactive controls placed in `prefix` or `suffix` of a `ListButtonItem` need `position: relative` to sit above the row button.
+
+## Examples
+
+### Check Items
+
+<Preview registry="seed" demo="list/list-check" height={340} />
+
+### Radio Items
+
+<Preview registry="seed" demo="list/list-radio" height={300} />
+
+## API Reference
+
+### List
+
+<AutoTypeTable path="src/app/preview/seed/types/list.ts" name="MDXListProps" />
+
+### ListItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListItemProps"
+/>
+
+### ListButtonItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListButtonItemProps"
+/>
+
+### ListCheckItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListCheckItemProps"
+/>
+
+### ListRadioItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListRadioItemProps"
+/>
+
+### ListCheckmark
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListCheckmarkProps"
+/>
+
+### ListRadiomark
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListRadiomarkProps"
+/>
+
+### ListHeader
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/list.ts"
+  name="MDXListHeaderProps"
+/>

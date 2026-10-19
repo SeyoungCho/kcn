@@ -1,0 +1,38 @@
+---
+title: Side Panel
+description: A panel that slides in from the side of the screen for secondary tasks like filters or details.
+---
+
+<Preview registry="seed" demo="side-panel/side-panel-default" height={520} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-seed/side-panel
+```
+
+## Usage
+
+`SidePanelContent` draws the panel with an optional `title`, `description`, and close button; put content in `SidePanelBody` (it scrolls when long) and buttons in `SidePanelFooter`. Swiping toward the edge it came from closes it. There's no built-in action button — control `open` to close the panel from your own buttons.
+
+## Examples
+
+### Directions
+
+<Preview registry="seed" demo="side-panel/side-panel-directions" height={520} />
+
+## API Reference
+
+### SidePanelRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/side-panel.ts"
+  name="MDXSidePanelProps"
+/>
+
+### SidePanelContent
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/side-panel.ts"
+  name="MDXSidePanelContentProps"
+/>

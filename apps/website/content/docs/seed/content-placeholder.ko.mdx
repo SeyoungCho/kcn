@@ -1,0 +1,47 @@
+---
+title: Content Placeholder
+description: 사진이 없는 자리를 회색 판과 그림으로 채웁니다.
+---
+
+<Preview
+  registry="seed"
+  demo="content-placeholder/content-placeholder-default"
+  height={240}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/content-placeholder
+```
+
+## 사용법
+
+`ContentPlaceholder` 는 부모의 크기를 다 채우므로, 이미지 틀이나 카드의 사진 자리 같은 부모로 크기를 정하세요. 그림은 판 높이의 절반이고 가장 넓어도 160px 입니다. 그림은 꾸밈이라, 이름이 필요하면 판에 `role="img"` 와 `aria-label` 을 주세요.
+
+## 예제
+
+### 종류
+
+<Preview
+  registry="seed"
+  demo="content-placeholder/content-placeholder-types"
+  height={440}
+/>
+
+### 직접 고른 그림
+
+`children` 으로 `svg` · `img` 요소를 주면 프리셋 대신 놓입니다.
+
+<Preview
+  registry="seed"
+  demo="content-placeholder/content-placeholder-custom"
+  height={260}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/content-placeholder.ts"
+  name="MDXContentPlaceholderPropsKO"
+/>

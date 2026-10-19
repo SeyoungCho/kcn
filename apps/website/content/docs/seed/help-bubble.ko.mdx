@@ -1,0 +1,40 @@
+---
+title: Help Bubble
+description: 요소를 설명하는 화살표 달린 작은 말풍선으로, 누르거나 마우스를 올리면 뜹니다.
+---
+
+<Preview registry="seed" demo="help-bubble/help-bubble-default" height={240} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/help-bubble
+```
+
+## 사용법
+
+눌러서 여는 말풍선은 `HelpBubbleRoot` · `HelpBubbleTrigger` 에 `HelpBubblePositioner` › `HelpBubbleContent` › `HelpBubbleArrow`(`HelpBubbleArrowTip`) · `HelpBubbleBody`(`HelpBubbleTitle` · `HelpBubbleDescription`)를 조합합니다. 열릴 때 초점을 가져가지 않아 `defaultOpen` 으로 화면과 함께 띄울 수 있습니다.
+
+## 예제
+
+### 툴팁
+
+`HelpBubbleTooltipTrigger` 는 요소 하나를 감싸 마우스를 올리거나 초점이 가면 말풍선을 띄웁니다. 제목 · 설명은 `title` · `description` 으로 줍니다. 여러 개를 `HelpBubbleTooltipDelayGroup` 으로 묶으면 옆 말풍선으로 옮겨 갈 때 기다리지 않고 바로 뜹니다.
+
+<Preview registry="seed" demo="help-bubble/help-bubble-tooltip" height={240} />
+
+## API 레퍼런스
+
+### HelpBubbleRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/help-bubble.ts"
+  name="MDXHelpBubblePropsKO"
+/>
+
+### HelpBubbleTooltipTrigger
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/help-bubble.ts"
+  name="MDXHelpBubbleTooltipTriggerPropsKO"
+/>

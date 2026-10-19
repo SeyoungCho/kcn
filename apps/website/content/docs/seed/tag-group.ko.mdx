@@ -1,0 +1,48 @@
+---
+title: Tag Group
+description: 동네 · 시간 · 개수 같은 짧은 정보를 점으로 나눠 한 줄에 늘어놓습니다.
+---
+
+<Preview registry="seed" demo="tag-group/tag-group-default" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-seed/tag-group
+```
+
+## 사용법
+
+`TagGroupRoot` 는 안의 `TagGroupItem` 사이에 구분자를 넣습니다. 묶음에 준 `size` · `weight` · `tone` 은 모든 항목에 적용되고, 항목에 직접 주면 그 항목만 바뀝니다.
+
+## 예제
+
+### 크기 · 굵기 · 색조
+
+<Preview registry="seed" demo="tag-group/tag-group-sizes" height={220} />
+
+### 아이콘과 함께
+
+<Preview registry="seed" demo="tag-group/tag-group-with-icon" height={180} />
+
+### 말줄임
+
+`truncate` 를 주면 한 줄에 두고 넘치는 항목을 말줄임표로 자릅니다. 주지 않으면 줄을 바꿉니다.
+
+<Preview registry="seed" demo="tag-group/tag-group-truncate" height={200} />
+
+## API 레퍼런스
+
+### TagGroupRoot
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tag-group.ts"
+  name="MDXTagGroupRootPropsKO"
+/>
+
+### TagGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/seed/types/tag-group.ts"
+  name="MDXTagGroupItemPropsKO"
+/>
