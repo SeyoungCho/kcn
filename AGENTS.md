@@ -109,10 +109,10 @@ Supporting pieces:
 - `apps/website/src/proxy.ts` — i18n middleware excludes `/preview`, so preview routes have no `[lang]` segment. The active language is instead forwarded by `<Preview>` as a `?lang=` search param (see `use-preview-src.ts` / `preview-dictionary-provider.tsx`).
 - `apps/website/src/dictionaries/{en,ko}.json` — the `demos` section holds the static labels rendered inside demo previews (fruit names, placeholders, variant/state labels). The `Dictionary` type is derived from `en.json`, so both locales must stay in sync.
 - `apps/website/loaders/registry-preview-imports.cjs` — preview-only transform that rewrites consumer-facing imports from registry source files (`@/components/ui/<x>` and `@/lib/<x>`) to the matching workspace registry package (`@repo/<registry>/ui/<x>`, `@repo/<registry>/lib/<x>`) while bundling the docs app. Registry packages must export `./ui/*` and `./lib/*`.
-- `apps/website/tsconfig.json` — maps `@/components/ui/*` to `packages/registries/seed/src/components/ui/*` and falls back from `apps/website/src/lib/*` to `packages/registries/seed/src/lib/*`, so the website type check resolves the consumer-facing aliases inside registry sources. Only seed uses cross-component aliases today; if another registry starts importing `@/components/ui/*` or `@/lib/<hook>` from its own files, this single mapping can no longer type both — revisit it then (for example with per-registry declaration builds).
+- `scripts/build-registry-types.mjs` — each registry's `build` script. Emits the registry's type declarations to `dist/types` and rewrites the consumer aliases (`@/components/ui/*`, `@/lib/*`) inside them to relative paths. Registry `package.json` exports point `types` at `dist/types` (runtime still loads `src`), so the website type-checks demos against declarations where every alias already resolves inside its own registry. Turbo runs `^build` before the website's `check-types` and `dev`; after editing a registry by hand, run `pnpm --filter @repo/<registry> build` (or `pnpm build`) before checking website types.
 - `apps/website/next.config.mjs` — every registry must be in `transpilePackages`; its Turbopack and webpack rules apply the preview-only registry import transform.
 
-Registry component source files are also the consumer-facing shadcn snippets. Keep imports such as `@/components/ui/icon` and `@/lib/utils` in that source. The docs site's own UI lives in `apps/website/src/components/docs-ui/` (import it as `@/components/docs-ui/*`); `@/components/ui/*` is reserved for registry snippets. Never add components under `apps/website/src/components/ui/`.
+Registry component source files are also the consumer-facing shadcn snippets. Keep imports such as `@/components/ui/icon` and `@/lib/utils` in that source. The docs site's own UI lives in `apps/website/src/components/docs-ui/` (import it as `@/components/docs-ui/*`); `@/components/ui/*` is reserved for registry snippets. Never add components under `apps/website/src/components/ui/`, and never map registry aliases in the website `tsconfig.json` — every registry uses the same specifiers.
 
 ### MDX Authoring API
 
@@ -154,7 +154,7 @@ Registry component source files are also the consumer-facing shadcn snippets. Ke
 
 When integrating a new registry into the docs site, beyond the standard MDX/CSS wiring, you must:
 
-1. Export `./styles/global.css` and `./styles/theme.css` from the registry's `package.json`.
+1. Export `./styles/global.css` and `./styles/theme.css` from the registry's `package.json`, export `./ui/*`, `./lib/*` and `./mdx` with `types` under `./dist/types/…`, and add `"build": "node ../../../scripts/build-registry-types.mjs"` to its scripts (copy `packages/registries/seed/package.json`).
 2. Add the registry to `transpilePackages` in `apps/website/next.config.mjs`.
 3. Add the registry slug to `PREVIEW_REGISTRIES` in `apps/website/src/types/preview.ts`.
 4. Create the per-registry preview route tree under `apps/website/src/app/preview/<registry-name>/` (mirror the `seed/` shape).

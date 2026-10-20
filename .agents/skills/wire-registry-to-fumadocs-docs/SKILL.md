@@ -51,6 +51,7 @@ The `<Preview>` component also owns the Code tab. Component previews generate co
      - `./styles/global.css` — full app entry point with Tailwind imports, `@theme inline` mappings, and base layer; imported by the per-registry preview iframe CSS bundle.
      - `./styles/theme.css` — theme CSS variable definitions on `:root` and `.dark`, imported transitively by `global.css`.
    - If `./styles/global.css` is missing from `exports`, add it.
+   - Export `./ui/*`, `./lib/*` and `./mdx` with `default` pointing at `src` and `types` pointing at `./dist/types/…`, and add the `"build": "node ../../../scripts/build-registry-types.mjs"` script — the website type-checks against those generated declarations (copy `packages/registries/seed/package.json`).
 
 4. Wire registry components for the `<Preview>` lookup map.
    - Follow the current architecture in the repo:

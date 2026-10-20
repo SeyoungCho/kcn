@@ -28,7 +28,7 @@ The `<Preview>` component also renders a Code tab:
 - Component mode generates the snippet from `component`, `props`, and plain-text `children`, with imports like `@/components/ui/button`.
 - Demo mode loads the matching demo file source through `/api/preview-code`. Demo files should import from `@repo/<registry-name>/ui/<component>` so they render in the isolated iframe; the Code tab rewrites those imports to `@/components/ui/<component>` before showing the code.
 
-Registry component source files remain consumer-facing shadcn snippets. Keep imports such as `@/components/ui/icon` and `@/lib/utils` intact in those source files. During docs bundling, `apps/website/loaders/registry-preview-imports.cjs` rewrites `@/components/ui/*` and `@/lib/*` to the matching workspace registry package so previews remain registry-isolated. Do not add components under `apps/website/src/components/ui/` (the docs site's own UI is in `src/components/docs-ui/`); the website type check resolves those aliases through `apps/website/tsconfig.json` `paths`.
+Registry component source files remain consumer-facing shadcn snippets. Keep imports such as `@/components/ui/icon` and `@/lib/utils` intact in those source files. During docs bundling, `apps/website/loaders/registry-preview-imports.cjs` rewrites `@/components/ui/*` and `@/lib/*` to the matching workspace registry package so previews remain registry-isolated. Do not add components under `apps/website/src/components/ui/` (the docs site's own UI is in `src/components/docs-ui/`); the website type-checks against each registry's generated `dist/types` declarations, so run `pnpm --filter @repo/<registry-name> build` after changing registry sources and before `pnpm --filter kcn-website check-types`.
 
 ## Workflow
 

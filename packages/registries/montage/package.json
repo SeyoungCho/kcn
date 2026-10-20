@@ -7,15 +7,15 @@
   "license": "MIT",
   "exports": {
     "./ui/*": {
-      "types": "./src/components/ui/*.tsx",
+      "types": "./dist/types/components/ui/*.d.ts",
       "default": "./src/components/ui/*.tsx"
     },
     "./lib/*": {
-      "types": "./src/lib/*.ts",
+      "types": "./dist/types/lib/*.d.ts",
       "default": "./src/lib/*.ts"
     },
     "./mdx": {
-      "types": "./src/mdx.ts",
+      "types": "./dist/types/mdx.d.ts",
       "default": "./src/mdx.ts"
     },
     "./styles/global.css": {
@@ -28,6 +28,7 @@
     }
   },
   "scripts": {
+    "build": "node ../../../scripts/build-registry-types.mjs",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
