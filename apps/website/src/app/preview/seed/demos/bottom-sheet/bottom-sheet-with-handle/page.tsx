@@ -10,7 +10,7 @@ import {
 } from "@repo/seed/ui/bottom-sheet";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const options = ["latest", "popular", "nearby"] as const;
+const options = ["recommended", "popular", "priceLow"] as const;
 
 export default function BottomSheetWithHandleDemo() {
   const t = usePreviewDictionary().demos.bottomSheet;

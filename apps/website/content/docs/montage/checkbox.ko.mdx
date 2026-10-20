@@ -1,0 +1,58 @@
+---
+title: Checkbox
+description: 옵션을 켜고 끄거나, 목록에서 여러 개를 고를 때 써요.
+---
+
+<Preview registry="montage" demo="checkbox/checkbox-demo" height={180} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/checkbox
+```
+
+## 사용법
+
+API 는 shadcn 의 Checkbox 와 같고, `variant`(`default` · `circle` · `check`) · `size` · `tight` 가 더 있어요. 글자와 함께 `<label>` 로 감싸거나 `Field` 를 써서 글자를 눌러도 바뀌게 하고, 보이는 글자가 없으면 `aria-label` 을 달아 주세요.
+
+```tsx
+<label className="flex items-center gap-2">
+  <Checkbox defaultChecked />
+  서비스 이용약관에 동의해요
+</label>
+```
+
+## 예제
+
+### 배리언트
+
+`check` 는 칸 없이 체크만 그리고, 선택되면 체크가 파래져요.
+
+<Preview registry="montage" demo="checkbox/checkbox-variants" height={180} />
+
+### 크기
+
+<Preview registry="montage" demo="checkbox/checkbox-sizes" height={140} />
+
+### Tight
+
+`tight` 는 좌우 여백을 없애 위아래 글자와 줄을 맞춰요.
+
+<Preview registry="montage" demo="checkbox/checkbox-tight" height={140} />
+
+### 일부 선택
+
+일부 항목만 골랐을 때 "전체 선택" 칸에 `indeterminate` 를 써요.
+
+<Preview registry="montage" demo="checkbox/checkbox-indeterminate" height={180} />
+
+### 비활성화
+
+<Preview registry="montage" demo="checkbox/checkbox-disabled" height={140} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/checkbox.ts"
+  name="MDXCheckboxPropsKO"
+/>

@@ -9,9 +9,9 @@ export default function DividerVerticalDemo() {
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="flex h-5 items-center gap-3 text-t4 text-fg-neutral-muted">
-        <span>{t.links.terms}</span>
+        <span>{t.links.shipping}</span>
         <Divider orientation="vertical" className="h-full" />
-        <span>{t.links.privacy}</span>
+        <span>{t.links.returns}</span>
         <Divider orientation="vertical" className="h-full" />
         <span>{t.links.help}</span>
       </div>

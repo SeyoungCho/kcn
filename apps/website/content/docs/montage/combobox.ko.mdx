@@ -1,0 +1,86 @@
+---
+title: Combobox
+description: 글자를 치면 선택지 목록이 걸러지는 입력 칸이에요.
+---
+
+<Preview registry="montage" demo="combobox/combobox-demo" height={520} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/combobox
+```
+
+## 사용법
+
+API 는 shadcn 의 Combobox 와 같아요. `Combobox` 에 `items` 를 주고, `ComboboxList` 의 함수 자식으로 항목을 하나씩 그려요. `{ value, label }` 모양의 항목은 `label` 로 보여 주고 걸러요. 보이는 이름표가 없으면 `ComboboxInput` 에 `aria-label` 을 달아 주세요.
+
+## 예제
+
+### 크기
+
+<Preview registry="montage" demo="combobox/combobox-sizes" height={480} />
+
+### 지우기 버튼
+
+<Preview registry="montage" demo="combobox/combobox-clear" height={520} />
+
+### 묶음
+
+`items` 배열을 가진 묶음을 주고, `ComboboxGroup` 과 `ComboboxCollection` 으로 그려요.
+
+<Preview registry="montage" demo="combobox/combobox-groups" height={520} />
+
+### 여러 개 고르기
+
+칩은 `ComboboxChips` 안에 그리고, 같은 `useComboboxAnchor()` ref 를 `ComboboxContent` 에도 넘겨서 목록이 입력 칸 전체 아래에 열리게 해요.
+
+<Preview registry="montage" demo="combobox/combobox-multiple" height={520} />
+
+### 상태
+
+<Preview registry="montage" demo="combobox/combobox-states" height={480} />
+
+## API 레퍼런스
+
+### Combobox
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxPropsKO"
+/>
+
+### ComboboxInput
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxInputPropsKO"
+/>
+
+### ComboboxContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxContentPropsKO"
+/>
+
+### ComboboxItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxItemPropsKO"
+/>
+
+### ComboboxChips
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxChipsPropsKO"
+/>
+
+### ComboboxChip
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxChipPropsKO"
+/>

@@ -1,0 +1,44 @@
+---
+title: Drawer
+description: Drawer는 페이지를 떠나지 않고 더 많은 정보나 동작을 보여 주는, 화면 아래에서 올라오는 시트예요.
+---
+
+<Preview registry="montage" demo="drawer/drawer-demo" height={400} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/drawer
+```
+
+## 사용법
+
+API 는 shadcn 의 Drawer 와 같지만 아래에서만 열리고, 끌어내려 닫을 수 있어요. `DrawerHeader` 와 `DrawerFooter` 사이의 블록에는 여백과 간격이 알아서 붙고, 버튼 줄의 버튼은 폭을 나눠 가지니 `size="lg"` 로 넣어 주세요.
+
+## 예제
+
+### 버튼 두 개
+
+<Preview registry="montage" demo="drawer/drawer-two-buttons" height={400} />
+
+### 스크롤
+
+내용이 길면 버튼 줄은 남고 내용만 스크롤돼요.
+
+<Preview registry="montage" demo="drawer/drawer-scroll" height={560} />
+
+## API 레퍼런스
+
+### Drawer
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/drawer.ts"
+  name="MDXDrawerPropsKO"
+/>
+
+### DrawerContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/drawer.ts"
+  name="MDXDrawerContentPropsKO"
+/>

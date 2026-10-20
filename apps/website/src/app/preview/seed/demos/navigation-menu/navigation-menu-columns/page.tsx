@@ -16,18 +16,18 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 export default function NavigationMenuColumnsDemo() {
   const t = usePreviewDictionary().demos.navigationMenu;
   const categories = [
-    t.categories.digital,
-    t.categories.furniture,
-    t.categories.kids,
-    t.categories.clothing,
-    t.categories.books,
-    t.categories.sports,
-    t.categories.beauty,
-    t.categories.pets,
-    t.categories.plants,
-    t.categories.games,
-    t.categories.tickets,
-    t.categories.others,
+    t.categories.foliage,
+    t.categories.succulents,
+    t.categories.herbs,
+    t.categories.flowers,
+    t.categories.largePlants,
+    t.categories.hanging,
+    t.categories.airPurifying,
+    t.categories.petSafe,
+    t.categories.easyCare,
+    t.categories.potsTools,
+    t.categories.soil,
+    t.categories.gifts,
   ];
 
   return (

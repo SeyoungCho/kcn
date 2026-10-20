@@ -14,26 +14,30 @@ export default function SegmentedControlDisabledDemo() {
       className="flex min-h-screen flex-col items-center justify-center gap-4
         p-8"
     >
-      <SegmentedControl defaultValue="day" aria-label={t.label}>
-        <SegmentedControlItem value="day">{t.options.day}</SegmentedControlItem>
-        <SegmentedControlItem value="week">
-          {t.options.week}
+      <SegmentedControl defaultValue="shade" aria-label={t.label}>
+        <SegmentedControlItem value="shade">
+          {t.options.shade}
         </SegmentedControlItem>
-        <SegmentedControlItem value="month" disabled>
-          {t.options.month}
+        <SegmentedControlItem value="partShade">
+          {t.options.partShade}
+        </SegmentedControlItem>
+        <SegmentedControlItem value="fullSun" disabled>
+          {t.options.fullSun}
         </SegmentedControlItem>
       </SegmentedControl>
       <SegmentedControl
-        defaultValue="week"
+        defaultValue="partShade"
         disabled
         aria-label={t.disabledLabel}
       >
-        <SegmentedControlItem value="day">{t.options.day}</SegmentedControlItem>
-        <SegmentedControlItem value="week">
-          {t.options.week}
+        <SegmentedControlItem value="shade">
+          {t.options.shade}
         </SegmentedControlItem>
-        <SegmentedControlItem value="month">
-          {t.options.month}
+        <SegmentedControlItem value="partShade">
+          {t.options.partShade}
+        </SegmentedControlItem>
+        <SegmentedControlItem value="fullSun">
+          {t.options.fullSun}
         </SegmentedControlItem>
       </SegmentedControl>
     </div>

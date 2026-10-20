@@ -27,23 +27,23 @@ export default function NavigationMenuDefaultDemo() {
             <NavigationMenuTrigger
               render={<ActionButton variant="ghost" size="small" />}
             >
-              {t.menus.products}
+              {t.menus.benefits}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <NavigationMenuItem
                 prefixIcon={<IconMegaphoneLine />}
-                label={t.products.ads.label}
-                description={t.products.ads.description}
+                label={t.benefits.events.label}
+                description={t.benefits.events.description}
               />
               <NavigationMenuItem
                 prefixIcon={<IconCouponLine />}
-                label={t.products.coupons.label}
-                description={t.products.coupons.description}
+                label={t.benefits.coupons.label}
+                description={t.benefits.coupons.description}
               />
               <NavigationMenuItem
                 prefixIcon={<IconBarchartSquareLine />}
-                label={t.products.insights.label}
-                description={t.products.insights.description}
+                label={t.benefits.points.label}
+                description={t.benefits.points.description}
               />
             </NavigationMenuContent>
           </NavigationMenuRoot>
@@ -54,9 +54,9 @@ export default function NavigationMenuDefaultDemo() {
               {t.menus.categories}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <NavigationMenuItem label={t.categories.digital} />
-              <NavigationMenuItem label={t.categories.furniture} />
-              <NavigationMenuItem label={t.categories.books} />
+              <NavigationMenuItem label={t.categories.foliage} />
+              <NavigationMenuItem label={t.categories.succulents} />
+              <NavigationMenuItem label={t.categories.herbs} />
             </NavigationMenuContent>
           </NavigationMenuRoot>
         </nav>

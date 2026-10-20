@@ -1,0 +1,47 @@
+---
+title: Slider
+description: Picks a number, or a range, by dragging a thumb along a track.
+---
+
+<Preview registry="montage" demo="slider/slider-demo" height={120} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/slider
+```
+
+## Usage
+
+The API matches shadcn's Slider, plus `heading` and `label`. Point `aria-labelledby` at a label (or use `Field`) so screen readers can name each thumb.
+
+## Examples
+
+### Range
+
+Pass an array to `defaultValue` for two thumbs; they swap places when dragged past each other.
+
+<Preview registry="montage" demo="slider/slider-range" height={120} />
+
+### Label
+
+`label` puts text under each thumb; pass a function, e.g. ``label={(value) => `${value} h`}``, to build it from that thumb's value.
+
+<Preview registry="montage" demo="slider/slider-label" height={140} />
+
+### Heading
+
+`heading` puts a title above the track; as a function it receives every thumb's value.
+
+<Preview registry="montage" demo="slider/slider-heading" height={200} />
+
+### Disabled
+
+<Preview registry="montage" demo="slider/slider-disabled" height={200} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/slider.ts"
+  name="MDXSliderProps"
+/>

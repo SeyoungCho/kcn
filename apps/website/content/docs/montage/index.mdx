@@ -1,13 +1,22 @@
 ---
-title: Hello World
-description: Your first document
+title: Introduction
+description: A shadcn/ui registry inspired by Montage, Wanted's design system.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+montage is a shadcn/ui registry inspired by [Montage](https://montage.wanted.co.kr/), the design system of Wanted Lab. Its components are built on Base UI and Tailwind CSS 4 and keep shadcn's API, so they fit into any shadcn project.
 
-## What is Next?
+## Installation
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+Add the style first. It sets up the color, typography, radius and shadow tokens, including dark mode.
+
+```npm
+npx shadcn@latest add @kcn-montage/montage-style
+```
+
+Then add the components you need.
+
+```npm
+npx shadcn@latest add @kcn-montage/button
+```
+
+The type scale is designed for [Pretendard](https://github.com/orioncactus/pretendard). Load it in your app for the intended look; otherwise the system font is used.

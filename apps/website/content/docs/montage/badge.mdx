@@ -1,0 +1,39 @@
+---
+title: Badge
+description: Badges label content with a short status or attribute.
+---
+
+<Preview registry="montage" demo="badge/badge-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/badge
+```
+
+## Usage
+
+The API matches shadcn's Badge, with extra `color` and `size` props. `variant` picks a tinted fill or an outline, and `color` sets the hue of the text, fill and border together.
+
+## Examples
+
+### Variants
+
+<Preview registry="montage" demo="badge/badge-variants" height={180} />
+
+### Colors
+
+<Preview registry="montage" demo="badge/badge-colors" height={240} />
+
+### Sizes
+
+An icon placed before or after the label is sized for you.
+
+<Preview registry="montage" demo="badge/badge-sizes" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/badge.ts"
+  name="MDXBadgeProps"
+/>

@@ -3,7 +3,7 @@
 import { TabsList, TabsRoot, TabsTrigger } from "@repo/seed/ui/tabs";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const tabs = ["posts", "reviews", "likes", "settings"] as const;
+const tabs = ["details", "care", "reviews", "qna"] as const;
 const sizes = ["small", "medium"] as const;
 
 export default function TabsSizesDemo() {
@@ -17,13 +17,13 @@ export default function TabsSizesDemo() {
       {sizes.map((size) => (
         <TabsRoot
           key={size}
-          defaultValue="posts"
+          defaultValue="details"
           size={size}
           className="w-full max-w-[400px]"
         >
           <TabsList>
             {tabs.map((tab) => (
-              <TabsTrigger key={tab} value={tab} disabled={tab === "settings"}>
+              <TabsTrigger key={tab} value={tab} disabled={tab === "qna"}>
                 {t.tabs[tab]}
               </TabsTrigger>
             ))}

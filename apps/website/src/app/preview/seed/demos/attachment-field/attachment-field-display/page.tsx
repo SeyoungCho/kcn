@@ -8,7 +8,7 @@ import {
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
 // Sample thumbnails — in an app these come from the native photo picker.
-const COLORS = ["#ff6f0f", "#2a9d8f", "#4361ee", "#e9c46a", "#9d4edd"];
+const COLORS = ["#4f7942", "#c8714f", "#8fbc8f", "#2e5e4e", "#d9b382"];
 const thumbnail = (color: string) =>
   `data:image/svg+xml;utf8,${encodeURIComponent(
     `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><rect width="160" height="160" fill="${color}"/><circle cx="80" cy="70" r="28" fill="white" fill-opacity="0.6"/></svg>`,

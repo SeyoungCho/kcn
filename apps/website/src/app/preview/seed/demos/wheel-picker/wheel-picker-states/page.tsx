@@ -8,7 +8,7 @@ const states = ["disabled", "readOnly"] as const;
 export default function WheelPickerStatesDemo() {
   const t = usePreviewDictionary().demos.wheelPicker;
 
-  const options = Object.entries(t.fruits).map(([key, label]) => ({
+  const options = Object.entries(t.plants).map(([key, label]) => ({
     value: key,
     label,
   }));
@@ -29,10 +29,10 @@ export default function WheelPickerStatesDemo() {
             readOnly={state === "readOnly"}
             columns={[
               {
-                id: "fruit",
-                "aria-label": t.fruitLabel,
+                id: "plant",
+                "aria-label": t.plantLabel,
                 options,
-                defaultValue: "banana",
+                defaultValue: "pothos",
               },
             ]}
           />

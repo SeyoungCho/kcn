@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, CreditCard, PiggyBank, Wallet } from "lucide-react";
+import { ChevronDown, Leaf, Sprout, TreePalm } from "lucide-react";
 import {
   Item,
   ItemActions,
@@ -19,15 +19,19 @@ export default function ItemHeaderFooterDemo() {
 
   const rows = [
     {
-      icon: Wallet,
-      title: t.account.title,
-      description: t.account.description,
+      icon: Leaf,
+      title: t.plants.monstera.title,
+      description: t.plants.monstera.description,
     },
-    { icon: CreditCard, title: t.card.title, description: t.card.description },
     {
-      icon: PiggyBank,
-      title: t.savings.title,
-      description: t.savings.description,
+      icon: TreePalm,
+      title: t.plants.areca.title,
+      description: t.plants.areca.description,
+    },
+    {
+      icon: Sprout,
+      title: t.plants.rosemary.title,
+      description: t.plants.rosemary.description,
     },
   ];
 

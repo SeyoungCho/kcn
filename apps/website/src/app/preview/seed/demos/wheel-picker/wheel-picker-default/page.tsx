@@ -6,9 +6,9 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 export default function WheelPickerDefaultDemo() {
   const t = usePreviewDictionary().demos.wheelPicker;
-  const [value, setValue] = React.useState("blueberry");
+  const [value, setValue] = React.useState("snakePlant");
 
-  const options = Object.entries(t.fruits).map(([key, label]) => ({
+  const options = Object.entries(t.plants).map(([key, label]) => ({
     value: key,
     label,
   }));
@@ -21,11 +21,11 @@ export default function WheelPickerDefaultDemo() {
     >
       <div className="w-full max-w-[320px]">
         <WheelPicker
-          aria-label={t.fruitLabel}
+          aria-label={t.plantLabel}
           columns={[
             {
-              id: "fruit",
-              "aria-label": t.fruitLabel,
+              id: "plant",
+              "aria-label": t.plantLabel,
               options,
               value,
               onValueChange: setValue,

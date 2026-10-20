@@ -14,7 +14,7 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 export default function DropdownMenuRadioGroupDemo() {
   const t = usePreviewDictionary().demos.tFlavored.dropdownMenu;
-  const [value, setValue] = useState("first");
+  const [value, setValue] = useState("recommended");
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
@@ -25,14 +25,14 @@ export default function DropdownMenuRadioGroupDemo() {
         <DropdownMenuContent align="center">
           <DropdownMenuRadioGroup value={value} onValueChange={setValue}>
             <DropdownMenuLabel>{t.radio.label}</DropdownMenuLabel>
-            <DropdownMenuRadioItem value="first">
-              {t.items.first}
+            <DropdownMenuRadioItem value="recommended">
+              {t.radio.items.recommended}
             </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="second">
-              {t.items.second}
+            <DropdownMenuRadioItem value="popular">
+              {t.radio.items.popular}
             </DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="third">
-              {t.items.third}
+            <DropdownMenuRadioItem value="priceLow">
+              {t.radio.items.priceLow}
             </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
         </DropdownMenuContent>

@@ -23,9 +23,9 @@ export default function DropdownMenuDemo() {
         <DropdownMenuContent>
           <DropdownMenuGroup>
             <DropdownMenuLabel>{t.label}</DropdownMenuLabel>
-            <DropdownMenuItem>{t.items.first}</DropdownMenuItem>
-            <DropdownMenuItem>{t.items.second}</DropdownMenuItem>
-            <DropdownMenuItem>{t.items.third}</DropdownMenuItem>
+            <DropdownMenuItem>{t.items.water}</DropdownMenuItem>
+            <DropdownMenuItem>{t.items.schedule}</DropdownMenuItem>
+            <DropdownMenuItem>{t.items.photo}</DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

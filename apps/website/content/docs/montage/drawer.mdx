@@ -1,0 +1,44 @@
+---
+title: Drawer
+description: A sheet that slides up from the bottom of the screen with more detail or actions, without leaving the page.
+---
+
+<Preview registry="montage" demo="drawer/drawer-demo" height={400} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/drawer
+```
+
+## Usage
+
+The API matches shadcn's Drawer, but it only opens from the bottom and can be swiped down to close. Blocks between `DrawerHeader` and `DrawerFooter` are padded and spaced for you, and footer buttons share the row, so give them `size="lg"`.
+
+## Examples
+
+### Two Buttons
+
+<Preview registry="montage" demo="drawer/drawer-two-buttons" height={400} />
+
+### Scrolling
+
+Long content scrolls while the footer stays in place.
+
+<Preview registry="montage" demo="drawer/drawer-scroll" height={560} />
+
+## API Reference
+
+### Drawer
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/drawer.ts"
+  name="MDXDrawerProps"
+/>
+
+### DrawerContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/drawer.ts"
+  name="MDXDrawerContentProps"
+/>

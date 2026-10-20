@@ -26,13 +26,13 @@ export default function ChipWithIconDemo() {
         <ChipPrefixIcon>
           <Icon svg={<IconHeartLine />} />
         </ChipPrefixIcon>
-        <ChipLabel>{t.withIcon.liked}</ChipLabel>
+        <ChipLabel>{t.withIcon.saved}</ChipLabel>
       </ToggleChip>
       <ToggleChip variant="outlineStrong">
         <ChipPrefixIcon>
           <Icon svg={<IconLocationpinLine />} />
         </ChipPrefixIcon>
-        <ChipLabel>{t.withIcon.nearby}</ChipLabel>
+        <ChipLabel>{t.withIcon.pickup}</ChipLabel>
       </ToggleChip>
       <ButtonChip variant="outlineWeak">
         <ChipLabel>{t.withIcon.sort}</ChipLabel>
@@ -42,7 +42,7 @@ export default function ChipWithIconDemo() {
       </ButtonChip>
       <ToggleChip
         layout="iconOnly"
-        inputProps={{ "aria-label": t.withIcon.favorite }}
+        inputProps={{ "aria-label": t.withIcon.topRated }}
       >
         <Icon svg={<IconStarFill />} size="x4" />
       </ToggleChip>

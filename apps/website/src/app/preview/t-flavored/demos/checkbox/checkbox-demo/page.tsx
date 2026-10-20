@@ -11,15 +11,15 @@ export default function CheckboxDemo() {
       <div className="flex w-full max-w-[360px] flex-col gap-4">
         <label className="flex items-center gap-3 text-t6 text-grey-800">
           <Checkbox defaultChecked />
-          {t.demo.terms}
+          {t.demo.careCard}
         </label>
         <label className="flex items-center gap-3 text-t6 text-grey-800">
           <Checkbox defaultChecked />
-          {t.demo.privacy}
+          {t.demo.plasticFree}
         </label>
         <label className="flex items-center gap-3 text-t6 text-grey-800">
           <Checkbox />
-          {t.demo.marketing}
+          {t.demo.giftWrap}
         </label>
       </div>
     </div>

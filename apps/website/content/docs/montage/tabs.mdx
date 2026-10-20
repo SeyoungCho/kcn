@@ -1,0 +1,95 @@
+---
+title: Tabs
+description: Switches between related views in the same place, as underlined tabs, a segmented control or chips.
+---
+
+<Preview registry="montage" demo="tabs/tabs-demo" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/tabs
+```
+
+## Usage
+
+The API matches shadcn's Tabs. `TabsList` takes `variant` (`default` is a segmented control, plus `line`, `chip` and `chip-primary`), `size` and `fitted`, and draws the moving indicator for you. Arrow keys select a tab as soon as it gets focus.
+
+```tsx
+<Tabs defaultValue="details">
+  <TabsList variant="line">
+    <TabsTrigger value="details">Details</TabsTrigger>
+    <TabsTrigger value="care">Care</TabsTrigger>
+  </TabsList>
+  <TabsContent value="details">…</TabsContent>
+  <TabsContent value="care">…</TabsContent>
+</Tabs>
+```
+
+## Examples
+
+### Segmented control
+
+<Preview registry="montage" demo="tabs/tabs-segmented" height={160} />
+
+### Chip
+
+`chip-primary` marks the selected chip with the primary color.
+
+<Preview registry="montage" demo="tabs/tabs-chip" height={200} />
+
+### Sizes
+
+<Preview registry="montage" demo="tabs/tabs-sizes" height={440} />
+
+### Scrollable
+
+Line and chip tabs take the width of their labels, scroll sideways when they overflow and fade out on the side that has more.
+
+<Preview registry="montage" demo="tabs/tabs-scrollable" height={200} />
+
+### Fitted
+
+`fitted` splits the list width evenly between tabs.
+
+<Preview registry="montage" demo="tabs/tabs-fitted" height={160} />
+
+### With Icon
+
+Icon-only tabs need an `aria-label`; `fitted={false}` shrinks the list to fit its tabs.
+
+<Preview registry="montage" demo="tabs/tabs-icons" height={200} />
+
+### Disabled
+
+<Preview registry="montage" demo="tabs/tabs-disabled" height={200} />
+
+## API Reference
+
+### Tabs
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tabs.ts"
+  name="MDXTabsProps"
+/>
+
+### TabsList
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tabs.ts"
+  name="MDXTabsListProps"
+/>
+
+### TabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tabs.ts"
+  name="MDXTabsTriggerProps"
+/>
+
+### TabsContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tabs.ts"
+  name="MDXTabsContentProps"
+/>

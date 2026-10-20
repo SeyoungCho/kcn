@@ -18,7 +18,7 @@ export default function ImageFrameFloatersDemo() {
       <ImageFrame
         className="w-full max-w-[320px]"
         ratio={1}
-        src="https://picsum.photos/seed/kcn/600/400"
+        src="https://picsum.photos/seed/monstera/600/400"
         alt={t.alt}
         fallback={<ContentPlaceholder />}
       >

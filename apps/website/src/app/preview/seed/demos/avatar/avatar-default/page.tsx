@@ -12,8 +12,8 @@ export default function AvatarDefaultDemo() {
       <Avatar
         size={64}
         src="https://picsum.photos/seed/kcn-avatar/200/200"
-        alt={t.alt}
-        fallback={<IdentityPlaceholder label={t.noPhoto} />}
+        alt={t.haneul}
+        fallback={<IdentityPlaceholder label={t.haneul} />}
       />
     </div>
   );

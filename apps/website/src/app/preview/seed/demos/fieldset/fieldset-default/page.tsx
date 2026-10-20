@@ -12,7 +12,7 @@ import {
 import { Switch } from "@repo/seed/ui/switch";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const items = ["chat", "marketing", "news"] as const;
+const items = ["watering", "orders", "offers"] as const;
 
 export default function FieldsetDefaultDemo() {
   const t = usePreviewDictionary().demos.fieldset;
@@ -38,7 +38,7 @@ export default function FieldsetDefaultDemo() {
                 key={item}
                 size={24}
                 label={t.items[item]}
-                defaultChecked={item === "chat"}
+                defaultChecked={item === "watering"}
               />
             ))}
           </div>

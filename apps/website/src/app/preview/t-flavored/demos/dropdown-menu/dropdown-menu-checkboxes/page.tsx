@@ -14,9 +14,9 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 export default function DropdownMenuCheckboxesDemo() {
   const t = usePreviewDictionary().demos.tFlavored.dropdownMenu;
-  const [statusBar, setStatusBar] = useState(true);
-  const [activityBar, setActivityBar] = useState(false);
-  const [panel, setPanel] = useState(false);
+  const [easyCare, setEasyCare] = useState(true);
+  const [petSafe, setPetSafe] = useState(false);
+  const [sale, setSale] = useState(false);
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
@@ -28,22 +28,19 @@ export default function DropdownMenuCheckboxesDemo() {
           <DropdownMenuGroup>
             <DropdownMenuLabel>{t.checkboxes.label}</DropdownMenuLabel>
             <DropdownMenuCheckboxItem
-              checked={statusBar}
-              onCheckedChange={setStatusBar}
+              checked={easyCare}
+              onCheckedChange={setEasyCare}
             >
-              {t.checkboxes.statusBar}
+              {t.checkboxes.easyCare}
             </DropdownMenuCheckboxItem>
             <DropdownMenuCheckboxItem
-              checked={activityBar}
-              onCheckedChange={setActivityBar}
+              checked={petSafe}
+              onCheckedChange={setPetSafe}
             >
-              {t.checkboxes.activityBar}
+              {t.checkboxes.petSafe}
             </DropdownMenuCheckboxItem>
-            <DropdownMenuCheckboxItem
-              checked={panel}
-              onCheckedChange={setPanel}
-            >
-              {t.checkboxes.panel}
+            <DropdownMenuCheckboxItem checked={sale} onCheckedChange={setSale}>
+              {t.checkboxes.sale}
             </DropdownMenuCheckboxItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

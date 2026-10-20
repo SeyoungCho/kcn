@@ -1,0 +1,53 @@
+---
+title: Alert Dialog
+description: Alert Dialog는 중요한 메시지로 사용자를 멈춰 세우고 답을 기다리는 작은 창이에요.
+---
+
+<Preview registry="montage" demo="alert-dialog/alert-dialog-demo" height={320} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/alert-dialog
+```
+
+## 사용법
+
+API 는 shadcn 의 AlertDialog 와 같지만 버튼이 글자 버튼이에요. `AlertDialogAction` 과 `AlertDialogCancel` 의 기본 `variant` 는 `link` 이고, 취소 버튼은 회색이에요. `AlertDialogAction` 은 창을 닫지 않으니 동작이 끝나면 직접 닫아 주세요.
+
+## 예제
+
+### 되돌릴 수 없는 동작
+
+되돌릴 수 없는 동작에는 `text-destructive` 를 더해요.
+
+<Preview registry="montage" demo="alert-dialog/alert-dialog-destructive" height={320} />
+
+### 설명만
+
+메시지만으로 뜻이 분명하면 제목을 빼요.
+
+<Preview registry="montage" demo="alert-dialog/alert-dialog-description-only" height={280} />
+
+## API 레퍼런스
+
+### AlertDialog
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert-dialog.ts"
+  name="MDXAlertDialogPropsKO"
+/>
+
+### AlertDialogAction
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert-dialog.ts"
+  name="MDXAlertDialogActionPropsKO"
+/>
+
+### AlertDialogCancel
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert-dialog.ts"
+  name="MDXAlertDialogCancelPropsKO"
+/>

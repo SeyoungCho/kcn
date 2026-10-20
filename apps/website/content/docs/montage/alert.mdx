@@ -1,0 +1,35 @@
+---
+title: Alert
+description: Alerts show a status message about a section or task.
+---
+
+<Preview registry="montage" demo="alert/alert-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/alert
+```
+
+## Usage
+
+The parts match shadcn's Alert, with status variants and an `AlertAction` slot. Put an icon first; it takes the variant's color.
+
+## Examples
+
+### Variants
+
+<Preview registry="montage" demo="alert/alert-variants" height={360} />
+
+### Action
+
+`AlertAction` holds a text button and a close button on the title line.
+
+<Preview registry="montage" demo="alert/alert-action" height={180} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert.ts"
+  name="MDXAlertProps"
+/>

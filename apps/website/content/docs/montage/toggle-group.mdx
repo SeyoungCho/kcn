@@ -1,0 +1,65 @@
+---
+title: Toggle Group
+description: A set of toggles where one, or several, can be pressed.
+---
+
+<Preview
+  registry="montage"
+  demo="toggle-group/toggle-group-demo"
+  height={120}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/toggle-group
+```
+
+## Usage
+
+The API matches shadcn's ToggleGroup, except the items stand apart instead of joining into one bar. `variant` and `size` on the group apply to every item.
+
+```tsx
+<ToggleGroup defaultValue={["all"]}>
+  <ToggleGroupItem value="all">All</ToggleGroupItem>
+  <ToggleGroupItem value="foliage">Foliage</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## Examples
+
+### Multiple
+
+Add `multiple` to let several items stay pressed.
+
+<Preview
+  registry="montage"
+  demo="toggle-group/toggle-group-multiple"
+  height={120}
+/>
+
+### Sizes
+
+The gap between items grows with `size`.
+
+<Preview
+  registry="montage"
+  demo="toggle-group/toggle-group-sizes"
+  height={260}
+/>
+
+## API Reference
+
+### ToggleGroup
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toggle-group.ts"
+  name="MDXToggleGroupProps"
+/>
+
+### ToggleGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toggle-group.ts"
+  name="MDXToggleGroupItemProps"
+/>

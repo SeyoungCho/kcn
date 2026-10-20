@@ -10,11 +10,11 @@ export default function RadioGroupHorizontalDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <RadioGroup
         label={t.label}
-        defaultValue="express"
+        defaultValue="earlyMorning"
         className="flex-row gap-x4"
       >
         <RadioGroupItem value="standard" label={t.options.standard} />
-        <RadioGroupItem value="express" label={t.options.express} />
+        <RadioGroupItem value="earlyMorning" label={t.options.earlyMorning} />
         <RadioGroupItem value="pickup" label={t.options.pickup} />
       </RadioGroup>
     </div>

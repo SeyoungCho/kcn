@@ -1,0 +1,41 @@
+---
+title: Spinner
+description: Spinners show that something is loading.
+---
+
+<Preview registry="montage" demo="spinner/spinner-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/spinner
+```
+
+## Usage
+
+The API matches shadcn's Spinner (an `<svg>` with `role="status"`), with an extra `variant` prop. Set the size with a `size-*` class.
+
+## Examples
+
+### Variants
+
+`brand` morphs between shapes and colors.
+
+<Preview registry="montage" demo="spinner/spinner-variants" height={180} />
+
+### Sizes
+
+<Preview registry="montage" demo="spinner/spinner-sizes" height={200} />
+
+### Colors
+
+The `default` stroke is `currentColor`, so `text-*` classes recolor it.
+
+<Preview registry="montage" demo="spinner/spinner-colors" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/spinner.ts"
+  name="MDXSpinnerProps"
+/>

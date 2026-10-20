@@ -1,0 +1,48 @@
+---
+title: Popover
+description: A small floating panel anchored to a trigger, with a short message or extra content.
+---
+
+<Preview registry="montage" demo="popover/popover-demo" height={280} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/popover
+```
+
+## Usage
+
+The API matches shadcn's Popover. With a `PopoverHeader` inside, the popover becomes a compact message that can take `PopoverFooter` text buttons and a `showCloseButton` close button; without one it's a plain panel for any content.
+
+## Examples
+
+### Close Button
+
+<Preview registry="montage" demo="popover/popover-close-button" height={280} />
+
+### Footer
+
+Footer actions are small `link` buttons.
+
+<Preview registry="montage" demo="popover/popover-footer" height={320} />
+
+### Custom Content
+
+<Preview registry="montage" demo="popover/popover-custom" height={320} />
+
+## API Reference
+
+### Popover
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/popover.ts"
+  name="MDXPopoverProps"
+/>
+
+### PopoverContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/popover.ts"
+  name="MDXPopoverContentProps"
+/>

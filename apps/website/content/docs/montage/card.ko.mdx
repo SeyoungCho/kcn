@@ -1,0 +1,58 @@
+---
+title: Card
+description: Card는 썸네일과 짧은 글로 콘텐츠를 간략하게 보여 줘요.
+---
+
+<Preview registry="montage" demo="card/card-demo" height={360} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/card
+```
+
+## 사용법
+
+부품은 shadcn 의 Card 를 따르고, 썸네일을 담는 `CardMedia` 가 더 있어요. 카드에는 바탕 면이 없고, `render={<a />}` 로 그리면 카드 전체가 링크가 돼요.
+
+```tsx
+<Card>
+  <CardMedia>
+    <img src="/thumbnail.jpg" alt="" />
+  </CardMedia>
+  <CardHeader>
+    <CardTitle>제목</CardTitle>
+    <CardDescription>설명</CardDescription>
+  </CardHeader>
+  <CardFooter>{/* 배지 */}</CardFooter>
+</Card>
+```
+
+## 예제
+
+### 썸네일 위 내용
+
+`CardMedia` 안에 둔 `CardAction` 은 썸네일 위쪽에 흰 글자와 버튼을 얹어요.
+
+<Preview registry="montage" demo="card/card-media-action" height={340} />
+
+### 아래 줄
+
+<Preview registry="montage" demo="card/card-footer" height={380} />
+
+### 크기
+
+<Preview registry="montage" demo="card/card-sizes" height={340} />
+
+### 가로
+
+`orientation="horizontal"` 은 썸네일 옆에 글을 두고, 끝에 둔 `CardAction` 에는 버튼이나 아이콘을 넣어요.
+
+<Preview registry="montage" demo="card/card-horizontal" height={260} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/card.ts"
+  name="MDXCardPropsKO"
+/>

@@ -4,13 +4,13 @@ import * as React from "react";
 import { Checkbox, CheckboxGroup } from "@repo/seed/ui/checkbox";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const interests = ["sports", "music", "travel"] as const;
+const topics = ["watering", "orders", "tips"] as const;
 
 export default function CheckboxGroupDemo() {
   const t = usePreviewDictionary().demos.checkbox;
-  const [checked, setChecked] = React.useState<string[]>(["music"]);
+  const [checked, setChecked] = React.useState<string[]>(["orders"]);
 
-  const allChecked = checked.length === interests.length;
+  const allChecked = checked.length === topics.length;
   const someChecked = checked.length > 0 && !allChecked;
 
   return (
@@ -22,18 +22,18 @@ export default function CheckboxGroupDemo() {
             weight="bold"
             checked={allChecked}
             indeterminate={someChecked}
-            onCheckedChange={(next) => setChecked(next ? [...interests] : [])}
+            onCheckedChange={(next) => setChecked(next ? [...topics] : [])}
           />
-          {interests.map((interest) => (
+          {topics.map((topic) => (
             <Checkbox
-              key={interest}
-              label={t.group.items[interest]}
-              checked={checked.includes(interest)}
+              key={topic}
+              label={t.group.items[topic]}
+              checked={checked.includes(topic)}
               onCheckedChange={(next) =>
                 setChecked((prev) =>
                   next
-                    ? [...prev, interest]
-                    : prev.filter((value) => value !== interest),
+                    ? [...prev, topic]
+                    : prev.filter((value) => value !== topic),
                 )
               }
             />

@@ -49,8 +49,8 @@ export default function CommandDefaultDemo() {
           shortcut: "⌘F",
         },
         {
-          value: "new-post",
-          label: t.items.newPost,
+          value: "review",
+          label: t.items.review,
           icon: <IconPencilLine />,
           shortcut: "⌘N",
         },

@@ -1,0 +1,71 @@
+---
+title: Dropdown Menu
+description: A list of actions or options that opens from a button.
+---
+
+<Preview registry="montage" demo="dropdown-menu/dropdown-menu-demo" height={440} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/dropdown-menu
+```
+
+## Usage
+
+The API matches shadcn's DropdownMenu, without submenus. Put `DropdownMenuLabel` inside a group — it stays at the top while the list scrolls. Checked items turn bold and blue with a check at the end, or show a checkbox or radio with `variant`. `DropdownMenuShortcut` holds a trailing value or icon, and `DropdownMenuFooter` pins actions to the bottom.
+
+## Examples
+
+### Icons and Values
+
+<Preview registry="montage" demo="dropdown-menu/dropdown-menu-icons" height={440} />
+
+### Radio Group
+
+<Preview registry="montage" demo="dropdown-menu/dropdown-menu-radio-group" height={440} />
+
+### Checkboxes
+
+<Preview registry="montage" demo="dropdown-menu/dropdown-menu-checkboxes" height={480} />
+
+### Footer
+
+<Preview registry="montage" demo="dropdown-menu/dropdown-menu-footer" height={560} />
+
+## API Reference
+
+### DropdownMenu
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dropdown-menu.ts"
+  name="MDXDropdownMenuProps"
+/>
+
+### DropdownMenuContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dropdown-menu.ts"
+  name="MDXDropdownMenuContentProps"
+/>
+
+### DropdownMenuItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dropdown-menu.ts"
+  name="MDXDropdownMenuItemProps"
+/>
+
+### DropdownMenuCheckboxItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dropdown-menu.ts"
+  name="MDXDropdownMenuCheckboxItemProps"
+/>
+
+### DropdownMenuRadioItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dropdown-menu.ts"
+  name="MDXDropdownMenuRadioItemProps"
+/>

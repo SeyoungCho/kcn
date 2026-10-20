@@ -1,0 +1,54 @@
+---
+title: Toggle
+description: A two-state button for options and filters.
+---
+
+<Preview registry="montage" demo="toggle/toggle-demo" height={120} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/toggle
+```
+
+## Usage
+
+The API matches shadcn's Toggle, plus an `icon` variant and an `xs` size. Put `data-icon="inline-start"` or `"inline-end"` on an icon next to text so the spacing fits.
+
+```tsx
+<Toggle>
+  <PlusIcon data-icon="inline-start" />
+  Add
+</Toggle>
+```
+
+## Examples
+
+### Variants
+
+<Preview registry="montage" demo="toggle/toggle-variants" height={160} />
+
+### Sizes
+
+<Preview registry="montage" demo="toggle/toggle-sizes" height={120} />
+
+### With Icon
+
+<Preview registry="montage" demo="toggle/toggle-with-icon" height={120} />
+
+### Icon
+
+`variant="icon"` is a bare icon toggle that needs an `aria-label`; fill the icon while pressed with `group-data-pressed/toggle:fill-current`.
+
+<Preview registry="montage" demo="toggle/toggle-icon" height={120} />
+
+### Disabled
+
+<Preview registry="montage" demo="toggle/toggle-disabled" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toggle.ts"
+  name="MDXToggleProps"
+/>

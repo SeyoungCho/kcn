@@ -1,0 +1,75 @@
+---
+title: Item
+description: One row of a list, with an icon or picture, text and trailing content.
+---
+
+<Preview registry="montage" demo="item/item-demo" height={300} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/item
+```
+
+## Usage
+
+The API matches shadcn's Item. Render an `<a>` or `<button>` to make a row pressable; mark the chosen row with `aria-current` and an unavailable one with `aria-disabled`.
+
+```tsx
+<ItemGroup>
+  <Item render={<button type="button" />}>
+    <ItemMedia>
+      <BellIcon />
+    </ItemMedia>
+    <ItemContent>
+      <ItemTitle>Notifications</ItemTitle>
+      <ItemDescription>Watering reminders and order updates</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <ChevronRightIcon />
+    </ItemActions>
+  </Item>
+</ItemGroup>
+```
+
+## Examples
+
+### Variants
+
+`variant="full"` adds side padding, which suits lists that span a card or a screen.
+
+<Preview registry="montage" demo="item/item-variants" height={340} />
+
+### Sizes
+
+<Preview registry="montage" demo="item/item-sizes" height={240} />
+
+### Media
+
+<Preview registry="montage" demo="item/item-media" height={280} />
+
+### Trailing Content
+
+Text in `ItemActions` reads as a value next to the chevron.
+
+<Preview registry="montage" demo="item/item-actions" height={160} />
+
+### States
+
+<Preview registry="montage" demo="item/item-states" height={280} />
+
+## API Reference
+
+### Item
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/item.ts"
+  name="MDXItemProps"
+/>
+
+### ItemMedia
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/item.ts"
+  name="MDXItemMediaProps"
+/>

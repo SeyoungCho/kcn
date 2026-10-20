@@ -13,18 +13,18 @@ import {
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
 const orders = [
-  { id: "1042", status: "paid", date: "2026-10-18", amount: 89000 },
-  { id: "1041", status: "shipping", date: "2026-10-17", amount: 320000 },
-  { id: "1040", status: "refunded", date: "2026-10-16", amount: 45000 },
-  { id: "1039", status: "paid", date: "2026-10-15", amount: 159000 },
-  { id: "1038", status: "shipping", date: "2026-10-14", amount: 72000 },
-  { id: "1037", status: "paid", date: "2026-10-13", amount: 38000 },
+  { id: "LL-2486", status: "shipped", date: "2026-10-18" },
+  { id: "LL-2485", status: "delivered", date: "2026-10-17" },
+  { id: "LL-2484", status: "cancelled", date: "2026-10-16" },
+  { id: "LL-2483", status: "delivered", date: "2026-10-15" },
+  { id: "LL-2482", status: "delivered", date: "2026-10-14" },
+  { id: "LL-2481", status: "delivered", date: "2026-10-13" },
 ] as const;
 
 const tones = {
-  paid: "positive",
-  shipping: "informative",
-  refunded: "neutral",
+  shipped: "informative",
+  delivered: "positive",
+  cancelled: "neutral",
 } as const;
 
 export default function TablePinnedColumnsDemo() {
@@ -53,7 +53,7 @@ export default function TablePinnedColumnsDemo() {
             {orders.map((order, index) => (
               <TableRow key={order.id} clickable tabIndex={0}>
                 <TableCell pin="left" pinEdge>
-                  #{order.id}
+                  {order.id}
                 </TableCell>
                 <TableCell className="whitespace-nowrap">
                   {t.customers[index]}
@@ -65,7 +65,7 @@ export default function TablePinnedColumnsDemo() {
                   {order.date}
                 </TableCell>
                 <TableCell className="tabular-nums">
-                  {order.amount.toLocaleString()}
+                  {t.amounts[index]}
                 </TableCell>
                 <TableCell pin="right" pinEdge>
                   <Badge variant="weak" tone={tones[order.status]}>

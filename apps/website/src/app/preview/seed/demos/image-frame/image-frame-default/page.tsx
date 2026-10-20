@@ -11,7 +11,7 @@ export default function ImageFrameDefaultDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <ImageFrame
         className="w-full max-w-[320px]"
-        src="https://picsum.photos/seed/kcn/600/400"
+        src="https://picsum.photos/seed/monstera/600/400"
         alt={t.alt}
         stroke
         fallback={<ContentPlaceholder />}

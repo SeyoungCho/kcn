@@ -13,16 +13,16 @@ import {
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
 const orders = [
-  { id: "1042", status: "paid", amount: 89000 },
-  { id: "1041", status: "shipping", amount: 320000 },
-  { id: "1040", status: "refunded", amount: 45000 },
-  { id: "1039", status: "paid", amount: 159000 },
+  { id: "LL-2486", status: "shipped" },
+  { id: "LL-2485", status: "delivered" },
+  { id: "LL-2484", status: "cancelled" },
+  { id: "LL-2483", status: "delivered" },
 ] as const;
 
 const tones = {
-  paid: "positive",
-  shipping: "informative",
-  refunded: "neutral",
+  shipped: "informative",
+  delivered: "positive",
+  cancelled: "neutral",
 } as const;
 
 export default function TableDefaultDemo() {
@@ -44,7 +44,7 @@ export default function TableDefaultDemo() {
           <TableBody>
             {orders.map((order, index) => (
               <TableRow key={order.id}>
-                <TableCell>#{order.id}</TableCell>
+                <TableCell>{order.id}</TableCell>
                 <TableCell>{t.customers[index]}</TableCell>
                 <TableCell>
                   <Badge variant="weak" tone={tones[order.status]}>
@@ -52,7 +52,7 @@ export default function TableDefaultDemo() {
                   </Badge>
                 </TableCell>
                 <TableCell className="text-right tabular-nums">
-                  {order.amount.toLocaleString()}
+                  {t.amounts[index]}
                 </TableCell>
               </TableRow>
             ))}

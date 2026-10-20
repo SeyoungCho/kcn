@@ -13,14 +13,14 @@ export default function SwitchDemo() {
           className="flex items-center justify-between gap-3 text-t5
             text-grey-800"
         >
-          {t.demo.notifications}
+          {t.demo.watering}
           <Switch defaultChecked />
         </label>
         <label
           className="flex items-center justify-between gap-3 text-t5
             text-grey-800"
         >
-          {t.demo.darkMode}
+          {t.demo.newArrivals}
           <Switch />
         </label>
       </div>

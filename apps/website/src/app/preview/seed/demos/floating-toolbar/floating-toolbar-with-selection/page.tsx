@@ -10,30 +10,33 @@ import {
 } from "@repo/seed/ui/floating-toolbar";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const members = ["kim", "lee", "park", "choi"] as const;
+const plants = ["monstera", "pothos", "olive", "pilea"] as const;
 
-type Member = (typeof members)[number];
+type Plant = (typeof plants)[number];
 
 export default function FloatingToolbarWithSelectionDemo() {
   const t = usePreviewDictionary().demos.floatingToolbar;
-  const [selected, setSelected] = React.useState<Member[]>(["kim", "park"]);
+  const [selected, setSelected] = React.useState<Plant[]>([
+    "monstera",
+    "olive",
+  ]);
 
-  const toggle = (member: Member, checked: boolean) =>
+  const toggle = (plant: Plant, checked: boolean) =>
     setSelected((current) =>
       checked
-        ? [...current, member]
-        : current.filter((value) => value !== member),
+        ? [...current, plant]
+        : current.filter((value) => value !== plant),
     );
 
   return (
     <div className="flex min-h-screen justify-center p-8">
       <div className="flex flex-col gap-3">
-        {members.map((member) => (
+        {plants.map((plant) => (
           <Checkbox
-            key={member}
-            label={t.members[member]}
-            checked={selected.includes(member)}
-            onCheckedChange={(checked) => toggle(member, checked)}
+            key={plant}
+            label={t.plants.items[plant]}
+            checked={selected.includes(plant)}
+            onCheckedChange={(checked) => toggle(plant, checked)}
           />
         ))}
       </div>
@@ -41,14 +44,16 @@ export default function FloatingToolbarWithSelectionDemo() {
         open={selected.length > 0}
         onDismiss={() => setSelected([])}
         closeLabel={t.closeLabel}
-        aria-label={t.toolbarLabel}
+        aria-label={t.plants.toolbarLabel}
       >
         <FloatingToolbarLabel>
-          {t.selectedCount.replace("{count}", String(selected.length))}
+          {t.plants.selectedCount.replace("{count}", String(selected.length))}
         </FloatingToolbarLabel>
         <FloatingToolbarSeparator />
-        <FloatingToolbarButton>{t.edit}</FloatingToolbarButton>
-        <FloatingToolbarButton tone="critical">{t.block}</FloatingToolbarButton>
+        <FloatingToolbarButton>{t.plants.water}</FloatingToolbarButton>
+        <FloatingToolbarButton tone="critical">
+          {t.plants.remove}
+        </FloatingToolbarButton>
       </FloatingToolbar>
     </div>
   );

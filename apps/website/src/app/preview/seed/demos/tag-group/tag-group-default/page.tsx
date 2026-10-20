@@ -11,7 +11,7 @@ export default function TagGroupDefaultDemo() {
       <TagGroupRoot>
         <TagGroupItem label={t.location} />
         <TagGroupItem label={t.time} />
-        <TagGroupItem label={t.views} />
+        <TagGroupItem label={t.visits} />
       </TagGroupRoot>
     </div>
   );

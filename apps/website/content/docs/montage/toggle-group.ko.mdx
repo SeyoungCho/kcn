@@ -1,0 +1,65 @@
+---
+title: Toggle Group
+description: 토글 여러 개를 묶어 하나 또는 여러 개를 눌러요.
+---
+
+<Preview
+  registry="montage"
+  demo="toggle-group/toggle-group-demo"
+  height={120}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/toggle-group
+```
+
+## 사용법
+
+API 는 shadcn 의 ToggleGroup 과 같지만, 항목이 한 줄로 붙지 않고 떨어져 놓여요. 그룹에 준 `variant` · `size` 는 모든 항목에 적용돼요.
+
+```tsx
+<ToggleGroup defaultValue={["all"]}>
+  <ToggleGroupItem value="all">전체</ToggleGroupItem>
+  <ToggleGroupItem value="foliage">관엽식물</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## 예제
+
+### 여러 개 선택
+
+`multiple` 을 주면 여러 항목을 함께 눌러 둘 수 있어요.
+
+<Preview
+  registry="montage"
+  demo="toggle-group/toggle-group-multiple"
+  height={120}
+/>
+
+### 크기
+
+`size` 를 따라 항목 사이 간격도 커져요.
+
+<Preview
+  registry="montage"
+  demo="toggle-group/toggle-group-sizes"
+  height={260}
+/>
+
+## API 레퍼런스
+
+### ToggleGroup
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toggle-group.ts"
+  name="MDXToggleGroupPropsKO"
+/>
+
+### ToggleGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toggle-group.ts"
+  name="MDXToggleGroupItemPropsKO"
+/>

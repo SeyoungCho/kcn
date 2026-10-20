@@ -8,7 +8,7 @@ import {
 } from "@repo/seed/ui/chip-tabs";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const tabs = ["all", "popular", "recent", "nearby"] as const;
+const tabs = ["all", "foliage", "succulents", "herbs"] as const;
 
 export default function ChipTabsDefaultDemo() {
   const t = usePreviewDictionary().demos.chipTabs;

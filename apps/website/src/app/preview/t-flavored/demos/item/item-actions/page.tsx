@@ -36,7 +36,7 @@ export default function ItemActionsDemo() {
           </ItemContent>
           <ItemContent>
             <ItemTitle>{t.actions.text.amount}</ItemTitle>
-            <ItemDescription>{t.actions.text.time}</ItemDescription>
+            <ItemDescription>{t.actions.text.status}</ItemDescription>
           </ItemContent>
         </Item>
         <Item render={<a href="#" />}>

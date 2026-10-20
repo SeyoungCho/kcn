@@ -7,13 +7,13 @@ import {
 } from "@repo/seed/ui/segmented-control";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const options = ["day", "week", "month"] as const;
+const options = ["shade", "partShade", "fullSun"] as const;
 
 type Option = (typeof options)[number];
 
 export default function SegmentedControlControlledDemo() {
   const t = usePreviewDictionary().demos.segmentedControl;
-  const [value, setValue] = React.useState<Option>("day");
+  const [value, setValue] = React.useState<Option>("shade");
 
   return (
     <div

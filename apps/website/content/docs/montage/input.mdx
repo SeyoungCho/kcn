@@ -1,29 +1,35 @@
 ---
 title: Input
-description: Input Component
+description: A single-line text input.
 ---
 
-## Code Block
+<Preview registry="montage" demo="input/input-demo" height={160} />
 
-```js
-console.log("Hello World");
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/input
 ```
 
-## Montage (Isolated Iframe Preview)
+## Usage
 
-<div className="space-y-4">
-  <Preview registry="montage" component="Input" />
+The API matches shadcn's Input, plus a `size` prop. Add a label and help text with `Field`, and icons, units or buttons inside the input with `InputGroup`. `aria-invalid` shows the error state; `<Field invalid>` sets it for you.
 
-  <Preview
-    registry="montage"
-    component="Input"
-    props={{ placeholder: "Type something..." }}
-  />
-</div>
+## Examples
 
-## Cards
+### Sizes
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+Inside a `Field`, the label follows the input's size.
+
+<Preview registry="montage" demo="input/input-sizes" height={300} />
+
+### States
+
+<Preview registry="montage" demo="input/input-states" height={400} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/input.ts"
+  name="MDXInputProps"
+/>

@@ -1,0 +1,68 @@
+---
+title: Avatar
+description: Avatars show a person or an organization as an image.
+---
+
+<Preview registry="montage" demo="avatar/avatar-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/avatar
+```
+
+## Usage
+
+The parts match shadcn's Avatar, with extra `variant` and size options. An empty `AvatarFallback` draws a silhouette while the image is missing or loading.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="avatar/avatar-sizes" height={220} />
+
+### Logo
+
+`variant="logo"` draws a rounded square and fits the whole image, for companies and organizations.
+
+<Preview registry="montage" demo="avatar/avatar-logo" height={220} />
+
+### Fallback
+
+Pass an icon or text to `AvatarFallback` to replace the silhouette.
+
+<Preview registry="montage" demo="avatar/avatar-fallback" height={160} />
+
+### Button
+
+Render a `<button>` with `render` and give it an `aria-label`.
+
+<Preview registry="montage" demo="avatar/avatar-button" height={160} />
+
+### Badge
+
+`AvatarBadge` adds a notification dot sized to the avatar.
+
+<Preview registry="montage" demo="avatar/avatar-badge" height={220} />
+
+### Group
+
+`AvatarGroup` overlaps the avatars with the first one on top; put `AvatarGroupCount` last.
+
+<Preview registry="montage" demo="avatar/avatar-group" height={200} />
+
+## API Reference
+
+### Avatar
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/avatar.ts"
+  name="MDXAvatarProps"
+/>
+
+### AvatarFallback
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/avatar.ts"
+  name="MDXAvatarFallbackProps"
+/>

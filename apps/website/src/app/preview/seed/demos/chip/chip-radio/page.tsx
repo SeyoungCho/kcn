@@ -5,10 +5,10 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 const categories = [
   "all",
-  "clothing",
-  "furniture",
-  "electronics",
-  "books",
+  "foliage",
+  "succulents",
+  "herbs",
+  "flowers",
 ] as const;
 
 export default function ChipRadioDemo() {
@@ -25,7 +25,7 @@ export default function ChipRadioDemo() {
           <RadioChipItem
             key={category}
             value={category}
-            disabled={category === "books"}
+            disabled={category === "flowers"}
           >
             <ChipLabel>{t.categories[category]}</ChipLabel>
           </RadioChipItem>

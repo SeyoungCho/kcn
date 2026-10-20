@@ -13,9 +13,9 @@ export default function SelectStatesDemo() {
 
   const items = (
     <SelectContent>
-      <SelectItem value="apple" label={t.fruits.apple} />
-      <SelectItem value="banana" label={t.fruits.banana} />
-      <SelectItem value="mango" label={t.fruits.mango} />
+      <SelectItem value="monstera" label={t.plants.monstera} />
+      <SelectItem value="pothos" label={t.plants.pothos} />
+      <SelectItem value="snake-plant" label={t.plants.snakePlant} />
     </SelectContent>
   );
 
@@ -37,7 +37,7 @@ export default function SelectStatesDemo() {
         <SelectRoot
           label={t.states.readOnly}
           readOnly
-          defaultValue={["banana"]}
+          defaultValue={["pothos"]}
         >
           <SelectTrigger placeholder={t.placeholder} />
           {items}

@@ -1,0 +1,58 @@
+---
+title: Table
+description: 데이터를 줄과 칸으로 보여 줘요. 스크롤해도 머리 줄은 보이는 자리에 남아요.
+---
+
+<Preview registry="montage" demo="table/table-demo" height={420} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/table
+```
+
+## 사용법
+
+API 는 shadcn 의 Table 과 같아요. 표는 둥근 테두리 안에서 따로 스크롤되고, `TableRow` 에 `interactive` 를 주면 누를 수 있는 줄이 돼요.
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>주문 번호</TableHead>
+      <TableHead>상품</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>LL-2481</TableCell>
+      <TableCell>몬스테라 델리시오사</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+## 예제
+
+### 누를 수 있는 줄
+
+<Preview registry="montage" demo="table/table-interactive" height={360} />
+
+### 스크롤
+
+최대 높이를 준 flex 세로 줄 안에 표를 두면, 줄이 스크롤되는 동안 머리 줄은 그 자리에 남아요.
+
+<Preview registry="montage" demo="table/table-scroll" height={360} />
+
+### 바닥 줄
+
+<Preview registry="montage" demo="table/table-footer" height={360} />
+
+## API 레퍼런스
+
+### TableRow
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/table.ts"
+  name="MDXTablePropsKO"
+/>

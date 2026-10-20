@@ -3,7 +3,7 @@
 import { TabsList, TabsRoot, TabsTrigger } from "@repo/seed/ui/tabs";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const tabs = ["posts", "reviews", "likes", "following", "followers"] as const;
+const tabs = ["details", "care", "reviews", "qna", "shipping"] as const;
 const layouts = ["fill", "hug"] as const;
 
 export default function TabsLayoutsDemo() {
@@ -17,7 +17,7 @@ export default function TabsLayoutsDemo() {
       {layouts.map((layout) => (
         <TabsRoot
           key={layout}
-          defaultValue="posts"
+          defaultValue="details"
           triggerLayout={layout}
           className="w-full max-w-[400px]"
         >

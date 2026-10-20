@@ -8,14 +8,14 @@ import {
 } from "@repo/seed/ui/tabs";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const tabs = ["posts", "reviews", "likes"] as const;
+const tabs = ["details", "care", "reviews"] as const;
 
 export default function TabsDefaultDemo() {
   const t = usePreviewDictionary().demos.tabs;
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
-      <TabsRoot defaultValue="posts" className="w-full max-w-[400px]">
+      <TabsRoot defaultValue="details" className="w-full max-w-[400px]">
         <TabsList>
           {tabs.map((tab) => (
             <TabsTrigger key={tab} value={tab}>

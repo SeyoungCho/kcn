@@ -1,31 +1,47 @@
 ---
 title: Button
-description: Button 컴포넌트
+description: Button은 즉시 실행되는 액션에 사용해요.
 ---
 
-## 코드 블록
+<Preview registry="montage" component="Button">
+  버튼
+</Preview>
 
-```js
-console.log("Hello World");
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/button
 ```
 
-## Montage (격리 iframe 미리보기)
+## 사용법
 
-<div className="space-y-4">
-  <Preview registry="montage" component="Button">클릭</Preview>
+API 는 shadcn 의 Button 과 같고, `outline-primary` 배리언트가 더 있어요.
 
-  <Preview
-    registry="montage"
-    component="Button"
-    props={{ variant: "destructive", size: "lg" }}
-  >
-    삭제
-  </Preview>
-</div>
+## 예제
 
-## 카드
+### 배리언트
 
-<Cards>
-  <Card title="Next.js 더 알아보기" href="https://nextjs.org/docs" />
-  <Card title="Fumadocs 더 알아보기" href="https://fumadocs.dev" />
-</Cards>
+<Preview registry="montage" demo="button/button-variants" height={240} />
+
+### 크기
+
+<Preview registry="montage" demo="button/button-sizes" height={200} />
+
+### 아이콘 포함
+
+아이콘만 있는 버튼은 `icon-*` 크기를 쓰고 `aria-label` 을 꼭 달아 주세요.
+
+<Preview registry="montage" demo="button/button-with-icon" height={240} />
+
+### 상태
+
+`loading` 이면 글자 대신 스피너가 보이고 누를 수 없어요.
+
+<Preview registry="montage" demo="button/button-states" height={200} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/button.ts"
+  name="MDXButtonPropsKO"
+/>

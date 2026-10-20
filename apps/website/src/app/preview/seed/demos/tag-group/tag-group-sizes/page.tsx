@@ -18,7 +18,7 @@ export default function TagGroupSizesDemo() {
         <TagGroupRoot key={size} size={size}>
           <TagGroupItem label={t.location} />
           <TagGroupItem label={t.time} />
-          <TagGroupItem label={t.views} />
+          <TagGroupItem label={t.visits} />
         </TagGroupRoot>
       ))}
       <TagGroupRoot size="t3" weight="bold">

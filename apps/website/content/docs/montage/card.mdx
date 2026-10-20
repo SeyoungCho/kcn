@@ -1,0 +1,58 @@
+---
+title: Card
+description: Cards summarize a piece of content with a thumbnail and short text.
+---
+
+<Preview registry="montage" demo="card/card-demo" height={360} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/card
+```
+
+## Usage
+
+The parts follow shadcn's Card, plus `CardMedia` for the thumbnail. The card has no surface of its own, and `render={<a />}` turns the whole card into a link.
+
+```tsx
+<Card>
+  <CardMedia>
+    <img src="/thumbnail.jpg" alt="" />
+  </CardMedia>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Caption</CardDescription>
+  </CardHeader>
+  <CardFooter>{/* badges */}</CardFooter>
+</Card>
+```
+
+## Examples
+
+### Thumbnail overlay
+
+A `CardAction` inside `CardMedia` lays white text and buttons over the top of the thumbnail.
+
+<Preview registry="montage" demo="card/card-media-action" height={340} />
+
+### Footer
+
+<Preview registry="montage" demo="card/card-footer" height={380} />
+
+### Sizes
+
+<Preview registry="montage" demo="card/card-sizes" height={340} />
+
+### Horizontal
+
+`orientation="horizontal"` places the text beside the thumbnail, and a `CardAction` at the end holds a button or icon.
+
+<Preview registry="montage" demo="card/card-horizontal" height={260} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/card.ts"
+  name="MDXCardProps"
+/>

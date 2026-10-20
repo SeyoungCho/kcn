@@ -1,0 +1,47 @@
+---
+title: Slider
+description: 막대 위 손잡이를 끌어 숫자나 범위를 골라요.
+---
+
+<Preview registry="montage" demo="slider/slider-demo" height={120} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/slider
+```
+
+## 사용법
+
+API 는 shadcn 의 Slider 와 같고, `heading` · `label` 이 더 있어요. 스크린 리더가 손잡이 이름을 읽도록 `aria-labelledby` 로 라벨을 가리키거나 `Field` 를 써 주세요.
+
+## 예제
+
+### 범위
+
+`defaultValue` 에 배열을 주면 손잡이가 두 개가 되고, 서로를 지나쳐 끌면 자리를 바꿔요.
+
+<Preview registry="montage" demo="slider/slider-range" height={120} />
+
+### 라벨
+
+`label` 은 손잡이마다 아래에 글자를 붙이고, ``label={(value) => `${value}시간`}`` 처럼 함수를 주면 그 손잡이의 값으로 만들어요.
+
+<Preview registry="montage" demo="slider/slider-label" height={140} />
+
+### 제목
+
+`heading` 은 막대 위에 제목을 놓고, 함수로 주면 모든 손잡이의 값을 받아요.
+
+<Preview registry="montage" demo="slider/slider-heading" height={200} />
+
+### 비활성화
+
+<Preview registry="montage" demo="slider/slider-disabled" height={200} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/slider.ts"
+  name="MDXSliderPropsKO"
+/>

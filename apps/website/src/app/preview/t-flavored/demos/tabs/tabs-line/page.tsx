@@ -8,14 +8,14 @@ import {
 } from "@repo/t-flavored/ui/tabs";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const sections = ["home", "benefits", "payments"] as const;
+const sections = ["details", "reviews", "care"] as const;
 
 export default function TabsLineDemo() {
   const t = usePreviewDictionary().demos.tFlavored.tabs;
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
-      <Tabs defaultValue="home" className="w-full max-w-[400px]">
+      <Tabs defaultValue="details" className="w-full max-w-[400px]">
         <TabsList variant="line">
           {sections.map((section) => (
             <TabsTrigger key={section} value={section}>

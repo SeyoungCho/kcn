@@ -5,7 +5,7 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 const variants = ["default", "line"] as const;
 const sizes = ["default", "sm"] as const;
-const items = ["first", "second", "third"] as const;
+const items = ["foliage", "succulents", "herbs"] as const;
 
 export default function TabsSizesDemo() {
   const t = usePreviewDictionary().demos.tFlavored.tabs;
@@ -20,7 +20,7 @@ export default function TabsSizesDemo() {
                 {`variant="${variant}" · `}
                 {t.sizes[size]}
               </span>
-              <Tabs defaultValue="first">
+              <Tabs defaultValue="foliage">
                 <TabsList variant={variant} size={size}>
                   {items.map((item) => (
                     <TabsTrigger key={item} value={item}>

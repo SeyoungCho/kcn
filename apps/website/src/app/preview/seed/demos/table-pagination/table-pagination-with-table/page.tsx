@@ -15,9 +15,11 @@ import type { TablePaginationValue } from "@repo/seed/ui/table-pagination";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
 const TOTAL = 42;
+// Newest first: LL-2486 on Oct 18, one order a day going back.
 const rows = Array.from({ length: TOTAL }, (_, index) => ({
-  id: index + 1,
-  joined: new Date(Date.UTC(2026, 0, 1 + index * 3)).toISOString().slice(0, 10),
+  index,
+  id: `LL-${2486 - index}`,
+  date: new Date(Date.UTC(2026, 9, 18 - index)).toISOString().slice(0, 10),
 }));
 
 export default function TablePaginationWithTableDemo() {
@@ -28,6 +30,7 @@ export default function TablePaginationWithTableDemo() {
   });
   const start = (value.page - 1) * value.pageSize;
   const pageRows = rows.slice(start, start + value.pageSize);
+  const plants = t.plants;
 
   return (
     <div className="flex min-h-screen items-start justify-center p-8">
@@ -36,19 +39,17 @@ export default function TablePaginationWithTableDemo() {
           <TableCaption>{t.caption}</TableCaption>
           <TableHeader>
             <TableRow>
-              <TableHead>{t.columns.id}</TableHead>
-              <TableHead>{t.columns.name}</TableHead>
-              <TableHead>{t.columns.joined}</TableHead>
+              <TableHead>{t.columns.order}</TableHead>
+              <TableHead>{t.columns.plant}</TableHead>
+              <TableHead>{t.columns.date}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {pageRows.map((row) => (
               <TableRow key={row.id}>
                 <TableCell className="tabular-nums">{row.id}</TableCell>
-                <TableCell>
-                  {t.member} {row.id}
-                </TableCell>
-                <TableCell className="tabular-nums">{row.joined}</TableCell>
+                <TableCell>{plants[row.index % plants.length]}</TableCell>
+                <TableCell className="tabular-nums">{row.date}</TableCell>
               </TableRow>
             ))}
           </TableBody>

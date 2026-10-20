@@ -26,9 +26,9 @@ export default function SelectSizesDemo() {
               aria-label={t.sizes[size]}
             />
             <SelectContent>
-              <SelectItem value="apple" label={t.fruits.apple} />
-              <SelectItem value="banana" label={t.fruits.banana} />
-              <SelectItem value="mango" label={t.fruits.mango} />
+              <SelectItem value="monstera" label={t.plants.monstera} />
+              <SelectItem value="pothos" label={t.plants.pothos} />
+              <SelectItem value="snake-plant" label={t.plants.snakePlant} />
             </SelectContent>
           </Select>
         </div>

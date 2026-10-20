@@ -10,9 +10,9 @@ export default function BadgeDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="flex flex-wrap items-center justify-center gap-2">
         <Badge>{t.demo.new}</Badge>
-        <Badge variant="weak">{t.demo.event}</Badge>
-        <Badge variant="destructive-weak">{t.demo.soldOut}</Badge>
-        <Badge variant="secondary">{t.demo.pending}</Badge>
+        <Badge variant="weak">{t.demo.easyCare}</Badge>
+        <Badge variant="destructive-weak">{t.demo.lowStock}</Badge>
+        <Badge variant="secondary">{t.demo.petSafe}</Badge>
       </div>
     </div>
   );

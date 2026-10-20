@@ -1,0 +1,56 @@
+---
+title: Toast
+description: A short message that appears at the bottom of the screen and closes by itself.
+---
+
+<Preview registry="montage" demo="toast/toast-demo" height={280} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/toast
+```
+
+## Usage
+
+Mount `<Toaster />` once, then call `toast.add()` from anywhere:
+
+```tsx
+import { Toaster, toast } from "@/components/ui/toast";
+
+<Toaster />;
+
+toast.add({ title: "Saved", type: "success" });
+```
+
+Add `description`, `actionProps` or `data.closeButton` for a heading with an action and a close button. Use `priority: "high"` for errors so screen readers announce them right away.
+
+## Examples
+
+### Types
+
+`type` adds a colored icon on the left.
+
+<Preview registry="montage" demo="toast/toast-types" height={280} />
+
+### Action
+
+Give toasts with an action a longer `timeout` so there's time to press it.
+
+<Preview registry="montage" demo="toast/toast-action" height={280} />
+
+## API Reference
+
+### Toaster
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toast.ts"
+  name="MDXToasterProps"
+/>
+
+### toast.add
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/toast.ts"
+  name="MDXToastProps"
+/>

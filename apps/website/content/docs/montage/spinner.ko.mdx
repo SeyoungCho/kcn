@@ -1,0 +1,41 @@
+---
+title: Spinner
+description: Spinner는 무언가를 불러오고 있음을 알려요.
+---
+
+<Preview registry="montage" demo="spinner/spinner-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/spinner
+```
+
+## 사용법
+
+API 는 shadcn 의 Spinner(`role="status"` 가 달린 `<svg>`)와 같고, `variant` prop 이 더 있어요. 크기는 `size-*` 클래스로 정해요.
+
+## 예제
+
+### 배리언트
+
+`brand` 는 도형과 색이 바뀌어요.
+
+<Preview registry="montage" demo="spinner/spinner-variants" height={180} />
+
+### 크기
+
+<Preview registry="montage" demo="spinner/spinner-sizes" height={200} />
+
+### 색
+
+`default` 의 선은 `currentColor` 라서 `text-*` 클래스로 색을 바꿀 수 있어요.
+
+<Preview registry="montage" demo="spinner/spinner-colors" height={160} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/spinner.ts"
+  name="MDXSpinnerPropsKO"
+/>

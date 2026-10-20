@@ -1,0 +1,84 @@
+---
+title: Pagination
+description: 여러 쪽으로 나뉜 결과 사이를 오가요. 쪽 번호, 쪽 표시, 점으로 쓸 수 있어요.
+---
+
+<Preview registry="montage" demo="pagination/pagination-demo" height={140} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/pagination
+```
+
+## 사용법
+
+API 는 shadcn 의 Pagination 과 같아요. 이전 · 다음은 아이콘만 있는 화살표이고, 첫 쪽 · 마지막 쪽에서는 `aria-disabled` 를 달아 주세요. `PaginationCounter` 와 `PaginationDots` 는 쪽 번호 없이 위치를 보여 주는 부품이에요.
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive>
+        1
+      </PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## 예제
+
+### 촘촘하게
+
+`size="icon-lg"` 는 터치 화면에 맞게 화살표를 크게 그려요.
+
+<Preview registry="montage" demo="pagination/pagination-compact" height={140} />
+
+### 쪽 표시
+
+<Preview registry="montage" demo="pagination/pagination-counter" height={140} />
+
+### 점
+
+점은 `max` 개까지만 보이고, 가려진 쪽 가장자리의 점은 작아져요. 마우스를 올리면 모든 점이 펼쳐져요.
+
+<Preview registry="montage" demo="pagination/pagination-dots" height={200} />
+
+### 이미지 위
+
+`variant="overlay"` 는 쪽 표시를 흐린 유리 알약으로, 점을 흰색으로 그려요.
+
+<Preview registry="montage" demo="pagination/pagination-overlay" height={340} />
+
+## API 레퍼런스
+
+### PaginationLink
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/pagination.ts"
+  name="MDXPaginationPropsKO"
+/>
+
+### PaginationCounter
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/pagination.ts"
+  name="MDXPaginationCounterPropsKO"
+/>
+
+### PaginationDots
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/pagination.ts"
+  name="MDXPaginationDotsPropsKO"
+/>

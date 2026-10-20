@@ -1,0 +1,78 @@
+---
+title: Select
+description: 입력 칸을 누르면 열리는 목록에서 값을 골라요.
+---
+
+<Preview registry="montage" demo="select/select-demo" height={520} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/select
+```
+
+## 사용법
+
+API 는 shadcn 의 Select 와 같아요. `Select` 에 `items` 를 주면 `SelectValue` 가 값 대신 이름을 보여 주고, 보이는 이름표가 없으면 `SelectTrigger` 에 `aria-label` 을 달아 주세요. `SelectItem` 은 고른 표시를 라디오나 체크박스로 바꾸는 `variant` 도 받아요.
+
+## 예제
+
+### 크기
+
+<Preview registry="montage" demo="select/select-sizes" height={480} />
+
+### 아이콘 포함
+
+아이콘은 `SelectValue` 앞에 넣어요.
+
+<Preview registry="montage" demo="select/select-with-icon" height={520} />
+
+### 라디오
+
+<Preview registry="montage" demo="select/select-radio" height={520} />
+
+### 여러 개 고르기
+
+`multiple` 이면 값이 배열이 되고, 고르는 동안 목록이 닫히지 않아요.
+
+<Preview registry="montage" demo="select/select-multiple" height={520} />
+
+### 묶음
+
+<Preview registry="montage" demo="select/select-groups" height={520} />
+
+### 상태
+
+`Select` 에 `disabled`, `SelectTrigger` 에 `aria-invalid` 를 줘요.
+
+<Preview registry="montage" demo="select/select-states" height={480} />
+
+## API 레퍼런스
+
+### Select
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectPropsKO"
+/>
+
+### SelectTrigger
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectTriggerPropsKO"
+/>
+
+### SelectContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectContentPropsKO"
+/>
+
+### SelectItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectItemPropsKO"
+/>

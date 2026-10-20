@@ -33,7 +33,7 @@ export default function CommandDialogDemo() {
   const items = [
     { value: "calendar", label: t.items.calendar },
     { value: "search", label: t.items.search },
-    { value: "new-post", label: t.items.newPost },
+    { value: "review", label: t.items.review },
     { value: "profile", label: t.items.profile },
     { value: "notifications", label: t.items.notifications },
     { value: "settings", label: t.items.settings },

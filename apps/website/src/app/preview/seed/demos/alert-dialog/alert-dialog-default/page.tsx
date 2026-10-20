@@ -20,22 +20,22 @@ export default function AlertDialogDefaultDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <AlertDialogRoot>
         <AlertDialogTrigger render={<ActionButton variant="criticalSolid" />}>
-          {t.delete.open}
+          {t.cancelOrder.open}
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t.delete.title}</AlertDialogTitle>
+            <AlertDialogTitle>{t.cancelOrder.title}</AlertDialogTitle>
             <AlertDialogDescription>
-              {t.delete.description}
+              {t.cancelOrder.description}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <div className="flex gap-x2">
               <AlertDialogAction variant="neutralWeak" className="flex-1">
-                {t.delete.cancel}
+                {t.cancelOrder.cancel}
               </AlertDialogAction>
               <AlertDialogAction variant="criticalSolid" className="flex-1">
-                {t.delete.confirm}
+                {t.cancelOrder.confirm}
               </AlertDialogAction>
             </div>
           </AlertDialogFooter>

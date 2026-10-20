@@ -1,0 +1,53 @@
+---
+title: Field
+description: A label, help text and error message around a form control.
+---
+
+<Preview registry="montage" demo="field/field-demo" height={440} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/field
+```
+
+## Usage
+
+The API matches shadcn's Field. `FieldLabel` and `FieldDescription` link to the control on their own, and `invalid` on `Field` reaches the control as `aria-invalid`. `required` on `FieldLabel` adds a red asterisk, and the label gets smaller next to a `size="sm"` control.
+
+## Examples
+
+### Validation
+
+An empty `<FieldError />` shows the message `validate` returns; without `validate`, use `<Field invalid>` and `<FieldError>…</FieldError>`.
+
+<Preview registry="montage" demo="field/field-validation" height={220} />
+
+### Horizontal
+
+Wrap the control and its help text in a `FieldContent`, and give the labels the same width so the controls line up.
+
+<Preview registry="montage" demo="field/field-horizontal" height={320} />
+
+## API Reference
+
+### Field
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/field.ts"
+  name="MDXFieldProps"
+/>
+
+### FieldLabel
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/field.ts"
+  name="MDXFieldLabelProps"
+/>
+
+### FieldError
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/field.ts"
+  name="MDXFieldErrorProps"
+/>

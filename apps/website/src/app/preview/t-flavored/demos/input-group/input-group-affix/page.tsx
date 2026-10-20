@@ -24,14 +24,14 @@ export default function InputGroupAffixDemo() {
           <FieldLabel>{t.affix.prefixLabel}</FieldLabel>
           <InputGroup>
             <InputGroupAddon>
-              <InputGroupText>$</InputGroupText>
+              <InputGroupText>₩</InputGroupText>
             </InputGroupAddon>
             <InputGroupInput
               inputMode="decimal"
               placeholder={t.affix.placeholder}
             />
           </InputGroup>
-          <FieldDescription>{t.affix.description}</FieldDescription>
+          <FieldDescription>{t.affix.prefixDescription}</FieldDescription>
         </Field>
         <Field>
           <FieldLabel>{t.affix.suffixLabel}</FieldLabel>
@@ -44,7 +44,7 @@ export default function InputGroupAffixDemo() {
               <InputGroupText>{t.affix.suffix}</InputGroupText>
             </InputGroupAddon>
           </InputGroup>
-          <FieldDescription>{t.affix.description}</FieldDescription>
+          <FieldDescription>{t.affix.suffixDescription}</FieldDescription>
         </Field>
       </FieldGroup>
     </div>

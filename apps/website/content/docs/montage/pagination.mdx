@@ -1,0 +1,84 @@
+---
+title: Pagination
+description: Moves between pages of results, with page numbers, a page counter or dots.
+---
+
+<Preview registry="montage" demo="pagination/pagination-demo" height={140} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/pagination
+```
+
+## Usage
+
+The API matches shadcn's Pagination. Previous and next are icon-only arrows; mark them with `aria-disabled` on the first and last page. `PaginationCounter` and `PaginationDots` are extra parts for showing the position without page numbers.
+
+```tsx
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious href="#" />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink href="#" isActive>
+        1
+      </PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext href="#" />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>
+```
+
+## Examples
+
+### Compact
+
+`size="icon-lg"` draws larger arrows for touch screens.
+
+<Preview registry="montage" demo="pagination/pagination-compact" height={140} />
+
+### Counter
+
+<Preview registry="montage" demo="pagination/pagination-counter" height={140} />
+
+### Dots
+
+Only `max` dots show at once, and the dots near a hidden edge shrink; hovering spreads them all out.
+
+<Preview registry="montage" demo="pagination/pagination-dots" height={200} />
+
+### Over Images
+
+`variant="overlay"` draws the counter as a frosted pill and the dots in white.
+
+<Preview registry="montage" demo="pagination/pagination-overlay" height={340} />
+
+## API Reference
+
+### PaginationLink
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/pagination.ts"
+  name="MDXPaginationProps"
+/>
+
+### PaginationCounter
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/pagination.ts"
+  name="MDXPaginationCounterProps"
+/>
+
+### PaginationDots
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/pagination.ts"
+  name="MDXPaginationDotsProps"
+/>

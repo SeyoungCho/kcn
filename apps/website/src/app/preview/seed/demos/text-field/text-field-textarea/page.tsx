@@ -9,8 +9,8 @@ export default function TextFieldTextareaDemo() {
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="w-full max-w-[360px]">
-        <TextField label={t.bioLabel} maxGraphemeCount={100}>
-          <TextFieldTextarea placeholder={t.bioPlaceholder} />
+        <TextField label={t.giftLabel} maxGraphemeCount={100}>
+          <TextFieldTextarea placeholder={t.giftPlaceholder} />
         </TextField>
       </div>
     </div>

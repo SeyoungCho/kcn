@@ -17,8 +17,8 @@ export default function TextFieldAffixesDemo() {
             aria-label={t.searchPlaceholder}
           />
         </TextField>
-        <TextField label={t.priceLabel} suffix={t.priceSuffix}>
-          <TextFieldInput inputMode="numeric" placeholder="0" />
+        <TextField label={t.intervalLabel} suffix={t.intervalSuffix}>
+          <TextFieldInput inputMode="numeric" placeholder="7" />
         </TextField>
       </div>
     </div>

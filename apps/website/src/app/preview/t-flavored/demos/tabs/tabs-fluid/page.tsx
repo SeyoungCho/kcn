@@ -5,15 +5,15 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 const categories = [
   "all",
-  "food",
-  "shopping",
-  "transport",
-  "cafe",
-  "living",
-  "travel",
-  "health",
-  "education",
-  "culture",
+  "foliage",
+  "succulents",
+  "herbs",
+  "flowers",
+  "potsTools",
+  "easyCare",
+  "petSafe",
+  "newArrivals",
+  "sale",
 ] as const;
 
 export default function TabsFluidDemo() {

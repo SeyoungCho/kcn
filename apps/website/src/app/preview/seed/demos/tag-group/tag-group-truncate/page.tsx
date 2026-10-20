@@ -12,12 +12,12 @@ export default function TagGroupTruncateDemo() {
         <TagGroupRoot truncate>
           <TagGroupItem label={t.long} />
           <TagGroupItem label={t.time} />
-          <TagGroupItem label={t.views} />
+          <TagGroupItem label={t.visits} />
         </TagGroupRoot>
         <TagGroupRoot>
           <TagGroupItem label={t.long} />
           <TagGroupItem label={t.time} />
-          <TagGroupItem label={t.views} />
+          <TagGroupItem label={t.visits} />
         </TagGroupRoot>
       </div>
     </div>

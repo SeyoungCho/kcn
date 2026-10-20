@@ -1,0 +1,65 @@
+---
+title: Calendar
+description: Calendar는 날짜 하나, 여러 날짜, 기간을 고르는 달력이에요.
+---
+
+<Preview registry="montage" demo="calendar/calendar-single" height={420} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/calendar
+```
+
+## 사용법
+
+API 는 shadcn 의 Calendar 와 같고 [React DayPicker](https://daypicker.dev) 위에 만들었어요. 늘 6주를 그리고, range 에서는 다른 달의 날을 감춰요.
+
+## 예제
+
+### 기간
+
+`resetOnSelect` 를 주면 기간을 다 고른 뒤 누를 때 새 기간을 시작해요.
+
+<Preview registry="montage" demo="calendar/calendar-range" height={420} />
+
+### 여러 날짜
+
+<Preview registry="montage" demo="calendar/calendar-multiple" height={420} />
+
+### 고를 수 없는 날
+
+`disabled` 에 매처를 넘겨요. `startMonth` 를 주면 이번 달보다 앞으로는 넘어가지 않아요.
+
+<Preview registry="montage" demo="calendar/calendar-disabled" height={420} />
+
+### 달 · 해 고르기
+
+<Preview registry="montage" demo="calendar/calendar-dropdown" height={420} />
+
+### 로캘
+
+`react-day-picker/locale` 의 로캘을 넘겨요.
+
+<Preview registry="montage" demo="calendar/calendar-locale" height={420} />
+
+### 날짜 선택기
+
+날짜 선택기는 `Button` 을 트리거로 둔 `Popover` 안에 `Calendar` 를 넣어 만들어요.
+
+<Preview registry="montage" demo="calendar/calendar-date-picker" height={460} />
+
+### 기간 선택기
+
+<Preview
+  registry="montage"
+  demo="calendar/calendar-date-range-picker"
+  height={460}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/calendar.ts"
+  name="MDXCalendarPropsKO"
+/>

@@ -1,0 +1,65 @@
+---
+title: Radio Group
+description: Lets the user pick exactly one option from a list.
+---
+
+<Preview registry="montage" demo="radio-group/radio-group-demo" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/radio-group
+```
+
+## Usage
+
+The API matches shadcn's RadioGroup; `RadioGroupItem` also takes `size` and `tight`. Wrap each item in a `<label>` with its text, and name the group with `aria-labelledby`.
+
+```tsx
+<RadioGroup defaultValue="daily" aria-labelledby="reminder-label">
+  <label className="flex items-center gap-2">
+    <RadioGroupItem value="daily" />
+    Every day
+  </label>
+  <label className="flex items-center gap-2">
+    <RadioGroupItem value="off" />
+    Off
+  </label>
+</RadioGroup>
+```
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="radio-group/radio-group-sizes" height={140} />
+
+### Tight
+
+`tight` drops the side spacing so the circle lines up with text above and below.
+
+<Preview registry="montage" demo="radio-group/radio-group-tight" height={140} />
+
+### Disabled
+
+<Preview
+  registry="montage"
+  demo="radio-group/radio-group-disabled"
+  height={200}
+/>
+
+## API Reference
+
+### RadioGroup
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/radio-group.ts"
+  name="MDXRadioGroupProps"
+/>
+
+### RadioGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/radio-group.ts"
+  name="MDXRadioGroupItemProps"
+/>

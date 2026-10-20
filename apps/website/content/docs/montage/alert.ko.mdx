@@ -1,0 +1,35 @@
+---
+title: Alert
+description: Alert는 화면 구역이나 작업의 상태를 알려 줘요.
+---
+
+<Preview registry="montage" demo="alert/alert-demo" height={180} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/alert
+```
+
+## 사용법
+
+부품은 shadcn 의 Alert 와 같고, 상태별 배리언트와 `AlertAction` 자리가 더 있어요. 아이콘을 맨 앞에 두면 배리언트의 색이 입혀져요.
+
+## 예제
+
+### 배리언트
+
+<Preview registry="montage" demo="alert/alert-variants" height={360} />
+
+### 액션
+
+`AlertAction` 에는 제목 줄에 붙는 글자 버튼과 닫기 버튼을 넣어요.
+
+<Preview registry="montage" demo="alert/alert-action" height={180} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert.ts"
+  name="MDXAlertPropsKO"
+/>

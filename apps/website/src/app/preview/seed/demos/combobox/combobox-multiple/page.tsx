@@ -14,18 +14,18 @@ import {
 } from "@repo/seed/ui/combobox";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const fruits = [
-  "apple",
-  "banana",
-  "blueberry",
-  "grape",
-  "mango",
-  "orange",
-  "peach",
-  "strawberry",
+const plants = [
+  "monstera",
+  "pothos",
+  "oliveTree",
+  "moneyPlant",
+  "snakePlant",
+  "arecaPalm",
+  "bostonFern",
+  "rosemary",
 ] as const;
 
-type Fruit = (typeof fruits)[number];
+type Plant = (typeof plants)[number];
 
 export default function ComboboxMultipleDemo() {
   const t = usePreviewDictionary().demos.combobox;
@@ -33,25 +33,25 @@ export default function ComboboxMultipleDemo() {
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
       <div className="w-full max-w-[320px]">
-        <Combobox<Fruit, true>
-          items={fruits}
+        <Combobox<Plant, true>
+          items={plants}
           multiple
-          defaultValue={["apple", "mango"]}
-          itemToStringLabel={(fruit) => t.fruits[fruit]}
+          defaultValue={["monstera", "snakePlant"]}
+          itemToStringLabel={(plant) => t.plants[plant]}
         >
           <ComboboxInputGroup>
             <ComboboxChips>
               <ComboboxValue>
-                {(selected: Fruit[]) =>
-                  selected.map((fruit) => (
+                {(selected: Plant[]) =>
+                  selected.map((plant) => (
                     <ComboboxChip
-                      key={fruit}
+                      key={plant}
                       removeLabel={t.removeChip.replace(
                         "{item}",
-                        t.fruits[fruit],
+                        t.plants[plant],
                       )}
                     >
-                      {t.fruits[fruit]}
+                      {t.plants[plant]}
                     </ComboboxChip>
                   ))
                 }
@@ -65,9 +65,9 @@ export default function ComboboxMultipleDemo() {
           <ComboboxContent>
             <ComboboxEmpty>{t.empty}</ComboboxEmpty>
             <ComboboxList>
-              {(fruit: Fruit) => (
-                <ComboboxItem key={fruit} value={fruit}>
-                  {t.fruits[fruit]}
+              {(plant: Plant) => (
+                <ComboboxItem key={plant} value={plant}>
+                  {t.plants[plant]}
                 </ComboboxItem>
               )}
             </ComboboxList>

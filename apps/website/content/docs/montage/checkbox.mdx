@@ -1,0 +1,57 @@
+---
+title: Checkbox
+description: Lets the user turn an option on or off, or pick several from a list.
+---
+
+<Preview registry="montage" demo="checkbox/checkbox-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/checkbox
+```
+
+## Usage
+
+The API matches shadcn's Checkbox, plus `variant` (`default`, `circle`, `check`), `size` and `tight`. Wrap it in a `<label>` with its text (or use `Field`) so the text toggles it too — otherwise give it an `aria-label`.
+
+```tsx
+<label className="flex items-center gap-2">
+  <Checkbox defaultChecked />I agree to the Terms of Service
+</label>
+```
+
+## Examples
+
+### Variants
+
+`check` draws the check mark alone and turns it blue when checked.
+
+<Preview registry="montage" demo="checkbox/checkbox-variants" height={180} />
+
+### Sizes
+
+<Preview registry="montage" demo="checkbox/checkbox-sizes" height={140} />
+
+### Tight
+
+`tight` drops the side spacing so the box lines up with text above and below.
+
+<Preview registry="montage" demo="checkbox/checkbox-tight" height={140} />
+
+### Indeterminate
+
+Use `indeterminate` for a "select all" box when only some items are checked.
+
+<Preview registry="montage" demo="checkbox/checkbox-indeterminate" height={180} />
+
+### Disabled
+
+<Preview registry="montage" demo="checkbox/checkbox-disabled" height={140} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/checkbox.ts"
+  name="MDXCheckboxProps"
+/>

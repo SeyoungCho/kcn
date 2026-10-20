@@ -15,6 +15,7 @@ import { usePreviewDictionary } from "@/components/preview/preview-dictionary-pr
 
 export default function DrawerScrollDemo() {
   const t = usePreviewDictionary().demos.tFlavored.drawer;
+  const terms = t.scroll.terms;
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
@@ -31,7 +32,7 @@ export default function DrawerScrollDemo() {
             className="flex flex-col gap-4 px-6 text-t6 break-keep
               text-grey-700"
           >
-            {t.scroll.terms.map((term, index) => (
+            {terms.map((term, index) => (
               <li key={term}>
                 {index + 1}. {term}
               </li>

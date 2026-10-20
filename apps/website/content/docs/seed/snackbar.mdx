@@ -19,7 +19,12 @@ Wrap your app in `SnackbarProvider` once. Then call `create({ render: () => <Sna
 const snackbar = useSnackbarAdapter();
 
 snackbar.create({
-  render: () => <Snackbar message="Moved to trash." actionLabel="Undo" />,
+  render: () => (
+    <Snackbar
+      message="Removed Monstera deliciosa from your cart."
+      actionLabel="Undo"
+    />
+  ),
 });
 ```
 

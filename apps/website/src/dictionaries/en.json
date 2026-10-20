@@ -12,7 +12,6 @@
   },
   "demos": {
     "actionButton": {
-      "label": "Button",
       "variants": {
         "brandSolid": "Brand solid",
         "neutralSolid": "Neutral solid",
@@ -29,11 +28,11 @@
         "large": "Large"
       },
       "withIcon": {
-        "add": "Add",
-        "search": "Search",
-        "delete": "Delete"
+        "add": "Add to cart",
+        "search": "Search plants",
+        "delete": "Empty cart"
       },
-      "iconOnly": "Add item",
+      "iconOnly": "Increase quantity",
       "states": {
         "loading": "Loading",
         "disabled": "Disabled"
@@ -42,8 +41,8 @@
     "textField": {
       "label": "Email",
       "placeholder": "name@example.com",
-      "description": "We'll only use it to reply to you.",
-      "errorMessage": "Enter a valid email address.",
+      "description": "We'll send order and delivery updates here.",
+      "errorMessage": "Enter an email address like name@example.com.",
       "variants": {
         "outline": "Outline",
         "underline": "Underline"
@@ -57,22 +56,22 @@
         "disabled": "Disabled",
         "readOnly": "Read only"
       },
-      "priceLabel": "Price",
-      "priceSuffix": "won",
-      "searchPlaceholder": "Search",
-      "bioLabel": "Bio",
-      "bioPlaceholder": "Tell us about yourself"
+      "intervalLabel": "Water every",
+      "intervalSuffix": "days",
+      "searchPlaceholder": "Search plants",
+      "giftLabel": "Gift message",
+      "giftPlaceholder": "Write a short note for the card"
     },
     "select": {
-      "label": "Fruit",
-      "placeholder": "Select a fruit",
-      "description": "Pick the one you like most.",
-      "errorMessage": "Select a fruit.",
-      "fruits": {
-        "apple": "Apple",
-        "banana": "Banana",
-        "blueberry": "Blueberry",
-        "mango": "Mango"
+      "label": "Plant",
+      "placeholder": "Choose a plant",
+      "description": "We'll remind you when it needs water.",
+      "errorMessage": "Choose a plant to get watering reminders.",
+      "plants": {
+        "monstera": "Monstera deliciosa",
+        "pothos": "Golden pothos",
+        "snakePlant": "Snake plant",
+        "bostonFern": "Boston fern"
       },
       "sizes": {
         "large": "Large",
@@ -85,9 +84,9 @@
       }
     },
     "callout": {
-      "title": "Heads up",
-      "description": "Your listing will be visible to neighbors once it is approved.",
-      "link": "Learn more",
+      "title": "Early-morning delivery",
+      "description": "Order by 11:00 PM and get your plants before 7:00 AM.",
+      "link": "Check your area",
       "tones": {
         "neutral": "Neutral",
         "informative": "Informative",
@@ -98,35 +97,33 @@
       },
       "toneDescription": "A short message that explains the situation.",
       "actionable": {
-        "title": "New feature",
-        "description": "Try the redesigned search."
+        "title": "Find your plant match",
+        "description": "Answer 3 quick questions and we'll suggest plants for your space."
       },
       "dismissible": {
-        "description": "You can hide this tip once you have read it.",
+        "description": "Snake plants rot when overwatered, so let the soil dry out first.",
         "reset": "Show again",
         "closeLabel": "Close"
       }
     },
     "snackbar": {
-      "trigger": "Show snackbar",
-      "message": "Moved to trash.",
+      "trigger": "Remove from cart",
+      "message": "Removed Monstera deliciosa from your cart.",
       "action": "Undo",
-      "undone": "Restored.",
+      "undone": "Added it back to your cart.",
       "variants": {
         "default": "Default",
         "positive": "Positive",
         "critical": "Critical"
       },
       "messages": {
-        "default": "Settings saved.",
-        "positive": "Payment completed.",
-        "critical": "Could not connect to the network."
+        "default": "Watering reminder set.",
+        "positive": "Payment complete for order LL-2487.",
+        "critical": "Couldn't upload your photo. Check your connection."
       }
     },
     "loadingIndicator": {
-      "label": "Save changes",
-      "idle": "Idle",
-      "loading": "Loading",
+      "label": "Add to cart",
       "toggle": "Toggle loading"
     },
     "progressCircle": {
@@ -153,28 +150,28 @@
       }
     },
     "resultSection": {
-      "title": "No results found",
-      "description": "Try a different keyword\nor check the spelling.",
+      "title": "No plants found",
+      "description": "Try another plant name\nor check the spelling.",
       "primaryAction": "Clear search",
       "secondaryAction": "Browse categories",
       "medium": {
-        "title": "Nothing here yet",
-        "description": "Saved items will show up here."
+        "title": "No saved plants yet",
+        "description": "Tap the heart on a plant to save it here."
       }
     },
     "contentPlaceholder": {
-      "label": "No image",
-      "custom": "No video"
+      "label": "No product photo",
+      "custom": "No care video yet"
     },
     "identityPlaceholder": {
       "person": "No profile photo",
-      "business": "No business photo"
+      "business": "No shop photo"
     },
     "avatar": {
-      "alt": "Profile photo",
-      "noPhoto": "No profile photo",
-      "noStorePhoto": "No store photo",
-      "brokenAlt": "Photo that failed to load"
+      "haneul": "Haneul Kim",
+      "doyun": "Doyun Lee",
+      "seoyeon": "Seoyeon Park",
+      "shop": "Little Leaf shop"
     },
     "icon": {
       "colors": {
@@ -183,8 +180,8 @@
         "critical": "Critical"
       },
       "affix": {
-        "add": "Add",
-        "next": "Next"
+        "add": "Add plant",
+        "next": "See all"
       }
     },
     "badge": {
@@ -201,13 +198,13 @@
         "large": "Large"
       },
       "withIcon": {
-        "verified": "Verified",
-        "new": "New",
-        "popular": "Popular"
+        "petSafe": "Pet-safe",
+        "easyCare": "Easy care",
+        "paid": "Paid"
       }
     },
     "chip": {
-      "label": "Chip",
+      "label": "Pet-safe",
       "variants": {
         "solid": "Solid",
         "outlineStrong": "Outline strong",
@@ -219,27 +216,27 @@
         "small": "Small"
       },
       "withIcon": {
-        "liked": "Liked",
-        "nearby": "Nearby",
-        "sort": "Sort",
-        "favorite": "Favorite"
+        "saved": "Saved",
+        "pickup": "Store pickup",
+        "sort": "Recommended",
+        "topRated": "Rated 4 stars and up"
       },
       "categories": {
         "all": "All",
-        "clothing": "Clothing",
-        "furniture": "Furniture",
-        "electronics": "Electronics",
-        "books": "Books"
+        "foliage": "Foliage",
+        "succulents": "Succulents",
+        "herbs": "Herbs",
+        "flowers": "Flowers"
       },
       "categoryLabel": "Category",
       "disabled": "Disabled"
     },
     "divider": {
-      "above": "Recently viewed items",
-      "below": "Recommended for you",
+      "above": "Recently viewed plants",
+      "below": "Easy-care picks for you",
       "links": {
-        "terms": "Terms",
-        "privacy": "Privacy",
+        "shipping": "Shipping",
+        "returns": "Returns",
         "help": "Help"
       },
       "default": "Default",
@@ -252,30 +249,37 @@
       "pageIndicator": "Page {page} of {total}"
     },
     "imageFrame": {
-      "alt": "Mountain landscape",
-      "brokenAlt": "Photo that failed to load",
+      "alt": "Monstera deliciosa in a terracotta pot",
+      "brokenAlt": "Golden pothos trailing from a shelf",
       "ratios": {
         "square": "1 : 1",
         "standard": "4 : 3",
         "wide": "16 : 9"
       },
-      "badge": "Reserved",
-      "like": "Like"
+      "badge": "New",
+      "like": "Add to wishlist"
     },
     "floatingToolbar": {
-      "toolbarLabel": "Actions for selected members",
-      "selected": "3 selected",
-      "selectedCount": "{count} selected",
-      "edit": "Edit",
-      "download": "Download",
-      "block": "Block",
       "closeLabel": "Clear selection",
       "show": "Show toolbar",
-      "members": {
-        "kim": "Minji Kim",
-        "lee": "Junho Lee",
-        "park": "Seoyeon Park",
-        "choi": "Dohyun Choi"
+      "photos": {
+        "toolbarLabel": "Actions for selected photos",
+        "selected": "3 photos selected",
+        "edit": "Edit",
+        "download": "Download",
+        "delete": "Delete"
+      },
+      "plants": {
+        "toolbarLabel": "Actions for selected plants",
+        "selectedCount": "{count} selected",
+        "water": "Mark as watered",
+        "remove": "Remove",
+        "items": {
+          "monstera": "Monstera deliciosa",
+          "pothos": "Golden pothos",
+          "olive": "Olive tree",
+          "pilea": "Chinese money plant"
+        }
       }
     },
     "list": {
@@ -283,7 +287,7 @@
       "items": {
         "notifications": {
           "title": "Notifications",
-          "detail": "Chats, keywords, and activity"
+          "detail": "Watering reminders and order updates"
         },
         "account": {
           "title": "Account",
@@ -291,7 +295,7 @@
         },
         "privacy": {
           "title": "Privacy",
-          "detail": "Blocked users and visibility"
+          "detail": "Who can see your plants and posts"
         },
         "help": {
           "title": "Help center"
@@ -299,22 +303,22 @@
       },
       "on": "On",
       "check": {
-        "label": "Interests",
+        "label": "Favorite categories",
         "options": {
-          "digital": {
-            "title": "Digital devices",
-            "detail": "Phones, laptops, and cameras"
+          "foliage": {
+            "title": "Foliage",
+            "detail": "Monstera, pothos, and palms"
           },
-          "furniture": {
-            "title": "Furniture",
-            "detail": "Desks, chairs, and storage"
+          "succulents": {
+            "title": "Succulents",
+            "detail": "Snake plants and cacti"
           },
-          "books": {
-            "title": "Books"
+          "herbs": {
+            "title": "Herbs"
           },
-          "tickets": {
-            "title": "Tickets",
-            "detail": "Not available right now"
+          "flowers": {
+            "title": "Flowers",
+            "detail": "Back in spring"
           }
         }
       },
@@ -322,29 +326,29 @@
         "label": "Delivery method",
         "options": {
           "pickup": {
-            "title": "Pick up in person",
-            "detail": "Meet the seller nearby"
+            "title": "Store pickup",
+            "detail": "Ready to collect the next day"
           },
           "parcel": {
-            "title": "Parcel delivery",
+            "title": "Standard delivery",
             "detail": "Arrives in 2–3 days"
           },
           "quick": {
-            "title": "Same-day courier",
-            "detail": "Not available in your area"
+            "title": "Early-morning delivery",
+            "detail": "Not available in your area yet"
           }
         }
       }
     },
     "segmentedControl": {
-      "label": "Period",
+      "label": "Light conditions",
       "options": {
-        "day": "Day",
-        "week": "Week",
-        "month": "Month"
+        "shade": "Shade",
+        "partShade": "Part shade",
+        "fullSun": "Full sun"
       },
       "selected": "Selected:",
-      "disabledLabel": "Disabled period"
+      "disabledLabel": "Light conditions (disabled)"
     },
     "table": {
       "caption": "Recent orders",
@@ -357,35 +361,43 @@
         "amount": "Amount"
       },
       "status": {
-        "paid": "Paid",
-        "shipping": "Shipping",
-        "refunded": "Refunded"
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled"
       },
       "customers": [
-        "Jiwoo Kim",
-        "Minjun Lee",
+        "Haneul Kim",
+        "Doyun Lee",
         "Seoyeon Park",
-        "Doyun Choi",
-        "Haeun Jung",
-        "Siwoo Kang"
+        "Minjun Choi",
+        "Yuna Jung",
+        "Jiho Han"
       ],
       "items": [
-        "Wireless earbuds",
-        "Standing desk",
-        "Camping chair",
-        "Mechanical keyboard",
-        "Coffee grinder",
-        "Desk lamp"
+        "Monstera deliciosa",
+        "Olive tree",
+        "Golden pothos",
+        "Areca palm",
+        "Snake plant",
+        "Boston fern"
+      ],
+      "amounts": [
+        "₩32,000",
+        "₩58,000",
+        "₩14,000",
+        "₩46,000",
+        "₩24,000",
+        "₩21,000"
       ]
     },
     "tagGroup": {
-      "location": "Seocho-dong",
-      "time": "3 min ago",
-      "views": "Views 12",
-      "verified": "Verified",
-      "rating": "4.8",
-      "reviews": "128 reviews",
-      "long": "Yeoksam-dong, Gangnam-gu, Seoul",
+      "location": "Mapo-gu",
+      "time": "Active 3 min ago",
+      "visits": "12 visits",
+      "verified": "Verified sitter",
+      "rating": "4.9",
+      "reviews": "36 reviews",
+      "long": "Mangwon-dong, Mapo-gu, Seoul",
       "tones": {
         "neutralSubtle": "Neutral subtle",
         "neutral": "Neutral",
@@ -393,13 +405,22 @@
       }
     },
     "tablePagination": {
-      "caption": "Members",
+      "caption": "Order history",
       "columns": {
-        "id": "ID",
-        "name": "Name",
-        "joined": "Joined"
+        "order": "Order",
+        "plant": "Plant",
+        "date": "Date"
       },
-      "member": "Member",
+      "plants": [
+        "Monstera deliciosa",
+        "Olive tree",
+        "Golden pothos",
+        "Areca palm",
+        "Snake plant",
+        "Boston fern",
+        "Chinese money plant",
+        "Rosemary"
+      ],
       "locale": "en-US",
       "labels": {
         "rootAriaLabel": "Table pagination",
@@ -415,77 +436,75 @@
     "chipTabs": {
       "tabs": {
         "all": "All",
-        "popular": "Popular",
-        "recent": "Recent",
-        "nearby": "Nearby"
+        "foliage": "Foliage",
+        "succulents": "Succulents",
+        "herbs": "Herbs"
       },
       "content": {
-        "all": "Showing every listing.",
-        "popular": "Listings with the most likes this week.",
-        "recent": "Listings posted in the last 24 hours.",
-        "nearby": "Listings within 3 km of you."
+        "all": "Every plant we have in stock.",
+        "foliage": "Leafy favorites like Monstera deliciosa and Golden pothos.",
+        "succulents": "Snake plants and other succulents that need little water.",
+        "herbs": "Rosemary and other herbs for a sunny windowsill."
       }
     },
     "accordion": {
       "items": {
         "shipping": {
-          "title": "How long does shipping take?",
-          "content": "Most orders arrive within 2–3 business days. You can track your parcel from the order details page."
+          "title": "How long does delivery take?",
+          "content": "Standard delivery takes 2–3 days. Order by 11:00 PM to get early-morning delivery the next day."
         },
         "returns": {
-          "title": "Can I return an item?",
-          "content": "Yes. Request a return within 7 days of delivery, as long as the item is unused."
+          "title": "What if a plant arrives damaged?",
+          "content": "Send us a photo within 7 days of delivery, and we'll ship a replacement or give you a full refund."
         },
         "payment": {
-          "title": "Which payment methods are supported?",
-          "content": "Cards, bank transfer, and Karrot Pay are supported."
+          "title": "Can I pay with a gift card?",
+          "content": "Little Leaf gift cards are coming soon. For now, you can pay by card or bank transfer."
         }
       },
       "descriptions": {
-        "shipping": "Delivery times and tracking",
-        "returns": "Return and refund policy",
-        "payment": "Cards, transfers, and more"
+        "shipping": "Delivery options and times",
+        "returns": "Damaged plants and refunds"
       },
       "disabled": "Coming soon"
     },
     "tabs": {
       "tabs": {
-        "posts": "Posts",
+        "details": "Details",
+        "care": "Care guide",
         "reviews": "Reviews",
-        "likes": "Likes",
-        "following": "Following",
-        "followers": "Followers",
-        "settings": "Settings"
+        "qna": "Q&A",
+        "shipping": "Shipping"
       },
       "content": {
-        "posts": "Posts you have written.",
-        "reviews": "Reviews you have received.",
-        "likes": "Posts you have liked."
+        "details": "Monstera deliciosa, about 50 cm tall, in a 15 cm nursery pot.",
+        "care": "Keep it in bright, indirect light and water when the top 3 cm of soil is dry.",
+        "reviews": "Rated 4.8 out of 5 in 128 reviews."
       }
     },
     "attachmentField": {
-      "label": "Attachments",
+      "label": "Photos of the damage",
       "description": "Up to 3 files, 10 MB each.",
       "images": {
-        "label": "Photos",
-        "description": "Up to 5 images."
+        "label": "Review photos",
+        "description": "Add up to 5 photos of your plant."
       },
       "dropzone": {
-        "label": "Documents",
+        "label": "Plant-care certificates",
         "description": "PDF files only."
       },
       "statuses": {
-        "label": "Upload status",
-        "description": "Uploading, failed (with retry), and uploaded files."
+        "label": "Care notes for your sitter",
+        "description": "You can retry any file that didn't upload.",
+        "files": {
+          "uploading": "monstera-care.pdf",
+          "error": "watering-schedule.pdf",
+          "success": "olive-tree-light-and-pruning-notes.pdf"
+        }
       },
       "display": {
-        "label": "Product photos",
-        "description": "Tap the camera to add a sample photo."
-      },
-      "states": {
-        "invalid": "Invalid",
-        "errorMessage": "Attach at least one file.",
-        "disabled": "Disabled"
+        "label": "Photos of your plant",
+        "description": "Up to 4 photos. Tap the camera to add a sample."
       },
       "labels": {
         "selectFile": "Choose file",
@@ -496,34 +515,34 @@
     },
     "datePicker": {
       "locale": "en-US",
-      "label": "Select date",
-      "rangeLabel": "Select date range",
-      "multipleLabel": "Select dates",
-      "selected": "Selected",
-      "none": "None"
+      "label": "Choose a delivery date",
+      "rangeLabel": "Choose your trip dates",
+      "multipleLabel": "Choose watering days",
+      "selected": "Delivery date",
+      "none": "Not chosen yet"
     },
     "timePicker": {
       "locale": "en-US",
-      "label": "Select time",
-      "selected": "Selected",
+      "label": "Watering reminder time",
+      "selected": "Reminder",
       "states": {
         "disabled": "Disabled"
       }
     },
     "wheelPicker": {
-      "fruitLabel": "Fruit",
-      "fruits": {
-        "apple": "Apple",
-        "banana": "Banana",
-        "blueberry": "Blueberry",
-        "mango": "Mango",
-        "orange": "Orange",
-        "peach": "Peach",
-        "strawberry": "Strawberry"
+      "plantLabel": "Plant",
+      "plants": {
+        "monstera": "Monstera deliciosa",
+        "pothos": "Golden pothos",
+        "oliveTree": "Olive tree",
+        "snakePlant": "Snake plant",
+        "arecaPalm": "Areca palm",
+        "bostonFern": "Boston fern",
+        "rosemary": "Rosemary"
       },
       "selected": "Selected",
       "columns": {
-        "label": "Duration",
+        "label": "Visit length",
         "hours": "Hours",
         "minutes": "Minutes",
         "hourUnit": "h",
@@ -539,18 +558,18 @@
       }
     },
     "command": {
-      "placeholder": "Type a command or search...",
+      "placeholder": "Search plants or menus...",
       "empty": "No results found.",
       "groups": {
         "suggestions": "Suggestions",
         "settings": "Settings"
       },
       "items": {
-        "calendar": "Calendar",
-        "search": "Search",
-        "newPost": "New post",
-        "profile": "Profile",
-        "notifications": "Notifications",
+        "calendar": "Care calendar",
+        "search": "Search plants",
+        "review": "Write a review",
+        "profile": "My profile",
+        "notifications": "Watering reminders",
         "settings": "Settings"
       },
       "footer": {
@@ -559,61 +578,61 @@
         "close": "Close"
       },
       "dialog": {
-        "trigger": "Open command palette",
-        "ariaLabel": "Command palette"
+        "trigger": "Quick search",
+        "ariaLabel": "Quick search"
       }
     },
     "navigationMenu": {
-      "brand": "Daangn Business",
+      "brand": "Little Leaf",
       "menus": {
-        "products": "Products",
+        "benefits": "Benefits",
         "services": "All services",
         "categories": "Categories"
       },
-      "products": {
-        "ads": {
-          "label": "Ads",
-          "description": "Reach neighbors near your store."
+      "benefits": {
+        "events": {
+          "label": "Events",
+          "description": "Seasonal sales and repotting days."
         },
         "coupons": {
           "label": "Coupons",
-          "description": "Bring customers back with discounts."
+          "description": "Save on plants, pots, and tools."
         },
-        "insights": {
-          "label": "Insights",
-          "description": "See how your posts perform."
+        "points": {
+          "label": "Points",
+          "description": "See what your orders and reviews earned."
         }
       },
       "groups": {
-        "marketing": "Marketing",
-        "management": "Management",
-        "ads": "Ads",
-        "coupons": "Coupons",
-        "posts": "Posts",
-        "orders": "Orders",
-        "customers": "Customers",
-        "settlement": "Settlement"
+        "shop": "Shop",
+        "care": "Care",
+        "plants": "Plants",
+        "potsTools": "Pots & tools",
+        "reviews": "Reviews",
+        "watering": "Watering schedule",
+        "sitters": "Plant-sitters",
+        "classes": "Care classes"
       },
       "categories": {
         "label": "Browse by category",
-        "digital": "Digital devices",
-        "furniture": "Furniture",
-        "kids": "Kids",
-        "clothing": "Clothing",
-        "books": "Books",
-        "sports": "Sports",
-        "beauty": "Beauty",
-        "pets": "Pets",
-        "plants": "Plants",
-        "games": "Games",
-        "tickets": "Tickets",
-        "others": "Others"
+        "foliage": "Foliage",
+        "succulents": "Succulents",
+        "herbs": "Herbs",
+        "flowers": "Flowers",
+        "largePlants": "Large plants",
+        "hanging": "Hanging plants",
+        "airPurifying": "Air-purifying",
+        "petSafe": "Pet-safe",
+        "easyCare": "Easy care",
+        "potsTools": "Pots & tools",
+        "soil": "Soil & plant food",
+        "gifts": "Gift sets"
       }
     },
     "sideNavigation": {
-      "brand": "Daangn Business",
+      "brand": "Little Leaf Admin",
       "groups": {
-        "store": "Store",
+        "shop": "Shop",
         "marketing": "Marketing"
       },
       "items": {
@@ -621,10 +640,10 @@
         "orders": "Orders",
         "customers": "Customers",
         "reviews": "Reviews",
-        "ads": "Ads",
-        "campaigns": "Campaigns",
-        "reports": "Reports",
-        "billing": "Billing",
+        "promotions": "Promotions",
+        "banners": "Banners",
+        "newsletters": "Newsletters",
+        "results": "Results",
         "coupons": "Coupons",
         "settings": "Settings"
       },
@@ -639,24 +658,24 @@
       }
     },
     "layout": {
-      "title": "Orders",
-      "description": "Orders placed in the last 7 days.",
+      "title": "My orders",
+      "description": "Orders from the last 30 days.",
       "orders": {
         "first": {
-          "name": "Carrot cake",
-          "status": "Preparing"
+          "name": "Monstera deliciosa",
+          "status": "Shipped"
         },
         "second": {
-          "name": "Iced americano",
-          "status": "Ready"
+          "name": "Terracotta pot (M)",
+          "status": "Preparing"
         },
         "third": {
-          "name": "Croissant set",
-          "status": "Picked up"
+          "name": "Golden pothos",
+          "status": "Delivered"
         }
       },
       "navigation": {
-        "brand": "Daangn Business",
+        "brand": "Little Leaf",
         "home": "Home",
         "orders": "Orders",
         "settings": "Settings",
@@ -667,7 +686,7 @@
       }
     },
     "checkbox": {
-      "label": "I agree to the terms of service",
+      "label": "Save as my default address",
       "variants": {
         "square": "Square",
         "ghost": "Ghost"
@@ -687,23 +706,23 @@
         "invalid": "Invalid"
       },
       "group": {
-        "label": "Interests",
-        "description": "Pick as many as you like.",
+        "label": "Notifications",
+        "description": "Choose what you'd like to hear about.",
         "selectAll": "Select all",
         "items": {
-          "sports": "Sports",
-          "music": "Music",
-          "travel": "Travel"
+          "watering": "Watering reminders",
+          "orders": "Order updates",
+          "tips": "Care tips"
         }
       }
     },
     "radioGroup": {
       "label": "Delivery",
-      "description": "Choose how you want to receive your order.",
-      "errorMessage": "Choose a delivery option.",
+      "description": "Choose how you'd like to get your plants.",
+      "errorMessage": "Choose a delivery option to continue.",
       "options": {
-        "standard": "Standard",
-        "express": "Express",
+        "standard": "Standard (2–3 days)",
+        "earlyMorning": "Early-morning",
         "pickup": "Store pickup"
       },
       "tones": {
@@ -721,7 +740,7 @@
       }
     },
     "switch": {
-      "label": "Push notifications",
+      "label": "Watering reminders",
       "tones": {
         "brand": "Brand",
         "neutral": "Neutral"
@@ -732,40 +751,40 @@
       }
     },
     "field": {
-      "label": "Bio",
+      "label": "Gift message",
       "indicator": "Optional",
-      "placeholder": "Tell us about yourself",
-      "description": "Shown on your profile.",
-      "errorMessage": "Enter a nickname.",
+      "placeholder": "Write a short note for the card",
+      "description": "We'll print it on a card and pack it in the box.",
+      "errorMessage": "Enter the recipient's name.",
       "states": {
-        "invalid": "Nickname",
+        "invalid": "Recipient",
         "disabled": "Disabled",
         "readOnly": "Read only"
       },
-      "readOnlyValue": "Karrot"
+      "readOnlyValue": "Haneul Kim"
     },
     "fieldset": {
       "label": "Notifications",
       "indicator": "Optional",
-      "description": "Choose which updates you get.",
-      "requiredLabel": "Agreements",
-      "errorMessage": "Agree to both to continue.",
+      "description": "We'll only send the ones you turn on.",
+      "requiredLabel": "Before you order",
+      "errorMessage": "Check both items to place your order.",
       "items": {
-        "chat": "Chat messages",
-        "marketing": "Marketing",
-        "news": "Neighborhood news"
+        "watering": "Watering reminders",
+        "orders": "Order and delivery updates",
+        "offers": "Sales and new plants"
       },
       "agreements": {
-        "terms": "Terms of service",
-        "privacy": "Privacy policy"
+        "returns": "I understand live plants can't be returned for a change of mind",
+        "address": "Share my address with the courier"
       }
     },
     "fieldButton": {
       "label": "Pickup date",
       "placeholder": "Select a date",
-      "description": "Press the field to pick a date.",
+      "description": "Pick a day to collect your plants in store.",
       "value": "Mon, October 19, 2026",
-      "errorMessage": "Select a pickup date.",
+      "errorMessage": "Choose a day to pick up your order.",
       "sizes": {
         "large": "Large",
         "medium": "Medium"
@@ -778,27 +797,27 @@
       "clearLabel": "Clear"
     },
     "combobox": {
-      "label": "Fruit",
-      "placeholder": "Search fruits",
-      "multiplePlaceholder": "Add fruits",
-      "empty": "No fruits found.",
-      "fruits": {
-        "apple": "Apple",
-        "banana": "Banana",
-        "blueberry": "Blueberry",
-        "grape": "Grape",
-        "mango": "Mango",
-        "orange": "Orange",
-        "peach": "Peach",
-        "strawberry": "Strawberry"
+      "label": "Plant",
+      "placeholder": "Search plants",
+      "multiplePlaceholder": "Add plants",
+      "empty": "No plants found.",
+      "plants": {
+        "monstera": "Monstera deliciosa",
+        "pothos": "Golden pothos",
+        "oliveTree": "Olive tree",
+        "moneyPlant": "Chinese money plant",
+        "snakePlant": "Snake plant",
+        "arecaPalm": "Areca palm",
+        "bostonFern": "Boston fern",
+        "rosemary": "Rosemary"
       },
       "removeChip": "Remove {item}"
     },
     "dialog": {
-      "open": "Edit profile",
-      "title": "Edit profile",
-      "description": "Your neighbors see the nickname and photo you set here.",
-      "body": "Pick a nickname that is easy to recognize. You can change it again in 30 days.",
+      "open": "Edit watering schedule",
+      "title": "Watering schedule",
+      "description": "Monstera deliciosa · Living room",
+      "body": "We'll remind you every 7 days. Water once the top 2–3 cm of soil feels dry.",
       "cancel": "Cancel",
       "save": "Save",
       "sizes": {
@@ -807,59 +826,59 @@
       },
       "sizeBody": "From 768px up, a medium dialog is 480px wide and a large one is 800px wide.",
       "scrollable": {
-        "open": "Read terms",
-        "title": "Terms of service",
-        "paragraph": "These terms explain how you can use the service, what we do with the information you share, and what happens when something goes wrong. Please read them carefully before you continue.",
+        "open": "Read sitting terms",
+        "title": "Plant-sitting terms",
+        "paragraph": "Your sitter visits on the dates you book, waters each plant as described in your care notes, and sends a photo after every visit. If a plant looks unwell, they'll message you before doing anything besides watering.",
         "agree": "Agree"
       }
     },
     "alertDialog": {
-      "delete": {
-        "open": "Delete post",
-        "title": "Delete this post?",
-        "description": "Deleted posts can't be restored.",
-        "cancel": "Cancel",
-        "confirm": "Delete"
+      "cancelOrder": {
+        "open": "Cancel order",
+        "title": "Cancel order LL-2481?",
+        "description": "We'll refund your payment within 3 business days. This can't be undone.",
+        "cancel": "Keep order",
+        "confirm": "Cancel order"
       },
-      "notice": {
-        "open": "Show notice",
-        "title": "Upload complete",
-        "description": "All 3 photos have been uploaded.",
+      "soldOut": {
+        "open": "Check out",
+        "title": "An item sold out",
+        "description": "The Areca palm in your cart just sold out, so we removed it.",
         "confirm": "OK"
       }
     },
     "responsiveDialog": {
-      "open": "Set meeting place",
-      "title": "Set a meeting place",
+      "open": "Request a sitter",
+      "title": "Ask Haneul Kim to plant-sit?",
       "description": "Shown as a dialog from 768px up and as a bottom sheet below.",
-      "body": "Choose a place that is easy for both of you to find, like a station exit or a store entrance.",
+      "body": "Haneul will stop by every other day from Oct 24 to 31 to water your 3 plants.",
       "cancel": "Cancel",
-      "confirm": "Confirm"
+      "confirm": "Send request"
     },
     "bottomSheet": {
       "default": {
-        "open": "Open sheet",
-        "title": "Turn on notifications?",
-        "description": "Get notified when someone replies to your post.",
+        "open": "Watering reminders",
+        "title": "Turn on watering reminders?",
+        "description": "We'll let you know when your Monstera deliciosa needs water.",
         "confirm": "Turn on"
       },
       "handle": {
         "open": "Sort",
         "title": "Sort by",
         "options": {
-          "latest": "Latest",
-          "popular": "Most popular",
-          "nearby": "Nearest"
+          "recommended": "Recommended",
+          "popular": "Popular",
+          "priceLow": "Price: low to high"
         }
       }
     },
     "sidePanel": {
-      "open": "Open panel",
+      "open": "Filter plants",
       "title": "Filters",
-      "description": "Narrow down the list.",
-      "body": "Only items that match every filter are shown. Filters stay applied until you reset them.",
+      "description": "Find plants that suit your home.",
+      "body": "Only plants that match every filter, such as Easy care and Pet-safe, are shown. Filters stay on until you reset them.",
       "reset": "Reset",
-      "apply": "Apply",
+      "apply": "Show 24 plants",
       "directions": {
         "left": "From left",
         "right": "From right"
@@ -868,8 +887,8 @@
     "popover": {
       "open": "Delivery info",
       "title": "Delivery",
-      "description": "Orders placed before 2 PM ship the same day.",
-      "body": "Delivery usually takes 1–2 business days. You can track the package from your order history.",
+      "description": "Order by 2:00 PM and we'll ship it the same day.",
+      "body": "Standard delivery takes 2–3 days. Plants travel in ventilated boxes, so they arrive fresh.",
       "confirm": "Got it",
       "placements": {
         "top": "Top",
@@ -880,31 +899,31 @@
     "menu": {
       "open": "More",
       "items": {
-        "edit": "Edit",
+        "edit": "Edit details",
         "copy": "Copy link",
-        "notify": "Notifications",
-        "notifyDescription": "Get notified about new comments",
-        "delete": "Delete"
+        "notify": "Watering reminder",
+        "notifyDescription": "Remind me every 7 days",
+        "delete": "Remove plant"
       },
       "groups": {
         "open": "Options",
-        "post": "Post",
+        "plant": "This plant",
         "sort": "Sort by",
         "options": {
-          "latest": "Latest",
-          "popular": "Most popular",
-          "nearby": "Nearest"
+          "watering": "Next watering",
+          "added": "Recently added",
+          "name": "Name"
         }
       }
     },
     "helpBubble": {
-      "trigger": "What is manner temperature?",
-      "title": "Manner temperature",
-      "description": "A score that grows with reviews from your neighbors.",
+      "trigger": "What does care level mean?",
+      "title": "Care level",
+      "description": "How much attention a plant needs, from easy to expert.",
       "tooltip": {
-        "trigger": "Hover or focus me",
-        "title": "Saved to drafts",
-        "description": "Drafts are kept for 30 days."
+        "trigger": "Pet-safe",
+        "title": "Safe around pets",
+        "description": "Not toxic to cats or dogs, even if they nibble a leaf."
       }
     },
     "tFlavored": {
@@ -928,8 +947,8 @@
           "xl": "X-large"
         },
         "withIcon": {
-          "add": "Add",
-          "search": "Search",
+          "add": "Add plant",
+          "search": "Search plants",
           "notifications": "Notifications",
           "settings": "Settings"
         },
@@ -941,9 +960,9 @@
       "badge": {
         "demo": {
           "new": "New",
-          "event": "Event",
-          "soldOut": "Sold out",
-          "pending": "Pending"
+          "easyCare": "Easy care",
+          "lowStock": "Low stock",
+          "petSafe": "Pet-safe"
         },
         "variants": {
           "default": "default",
@@ -965,48 +984,48 @@
           "default": "Default",
           "lg": "Large"
         },
-        "link": "View benefits"
+        "link": "Pet-safe plants"
       },
       "spinner": {
         "loading": "Loading",
-        "label": "Loading\nyour cards."
+        "label": "Loading\nyour plants."
       },
       "skeleton": {
-        "loading": "Loading"
+        "loading": "Loading plants"
       },
       "progress": {
-        "label": "Uploading",
-        "start": "Start animation",
-        "reset": "Reset animation"
+        "label": "Uploading your plant photo",
+        "start": "Upload photo",
+        "reset": "Reset"
       },
       "separator": {
         "rows": {
-          "first": "Account settings",
-          "second": "Notifications",
-          "third": "Linked accounts"
+          "first": "My plants",
+          "second": "Order history",
+          "third": "Delivery addresses"
         },
         "vertical": {
-          "home": "Home",
-          "cards": "Cards",
-          "benefits": "Benefits"
+          "shop": "Shop",
+          "care": "Care",
+          "community": "Community"
         }
       },
       "empty": {
         "retry": {
-          "title": "Please try again",
-          "description": "We couldn't load this page. Please try again.",
-          "action": "Retry"
+          "title": "Couldn't load your orders",
+          "description": "Check your connection and try again.",
+          "action": "Try again"
         },
         "preparing": {
-          "title": "Live shopping is coming soon",
-          "description": "We'll send you a notification when it's ready."
+          "title": "Live repotting classes are coming soon",
+          "description": "We'll send you a notification when they're ready."
         }
       },
       "input": {
         "demo": {
-          "label": "Name",
-          "placeholder": "Enter your name",
-          "description": "Enter the name shown on your ID."
+          "label": "Plant nickname",
+          "placeholder": "e.g. Leafy",
+          "description": "We'll use it in your watering reminders."
         },
         "variants": {
           "description": "Help text",
@@ -1019,62 +1038,63 @@
           }
         },
         "invalid": {
-          "label": "Nickname",
-          "placeholder": "Type 3 or more characters to see the error.",
-          "error": "Enter fewer than 3 characters."
+          "label": "Quantity",
+          "placeholder": "Try entering 100",
+          "error": "Enter a quantity of 99 or less."
         },
         "disabled": {
           "emptyLabel": "Without a value",
           "filledLabel": "With a value",
           "placeholder": "Placeholder",
-          "value": "Hello.",
+          "value": "Monstera deliciosa",
           "description": "This field is disabled."
         }
       },
       "field": {
         "demo": {
-          "name": "Name",
-          "namePlaceholder": "Enter your name",
+          "name": "Recipient",
+          "namePlaceholder": "Enter the recipient's name",
           "email": "Email",
-          "emailDescription": "We'll send the receipt to this address.",
-          "memo": "Message",
-          "memoPlaceholder": "Leave a message for the seller."
+          "emailDescription": "We'll send your order confirmation here.",
+          "memo": "Gift message",
+          "memoPlaceholder": "Write a note to go with the plant."
         },
         "validation": {
-          "label": "Nickname",
-          "placeholder": "Type 3 or more characters",
-          "description": "Use up to 2 characters.",
-          "error": "Enter fewer than 3 characters."
+          "label": "Quantity",
+          "placeholder": "Try entering 100",
+          "description": "You can order up to 99 at a time.",
+          "error": "Enter a quantity of 99 or less."
         },
         "appear": {
-          "label": "Account number",
-          "description": "The label appears once you start typing."
+          "label": "Phone number",
+          "description": "We'll text you when your order ships."
         }
       },
       "inputGroup": {
         "search": {
-          "label": "Search",
-          "placeholder": "Search",
+          "label": "Search plants",
+          "placeholder": "Search plants and pots",
           "clear": "Clear search"
         },
         "affix": {
-          "prefixLabel": "Amount",
-          "suffixLabel": "Price",
+          "prefixLabel": "Max price",
+          "prefixDescription": "We'll show plants up to this price.",
+          "suffixLabel": "Pot diameter",
+          "suffixDescription": "Measure across the top of the pot.",
           "placeholder": "0",
-          "suffix": "won",
-          "description": "Enter an amount."
+          "suffix": "cm"
         },
         "button": {
-          "label": "Verification code",
-          "placeholder": "Enter the 6-digit code",
-          "action": "Send",
-          "description": "We'll text the code to your phone."
+          "label": "Coupon code",
+          "placeholder": "Enter the 8-digit code",
+          "action": "Apply",
+          "description": "You'll find it on the card in your plant box."
         },
         "clearable": {
-          "label": "Name",
-          "placeholder": "Enter your name",
+          "label": "Delivery note",
+          "placeholder": "e.g. Leave it at the door",
           "clear": "Clear",
-          "description": "Type, then press the clear button on the right."
+          "description": "We'll pass this on to the courier."
         },
         "password": {
           "label": "Password",
@@ -1086,72 +1106,74 @@
       },
       "textarea": {
         "demo": {
-          "label": "Review",
-          "placeholder": "Write a long text or press Enter.",
-          "description": "The field grows with its content."
+          "label": "Gift message",
+          "placeholder": "Write a note to go with the plant.",
+          "description": "We'll handwrite it on a card in the box."
         },
         "fixed": {
-          "label": "Memo",
-          "placeholder": "Enter some text.",
-          "description": "The height stays fixed; longer text scrolls."
+          "label": "Review",
+          "placeholder": "How is your plant doing? Tell other plant owners.",
+          "description": "You can write up to 500 characters."
         }
       },
       "dialog": {
         "demo": {
-          "trigger": "Open modal",
-          "body": "A modal floats above the rest of the screen to hold the user's attention. Close it with the button below or by tapping outside.",
-          "confirm": "Confirm"
+          "trigger": "Today's care tip",
+          "body": "Yellow Monstera leaves usually mean too much water. Wait until the top 3 cm of soil is dry before you water again.",
+          "confirm": "Got it"
         },
         "header": {
-          "trigger": "Change nickname",
-          "title": "Change your nickname?",
-          "description": "Your friends will see the new nickname right away.",
+          "trigger": "Change delivery",
+          "title": "Switch to early-morning delivery?",
+          "description": "Your order will arrive before 7:00 AM tomorrow.",
           "cancel": "Cancel",
-          "confirm": "Change"
+          "confirm": "Switch"
         }
       },
       "alertDialog": {
-        "title": "Your feedback\nhas been delivered",
-        "description": "We'll use it to make\nthe service simpler.",
+        "title": "Your review\nhas been posted",
+        "description": "Thanks for sharing how\nyour plant is doing.",
         "demo": {
           "trigger": "Alert dialog",
           "confirm": "OK"
         },
         "confirm": {
           "trigger": "Confirm dialog",
-          "cancel": "No",
-          "confirm": "Yes"
+          "title": "Cancel this order?",
+          "description": "Order LL-2481 hasn't shipped yet,\nso you'll get a full refund.",
+          "cancel": "Keep order",
+          "confirm": "Cancel order"
         },
         "longButtons": {
           "trigger": "Long buttons",
-          "cancel": "No, please cancel",
-          "confirm": "Yes, I understand"
+          "cancel": "No, keep my order",
+          "confirm": "Yes, cancel the order"
         },
         "longDescription": {
           "trigger": "Long description",
-          "line": "We'll use your feedback to make the service simpler."
+          "line": "Your photos and tips help other plant owners care for theirs."
         }
       },
       "drawer": {
-        "trigger": "Open bottom sheet",
-        "title": "I'm the bottom sheet title.",
-        "description": "I'm the bottom sheet subtitle.",
-        "body": "I'm the bottom sheet content.",
-        "confirm": "Confirm",
-        "close": "Close",
+        "trigger": "Find a plant-sitter",
+        "title": "Going away for a while?",
+        "description": "A sitter can look after your plants while you're gone.",
+        "body": "Choose your trip dates and we'll match you with a nearby sitter who waters and checks on every plant.",
+        "confirm": "Choose dates",
+        "close": "Not now",
         "scroll": {
-          "trigger": "Terms of service",
+          "trigger": "Plant-sitting terms",
           "title": "Please agree to the terms",
-          "description": "Read them through before you continue.",
+          "description": "Read them through before you book.",
           "terms": [
-            "We collect only the information needed to provide the service.",
-            "Collected information is kept for one year after you leave and then deleted.",
-            "We never share your information with third parties without your consent.",
-            "You can view, change or delete your information at any time in Settings.",
-            "We notify you seven days before any change to these terms takes effect.",
-            "Payments can be refunded within seven days if the service was not used.",
-            "Accounts that break the rules may be suspended without notice.",
-            "Questions about these terms are answered by customer support.",
+            "A sitter visits on the dates you choose and stays about 30 minutes.",
+            "Add watering notes for each plant in the app before your trip.",
+            "Sitters look after plants only, not pets, mail or other chores.",
+            "After each visit, your sitter posts a photo update in the app.",
+            "You can cancel for free up to 24 hours before the first visit.",
+            "Cancelling within 24 hours of the first visit costs one visit.",
+            "If a plant is damaged during a visit, we replace it with the same plant.",
+            "Entry details you share are deleted after the last visit.",
             "These terms take effect on the day you agree to them."
           ],
           "agree": "Agree"
@@ -1164,24 +1186,24 @@
           "month": "Month"
         },
         "periodContent": {
-          "day": "You spent $24 today.",
-          "week": "You spent $182 this week.",
-          "month": "You spent $760 this month."
+          "day": "Water the Golden pothos and Boston fern today.",
+          "week": "5 plants need water this week.",
+          "month": "Time to repot the Olive tree this month."
         },
         "sections": {
-          "home": "Home",
-          "benefits": "Benefits",
-          "payments": "Payments"
+          "details": "Details",
+          "reviews": "Reviews",
+          "care": "Care"
         },
         "sectionContent": {
-          "home": "Your accounts and recent activity.",
-          "benefits": "Points and coupons you can use now.",
-          "payments": "Upcoming bills and card payments."
+          "details": "Monstera deliciosa grows big split leaves and suits bright rooms.",
+          "reviews": "Rated 4.8 out of 5 in 126 reviews.",
+          "care": "Water when the top 3 cm of soil feels dry."
         },
         "items": {
-          "first": "Tab 1",
-          "second": "Tab 2",
-          "third": "Tab 3"
+          "foliage": "Foliage",
+          "succulents": "Succulents",
+          "herbs": "Herbs"
         },
         "sizes": {
           "default": "Default",
@@ -1189,48 +1211,50 @@
         },
         "categories": {
           "all": "All",
-          "food": "Food",
-          "shopping": "Shopping",
-          "transport": "Transport",
-          "cafe": "Cafe",
-          "living": "Living",
-          "travel": "Travel",
-          "health": "Health",
-          "education": "Education",
-          "culture": "Culture"
+          "foliage": "Foliage",
+          "succulents": "Succulents",
+          "herbs": "Herbs",
+          "flowers": "Flowers",
+          "potsTools": "Pots & tools",
+          "easyCare": "Easy care",
+          "petSafe": "Pet-safe",
+          "newArrivals": "New",
+          "sale": "Sale"
         }
       },
       "accordion": {
         "prefix": "Q",
         "faq": {
-          "points": {
-            "question": "What are points?",
-            "answer": "Points are rewards you collect from purchases and events. You can spend them like cash at partner stores."
+          "watering": {
+            "question": "How often should I water?",
+            "answer": "Water when the top 3 cm of soil feels dry. For most foliage plants that's about once a week, and less often in winter."
           },
-          "subscription": {
-            "question": "How do I cancel my subscription?",
-            "answer": "Open Settings, choose Subscription and tap Cancel. You keep the benefits until the end of the current billing period."
+          "damaged": {
+            "question": "What if a plant arrives damaged?",
+            "answer": "Send us a photo within 48 hours of delivery and we'll ship a replacement or give you a full refund."
           },
-          "fee": {
-            "question": "When is the transfer fee charged?",
-            "answer": "Transfers to other banks are free up to ten times a month. After that, a small fee is charged per transfer."
+          "petSafe": {
+            "question": "Which plants are safe for pets?",
+            "answer": "Look for the Pet-safe badge. Areca palm, Boston fern and Chinese money plant are all safe for cats and dogs."
           }
         },
         "openAll": "Open all",
         "closeAll": "Close all"
       },
       "item": {
-        "account": {
-          "title": "Checking account",
-          "description": "Balance $1,280"
-        },
-        "card": {
-          "title": "Credit card",
-          "description": "Due on the 14th"
-        },
-        "savings": {
-          "title": "Savings",
-          "description": "3.5% interest"
+        "plants": {
+          "monstera": {
+            "title": "Monstera deliciosa",
+            "description": "Water in 2 days"
+          },
+          "areca": {
+            "title": "Areca palm",
+            "description": "Water today"
+          },
+          "rosemary": {
+            "title": "Rosemary",
+            "description": "Water in 5 days"
+          }
         },
         "sizes": {
           "sm": "Small",
@@ -1255,23 +1279,23 @@
         },
         "actions": {
           "button": {
-            "title": "Get alerts",
-            "description": "When your balance changes",
+            "title": "Watering reminders",
+            "description": "We'll tell you when a plant needs water",
             "label": "Turn on"
           },
           "text": {
-            "title": "Coffee shop",
-            "description": "Card payment",
-            "amount": "-$4.50",
-            "time": "9:41 AM"
+            "title": "Monstera deliciosa",
+            "description": "Order LL-2481",
+            "amount": "₩32,000",
+            "status": "Delivered"
           },
           "arrow": {
-            "title": "Transaction history"
+            "title": "Order history"
           }
         },
         "header": {
-          "description": "Updated just now",
-          "title": "My accounts",
+          "description": "Watering this week",
+          "title": "My plants",
           "action": "Edit"
         },
         "footer": "See more",
@@ -1283,34 +1307,39 @@
         }
       },
       "dropdownMenu": {
-        "trigger": "Open menu",
-        "label": "Edit",
+        "trigger": "Manage plant",
+        "label": "Monstera deliciosa",
         "items": {
-          "first": "First item",
-          "second": "Second item",
-          "third": "Third item"
+          "water": "Log watering",
+          "schedule": "Edit care schedule",
+          "photo": "Add a photo"
         },
         "icons": {
-          "copy": "Copy",
+          "copy": "Copy link",
           "share": "Share",
-          "settings": "Settings",
-          "delete": "Delete"
+          "settings": "Care settings",
+          "delete": "Remove plant"
         },
         "checkboxes": {
-          "trigger": "View",
-          "label": "Show",
-          "statusBar": "Status bar",
-          "activityBar": "Activity bar",
-          "panel": "Panel"
+          "trigger": "Filter",
+          "label": "Show only",
+          "easyCare": "Easy care",
+          "petSafe": "Pet-safe",
+          "sale": "Sale"
         },
         "radio": {
-          "trigger": "Choose",
-          "label": "Pick one"
+          "trigger": "Sort",
+          "label": "Sort by",
+          "items": {
+            "recommended": "Recommended",
+            "popular": "Popular",
+            "priceLow": "Price: low to high"
+          }
         }
       },
       "tooltip": {
-        "trigger": "Hover me",
-        "message": "This is a tooltip.",
+        "trigger": "Light needs",
+        "message": "Bright, indirect light",
         "sizes": {
           "sm": "Small",
           "default": "Medium",
@@ -1320,43 +1349,43 @@
           "top": "Top",
           "bottom": "Bottom"
         },
-        "controlled": "Click me"
+        "controlled": "Show care tip"
       },
       "toast": {
         "top": {
           "trigger": "Top toast",
-          "message": "This toast shows at the top"
+          "message": "Watering reminder is on"
         },
         "bottom": {
           "trigger": "Bottom toast",
-          "message": "This toast shows at the bottom"
+          "message": "Added Monstera deliciosa to your cart"
         },
         "types": {
           "success": {
             "trigger": "Success",
-            "message": "Saved"
+            "message": "Order LL-2481 is placed"
           },
           "error": {
             "trigger": "Error",
-            "message": "Couldn't save"
+            "message": "Couldn't place your order. Try again."
           },
           "info": {
             "trigger": "Info",
-            "message": "A new version is available"
+            "message": "Order LL-2481 has shipped"
           }
         },
         "action": {
-          "trigger": "Delete item",
-          "message": "Item deleted",
+          "trigger": "Remove from cart",
+          "message": "Removed Golden pothos from your cart",
           "undo": "Undo",
-          "restored": "Item restored"
+          "restored": "Golden pothos is back in your cart"
         }
       },
       "checkbox": {
         "demo": {
-          "terms": "I agree to the Terms of Service",
-          "privacy": "I agree to the collection of personal information",
-          "marketing": "Send me marketing messages (optional)"
+          "careCard": "Include a care guide card",
+          "plasticFree": "Pack it without plastic",
+          "giftWrap": "Add gift wrapping (+₩2,000)"
         },
         "variants": {
           "circle": "Circle",
@@ -1368,14 +1397,14 @@
       },
       "switch": {
         "demo": {
-          "notifications": "Push notifications",
-          "darkMode": "Dark mode"
+          "watering": "Watering reminders",
+          "newArrivals": "New arrivals"
         },
-        "disabled": "Disabled setting"
+        "disabled": "Order status alerts"
       },
       "slider": {
         "demo": {
-          "label": "Volume"
+          "label": "Target humidity"
         },
         "colors": {
           "blue": "Blue",
@@ -1383,17 +1412,17 @@
           "red": "Red"
         },
         "labels": {
-          "label": "Budget",
-          "min": "$100",
-          "mid": "$150",
-          "max": "$200"
+          "label": "Plant height",
+          "min": "100 cm",
+          "mid": "150 cm",
+          "max": "200 cm"
         },
         "tooltip": {
-          "label": "Brightness"
+          "label": "Grow light brightness"
         }
       },
       "numberField": {
-        "quantity": "Quantity",
+        "quantity": "Monstera deliciosa quantity",
         "decrease": "Decrease quantity",
         "increase": "Increase quantity",
         "sizes": {
@@ -1404,14 +1433,815 @@
         }
       },
       "rating": {
-        "label": "Rate this place",
+        "label": "Rate Monstera deliciosa",
         "star": " star",
         "stars": " stars",
-        "readOnlyLabel": "Rated 5 out of 5",
+        "readOnlyLabel": "Average rating: 5 out of 5",
         "sizes": {
           "default": "Default",
           "lg": "Large",
           "xl": "X-large"
+        }
+      }
+    },
+    "montage": {
+      "button": {
+        "variants": {
+          "default": "Default",
+          "secondary": "Secondary",
+          "destructive": "Destructive",
+          "outline": "Outline",
+          "outline-primary": "Outline primary",
+          "ghost": "Ghost",
+          "link": "Link"
+        },
+        "sizes": {
+          "xs": "X-small",
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large"
+        },
+        "withIcon": {
+          "addToCart": "Add to cart",
+          "wishlist": "Wishlist",
+          "search": "Search plants",
+          "notifications": "Notifications",
+          "settings": "Settings"
+        },
+        "states": {
+          "loading": "Loading",
+          "disabled": "Disabled"
+        }
+      },
+      "calendar": {
+        "pickDeliveryDate": "Pick a delivery date",
+        "pickTripDates": "Pick your trip dates"
+      },
+      "badge": {
+        "demo": {
+          "easyCare": "Easy care",
+          "new": "New",
+          "petSafe": "Pet-safe",
+          "lowStock": "Low stock"
+        },
+        "variants": {
+          "default": "Default",
+          "outline": "Outline"
+        },
+        "colors": {
+          "neutral": "Neutral",
+          "brand": "Brand",
+          "positive": "Positive",
+          "cautionary": "Cautionary",
+          "destructive": "Destructive",
+          "lime": "Lime",
+          "cyan": "Cyan",
+          "lightBlue": "Light blue",
+          "violet": "Violet",
+          "purple": "Purple",
+          "pink": "Pink"
+        },
+        "sizes": {
+          "xs": "X-small",
+          "sm": "Small",
+          "default": "Default"
+        }
+      },
+      "avatar": {
+        "members": {
+          "haneul": "Haneul Kim",
+          "doyun": "Doyun Lee",
+          "seoyeon": "Seoyeon Park",
+          "minjun": "Minjun Choi"
+        },
+        "shopName": "Little Leaf",
+        "openProfile": "Open Haneul Kim's profile",
+        "openShop": "Visit the Little Leaf shop",
+        "initial": "H",
+        "groupCount": "and 12 others"
+      },
+      "card": {
+        "alt": "Monstera deliciosa in a terracotta pot",
+        "title": "Monstera deliciosa",
+        "price": "₩32,000",
+        "rating": "4.8 · 126 reviews",
+        "overlay": "Low stock",
+        "wishlist": "Add to wishlist",
+        "badges": {
+          "easyCare": "Easy care",
+          "new": "New"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small"
+        }
+      },
+      "separator": {
+        "title": "My plants",
+        "description": "2 of your 5 plants need water today.",
+        "links": {
+          "schedule": "Schedule",
+          "tips": "Care tips",
+          "photos": "Photos"
+        }
+      },
+      "empty": {
+        "plants": {
+          "title": "No plants added yet",
+          "description": "Add the plants you own and we'll remind you when to water them.",
+          "action": "Add a plant"
+        },
+        "error": {
+          "title": "We couldn't load your orders",
+          "description": "Check your connection and try again in a moment.",
+          "retry": "Try again",
+          "home": "Go home"
+        },
+        "search": {
+          "title": "No plants match your search",
+          "description": "Try another name, like \"pothos\", or remove a filter."
+        }
+      },
+      "alert": {
+        "demo": {
+          "title": "Time to water your Monstera",
+          "description": "It's been 7 days since you last watered it."
+        },
+        "variants": {
+          "default": "Days are getting shorter. Move your plants closer to a window.",
+          "positive": "Order LL-2481 has been delivered.",
+          "cautionary": "Frost is expected tonight. Bring your rosemary indoors.",
+          "destructive": "Payment failed. Check your card details and try again.",
+          "neutral": "Your plant-sitter Doyun Lee visits tomorrow."
+        },
+        "action": {
+          "title": "3 plants need water today",
+          "description": "Log each watering, and we'll remind you when it's due again.",
+          "view": "View",
+          "close": "Close",
+          "reopen": "Show reminder"
+        }
+      },
+      "spinner": {
+        "variants": {
+          "default": "Default",
+          "brand": "Brand"
+        }
+      },
+      "progress": {
+        "label": "Uploading plant photo"
+      },
+      "toast": {
+        "demo": {
+          "trigger": "Add to cart",
+          "message": "Monstera deliciosa added to your cart."
+        },
+        "types": {
+          "success": {
+            "trigger": "Success",
+            "message": "Your order is placed."
+          },
+          "warning": {
+            "trigger": "Warning",
+            "message": "Only 2 Olive trees left in stock."
+          },
+          "error": {
+            "trigger": "Error",
+            "message": "Couldn't upload your photo. Try again."
+          }
+        },
+        "action": {
+          "trigger": "Remove from cart",
+          "title": "Golden pothos removed from cart",
+          "description": "You can undo this for a few seconds.",
+          "undo": "Undo",
+          "restored": "Golden pothos is back in your cart."
+        }
+      },
+      "tooltip": {
+        "trigger": "Pet-safe",
+        "message": "Safe for cats and dogs",
+        "sizes": {
+          "sm": "Small",
+          "default": "Default"
+        },
+        "sides": {
+          "top": "Top",
+          "right": "Right",
+          "bottom": "Bottom",
+          "left": "Left"
+        },
+        "shortcut": {
+          "label": "Copy order number"
+        }
+      },
+      "tabs": {
+        "sections": {
+          "details": "Details",
+          "care": "Care",
+          "reviews": "Reviews"
+        },
+        "content": {
+          "details": "A big-leaved plant that fills a bright corner of the room.",
+          "care": "Water when the top 3 cm of soil is dry, about once a week.",
+          "reviews": "4.8 average from 126 reviews."
+        },
+        "periods": {
+          "day": "Day",
+          "week": "Week",
+          "month": "Month"
+        },
+        "categories": {
+          "all": "All",
+          "foliage": "Foliage",
+          "succulents": "Succulents",
+          "herbs": "Herbs",
+          "flowers": "Flowers",
+          "potsTools": "Pots & tools",
+          "easyCare": "Easy care",
+          "petSafe": "Pet-safe"
+        },
+        "views": {
+          "list": "List",
+          "grid": "Grid",
+          "map": "Map"
+        }
+      },
+      "accordion": {
+        "faq": {
+          "watering": {
+            "title": "How often should I water?",
+            "content": "Water when the top 2–3 cm of soil feels dry. For most foliage plants, that's about once a week in summer and every two weeks in winter."
+          },
+          "damaged": {
+            "title": "What if a plant arrives damaged?",
+            "content": "Send us a photo within 48 hours of delivery, and we'll ship a replacement or give you a full refund."
+          },
+          "petSafe": {
+            "title": "Which plants are safe for pets?",
+            "content": "Look for the Pet-safe badge. The Chinese money plant, Areca palm and Boston fern are all safe around cats and dogs."
+          }
+        },
+        "topics": {
+          "account": {
+            "title": "Account",
+            "content": "Manage your email, password and saved delivery addresses."
+          },
+          "notifications": {
+            "title": "Notifications",
+            "content": "Choose which watering reminders and order updates reach you."
+          },
+          "privacy": {
+            "title": "Privacy",
+            "content": "Control who can see your plant photos and reviews."
+          }
+        }
+      },
+      "table": {
+        "caption": "Your recent orders",
+        "headers": {
+          "order": "Order",
+          "item": "Item",
+          "amount": "Amount",
+          "status": "Status",
+          "price": "Price"
+        },
+        "status": {
+          "paid": "Paid",
+          "preparing": "Preparing",
+          "shipped": "Shipped",
+          "delivered": "Delivered"
+        },
+        "plants": {
+          "monstera": {
+            "name": "Monstera deliciosa",
+            "price": "₩32,000"
+          },
+          "pothos": {
+            "name": "Golden pothos",
+            "price": "₩14,000"
+          },
+          "olive": {
+            "name": "Olive tree",
+            "price": "₩58,000"
+          },
+          "pilea": {
+            "name": "Chinese money plant",
+            "price": "₩18,000"
+          },
+          "snakePlant": {
+            "name": "Snake plant",
+            "price": "₩24,000"
+          },
+          "areca": {
+            "name": "Areca palm",
+            "price": "₩46,000"
+          },
+          "fern": {
+            "name": "Boston fern",
+            "price": "₩21,000"
+          },
+          "rosemary": {
+            "name": "Rosemary",
+            "price": "₩9,000"
+          }
+        },
+        "total": "Total",
+        "totalAmount": "₩55,000"
+      },
+      "item": {
+        "settings": {
+          "notifications": {
+            "title": "Notifications",
+            "description": "Watering reminders, order updates and comments"
+          },
+          "privacy": {
+            "title": "Privacy",
+            "description": "Who can see your plants and photos"
+          },
+          "account": {
+            "title": "Account",
+            "description": "Email, password and delivery addresses"
+          }
+        },
+        "reminderTime": "Reminder time",
+        "reminderTimeValue": "9:00 AM",
+        "delivery": {
+          "standard": "Standard (2–3 days)",
+          "earlyMorning": "Early-morning",
+          "storePickup": "Store pickup",
+          "sameDay": "Same-day (not in your area)"
+        },
+        "plant": {
+          "title": "Monstera deliciosa",
+          "description": "Foliage · ₩32,000"
+        },
+        "size": {
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large"
+        }
+      },
+      "dialog": {
+        "demo": {
+          "trigger": "Set reminders",
+          "title": "Turn on watering reminders?",
+          "description": "We'll let you know when each of your plants is ready for water.",
+          "cancel": "Not now",
+          "confirm": "Turn on"
+        },
+        "singleAction": {
+          "trigger": "Show notice",
+          "title": "Winter shipping",
+          "body": "From November 1, we wrap plants in insulation to keep them warm, so delivery may take one extra day. Store pickup isn't affected.",
+          "confirm": "Got it"
+        },
+        "scroll": {
+          "trigger": "Read the terms",
+          "title": "Plant-sitting terms",
+          "description": "Please read these before you book a sitter.",
+          "terms": {
+            "booking": "Book at least 3 days before your trip so we can match you with a sitter.",
+            "notes": "Leave care notes for each plant, including how much water it needs.",
+            "visits": "Your sitter visits up to twice a week and sends you a photo after each visit.",
+            "supplies": "Keep a watering can and plant food where your sitter can find them.",
+            "changes": "You can change your trip dates for free until 24 hours before the first visit.",
+            "cancellation": "If you cancel less than 24 hours before the first visit, we charge 50% of the fee.",
+            "health": "If a plant looks unwell, your sitter messages you before doing anything.",
+            "rating": "After your trip, rate your sitter to help other plant owners choose."
+          },
+          "agree": "Agree and book"
+        }
+      },
+      "alertDialog": {
+        "demo": {
+          "trigger": "Leave checkout",
+          "title": "Leave checkout?",
+          "description": "Your gift message won't be saved.",
+          "cancel": "Cancel",
+          "confirm": "Leave"
+        },
+        "destructive": {
+          "trigger": "Cancel order",
+          "title": "Cancel order LL-2481?",
+          "description": "A cancelled order can't be restored. Your refund arrives within 3–5 business days.",
+          "cancel": "Keep order",
+          "confirm": "Cancel order"
+        },
+        "descriptionOnly": {
+          "trigger": "Save address",
+          "description": "Your delivery address has been saved.",
+          "confirm": "OK"
+        }
+      },
+      "drawer": {
+        "demo": {
+          "trigger": "Book a sitter",
+          "title": "Book Doyun Lee as your sitter?",
+          "description": "Doyun visits twice a week from Oct 24 to Nov 1 and sends you a photo after each visit.",
+          "confirm": "Book"
+        },
+        "twoButtons": {
+          "trigger": "Share photo",
+          "title": "Share this photo",
+          "description": "Anyone with the link can see the photo, even without a Little Leaf account.",
+          "cancel": "Cancel",
+          "confirm": "Copy link"
+        },
+        "scroll": {
+          "trigger": "Care guide",
+          "title": "Monstera care guide",
+          "description": "Follow these steps to help your new plant settle in.",
+          "steps": {
+            "light": "Place it in bright, indirect light, a few steps back from a sunny window.",
+            "rotate": "Turn the pot a quarter turn each week so it grows evenly.",
+            "water": "Water when the top 2–3 cm of soil is dry, until water drains from the bottom.",
+            "saucer": "Empty the saucer after watering so the roots don't sit in water.",
+            "leaves": "Wipe the leaves with a damp cloth every two weeks.",
+            "food": "Give it plant food once a month from spring to early autumn.",
+            "winter": "Keep it away from cold drafts and heaters in winter.",
+            "pets": "Keep it out of reach of cats and dogs, as the leaves can upset their stomachs."
+          },
+          "done": "Got it"
+        }
+      },
+      "popover": {
+        "demo": {
+          "trigger": "Open popover",
+          "title": "Watering tip",
+          "description": "Water when the top 2–3 cm of soil feels dry."
+        },
+        "closeButton": {
+          "trigger": "Show tip",
+          "description": "Give the pot a quarter turn each week so your plant grows evenly."
+        },
+        "footer": {
+          "trigger": "Show update",
+          "title": "Your order is on its way",
+          "description": "Order LL-2481 should arrive in 2–3 days.",
+          "dismiss": "Later",
+          "action": "Track delivery"
+        },
+        "custom": {
+          "trigger": "Share",
+          "title": "Share link",
+          "body": "Anyone with the link can see this plant photo.",
+          "copy": "Copy link"
+        }
+      },
+      "dropdownMenu": {
+        "demo": {
+          "trigger": "Open menu",
+          "label": "Order LL-2481",
+          "track": "Track delivery",
+          "reorder": "Order again",
+          "receipt": "View receipt"
+        },
+        "icons": {
+          "trigger": "Settings",
+          "reminders": "Watering reminders",
+          "remindersValue": "9:00 AM",
+          "language": "Language",
+          "languageValue": "English",
+          "theme": "Theme",
+          "themeValue": "System"
+        },
+        "radio": {
+          "trigger": "Sort",
+          "label": "Sort by",
+          "recommended": "Recommended",
+          "popular": "Popular",
+          "priceLow": "Price: low to high"
+        },
+        "checkboxes": {
+          "trigger": "Category",
+          "label": "Category",
+          "foliage": "Foliage",
+          "succulents": "Succulents",
+          "herbs": "Herbs",
+          "flowers": "Flowers"
+        },
+        "footer": {
+          "trigger": "Filter",
+          "priceLabel": "Price",
+          "under10k": "Under ₩10,000",
+          "from10kTo30k": "₩10,000–30,000",
+          "from30kTo50k": "₩30,000–50,000",
+          "over50k": "₩50,000 and up",
+          "featuresLabel": "Features",
+          "easyCare": "Easy care",
+          "petSafe": "Pet-safe",
+          "newArrival": "New",
+          "sale": "Sale",
+          "reset": "Reset",
+          "apply": "Apply"
+        }
+      },
+      "select": {
+        "label": "Plant",
+        "placeholder": "Choose a plant",
+        "plants": {
+          "monstera": "Monstera deliciosa",
+          "pothos": "Golden pothos",
+          "oliveTree": "Olive tree",
+          "moneyPlant": "Chinese money plant",
+          "snakePlant": "Snake plant",
+          "bostonFern": "Boston fern"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small"
+        },
+        "language": {
+          "label": "Language",
+          "placeholder": "Select a language",
+          "korean": "Korean",
+          "english": "English",
+          "japanese": "Japanese",
+          "chinese": "Chinese"
+        },
+        "groups": {
+          "label": "Product",
+          "placeholder": "Choose a product",
+          "plants": "Plants",
+          "tools": "Pots & tools",
+          "terracottaPot": "Terracotta pot",
+          "wateringCan": "Watering can",
+          "pottingMix": "Potting mix 2L"
+        },
+        "multiple": {
+          "label": "Plants to look after",
+          "placeholder": "Choose plants"
+        },
+        "states": {
+          "disabled": "Disabled",
+          "invalid": "Invalid"
+        }
+      },
+      "combobox": {
+        "label": "Plant",
+        "placeholder": "Search plants",
+        "empty": "No plants found.",
+        "plants": {
+          "monstera": "Monstera deliciosa",
+          "pothos": "Golden pothos",
+          "olive": "Olive tree",
+          "pilea": "Chinese money plant",
+          "snake": "Snake plant",
+          "areca": "Areca palm",
+          "fern": "Boston fern",
+          "rosemary": "Rosemary"
+        },
+        "groups": {
+          "label": "Products",
+          "placeholder": "Search plants and supplies",
+          "foliage": "Foliage",
+          "tools": "Pots & tools"
+        },
+        "tools": {
+          "terracottaPot": "Terracotta pot",
+          "wateringCan": "Watering can",
+          "pottingMix": "Potting mix 2L"
+        },
+        "multiple": {
+          "label": "My plants",
+          "placeholder": "Add your plants"
+        },
+        "states": {
+          "disabled": "Disabled",
+          "invalid": "Invalid"
+        }
+      },
+      "checkbox": {
+        "demo": {
+          "water": "Water the Monstera",
+          "mist": "Mist the Boston fern",
+          "repot": "Repot the Golden pothos"
+        },
+        "variants": {
+          "default": "Default",
+          "circle": "Circle",
+          "check": "Check"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small"
+        },
+        "tight": {
+          "default": "Default",
+          "tight": "Tight"
+        },
+        "indeterminate": {
+          "all": "Select all",
+          "monstera": "Monstera deliciosa",
+          "wateringCan": "Watering can"
+        },
+        "disabled": {
+          "off": "Disabled",
+          "on": "Disabled and checked"
+        }
+      },
+      "radioGroup": {
+        "demo": {
+          "label": "Watering reminders",
+          "daily": "Every day",
+          "due": "Only when a plant needs water",
+          "off": "Off"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small"
+        },
+        "tight": {
+          "default": "Default",
+          "tight": "Tight"
+        },
+        "disabled": {
+          "label": "Gift wrap",
+          "none": "No wrap",
+          "paper": "Paper wrap",
+          "box": "Gift box (sold out)"
+        }
+      },
+      "switch": {
+        "demo": {
+          "watering": "Watering reminders",
+          "tips": "Weekly care tips"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small"
+        },
+        "disabled": {
+          "off": "Disabled",
+          "on": "Disabled and on"
+        }
+      },
+      "slider": {
+        "demo": {
+          "label": "Grow light brightness"
+        },
+        "range": {
+          "label": "Humidity range"
+        },
+        "sunlight": {
+          "label": "Hours of sunlight a day",
+          "title": "Sunlight",
+          "shade": "Shade",
+          "tenPlus": "10+ h",
+          "any": "Any light",
+          "hoursSuffix": " h"
+        },
+        "disabled": {
+          "heading": "Watering amount",
+          "label": "Auto"
+        }
+      },
+      "toggle": {
+        "demo": {
+          "label": "Pet-safe"
+        },
+        "variants": {
+          "default": "Default",
+          "outline": "Outline"
+        },
+        "sizes": {
+          "xs": "X-small",
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large"
+        },
+        "withIcon": {
+          "add": "Add",
+          "remove": "Remove"
+        },
+        "icon": {
+          "bookmark": "Save to wishlist",
+          "like": "Like this post",
+          "star": "Add to favorites"
+        },
+        "disabled": {
+          "off": "Disabled",
+          "on": "Disabled and pressed"
+        }
+      },
+      "toggleGroup": {
+        "demo": {
+          "all": "All",
+          "foliage": "Foliage",
+          "succulents": "Succulents",
+          "herbs": "Herbs"
+        },
+        "multiple": {
+          "easyCare": "Easy care",
+          "petSafe": "Pet-safe",
+          "sale": "Sale",
+          "new": "New"
+        }
+      },
+      "input": {
+        "demo": {
+          "label": "Delivery address",
+          "placeholder": "Enter a delivery address"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small",
+          "placeholder": "Enter the recipient's name",
+          "description": "This name goes on the delivery label."
+        },
+        "states": {
+          "default": "Default",
+          "invalid": "Invalid",
+          "readOnly": "Read only",
+          "readOnlyValue": "Order LL-2481",
+          "disabled": "Disabled",
+          "disabledValue": "Haneul Kim"
+        }
+      },
+      "field": {
+        "demo": {
+          "name": "Recipient",
+          "namePlaceholder": "Enter the recipient's name",
+          "email": "Email",
+          "emailDescription": "We'll send your order receipt to this address.",
+          "message": "Gift message",
+          "messagePlaceholder": "Write a short note to send with the plant"
+        },
+        "validation": {
+          "label": "Plant nickname",
+          "placeholder": "e.g. Monty",
+          "description": "Use 2 or more characters.",
+          "error": "Enter a nickname with 2 or more characters."
+        },
+        "horizontal": {
+          "name": "Recipient",
+          "namePlaceholder": "Enter the recipient's name",
+          "email": "Email",
+          "emailDescription": "We'll send delivery updates to this address.",
+          "phone": "Phone"
+        }
+      },
+      "inputGroup": {
+        "search": {
+          "label": "Search plants",
+          "placeholder": "Search plants and pots",
+          "clear": "Clear search"
+        },
+        "addons": {
+          "email": "Email",
+          "price": "Max price",
+          "unit": "won",
+          "nickname": "Nickname",
+          "nicknameValue": "greenhaneul",
+          "available": "This nickname is available."
+        },
+        "button": {
+          "phone": "Phone number",
+          "send": "Send code",
+          "code": "Verification code",
+          "codePlaceholder": "6 digits",
+          "resend": "Resend"
+        },
+        "clear": {
+          "label": "Delivery note",
+          "placeholder": "e.g. Leave it at the door",
+          "clear": "Clear",
+          "description": "Type something to see the clear button."
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "show": "Show password",
+          "hide": "Hide password",
+          "description": "Use 8 or more characters."
+        },
+        "textarea": {
+          "label": "Ask a plant expert",
+          "placeholder": "Are the leaves turning yellow? Tell us what you see.",
+          "attach": "Attach a photo",
+          "send": "Send"
+        }
+      },
+      "textarea": {
+        "demo": {
+          "label": "Gift message",
+          "placeholder": "Write a note to send with the plant"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small",
+          "placeholder": "Add a note for the courier"
+        },
+        "states": {
+          "invalid": "Invalid",
+          "disabled": "Disabled",
+          "disabledValue": "Please leave it at the front door."
+        },
+        "counter": {
+          "label": "Review",
+          "placeholder": "Tell us how your plant is settling in",
+          "description": "Up to 100 characters."
         }
       }
     }

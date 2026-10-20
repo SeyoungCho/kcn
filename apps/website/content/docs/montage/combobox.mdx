@@ -1,0 +1,86 @@
+---
+title: Combobox
+description: An input that filters a list of options as the user types.
+---
+
+<Preview registry="montage" demo="combobox/combobox-demo" height={520} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/combobox
+```
+
+## Usage
+
+The API matches shadcn's Combobox. Pass `items` to `Combobox` and render each one from a function child of `ComboboxList`; `{ value, label }` items are shown and filtered by `label`. Give `ComboboxInput` an `aria-label` when there is no visible label.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="combobox/combobox-sizes" height={480} />
+
+### Clear Button
+
+<Preview registry="montage" demo="combobox/combobox-clear" height={520} />
+
+### Groups
+
+Pass groups that each have an `items` array, and render them with `ComboboxGroup` and `ComboboxCollection`.
+
+<Preview registry="montage" demo="combobox/combobox-groups" height={520} />
+
+### Multiple
+
+Render chips inside `ComboboxChips`, and pass the same `useComboboxAnchor()` ref to `ComboboxContent` so the list opens under the whole field.
+
+<Preview registry="montage" demo="combobox/combobox-multiple" height={520} />
+
+### States
+
+<Preview registry="montage" demo="combobox/combobox-states" height={480} />
+
+## API Reference
+
+### Combobox
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxProps"
+/>
+
+### ComboboxInput
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxInputProps"
+/>
+
+### ComboboxContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxContentProps"
+/>
+
+### ComboboxItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxItemProps"
+/>
+
+### ComboboxChips
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxChipsProps"
+/>
+
+### ComboboxChip
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/combobox.ts"
+  name="MDXComboboxChipProps"
+/>

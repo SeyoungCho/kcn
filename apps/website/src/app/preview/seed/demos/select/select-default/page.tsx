@@ -17,10 +17,10 @@ export default function SelectDefaultDemo() {
         <SelectRoot label={t.label} description={t.description}>
           <SelectTrigger placeholder={t.placeholder} />
           <SelectContent>
-            <SelectItem value="apple" label={t.fruits.apple} />
-            <SelectItem value="banana" label={t.fruits.banana} />
-            <SelectItem value="blueberry" label={t.fruits.blueberry} />
-            <SelectItem value="mango" label={t.fruits.mango} />
+            <SelectItem value="monstera" label={t.plants.monstera} />
+            <SelectItem value="pothos" label={t.plants.pothos} />
+            <SelectItem value="snake-plant" label={t.plants.snakePlant} />
+            <SelectItem value="boston-fern" label={t.plants.bostonFern} />
           </SelectContent>
         </SelectRoot>
       </div>

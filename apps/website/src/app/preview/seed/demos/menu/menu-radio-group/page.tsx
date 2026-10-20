@@ -16,11 +16,11 @@ import {
 } from "@repo/seed/ui/menu";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const options = ["latest", "popular", "nearby"] as const;
+const options = ["watering", "added", "name"] as const;
 
 export default function MenuRadioGroupDemo() {
   const t = usePreviewDictionary().demos.menu;
-  const [sort, setSort] = React.useState<string>("latest");
+  const [sort, setSort] = React.useState<string>("watering");
 
   return (
     <div className="flex min-h-screen justify-center p-8 pt-12">
@@ -30,7 +30,7 @@ export default function MenuRadioGroupDemo() {
         </MenuTrigger>
         <MenuContent>
           <MenuGroup>
-            <MenuGroupLabel>{t.groups.post}</MenuGroupLabel>
+            <MenuGroupLabel>{t.groups.plant}</MenuGroupLabel>
             <MenuItem prefixIcon={<IconPencilLine />} label={t.items.edit} />
             <MenuItem
               prefixIcon={<IconSquare2StackedLine />}

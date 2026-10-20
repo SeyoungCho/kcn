@@ -8,7 +8,7 @@ import {
 } from "@repo/t-flavored/ui/accordion";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const questions = ["points", "subscription", "fee"] as const;
+const questions = ["watering", "damaged", "petSafe"] as const;
 
 export default function AccordionDemo() {
   const t = usePreviewDictionary().demos.tFlavored.accordion;

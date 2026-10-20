@@ -1,0 +1,65 @@
+---
+title: Calendar
+description: A calendar for picking a date, several dates or a date range.
+---
+
+<Preview registry="montage" demo="calendar/calendar-single" height={420} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/calendar
+```
+
+## Usage
+
+The API matches shadcn's Calendar, built on [React DayPicker](https://daypicker.dev). It always renders six weeks, and range mode hides days from other months.
+
+## Examples
+
+### Range
+
+With `resetOnSelect`, a click after a complete range starts a new one.
+
+<Preview registry="montage" demo="calendar/calendar-range" height={420} />
+
+### Multiple
+
+<Preview registry="montage" demo="calendar/calendar-multiple" height={420} />
+
+### Disabled Days
+
+Pass matchers to `disabled`; `startMonth` stops navigation before the current month.
+
+<Preview registry="montage" demo="calendar/calendar-disabled" height={420} />
+
+### Month and Year Selector
+
+<Preview registry="montage" demo="calendar/calendar-dropdown" height={420} />
+
+### Locale
+
+Pass a locale from `react-day-picker/locale`.
+
+<Preview registry="montage" demo="calendar/calendar-locale" height={420} />
+
+### Date Picker
+
+A date picker is a `Popover` with a `Button` trigger and a `Calendar` inside.
+
+<Preview registry="montage" demo="calendar/calendar-date-picker" height={460} />
+
+### Date Range Picker
+
+<Preview
+  registry="montage"
+  demo="calendar/calendar-date-range-picker"
+  height={460}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/calendar.ts"
+  name="MDXCalendarProps"
+/>

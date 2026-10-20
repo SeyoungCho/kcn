@@ -1,0 +1,33 @@
+---
+title: Progress
+description: A thin bar that shows how far a task has come.
+---
+
+<Preview registry="montage" demo="progress/progress-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/progress
+```
+
+## Usage
+
+The API matches shadcn's Progress, with an extra `size` prop. Give it an `aria-label`, or a `ProgressLabel` child.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="progress/progress-sizes" height={200} />
+
+### Label
+
+<Preview registry="montage" demo="progress/progress-label" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/progress.ts"
+  name="MDXProgressProps"
+/>

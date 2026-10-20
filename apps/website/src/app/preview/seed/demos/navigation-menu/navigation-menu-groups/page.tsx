@@ -27,19 +27,19 @@ export default function NavigationMenuGroupsDemo() {
           <NavigationMenuContent>
             <NavigationMenuGroup>
               <NavigationMenuGroupLabel>
-                {t.groups.marketing}
+                {t.groups.shop}
               </NavigationMenuGroupLabel>
-              <NavigationMenuItem label={t.groups.ads} current />
-              <NavigationMenuItem label={t.groups.coupons} />
-              <NavigationMenuItem label={t.groups.posts} />
+              <NavigationMenuItem label={t.groups.plants} current />
+              <NavigationMenuItem label={t.groups.potsTools} />
+              <NavigationMenuItem label={t.groups.reviews} />
             </NavigationMenuGroup>
             <NavigationMenuGroup>
               <NavigationMenuGroupLabel>
-                {t.groups.management}
+                {t.groups.care}
               </NavigationMenuGroupLabel>
-              <NavigationMenuItem label={t.groups.orders} />
-              <NavigationMenuItem label={t.groups.customers} />
-              <NavigationMenuItem label={t.groups.settlement} disabled />
+              <NavigationMenuItem label={t.groups.watering} />
+              <NavigationMenuItem label={t.groups.sitters} />
+              <NavigationMenuItem label={t.groups.classes} disabled />
             </NavigationMenuGroup>
           </NavigationMenuContent>
         </NavigationMenuRoot>

@@ -1,0 +1,58 @@
+---
+title: Table
+description: Shows rows of data in columns, with a header that stays in view while scrolling.
+---
+
+<Preview registry="montage" demo="table/table-demo" height={420} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/table
+```
+
+## Usage
+
+The API matches shadcn's Table. The table sits in a rounded frame that scrolls on its own, and `interactive` on `TableRow` makes a row pressable.
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Order</TableHead>
+      <TableHead>Item</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>LL-2481</TableCell>
+      <TableCell>Monstera deliciosa</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+## Examples
+
+### Interactive Rows
+
+<Preview registry="montage" demo="table/table-interactive" height={360} />
+
+### Scrolling
+
+Give the table a flex column parent with a maximum height; the header stays in view while the rows scroll.
+
+<Preview registry="montage" demo="table/table-scroll" height={360} />
+
+### Footer
+
+<Preview registry="montage" demo="table/table-footer" height={360} />
+
+## API Reference
+
+### TableRow
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/table.ts"
+  name="MDXTableProps"
+/>

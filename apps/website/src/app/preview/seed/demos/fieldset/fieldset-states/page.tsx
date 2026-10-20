@@ -12,12 +12,12 @@ import {
 } from "@repo/seed/ui/fieldset";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const agreements = ["terms", "privacy"] as const;
+const agreements = ["returns", "address"] as const;
 
 export default function FieldsetStatesDemo() {
   const t = usePreviewDictionary().demos.fieldset;
   const id = React.useId();
-  const [checked, setChecked] = React.useState<string[]>(["terms"]);
+  const [checked, setChecked] = React.useState<string[]>(["returns"]);
   const invalid = checked.length < agreements.length;
 
   return (

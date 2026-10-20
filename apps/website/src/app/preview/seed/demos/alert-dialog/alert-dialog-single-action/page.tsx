@@ -20,17 +20,17 @@ export default function AlertDialogSingleActionDemo() {
     <div className="flex min-h-screen items-center justify-center p-8">
       <AlertDialogRoot>
         <AlertDialogTrigger render={<ActionButton variant="neutralWeak" />}>
-          {t.notice.open}
+          {t.soldOut.open}
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t.notice.title}</AlertDialogTitle>
+            <AlertDialogTitle>{t.soldOut.title}</AlertDialogTitle>
             <AlertDialogDescription>
-              {t.notice.description}
+              {t.soldOut.description}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction>{t.notice.confirm}</AlertDialogAction>
+            <AlertDialogAction>{t.soldOut.confirm}</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialogRoot>

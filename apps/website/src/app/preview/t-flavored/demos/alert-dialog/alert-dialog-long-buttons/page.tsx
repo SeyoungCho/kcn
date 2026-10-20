@@ -27,8 +27,10 @@ export default function AlertDialogLongButtonsDemo() {
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>{t.title}</AlertDialogTitle>
-            <AlertDialogDescription>{t.description}</AlertDialogDescription>
+            <AlertDialogTitle>{t.confirm.title}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t.confirm.description}
+            </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>{t.longButtons.cancel}</AlertDialogCancel>

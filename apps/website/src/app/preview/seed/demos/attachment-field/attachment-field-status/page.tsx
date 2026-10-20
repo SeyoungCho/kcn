@@ -16,18 +16,18 @@ export default function AttachmentFieldStatusDemo() {
   const [entries] = React.useState<AttachmentInputFileEntry[]>(() => [
     {
       id: "uploading",
-      file: sampleFile("contract.pdf", 1_240_000),
+      file: sampleFile(t.statuses.files.uploading, 1_240_000),
       status: "uploading",
       progress: 40,
     },
     {
       id: "error",
-      file: sampleFile("invoice.pdf", 380_000),
+      file: sampleFile(t.statuses.files.error, 380_000),
       status: "error",
     },
     {
       id: "success",
-      file: sampleFile("quarterly-report-final.pdf", 2_600_000),
+      file: sampleFile(t.statuses.files.success, 2_600_000),
       status: "success",
     },
   ]);

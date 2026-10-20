@@ -1,0 +1,59 @@
+---
+title: Empty
+description: Empty는 보여 줄 것이 없는 까닭과 다음에 할 일을 알려 줘요.
+---
+
+<Preview registry="montage" demo="empty/empty-demo" height={400} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/empty
+```
+
+## 사용법
+
+부품은 shadcn 의 Empty 와 같고 `size` · `padding` prop 이 더 있어요. `EmptyContent` 에는 outline 버튼을 넣는데, 기본 크기에서는 `size="lg"` 버튼을, `size="sm"` 에서는 기본 크기 버튼을 써요.
+
+## 예제
+
+### 버튼 두 개
+
+<Preview registry="montage" demo="empty/empty-buttons" height={400} />
+
+### 쌓은 버튼
+
+`EmptyContent` 에 `orientation="vertical"` 을 주면 버튼을 같은 폭으로 쌓아요.
+
+<Preview registry="montage" demo="empty/empty-vertical" height={460} />
+
+### 작게
+
+<Preview registry="montage" demo="empty/empty-sm" height={400} />
+
+### 미디어
+
+<Preview registry="montage" demo="empty/empty-media" height={380} />
+
+## API 레퍼런스
+
+### Empty
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/empty.ts"
+  name="MDXEmptyPropsKO"
+/>
+
+### EmptyMedia
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/empty.ts"
+  name="MDXEmptyMediaPropsKO"
+/>
+
+### EmptyContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/empty.ts"
+  name="MDXEmptyContentPropsKO"
+/>

@@ -1,0 +1,65 @@
+---
+title: Radio Group
+description: 목록에서 하나만 고를 때 써요.
+---
+
+<Preview registry="montage" demo="radio-group/radio-group-demo" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/radio-group
+```
+
+## 사용법
+
+API 는 shadcn 의 RadioGroup 과 같고, `RadioGroupItem` 에 `size` · `tight` 가 더 있어요. 항목마다 글자와 함께 `<label>` 로 감싸고, 그룹은 `aria-labelledby` 로 이름을 붙여 주세요.
+
+```tsx
+<RadioGroup defaultValue="daily" aria-labelledby="reminder-label">
+  <label className="flex items-center gap-2">
+    <RadioGroupItem value="daily" />
+    매일
+  </label>
+  <label className="flex items-center gap-2">
+    <RadioGroupItem value="off" />
+    받지 않음
+  </label>
+</RadioGroup>
+```
+
+## 예제
+
+### 크기
+
+<Preview registry="montage" demo="radio-group/radio-group-sizes" height={140} />
+
+### Tight
+
+`tight` 는 좌우 여백을 없애 위아래 글자와 줄을 맞춰요.
+
+<Preview registry="montage" demo="radio-group/radio-group-tight" height={140} />
+
+### 비활성화
+
+<Preview
+  registry="montage"
+  demo="radio-group/radio-group-disabled"
+  height={200}
+/>
+
+## API 레퍼런스
+
+### RadioGroup
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/radio-group.ts"
+  name="MDXRadioGroupPropsKO"
+/>
+
+### RadioGroupItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/radio-group.ts"
+  name="MDXRadioGroupItemPropsKO"
+/>

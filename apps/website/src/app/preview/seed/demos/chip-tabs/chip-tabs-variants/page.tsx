@@ -7,7 +7,7 @@ import {
 } from "@repo/seed/ui/chip-tabs";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const tabs = ["all", "popular", "recent", "nearby"] as const;
+const tabs = ["all", "foliage", "succulents", "herbs"] as const;
 const examples = [
   { variant: "neutralSolid", size: "medium" },
   { variant: "neutralOutline", size: "medium" },

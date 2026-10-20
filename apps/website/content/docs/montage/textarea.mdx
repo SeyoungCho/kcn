@@ -1,0 +1,39 @@
+---
+title: Textarea
+description: A multi-line text input that grows with its content.
+---
+
+<Preview registry="montage" demo="textarea/textarea-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/textarea
+```
+
+## Usage
+
+The API matches shadcn's Textarea, plus a `size` prop, with the same states as `Input`. It starts two lines tall and grows with the content (CSS `field-sizing`); cap it with `max-h-*`. For buttons below the text, use `InputGroupTextarea`.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="textarea/textarea-sizes" height={300} />
+
+### States
+
+<Preview registry="montage" demo="textarea/textarea-states" height={340} />
+
+### Character Count
+
+Type more than 100 characters to see the error state.
+
+<Preview registry="montage" demo="textarea/textarea-counter" height={220} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/textarea.ts"
+  name="MDXTextareaProps"
+/>

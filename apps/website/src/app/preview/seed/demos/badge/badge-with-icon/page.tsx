@@ -14,10 +14,10 @@ export default function BadgeWithIconDemo() {
         p-8"
     >
       <Badge tone="positive" variant="weak" prefix={<IconCheckmarkFatFill />}>
-        {t.withIcon.verified}
+        {t.withIcon.petSafe}
       </Badge>
       <Badge tone="brand" prefix={<IconStarFill />}>
-        {t.withIcon.popular}
+        {t.withIcon.easyCare}
       </Badge>
       <Badge
         size="large"
@@ -25,7 +25,7 @@ export default function BadgeWithIconDemo() {
         variant="outline"
         prefix={<IconCheckmarkFatFill />}
       >
-        {t.withIcon.new}
+        {t.withIcon.paid}
       </Badge>
     </div>
   );

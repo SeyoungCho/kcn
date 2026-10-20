@@ -1,0 +1,78 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from, triggered by a field.
+---
+
+<Preview registry="montage" demo="select/select-demo" height={520} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/select
+```
+
+## Usage
+
+The API matches shadcn's Select. Pass `items` to `Select` so `SelectValue` shows the label instead of the raw value, and give `SelectTrigger` an `aria-label` when there is no visible label. `SelectItem` also takes a `variant` that shows the selection as a radio or checkbox.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="select/select-sizes" height={480} />
+
+### With Icon
+
+Put the icon before `SelectValue`.
+
+<Preview registry="montage" demo="select/select-with-icon" height={520} />
+
+### Radio
+
+<Preview registry="montage" demo="select/select-radio" height={520} />
+
+### Multiple
+
+With `multiple` the value is an array and the list stays open while picking.
+
+<Preview registry="montage" demo="select/select-multiple" height={520} />
+
+### Groups
+
+<Preview registry="montage" demo="select/select-groups" height={520} />
+
+### States
+
+Set `disabled` on `Select` and `aria-invalid` on `SelectTrigger`.
+
+<Preview registry="montage" demo="select/select-states" height={480} />
+
+## API Reference
+
+### Select
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectProps"
+/>
+
+### SelectTrigger
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectTriggerProps"
+/>
+
+### SelectContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectContentProps"
+/>
+
+### SelectItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/select.ts"
+  name="MDXSelectItemProps"
+/>

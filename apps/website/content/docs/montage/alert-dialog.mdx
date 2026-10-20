@@ -1,0 +1,53 @@
+---
+title: Alert Dialog
+description: A small dialog that interrupts the user with an important message and waits for an answer.
+---
+
+<Preview registry="montage" demo="alert-dialog/alert-dialog-demo" height={320} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/alert-dialog
+```
+
+## Usage
+
+The API matches shadcn's AlertDialog, but its actions are text buttons: `AlertDialogAction` and `AlertDialogCancel` default to `variant="link"`, and the cancel button is muted. `AlertDialogAction` doesn't close the dialog — close it yourself when the action is done.
+
+## Examples
+
+### Destructive
+
+Add `text-destructive` to an action that can't be undone.
+
+<Preview registry="montage" demo="alert-dialog/alert-dialog-destructive" height={320} />
+
+### Description Only
+
+Leave out the title when the message speaks for itself.
+
+<Preview registry="montage" demo="alert-dialog/alert-dialog-description-only" height={280} />
+
+## API Reference
+
+### AlertDialog
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert-dialog.ts"
+  name="MDXAlertDialogProps"
+/>
+
+### AlertDialogAction
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert-dialog.ts"
+  name="MDXAlertDialogActionProps"
+/>
+
+### AlertDialogCancel
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/alert-dialog.ts"
+  name="MDXAlertDialogCancelProps"
+/>

@@ -1,0 +1,59 @@
+---
+title: Empty
+description: Empty explains why there is nothing to show and what to do next.
+---
+
+<Preview registry="montage" demo="empty/empty-demo" height={400} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/empty
+```
+
+## Usage
+
+The parts match shadcn's Empty, with extra `size` and `padding` props. Put outline buttons in `EmptyContent`: `size="lg"` buttons for the default size, default-size buttons for `size="sm"`.
+
+## Examples
+
+### Two buttons
+
+<Preview registry="montage" demo="empty/empty-buttons" height={400} />
+
+### Stacked buttons
+
+`orientation="vertical"` on `EmptyContent` stacks the buttons at the same width.
+
+<Preview registry="montage" demo="empty/empty-vertical" height={460} />
+
+### Small
+
+<Preview registry="montage" demo="empty/empty-sm" height={400} />
+
+### Media
+
+<Preview registry="montage" demo="empty/empty-media" height={380} />
+
+## API Reference
+
+### Empty
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/empty.ts"
+  name="MDXEmptyProps"
+/>
+
+### EmptyMedia
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/empty.ts"
+  name="MDXEmptyMediaProps"
+/>
+
+### EmptyContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/empty.ts"
+  name="MDXEmptyContentProps"
+/>

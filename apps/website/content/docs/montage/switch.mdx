@@ -1,0 +1,33 @@
+---
+title: Switch
+description: Turns a setting on or off right away.
+---
+
+<Preview registry="montage" demo="switch/switch-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/switch
+```
+
+## Usage
+
+The API matches shadcn's Switch, including `size` (`default`, `sm`). Wrap it in a `<label>` with its text (or use `Field`) — otherwise give it an `aria-label`.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="switch/switch-sizes" height={120} />
+
+### Disabled
+
+<Preview registry="montage" demo="switch/switch-disabled" height={120} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/switch.ts"
+  name="MDXSwitchProps"
+/>

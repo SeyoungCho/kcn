@@ -1,0 +1,46 @@
+---
+title: Dialog
+description: A window over the page that holds the user's attention until they respond or close it.
+---
+
+<Preview registry="montage" demo="dialog/dialog-demo" height={360} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/dialog
+```
+
+## Usage
+
+The API matches shadcn's Dialog. Content between `DialogHeader` and `DialogFooter` is padded for you, and footer buttons share the row, so give them `size="lg"`. Pass a width class such as `w-120` for a wider dialog.
+
+## Examples
+
+### Single Action
+
+A single footer button fills the row.
+
+<Preview registry="montage" demo="dialog/dialog-single-action" height={400} />
+
+### Scrolling
+
+Long content scrolls while the header and footer stay in place.
+
+<Preview registry="montage" demo="dialog/dialog-scroll" height={560} />
+
+## API Reference
+
+### Dialog
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dialog.ts"
+  name="MDXDialogProps"
+/>
+
+### DialogContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dialog.ts"
+  name="MDXDialogContentProps"
+/>

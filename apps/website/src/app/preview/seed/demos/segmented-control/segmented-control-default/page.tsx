@@ -11,13 +11,15 @@ export default function SegmentedControlDefaultDemo() {
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
-      <SegmentedControl defaultValue="week" aria-label={t.label}>
-        <SegmentedControlItem value="day">{t.options.day}</SegmentedControlItem>
-        <SegmentedControlItem value="week">
-          {t.options.week}
+      <SegmentedControl defaultValue="partShade" aria-label={t.label}>
+        <SegmentedControlItem value="shade">
+          {t.options.shade}
         </SegmentedControlItem>
-        <SegmentedControlItem value="month">
-          {t.options.month}
+        <SegmentedControlItem value="partShade">
+          {t.options.partShade}
+        </SegmentedControlItem>
+        <SegmentedControlItem value="fullSun">
+          {t.options.fullSun}
         </SegmentedControlItem>
       </SegmentedControl>
     </div>

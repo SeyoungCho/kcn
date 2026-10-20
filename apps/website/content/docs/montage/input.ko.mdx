@@ -1,29 +1,35 @@
 ---
 title: Input
-description: Input 컴포넌트
+description: 한 줄짜리 텍스트 입력 칸이에요.
 ---
 
-## 코드 블록
+<Preview registry="montage" demo="input/input-demo" height={160} />
 
-```js
-console.log("Hello World");
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/input
 ```
 
-## Montage (격리 iframe 미리보기)
+## 사용법
 
-<div className="space-y-4">
-  <Preview registry="montage" component="Input" />
+API 는 shadcn 의 Input 과 같고, `size` prop 이 더 있어요. 라벨과 도움말은 `Field` 로, 칸 안의 아이콘 · 단위 · 버튼은 `InputGroup` 으로 붙여요. `aria-invalid` 가 붙으면 에러 상태가 되고, `<Field invalid>` 안에서는 저절로 붙어요.
 
-  <Preview
-    registry="montage"
-    component="Input"
-    props={{ placeholder: "내용을 입력하세요..." }}
-  />
-</div>
+## 예제
 
-## 카드
+### 크기
 
-<Cards>
-  <Card title="Next.js 더 알아보기" href="https://nextjs.org/docs" />
-  <Card title="Fumadocs 더 알아보기" href="https://fumadocs.dev" />
-</Cards>
+`Field` 안에서는 라벨도 칸의 크기를 따라가요.
+
+<Preview registry="montage" demo="input/input-sizes" height={300} />
+
+### 상태
+
+<Preview registry="montage" demo="input/input-states" height={400} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/input.ts"
+  name="MDXInputPropsKO"
+/>

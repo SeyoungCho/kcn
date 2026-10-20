@@ -1,0 +1,46 @@
+---
+title: Dialog
+description: Dialog는 페이지 위에 떠서 사용자가 답하거나 닫을 때까지 주의를 붙잡는 창이에요.
+---
+
+<Preview registry="montage" demo="dialog/dialog-demo" height={360} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/dialog
+```
+
+## 사용법
+
+API 는 shadcn 의 Dialog 와 같아요. `DialogHeader` 와 `DialogFooter` 사이의 내용에는 여백이 알아서 붙고, 버튼 줄의 버튼은 폭을 나눠 가지니 `size="lg"` 로 넣어 주세요. 더 넓은 창이 필요하면 `w-120` 같은 폭 클래스를 주세요.
+
+## 예제
+
+### 버튼 하나
+
+버튼이 하나면 줄을 꽉 채워요.
+
+<Preview registry="montage" demo="dialog/dialog-single-action" height={400} />
+
+### 스크롤
+
+내용이 길면 머리와 버튼 줄은 남고 내용만 스크롤돼요.
+
+<Preview registry="montage" demo="dialog/dialog-scroll" height={560} />
+
+## API 레퍼런스
+
+### Dialog
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dialog.ts"
+  name="MDXDialogPropsKO"
+/>
+
+### DialogContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/dialog.ts"
+  name="MDXDialogContentPropsKO"
+/>

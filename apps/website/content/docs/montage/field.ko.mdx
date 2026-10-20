@@ -1,0 +1,53 @@
+---
+title: Field
+description: 입력 칸 둘레의 라벨 · 도움말 · 에러 메시지예요.
+---
+
+<Preview registry="montage" demo="field/field-demo" height={440} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/field
+```
+
+## 사용법
+
+API 는 shadcn 의 Field 와 같아요. `FieldLabel` 과 `FieldDescription` 은 안의 칸과 저절로 이어지고, `Field` 의 `invalid` 는 칸의 `aria-invalid` 로 내려가요. `FieldLabel` 에 `required` 를 주면 빨간 별표가 붙고, `size="sm"` 인 칸 옆에서는 라벨도 작아져요.
+
+## 예제
+
+### 검사
+
+비어 있는 `<FieldError />` 는 `validate` 가 돌려준 메시지를 보여 주고, `validate` 없이는 `<Field invalid>` 와 `<FieldError>…</FieldError>` 를 써요.
+
+<Preview registry="montage" demo="field/field-validation" height={220} />
+
+### 가로 배치
+
+칸과 도움말은 `FieldContent` 로 감싸고, 라벨의 너비를 같게 주면 칸의 시작 위치가 맞춰져요.
+
+<Preview registry="montage" demo="field/field-horizontal" height={320} />
+
+## API 레퍼런스
+
+### Field
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/field.ts"
+  name="MDXFieldPropsKO"
+/>
+
+### FieldLabel
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/field.ts"
+  name="MDXFieldLabelPropsKO"
+/>
+
+### FieldError
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/field.ts"
+  name="MDXFieldErrorPropsKO"
+/>

@@ -1,0 +1,66 @@
+---
+title: Accordion
+description: Headings that expand to show more, for FAQs, settings and other long content.
+---
+
+<Preview registry="montage" demo="accordion/accordion-demo" height={420} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/accordion
+```
+
+## Usage
+
+The API matches shadcn's Accordion, with `variant` and `size` on `Accordion`. Opening an item closes the others unless you pass `multiple`.
+
+```tsx
+<Accordion multiple>
+  <AccordionItem value="watering">
+    <AccordionTrigger>How often should I water?</AccordionTrigger>
+    <AccordionContent>…</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Examples
+
+### Full
+
+`variant="full"` adds side padding, which suits accordions inside cards and sheets.
+
+<Preview registry="montage" demo="accordion/accordion-full" height={360} />
+
+### With Icon
+
+Put an icon before the title inside `AccordionTrigger`.
+
+<Preview registry="montage" demo="accordion/accordion-icon" height={340} />
+
+### Disabled
+
+<Preview registry="montage" demo="accordion/accordion-disabled" height={260} />
+
+## API Reference
+
+### Accordion
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/accordion.ts"
+  name="MDXAccordionProps"
+/>
+
+### AccordionItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/accordion.ts"
+  name="MDXAccordionItemProps"
+/>
+
+### AccordionContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/accordion.ts"
+  name="MDXAccordionContentProps"
+/>

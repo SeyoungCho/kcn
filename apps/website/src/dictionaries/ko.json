@@ -12,7 +12,6 @@
   },
   "demos": {
     "actionButton": {
-      "label": "버튼",
       "variants": {
         "brandSolid": "brandSolid",
         "neutralSolid": "neutralSolid",
@@ -29,11 +28,11 @@
         "large": "크게"
       },
       "withIcon": {
-        "add": "추가",
-        "search": "검색",
-        "delete": "삭제"
+        "add": "장바구니 담기",
+        "search": "식물 검색",
+        "delete": "장바구니 비우기"
       },
-      "iconOnly": "항목 추가",
+      "iconOnly": "수량 늘리기",
       "states": {
         "loading": "로딩 중",
         "disabled": "비활성화"
@@ -42,8 +41,8 @@
     "textField": {
       "label": "이메일",
       "placeholder": "name@example.com",
-      "description": "답장을 보낼 때만 사용해요.",
-      "errorMessage": "올바른 이메일 주소를 입력해 주세요.",
+      "description": "주문과 배송 소식을 이 주소로 보내 드려요.",
+      "errorMessage": "name@example.com 형식으로 입력해 주세요.",
       "variants": {
         "outline": "외곽선",
         "underline": "밑줄"
@@ -57,22 +56,22 @@
         "disabled": "비활성화",
         "readOnly": "읽기 전용"
       },
-      "priceLabel": "가격",
-      "priceSuffix": "원",
-      "searchPlaceholder": "검색",
-      "bioLabel": "자기소개",
-      "bioPlaceholder": "자신을 소개해 주세요"
+      "intervalLabel": "물 주기",
+      "intervalSuffix": "일마다",
+      "searchPlaceholder": "식물 검색",
+      "giftLabel": "선물 메시지",
+      "giftPlaceholder": "카드에 적을 짧은 메시지를 남겨 주세요"
     },
     "select": {
-      "label": "과일",
-      "placeholder": "과일을 선택하세요",
-      "description": "가장 좋아하는 것을 골라 주세요.",
-      "errorMessage": "과일을 선택해 주세요.",
-      "fruits": {
-        "apple": "사과",
-        "banana": "바나나",
-        "blueberry": "블루베리",
-        "mango": "망고"
+      "label": "식물",
+      "placeholder": "식물을 골라 주세요",
+      "description": "물 줄 때가 되면 알려 드려요.",
+      "errorMessage": "물 주기 알림을 받을 식물을 골라 주세요.",
+      "plants": {
+        "monstera": "몬스테라 델리시오사",
+        "pothos": "스킨답서스",
+        "snakePlant": "스투키",
+        "bostonFern": "보스턴고사리"
       },
       "sizes": {
         "large": "크게",
@@ -85,9 +84,9 @@
       }
     },
     "callout": {
-      "title": "알려 드려요",
-      "description": "승인되면 이웃에게 게시글이 보여요.",
-      "link": "자세히 보기",
+      "title": "새벽 배송",
+      "description": "23:00 전에 주문하면 다음 날 7:00 전에 받아요.",
+      "link": "배송 지역 보기",
       "tones": {
         "neutral": "중립",
         "informative": "안내",
@@ -98,35 +97,33 @@
       },
       "toneDescription": "상황을 설명하는 짧은 메시지예요.",
       "actionable": {
-        "title": "새 기능",
-        "description": "새로워진 검색을 써 보세요."
+        "title": "나에게 맞는 식물 찾기",
+        "description": "질문 3개에 답하면 공간에 맞는 식물을 추천해 드려요."
       },
       "dismissible": {
-        "description": "읽은 뒤에는 이 도움말을 닫을 수 있어요.",
+        "description": "스투키는 물을 너무 자주 주면 뿌리가 무르니 흙이 마른 뒤에 주세요.",
         "reset": "다시 보기",
         "closeLabel": "닫기"
       }
     },
     "snackbar": {
-      "trigger": "스낵바 띄우기",
-      "message": "휴지통으로 옮겼어요.",
+      "trigger": "장바구니에서 빼기",
+      "message": "장바구니에서 몬스테라 델리시오사를 뺐어요.",
       "action": "되돌리기",
-      "undone": "되돌렸어요.",
+      "undone": "장바구니에 다시 담았어요.",
       "variants": {
         "default": "기본",
         "positive": "긍정",
         "critical": "위험"
       },
       "messages": {
-        "default": "설정을 저장했어요.",
-        "positive": "결제가 끝났어요.",
-        "critical": "네트워크에 연결하지 못했어요."
+        "default": "물 주기 알림을 맞췄어요.",
+        "positive": "주문 LL-2487 결제를 마쳤어요.",
+        "critical": "사진을 올리지 못했어요. 연결을 확인해 주세요."
       }
     },
     "loadingIndicator": {
-      "label": "변경 사항 저장",
-      "idle": "기본",
-      "loading": "처리 중",
+      "label": "장바구니에 담기",
       "toggle": "처리 중 바꾸기"
     },
     "progressCircle": {
@@ -153,28 +150,28 @@
       }
     },
     "resultSection": {
-      "title": "검색 결과가 없어요",
-      "description": "다른 검색어를 입력하거나\n맞춤법을 확인해 보세요.",
+      "title": "찾는 식물이 없어요",
+      "description": "다른 식물 이름으로 검색하거나\n맞춤법을 확인해 보세요.",
       "primaryAction": "검색어 지우기",
       "secondaryAction": "카테고리 둘러보기",
       "medium": {
-        "title": "아직 아무것도 없어요",
-        "description": "저장한 항목이 여기에 보여요."
+        "title": "아직 찜한 식물이 없어요",
+        "description": "식물의 하트를 누르면 여기에 모여요."
       }
     },
     "contentPlaceholder": {
-      "label": "사진 없음",
-      "custom": "동영상 없음"
+      "label": "상품 사진 없음",
+      "custom": "관리 영상 없음"
     },
     "identityPlaceholder": {
       "person": "프로필 사진 없음",
       "business": "가게 사진 없음"
     },
     "avatar": {
-      "alt": "프로필 사진",
-      "noPhoto": "프로필 사진 없음",
-      "noStorePhoto": "가게 사진 없음",
-      "brokenAlt": "불러오지 못한 사진"
+      "haneul": "김하늘",
+      "doyun": "이도윤",
+      "seoyeon": "박서연",
+      "shop": "리틀리프 매장"
     },
     "icon": {
       "colors": {
@@ -183,8 +180,8 @@
         "critical": "위험"
       },
       "affix": {
-        "add": "추가",
-        "next": "다음"
+        "add": "식물 추가",
+        "next": "전체 보기"
       }
     },
     "badge": {
@@ -201,13 +198,13 @@
         "large": "크게"
       },
       "withIcon": {
-        "verified": "인증됨",
-        "new": "새 글",
-        "popular": "인기"
+        "petSafe": "반려동물 안전",
+        "easyCare": "초보 추천",
+        "paid": "결제 완료"
       }
     },
     "chip": {
-      "label": "칩",
+      "label": "반려동물 안전",
       "variants": {
         "solid": "솔리드",
         "outlineStrong": "진한 테두리",
@@ -219,28 +216,28 @@
         "small": "작음"
       },
       "withIcon": {
-        "liked": "관심",
-        "nearby": "내 근처",
-        "sort": "정렬",
-        "favorite": "즐겨찾기"
+        "saved": "찜한 식물",
+        "pickup": "매장 픽업",
+        "sort": "추천순",
+        "topRated": "별점 4점 이상"
       },
       "categories": {
         "all": "전체",
-        "clothing": "의류",
-        "furniture": "가구",
-        "electronics": "전자기기",
-        "books": "도서"
+        "foliage": "관엽식물",
+        "succulents": "다육·선인장",
+        "herbs": "허브",
+        "flowers": "꽃"
       },
       "categoryLabel": "카테고리",
       "disabled": "비활성"
     },
     "divider": {
-      "above": "최근 본 항목",
-      "below": "나를 위한 추천",
+      "above": "최근 본 식물",
+      "below": "키우기 쉬운 추천 식물",
       "links": {
-        "terms": "이용약관",
-        "privacy": "개인정보",
-        "help": "도움말"
+        "shipping": "배송 안내",
+        "returns": "교환·반품",
+        "help": "고객센터"
       },
       "default": "기본",
       "inset": "양옆 띄우기",
@@ -252,30 +249,37 @@
       "pageIndicator": "{total}쪽 중 {page}쪽"
     },
     "imageFrame": {
-      "alt": "산 풍경",
-      "brokenAlt": "불러오지 못한 사진",
+      "alt": "테라코타 화분에 심은 몬스테라 델리시오사",
+      "brokenAlt": "선반 아래로 늘어진 스킨답서스",
       "ratios": {
         "square": "1 : 1",
         "standard": "4 : 3",
         "wide": "16 : 9"
       },
-      "badge": "예약 중",
-      "like": "좋아요"
+      "badge": "신상품",
+      "like": "찜하기"
     },
     "floatingToolbar": {
-      "toolbarLabel": "고른 회원에 할 일",
-      "selected": "3명 고름",
-      "selectedCount": "{count}명 고름",
-      "edit": "수정",
-      "download": "내려받기",
-      "block": "차단",
       "closeLabel": "선택 해제",
       "show": "도구 줄 보이기",
-      "members": {
-        "kim": "김민지",
-        "lee": "이준호",
-        "park": "박서연",
-        "choi": "최도현"
+      "photos": {
+        "toolbarLabel": "고른 사진에 할 일",
+        "selected": "사진 3장 선택됨",
+        "edit": "수정",
+        "download": "내려받기",
+        "delete": "삭제"
+      },
+      "plants": {
+        "toolbarLabel": "고른 식물에 할 일",
+        "selectedCount": "{count}개 선택됨",
+        "water": "물 줬어요",
+        "remove": "삭제",
+        "items": {
+          "monstera": "몬스테라 델리시오사",
+          "pothos": "스킨답서스",
+          "olive": "올리브나무",
+          "pilea": "필레아 페페로미오이데스"
+        }
       }
     },
     "list": {
@@ -283,7 +287,7 @@
       "items": {
         "notifications": {
           "title": "알림",
-          "detail": "채팅 · 키워드 · 활동"
+          "detail": "물주기 알림 · 주문 소식"
         },
         "account": {
           "title": "계정",
@@ -291,7 +295,7 @@
         },
         "privacy": {
           "title": "개인정보",
-          "detail": "차단한 사용자 · 공개 범위"
+          "detail": "내 식물과 글을 볼 수 있는 사람"
         },
         "help": {
           "title": "고객센터"
@@ -299,52 +303,52 @@
       },
       "on": "켜짐",
       "check": {
-        "label": "관심 분야",
+        "label": "관심 카테고리",
         "options": {
-          "digital": {
-            "title": "디지털기기",
-            "detail": "휴대폰 · 노트북 · 카메라"
+          "foliage": {
+            "title": "관엽식물",
+            "detail": "몬스테라 · 스킨답서스 · 야자"
           },
-          "furniture": {
-            "title": "가구",
-            "detail": "책상 · 의자 · 수납장"
+          "succulents": {
+            "title": "다육·선인장",
+            "detail": "스투키 · 선인장"
           },
-          "books": {
-            "title": "도서"
+          "herbs": {
+            "title": "허브"
           },
-          "tickets": {
-            "title": "티켓",
-            "detail": "지금은 고를 수 없어요"
+          "flowers": {
+            "title": "꽃",
+            "detail": "봄에 다시 들어와요"
           }
         }
       },
       "radio": {
-        "label": "거래 방법",
+        "label": "배송 방법",
         "options": {
           "pickup": {
-            "title": "직접 만나서 거래",
-            "detail": "가까운 곳에서 판매자를 만나요"
+            "title": "매장 픽업",
+            "detail": "다음 날부터 매장에서 찾아갈 수 있어요"
           },
           "parcel": {
-            "title": "택배 거래",
-            "detail": "2~3일 안에 도착해요"
+            "title": "일반 배송",
+            "detail": "2–3일 안에 도착해요"
           },
           "quick": {
-            "title": "당일 배송",
-            "detail": "우리 동네에서는 쓸 수 없어요"
+            "title": "새벽 배송",
+            "detail": "우리 동네는 아직 받을 수 없어요"
           }
         }
       }
     },
     "segmentedControl": {
-      "label": "기간",
+      "label": "빛 조건",
       "options": {
-        "day": "일",
-        "week": "주",
-        "month": "월"
+        "shade": "그늘",
+        "partShade": "반그늘",
+        "fullSun": "양지"
       },
       "selected": "고른 값:",
-      "disabledLabel": "비활성 기간"
+      "disabledLabel": "빛 조건 (비활성)"
     },
     "table": {
       "caption": "최근 주문",
@@ -357,35 +361,36 @@
         "amount": "금액"
       },
       "status": {
-        "paid": "결제 완료",
-        "shipping": "배송 중",
-        "refunded": "환불됨"
+        "shipped": "배송 중",
+        "delivered": "배송 완료",
+        "cancelled": "취소됨"
       },
-      "customers": [
-        "김지우",
-        "이민준",
-        "박서연",
-        "최도윤",
-        "정하은",
-        "강시우"
-      ],
+      "customers": ["김하늘", "이도윤", "박서연", "최민준", "정유나", "한지호"],
       "items": [
-        "무선 이어폰",
-        "높이 조절 책상",
-        "캠핑 의자",
-        "기계식 키보드",
-        "커피 그라인더",
-        "책상 조명"
+        "몬스테라 델리시오사",
+        "올리브나무",
+        "스킨답서스",
+        "아레카야자",
+        "스투키",
+        "보스턴고사리"
+      ],
+      "amounts": [
+        "₩32,000",
+        "₩58,000",
+        "₩14,000",
+        "₩46,000",
+        "₩24,000",
+        "₩21,000"
       ]
     },
     "tagGroup": {
-      "location": "서초동",
-      "time": "3분 전",
-      "views": "조회 12",
-      "verified": "인증됨",
-      "rating": "4.8",
-      "reviews": "후기 128개",
-      "long": "서울특별시 강남구 역삼동",
+      "location": "마포구",
+      "time": "3분 전 활동",
+      "visits": "방문 12회",
+      "verified": "인증 시터",
+      "rating": "4.9",
+      "reviews": "후기 36개",
+      "long": "서울특별시 마포구 망원동",
       "tones": {
         "neutralSubtle": "옅은 기본",
         "neutral": "기본",
@@ -393,13 +398,22 @@
       }
     },
     "tablePagination": {
-      "caption": "회원 목록",
+      "caption": "주문 내역",
       "columns": {
-        "id": "번호",
-        "name": "이름",
-        "joined": "가입일"
+        "order": "주문 번호",
+        "plant": "식물",
+        "date": "주문일"
       },
-      "member": "회원",
+      "plants": [
+        "몬스테라 델리시오사",
+        "올리브나무",
+        "스킨답서스",
+        "아레카야자",
+        "스투키",
+        "보스턴고사리",
+        "필레아 페페로미오이데스",
+        "로즈메리"
+      ],
       "locale": "ko-KR",
       "labels": {
         "rootAriaLabel": "표 페이지 탐색",
@@ -415,77 +429,75 @@
     "chipTabs": {
       "tabs": {
         "all": "전체",
-        "popular": "인기",
-        "recent": "최신",
-        "nearby": "내 근처"
+        "foliage": "관엽식물",
+        "succulents": "다육·선인장",
+        "herbs": "허브"
       },
       "content": {
-        "all": "모든 글을 보여 줍니다.",
-        "popular": "이번 주 관심을 가장 많이 받은 글이에요.",
-        "recent": "지난 24시간 동안 올라온 글이에요.",
-        "nearby": "3km 안에 있는 글이에요."
+        "all": "지금 살 수 있는 모든 식물이에요.",
+        "foliage": "몬스테라 델리시오사, 스킨답서스처럼 잎이 멋진 식물이에요.",
+        "succulents": "스투키처럼 물을 자주 주지 않아도 되는 식물이에요.",
+        "herbs": "로즈메리처럼 볕 드는 창가에서 키우기 좋은 허브예요."
       }
     },
     "accordion": {
       "items": {
         "shipping": {
           "title": "배송은 얼마나 걸리나요?",
-          "content": "대부분 2~3 영업일 안에 도착해요. 주문 상세 화면에서 배송 상황을 볼 수 있어요."
+          "content": "일반 배송은 2–3일 걸려요. 23:00 전에 주문하면 다음 날 새벽 배송으로 받을 수 있어요."
         },
         "returns": {
-          "title": "반품할 수 있나요?",
-          "content": "네. 쓰지 않은 상품이라면 받은 날부터 7일 안에 반품을 신청할 수 있어요."
+          "title": "배송 중에 다친 식물은 어떻게 하나요?",
+          "content": "받은 날부터 7일 안에 사진을 보내 주시면 새 식물로 다시 보내 드리거나 전액 환불해 드려요."
         },
         "payment": {
-          "title": "어떤 결제 수단을 쓸 수 있나요?",
-          "content": "카드 · 계좌 이체 · 당근페이를 쓸 수 있어요."
+          "title": "기프트 카드로 결제할 수 있나요?",
+          "content": "리틀리프 기프트 카드는 곧 나와요. 지금은 카드나 계좌 이체로 결제할 수 있어요."
         }
       },
       "descriptions": {
-        "shipping": "배송 기간과 배송 조회",
-        "returns": "반품 · 환불 규정",
-        "payment": "카드 · 이체 등"
+        "shipping": "배송 방법과 기간",
+        "returns": "다친 식물 · 환불"
       },
       "disabled": "준비 중"
     },
     "tabs": {
       "tabs": {
-        "posts": "게시글",
+        "details": "상품 정보",
+        "care": "키우는 법",
         "reviews": "후기",
-        "likes": "관심",
-        "following": "팔로잉",
-        "followers": "팔로워",
-        "settings": "설정"
+        "qna": "문의",
+        "shipping": "배송"
       },
       "content": {
-        "posts": "내가 쓴 글이에요.",
-        "reviews": "내가 받은 후기예요.",
-        "likes": "관심을 표시한 글이에요."
+        "details": "50cm 안팎의 몬스테라 델리시오사를 15cm 플라스틱 화분에 담아 보내요.",
+        "care": "밝은 간접광에 두고, 겉흙이 3cm쯤 마르면 물을 주세요.",
+        "reviews": "후기 128개, 평균 별점 4.8이에요."
       }
     },
     "attachmentField": {
-      "label": "첨부 파일",
+      "label": "다친 부분 사진",
       "description": "파일은 3개까지, 하나에 10MB까지 올릴 수 있어요.",
       "images": {
-        "label": "사진",
-        "description": "사진은 5장까지 올릴 수 있어요."
+        "label": "리뷰 사진",
+        "description": "식물 사진을 5장까지 올릴 수 있어요."
       },
       "dropzone": {
-        "label": "서류",
+        "label": "식물 관리 수료증",
         "description": "PDF 파일만 올릴 수 있어요."
       },
       "statuses": {
-        "label": "올리기 상태",
-        "description": "올리는 중 · 실패(재시도) · 올린 파일이에요."
+        "label": "시터에게 전할 관리 메모",
+        "description": "올리지 못한 파일은 다시 시도할 수 있어요.",
+        "files": {
+          "uploading": "몬스테라-관리법.pdf",
+          "error": "물주기-일정표.pdf",
+          "success": "올리브나무-햇빛-가지치기-메모.pdf"
+        }
       },
       "display": {
-        "label": "상품 사진",
-        "description": "카메라를 누르면 예시 사진이 들어가요."
-      },
-      "states": {
-        "invalid": "오류",
-        "errorMessage": "파일을 하나 이상 첨부해 주세요.",
-        "disabled": "비활성"
+        "label": "내 식물 사진",
+        "description": "4장까지 올릴 수 있어요. 카메라를 누르면 예시 사진이 들어가요."
       },
       "labels": {
         "selectFile": "파일 선택",
@@ -496,34 +508,34 @@
     },
     "datePicker": {
       "locale": "ko-KR",
-      "label": "날짜 선택",
-      "rangeLabel": "기간 선택",
-      "multipleLabel": "날짜 여러 개 선택",
-      "selected": "고른 날짜",
-      "none": "없음"
+      "label": "배송 날짜 선택",
+      "rangeLabel": "집을 비우는 기간 선택",
+      "multipleLabel": "물 주는 날 선택",
+      "selected": "배송 날짜",
+      "none": "아직 고르지 않았어요"
     },
     "timePicker": {
       "locale": "ko-KR",
-      "label": "시간 선택",
-      "selected": "고른 시각",
+      "label": "물 주기 알림 시각",
+      "selected": "알림",
       "states": {
         "disabled": "비활성"
       }
     },
     "wheelPicker": {
-      "fruitLabel": "과일",
-      "fruits": {
-        "apple": "사과",
-        "banana": "바나나",
-        "blueberry": "블루베리",
-        "mango": "망고",
-        "orange": "오렌지",
-        "peach": "복숭아",
-        "strawberry": "딸기"
+      "plantLabel": "식물",
+      "plants": {
+        "monstera": "몬스테라 델리시오사",
+        "pothos": "스킨답서스",
+        "oliveTree": "올리브나무",
+        "snakePlant": "스투키",
+        "arecaPalm": "아레카야자",
+        "bostonFern": "보스턴고사리",
+        "rosemary": "로즈메리"
       },
-      "selected": "고른 값",
+      "selected": "고른 식물",
       "columns": {
-        "label": "걸리는 시간",
+        "label": "돌봄 방문 시간",
         "hours": "시간",
         "minutes": "분",
         "hourUnit": "시간",
@@ -539,18 +551,18 @@
       }
     },
     "command": {
-      "placeholder": "명령을 입력하거나 검색하세요...",
+      "placeholder": "식물이나 메뉴를 검색해 보세요...",
       "empty": "맞는 결과가 없어요.",
       "groups": {
         "suggestions": "추천",
         "settings": "설정"
       },
       "items": {
-        "calendar": "달력",
-        "search": "검색",
-        "newPost": "새 글 쓰기",
-        "profile": "프로필",
-        "notifications": "알림",
+        "calendar": "관리 캘린더",
+        "search": "식물 검색",
+        "review": "리뷰 쓰기",
+        "profile": "내 프로필",
+        "notifications": "물주기 알림",
         "settings": "설정"
       },
       "footer": {
@@ -559,61 +571,61 @@
         "close": "닫기"
       },
       "dialog": {
-        "trigger": "명령 팔레트 열기",
-        "ariaLabel": "명령 팔레트"
+        "trigger": "빠른 검색",
+        "ariaLabel": "빠른 검색"
       }
     },
     "navigationMenu": {
-      "brand": "당근 비즈니스",
+      "brand": "리틀리프",
       "menus": {
-        "products": "제품",
+        "benefits": "혜택",
         "services": "전체 서비스",
         "categories": "카테고리"
       },
-      "products": {
-        "ads": {
-          "label": "광고",
-          "description": "가게 근처 이웃에게 알려요."
+      "benefits": {
+        "events": {
+          "label": "이벤트",
+          "description": "계절 할인과 분갈이 행사를 알려요."
         },
         "coupons": {
           "label": "쿠폰",
-          "description": "할인으로 손님을 다시 불러요."
+          "description": "식물과 화분·용품을 더 싸게 사요."
         },
-        "insights": {
-          "label": "통계",
-          "description": "소식이 얼마나 읽혔는지 봐요."
+        "points": {
+          "label": "포인트",
+          "description": "주문과 후기로 쌓인 포인트를 봐요."
         }
       },
       "groups": {
-        "marketing": "마케팅",
-        "management": "관리",
-        "ads": "광고",
-        "coupons": "쿠폰",
-        "posts": "소식",
-        "orders": "주문",
-        "customers": "고객",
-        "settlement": "정산"
+        "shop": "쇼핑",
+        "care": "돌보기",
+        "plants": "식물",
+        "potsTools": "화분·용품",
+        "reviews": "후기",
+        "watering": "물주기 일정",
+        "sitters": "식물 돌보미",
+        "classes": "돌봄 클래스"
       },
       "categories": {
         "label": "카테고리별로 보기",
-        "digital": "디지털기기",
-        "furniture": "가구",
-        "kids": "유아동",
-        "clothing": "의류",
-        "books": "도서",
-        "sports": "스포츠",
-        "beauty": "뷰티",
-        "pets": "반려동물",
-        "plants": "식물",
-        "games": "게임",
-        "tickets": "티켓",
-        "others": "기타"
+        "foliage": "관엽식물",
+        "succulents": "다육·선인장",
+        "herbs": "허브",
+        "flowers": "꽃",
+        "largePlants": "대형 식물",
+        "hanging": "행잉 식물",
+        "airPurifying": "공기정화 식물",
+        "petSafe": "반려동물 안전",
+        "easyCare": "초보 추천",
+        "potsTools": "화분·용품",
+        "soil": "흙·영양제",
+        "gifts": "선물 세트"
       }
     },
     "sideNavigation": {
-      "brand": "당근 비즈니스",
+      "brand": "리틀리프 관리",
       "groups": {
-        "store": "가게",
+        "shop": "가게",
         "marketing": "마케팅"
       },
       "items": {
@@ -621,10 +633,10 @@
         "orders": "주문",
         "customers": "고객",
         "reviews": "후기",
-        "ads": "광고",
-        "campaigns": "캠페인",
-        "reports": "보고서",
-        "billing": "결제",
+        "promotions": "프로모션",
+        "banners": "배너",
+        "newsletters": "뉴스레터",
+        "results": "성과",
         "coupons": "쿠폰",
         "settings": "설정"
       },
@@ -639,26 +651,26 @@
       }
     },
     "layout": {
-      "title": "주문",
-      "description": "지난 7일 동안 들어온 주문이에요.",
+      "title": "주문 내역",
+      "description": "최근 30일 동안 주문한 내역이에요.",
       "orders": {
         "first": {
-          "name": "당근 케이크",
-          "status": "준비 중"
+          "name": "몬스테라 델리시오사",
+          "status": "배송 중"
         },
         "second": {
-          "name": "아이스 아메리카노",
-          "status": "준비 완료"
+          "name": "테라코타 화분 (M)",
+          "status": "배송 준비 중"
         },
         "third": {
-          "name": "크루아상 세트",
-          "status": "가져감"
+          "name": "스킨답서스",
+          "status": "배송 완료"
         }
       },
       "navigation": {
-        "brand": "당근 비즈니스",
+        "brand": "리틀리프",
         "home": "홈",
-        "orders": "주문",
+        "orders": "주문 내역",
         "settings": "설정",
         "trigger": {
           "open": "사이드바 열기",
@@ -667,7 +679,7 @@
       }
     },
     "checkbox": {
-      "label": "이용 약관에 동의합니다",
+      "label": "기본 배송지로 저장",
       "variants": {
         "square": "사각형",
         "ghost": "고스트"
@@ -687,23 +699,23 @@
         "invalid": "오류"
       },
       "group": {
-        "label": "관심사",
-        "description": "원하는 만큼 고르세요.",
+        "label": "알림",
+        "description": "받고 싶은 알림을 골라 주세요.",
         "selectAll": "모두 선택",
         "items": {
-          "sports": "스포츠",
-          "music": "음악",
-          "travel": "여행"
+          "watering": "물주기 알림",
+          "orders": "주문 · 배송 소식",
+          "tips": "관리 팁"
         }
       }
     },
     "radioGroup": {
       "label": "배송 방법",
-      "description": "주문을 받을 방법을 고르세요.",
+      "description": "식물을 받을 방법을 골라 주세요.",
       "errorMessage": "배송 방법을 골라 주세요.",
       "options": {
-        "standard": "일반 배송",
-        "express": "빠른 배송",
+        "standard": "일반 배송 (2–3일)",
+        "earlyMorning": "새벽 배송",
         "pickup": "매장 픽업"
       },
       "tones": {
@@ -721,7 +733,7 @@
       }
     },
     "switch": {
-      "label": "푸시 알림",
+      "label": "물 주기 알림",
       "tones": {
         "brand": "브랜드",
         "neutral": "뉴트럴"
@@ -732,40 +744,40 @@
       }
     },
     "field": {
-      "label": "자기소개",
+      "label": "선물 메시지",
       "indicator": "선택",
-      "placeholder": "자신을 소개해 주세요",
-      "description": "프로필에 보여요.",
-      "errorMessage": "닉네임을 입력해 주세요.",
+      "placeholder": "카드에 적을 짧은 메시지를 써 주세요",
+      "description": "카드에 인쇄해 상자에 함께 넣어 드려요.",
+      "errorMessage": "받는 분 이름을 입력해 주세요.",
       "states": {
-        "invalid": "닉네임",
+        "invalid": "받는 분",
         "disabled": "비활성",
         "readOnly": "읽기 전용"
       },
-      "readOnlyValue": "당근"
+      "readOnlyValue": "김하늘"
     },
     "fieldset": {
       "label": "알림",
       "indicator": "선택",
-      "description": "받을 소식을 고르세요.",
-      "requiredLabel": "약관 동의",
-      "errorMessage": "계속하려면 둘 다 동의해 주세요.",
+      "description": "켠 알림만 보내 드려요.",
+      "requiredLabel": "주문 전 확인",
+      "errorMessage": "주문하려면 두 항목에 모두 동의해 주세요.",
       "items": {
-        "chat": "채팅 메시지",
-        "marketing": "마케팅",
-        "news": "동네 소식"
+        "watering": "물주기 알림",
+        "orders": "주문·배송 소식",
+        "offers": "할인·신상품 소식"
       },
       "agreements": {
-        "terms": "서비스 이용 약관",
-        "privacy": "개인정보 처리방침"
+        "returns": "살아 있는 식물은 단순 변심으로 반품할 수 없어요",
+        "address": "배송을 위해 택배사에 주소를 제공하는 데 동의해요"
       }
     },
     "fieldButton": {
       "label": "픽업 날짜",
       "placeholder": "날짜를 고르세요",
-      "description": "칸을 누르면 날짜를 고를 수 있어요.",
+      "description": "매장에서 식물을 찾아갈 날을 골라 주세요.",
       "value": "2026년 10월 19일 (월)",
-      "errorMessage": "픽업 날짜를 골라 주세요.",
+      "errorMessage": "주문을 찾아갈 날짜를 골라 주세요.",
       "sizes": {
         "large": "크게",
         "medium": "중간"
@@ -778,88 +790,88 @@
       "clearLabel": "지우기"
     },
     "combobox": {
-      "label": "과일",
-      "placeholder": "과일 검색",
-      "multiplePlaceholder": "과일 추가",
-      "empty": "찾는 과일이 없어요.",
-      "fruits": {
-        "apple": "사과",
-        "banana": "바나나",
-        "blueberry": "블루베리",
-        "grape": "포도",
-        "mango": "망고",
-        "orange": "오렌지",
-        "peach": "복숭아",
-        "strawberry": "딸기"
+      "label": "식물",
+      "placeholder": "식물 검색",
+      "multiplePlaceholder": "식물 추가",
+      "empty": "찾는 식물이 없어요.",
+      "plants": {
+        "monstera": "몬스테라 델리시오사",
+        "pothos": "스킨답서스",
+        "oliveTree": "올리브나무",
+        "moneyPlant": "필레아 페페로미오이데스",
+        "snakePlant": "스투키",
+        "arecaPalm": "아레카야자",
+        "bostonFern": "보스턴고사리",
+        "rosemary": "로즈메리"
       },
       "removeChip": "{item} 빼기"
     },
     "dialog": {
-      "open": "프로필 수정",
-      "title": "프로필 수정",
-      "description": "여기서 정한 닉네임과 사진이 이웃에게 보여요.",
-      "body": "알아보기 쉬운 닉네임을 골라 주세요. 30일이 지나면 다시 바꿀 수 있어요.",
+      "open": "물주기 일정 수정",
+      "title": "물주기 일정",
+      "description": "몬스테라 델리시오사 · 거실",
+      "body": "7일마다 알려 드려요. 겉흙 2–3cm가 말랐을 때 물을 주세요.",
       "cancel": "취소",
       "save": "저장",
       "sizes": {
         "medium": "Medium",
         "large": "Large"
       },
-      "sizeBody": "768px 이상에서 medium 창은 480px, large 창은 800px 폭입니다.",
+      "sizeBody": "768px 이상에서 medium 창은 480px, large 창은 800px 폭이에요.",
       "scrollable": {
-        "open": "약관 보기",
-        "title": "서비스 이용약관",
-        "paragraph": "이 약관은 서비스를 어떻게 이용할 수 있는지, 나눠 주신 정보를 어떻게 다루는지, 문제가 생기면 어떻게 되는지를 설명합니다. 계속하기 전에 꼼꼼히 읽어 주세요.",
+        "open": "돌봄 약관 보기",
+        "title": "식물 돌봄 이용약관",
+        "paragraph": "시터는 예약한 날짜에 방문해 관리 메모대로 식물마다 물을 주고, 방문할 때마다 사진을 보내 드려요. 식물 상태가 좋지 않아 보이면 물주기 말고 다른 조치를 하기 전에 먼저 메시지를 드려요.",
         "agree": "동의"
       }
     },
     "alertDialog": {
-      "delete": {
-        "open": "게시글 삭제",
-        "title": "게시글을 삭제할까요?",
-        "description": "삭제한 게시글은 되돌릴 수 없어요.",
-        "cancel": "취소",
-        "confirm": "삭제"
+      "cancelOrder": {
+        "open": "주문 취소",
+        "title": "LL-2481 주문을 취소할까요?",
+        "description": "결제 금액은 3영업일 안에 환불돼요. 취소한 주문은 되돌릴 수 없어요.",
+        "cancel": "주문 유지",
+        "confirm": "주문 취소"
       },
-      "notice": {
-        "open": "알림 보기",
-        "title": "업로드 완료",
-        "description": "사진 3장을 모두 올렸어요.",
+      "soldOut": {
+        "open": "결제하기",
+        "title": "품절된 상품이 있어요",
+        "description": "장바구니에 담은 아레카야자가 방금 품절되어 목록에서 뺐어요.",
         "confirm": "확인"
       }
     },
     "responsiveDialog": {
-      "open": "거래 장소 정하기",
-      "title": "거래 장소 정하기",
+      "open": "시터 요청하기",
+      "title": "김하늘 님에게 돌봄을 맡길까요?",
       "description": "768px 이상에서는 창으로, 그보다 좁으면 바텀 시트로 보여요.",
-      "body": "역 출구나 가게 입구처럼 서로 찾기 쉬운 곳을 골라 주세요.",
+      "body": "10월 24일부터 31일까지 이틀에 한 번 들러 식물 3개에 물을 줘요.",
       "cancel": "취소",
-      "confirm": "확인"
+      "confirm": "요청 보내기"
     },
     "bottomSheet": {
       "default": {
-        "open": "시트 열기",
-        "title": "알림을 켤까요?",
-        "description": "누군가 내 게시글에 답하면 알려 드려요.",
+        "open": "물주기 알림",
+        "title": "물주기 알림을 켤까요?",
+        "description": "몬스테라 델리시오사에 물을 줄 때가 되면 알려 드려요.",
         "confirm": "켜기"
       },
       "handle": {
         "open": "정렬",
         "title": "정렬 기준",
         "options": {
-          "latest": "최신순",
+          "recommended": "추천순",
           "popular": "인기순",
-          "nearby": "가까운순"
+          "priceLow": "낮은 가격순"
         }
       }
     },
     "sidePanel": {
-      "open": "패널 열기",
+      "open": "식물 필터",
       "title": "필터",
-      "description": "목록을 좁혀 보세요.",
-      "body": "모든 필터에 맞는 항목만 보여요. 초기화하기 전까지 필터는 그대로 남아요.",
+      "description": "우리 집에 맞는 식물을 찾아보세요.",
+      "body": "초보 추천 · 반려동물 안전처럼 고른 조건에 모두 맞는 식물만 보여요. 초기화하기 전까지 필터는 그대로 남아요.",
       "reset": "초기화",
-      "apply": "적용",
+      "apply": "식물 24개 보기",
       "directions": {
         "left": "왼쪽에서",
         "right": "오른쪽에서"
@@ -868,8 +880,8 @@
     "popover": {
       "open": "배송 안내",
       "title": "배송",
-      "description": "오후 2시 전에 주문하면 그날 보내 드려요.",
-      "body": "보통 영업일 기준 1–2일 걸려요. 주문 내역에서 배송 상황을 볼 수 있어요.",
+      "description": "14:00 전에 주문하면 그날 보내 드려요.",
+      "body": "일반 배송은 2–3일 걸려요. 숨 쉬는 상자에 담아 보내서 식물이 싱싱하게 도착해요.",
       "confirm": "확인",
       "placements": {
         "top": "위",
@@ -880,31 +892,31 @@
     "menu": {
       "open": "더 보기",
       "items": {
-        "edit": "수정",
+        "edit": "정보 수정",
         "copy": "링크 복사",
-        "notify": "알림",
-        "notifyDescription": "새 댓글이 달리면 알려 드려요",
-        "delete": "삭제"
+        "notify": "물주기 알림",
+        "notifyDescription": "7일마다 알려 드려요",
+        "delete": "식물 삭제"
       },
       "groups": {
         "open": "옵션",
-        "post": "게시글",
+        "plant": "이 식물",
         "sort": "정렬 기준",
         "options": {
-          "latest": "최신순",
-          "popular": "인기순",
-          "nearby": "가까운순"
+          "watering": "물 줄 날짜순",
+          "added": "최근 추가순",
+          "name": "이름순"
         }
       }
     },
     "helpBubble": {
-      "trigger": "매너온도란?",
-      "title": "매너온도",
-      "description": "이웃이 남긴 후기에 따라 오르는 점수예요.",
+      "trigger": "관리 난이도란?",
+      "title": "관리 난이도",
+      "description": "식물에 손이 얼마나 가는지 쉬움부터 어려움까지 알려 줘요.",
       "tooltip": {
-        "trigger": "올리거나 초점을 주세요",
-        "title": "임시 저장됨",
-        "description": "임시 저장한 글은 30일 동안 남아요."
+        "trigger": "반려동물 안전",
+        "title": "반려동물과 함께 키워도 돼요",
+        "description": "고양이나 강아지가 잎을 조금 뜯어 먹어도 괜찮아요."
       }
     },
     "tFlavored": {
@@ -928,8 +940,8 @@
           "xl": "아주 크게"
         },
         "withIcon": {
-          "add": "추가",
-          "search": "검색",
+          "add": "식물 추가",
+          "search": "식물 검색",
           "notifications": "알림",
           "settings": "설정"
         },
@@ -940,10 +952,10 @@
       },
       "badge": {
         "demo": {
-          "new": "신규",
-          "event": "이벤트",
-          "soldOut": "품절",
-          "pending": "대기 중"
+          "new": "신상품",
+          "easyCare": "초보 추천",
+          "lowStock": "품절 임박",
+          "petSafe": "반려동물 안전"
         },
         "variants": {
           "default": "default",
@@ -965,48 +977,48 @@
           "default": "보통",
           "lg": "크게"
         },
-        "link": "혜택 보기"
+        "link": "반려동물 안전 식물"
       },
       "spinner": {
         "loading": "로딩 중",
-        "label": "카드를\n불러오고 있어요."
+        "label": "내 식물을\n불러오고 있어요."
       },
       "skeleton": {
-        "loading": "로딩 중"
+        "loading": "식물을 불러오는 중"
       },
       "progress": {
-        "label": "업로드 중",
-        "start": "애니메이션 시작",
-        "reset": "애니메이션 리셋"
+        "label": "식물 사진을 올리는 중",
+        "start": "사진 올리기",
+        "reset": "초기화"
       },
       "separator": {
         "rows": {
-          "first": "계정 설정",
-          "second": "알림",
-          "third": "연결된 계좌"
+          "first": "내 식물",
+          "second": "주문 내역",
+          "third": "배송지 관리"
         },
         "vertical": {
-          "home": "홈",
-          "cards": "카드",
-          "benefits": "혜택"
+          "shop": "쇼핑",
+          "care": "돌봄",
+          "community": "커뮤니티"
         }
       },
       "empty": {
         "retry": {
-          "title": "다시 접속해 주세요",
-          "description": "페이지를 불러올 수 없어요. 다시 시도해 주세요.",
-          "action": "재시도"
+          "title": "주문 내역을 불러오지 못했어요",
+          "description": "인터넷 연결을 확인하고 다시 시도해 주세요.",
+          "action": "다시 시도"
         },
         "preparing": {
-          "title": "라이브 쇼핑 준비 중",
-          "description": "준비가 끝나면 알림을 보내드릴게요."
+          "title": "라이브 분갈이 클래스 준비 중",
+          "description": "준비가 끝나면 알림을 보내 드릴게요."
         }
       },
       "input": {
         "demo": {
-          "label": "이름",
-          "placeholder": "이름을 입력해주세요",
-          "description": "신분증에 적힌 이름을 입력해주세요."
+          "label": "식물 애칭",
+          "placeholder": "예: 초록이",
+          "description": "물 주기 알림에 이 이름으로 보여요."
         },
         "variants": {
           "description": "도움말",
@@ -1019,139 +1031,142 @@
           }
         },
         "invalid": {
-          "label": "닉네임",
-          "placeholder": "3글자 이상 입력하면 에러 상태가 적용돼요.",
-          "error": "3글자 미만으로 입력해주세요."
+          "label": "수량",
+          "placeholder": "100을 입력해 보세요",
+          "error": "99개 이하로 입력해 주세요."
         },
         "disabled": {
           "emptyLabel": "값이 없는 경우",
           "filledLabel": "값이 있는 경우",
           "placeholder": "플레이스홀더",
-          "value": "안녕하세요.",
+          "value": "몬스테라 델리시오사",
           "description": "이 필드는 현재 비활성화 상태예요."
         }
       },
       "field": {
         "demo": {
-          "name": "이름",
-          "namePlaceholder": "이름을 입력해주세요",
+          "name": "받는 분",
+          "namePlaceholder": "받는 분 이름을 입력해 주세요",
           "email": "이메일",
-          "emailDescription": "이 주소로 영수증을 보내드려요.",
-          "memo": "메시지",
-          "memoPlaceholder": "판매자에게 남길 말을 적어주세요."
+          "emailDescription": "이 주소로 주문 확인 메일을 보내 드려요.",
+          "memo": "선물 메시지",
+          "memoPlaceholder": "식물과 함께 보낼 메시지를 적어 주세요."
         },
         "validation": {
-          "label": "닉네임",
-          "placeholder": "3글자 이상 입력해보세요",
-          "description": "2글자까지 쓸 수 있어요.",
-          "error": "3글자 미만으로 입력해주세요."
+          "label": "수량",
+          "placeholder": "100을 입력해 보세요",
+          "description": "한 번에 99개까지 주문할 수 있어요.",
+          "error": "99개 이하로 입력해 주세요."
         },
         "appear": {
-          "label": "계좌번호",
-          "description": "입력을 시작하면 라벨이 보여요."
+          "label": "휴대폰 번호",
+          "description": "배송이 시작되면 문자로 알려 드려요."
         }
       },
       "inputGroup": {
         "search": {
-          "label": "검색",
-          "placeholder": "검색어를 입력하세요",
-          "clear": "검색어 삭제"
+          "label": "식물 검색",
+          "placeholder": "식물이나 화분을 검색해 보세요",
+          "clear": "검색어 지우기"
         },
         "affix": {
-          "prefixLabel": "금액",
-          "suffixLabel": "가격",
+          "prefixLabel": "최대 가격",
+          "prefixDescription": "이 가격 이하의 식물만 보여 드려요.",
+          "suffixLabel": "화분 지름",
+          "suffixDescription": "화분 윗부분의 폭을 재어 주세요.",
           "placeholder": "0",
-          "suffix": "원",
-          "description": "금액이나 단위를 입력해주세요."
+          "suffix": "cm"
         },
         "button": {
-          "label": "인증번호",
-          "placeholder": "6자리 숫자를 입력해주세요",
-          "action": "전송",
-          "description": "휴대폰으로 인증번호를 보내드려요."
+          "label": "쿠폰 번호",
+          "placeholder": "8자리 숫자를 입력해 주세요",
+          "action": "적용",
+          "description": "식물 상자에 든 카드에서 확인할 수 있어요."
         },
         "clearable": {
-          "label": "이름",
-          "placeholder": "이름을 입력해주세요",
+          "label": "배송 메모",
+          "placeholder": "예: 문 앞에 놓아 주세요",
           "clear": "지우기",
-          "description": "값을 입력한 뒤 오른쪽 지우기 버튼을 눌러보세요."
+          "description": "배송 기사님께 전해 드려요."
         },
         "password": {
           "label": "비밀번호",
-          "placeholder": "비밀번호를 입력해주세요",
+          "placeholder": "비밀번호를 입력해 주세요",
           "show": "비밀번호 보기",
           "hide": "비밀번호 숨기기",
-          "description": "8자 이상 입력해주세요."
+          "description": "8자 이상 입력해 주세요."
         }
       },
       "textarea": {
         "demo": {
-          "label": "후기",
-          "placeholder": "텍스트를 길게 입력하거나 엔터를 눌러보세요.",
-          "description": "내용에 맞춰 높이가 늘어나요."
+          "label": "선물 메시지",
+          "placeholder": "식물과 함께 보낼 메시지를 적어 주세요.",
+          "description": "상자에 넣는 카드에 손글씨로 적어 드려요."
         },
         "fixed": {
-          "label": "메모",
-          "placeholder": "텍스트를 입력해보세요.",
-          "description": "높이가 고정돼 있고, 넘치는 글은 스크롤돼요."
+          "label": "후기",
+          "placeholder": "식물은 잘 자라고 있나요? 다른 분들께 알려 주세요.",
+          "description": "500자까지 쓸 수 있어요."
         }
       },
       "dialog": {
         "demo": {
-          "trigger": "모달 열기",
-          "body": "모달은 다른 화면 위에 떠서 사용자의 집중을 모아요. 아래 버튼을 누르거나 바깥을 누르면 닫혀요.",
-          "confirm": "확인"
+          "trigger": "오늘의 관리 팁",
+          "body": "몬스테라 잎이 노랗게 변했다면 물이 많아서일 때가 많아요. 겉흙 3cm가 마른 뒤에 다시 물을 주세요.",
+          "confirm": "알겠어요"
         },
         "header": {
-          "trigger": "닉네임 바꾸기",
-          "title": "닉네임을 바꿀까요?",
-          "description": "바꾼 닉네임은 친구에게 바로 보여요.",
+          "trigger": "배송 방법 바꾸기",
+          "title": "새벽 배송으로 바꿀까요?",
+          "description": "내일 07:00 전에 받아 볼 수 있어요.",
           "cancel": "취소",
           "confirm": "바꾸기"
         }
       },
       "alertDialog": {
-        "title": "소중한 의견이\n잘 전달되었어요",
-        "description": "의견을 바탕으로 더 간편한\n서비스를 만들게요.",
+        "title": "후기를\n등록했어요",
+        "description": "식물이 자라는 모습을\n나눠 주셔서 고마워요.",
         "demo": {
           "trigger": "알림 다이얼로그",
           "confirm": "확인"
         },
         "confirm": {
           "trigger": "확인 다이얼로그",
-          "cancel": "아니오",
-          "confirm": "예"
+          "title": "주문을 취소할까요?",
+          "description": "LL-2481 주문은 아직 배송 전이라\n전액 환불받을 수 있어요.",
+          "cancel": "유지하기",
+          "confirm": "취소하기"
         },
         "longButtons": {
           "trigger": "긴 버튼",
-          "cancel": "아니오, 취소해주세요",
-          "confirm": "예, 알겠습니다"
+          "cancel": "아니요, 주문을 유지할게요",
+          "confirm": "네, 주문을 취소할게요"
         },
         "longDescription": {
           "trigger": "긴 설명",
-          "line": "소중한 의견을 바탕으로 더 간편한 서비스를 만들게요."
+          "line": "남겨 주신 사진과 팁은 다른 분들이 식물을 돌보는 데 큰 도움이 돼요."
         }
       },
       "drawer": {
-        "trigger": "바텀시트 열기",
-        "title": "저는 바텀시트 제목이에요.",
-        "description": "저는 바텀시트 부제목이에요.",
-        "body": "저는 바텀시트 내용이에요.",
-        "confirm": "확인",
-        "close": "닫기",
+        "trigger": "돌보미 찾기",
+        "title": "한동안 집을 비우시나요?",
+        "description": "집을 비운 동안 돌보미가 식물을 돌봐 드려요.",
+        "body": "여행 날짜를 고르면 가까운 돌보미를 연결해 드려요. 물 주기부터 상태 확인까지 식물마다 꼼꼼히 챙겨요.",
+        "confirm": "날짜 고르기",
+        "close": "다음에 할게요",
         "scroll": {
-          "trigger": "이용약관",
+          "trigger": "돌보미 이용 약관",
           "title": "약관에 동의해 주세요",
-          "description": "계속하기 전에 끝까지 읽어 주세요.",
+          "description": "예약하기 전에 끝까지 읽어 주세요.",
           "terms": [
-            "서비스를 제공하는 데 꼭 필요한 정보만 모아요.",
-            "모은 정보는 탈퇴하고 1년이 지나면 지워요.",
-            "동의 없이 다른 곳에 정보를 넘기지 않아요.",
-            "내 정보는 설정에서 언제든 보고 고치고 지울 수 있어요.",
-            "약관이 바뀌면 적용되기 7일 전에 알려 드려요.",
-            "쓰지 않은 결제는 7일 안에 환불받을 수 있어요.",
-            "규칙을 어긴 계정은 미리 알리지 않고 멈출 수 있어요.",
-            "약관에 대한 궁금한 점은 고객센터에서 답해 드려요.",
+            "돌보미는 고른 날짜에 방문해 30분쯤 머물러요.",
+            "떠나기 전에 앱에서 식물마다 물 주기 메모를 남겨 주세요.",
+            "돌보미는 식물만 돌봐요. 반려동물이나 우편물, 다른 집안일은 맡지 않아요.",
+            "방문이 끝날 때마다 돌보미가 앱에 사진을 올려 드려요.",
+            "첫 방문 24시간 전까지는 무료로 취소할 수 있어요.",
+            "첫 방문 전 24시간 안에 취소하면 1회 방문 요금이 들어요.",
+            "방문 중에 식물이 다치면 같은 식물로 바꿔 드려요.",
+            "알려 주신 출입 정보는 마지막 방문이 끝나면 지워요.",
             "이 약관은 동의한 날부터 적용돼요."
           ],
           "agree": "동의하기"
@@ -1164,24 +1179,24 @@
           "month": "월간"
         },
         "periodContent": {
-          "day": "오늘 2만 4천 원을 썼어요.",
-          "week": "이번 주에 18만 2천 원을 썼어요.",
-          "month": "이번 달에 76만 원을 썼어요."
+          "day": "오늘은 스킨답서스와 보스턴고사리에 물을 줘요.",
+          "week": "이번 주에 물을 줄 식물이 5개예요.",
+          "month": "이번 달에는 올리브나무를 분갈이해요."
         },
         "sections": {
-          "home": "홈",
-          "benefits": "혜택",
-          "payments": "결제"
+          "details": "상세 정보",
+          "reviews": "후기",
+          "care": "키우는 법"
         },
         "sectionContent": {
-          "home": "내 계좌와 최근 거래를 볼 수 있어요.",
-          "benefits": "지금 쓸 수 있는 포인트와 쿠폰이에요.",
-          "payments": "곧 나갈 요금과 카드 대금이에요."
+          "details": "몬스테라 델리시오사는 갈라진 큰 잎이 자라고 밝은 방에 잘 어울려요.",
+          "reviews": "후기 126개, 평균 별점 4.8점이에요.",
+          "care": "겉흙 3cm가 마르면 물을 듬뿍 줘요."
         },
         "items": {
-          "first": "탭1",
-          "second": "탭2",
-          "third": "탭3"
+          "foliage": "관엽식물",
+          "succulents": "다육·선인장",
+          "herbs": "허브"
         },
         "sizes": {
           "default": "기본",
@@ -1189,48 +1204,50 @@
         },
         "categories": {
           "all": "전체",
-          "food": "식비",
-          "shopping": "쇼핑",
-          "transport": "교통",
-          "cafe": "카페",
-          "living": "생활",
-          "travel": "여행",
-          "health": "의료",
-          "education": "교육",
-          "culture": "문화"
+          "foliage": "관엽식물",
+          "succulents": "다육·선인장",
+          "herbs": "허브",
+          "flowers": "꽃",
+          "potsTools": "화분·용품",
+          "easyCare": "초보 추천",
+          "petSafe": "반려동물 안전",
+          "newArrivals": "신상품",
+          "sale": "할인"
         }
       },
       "accordion": {
         "prefix": "Q",
         "faq": {
-          "points": {
-            "question": "포인트가 뭐예요?",
-            "answer": "결제나 이벤트로 모으는 혜택이에요. 제휴 매장에서 현금처럼 쓸 수 있어요."
+          "watering": {
+            "question": "물은 얼마나 자주 줘야 하나요?",
+            "answer": "겉흙 3cm가 마르면 흠뻑 주세요. 관엽식물은 보통 일주일에 한 번이고, 겨울에는 그보다 드물게 줘요."
           },
-          "subscription": {
-            "question": "구독은 어떻게 해지하나요?",
-            "answer": "설정에서 구독을 고른 뒤 해지를 누르세요. 이번 결제 기간이 끝날 때까지는 혜택이 그대로 유지돼요."
+          "damaged": {
+            "question": "배송 중에 다친 식물은 어떻게 하나요?",
+            "answer": "받은 날부터 48시간 안에 사진을 보내 주세요. 같은 식물로 다시 보내 드리거나 전액 환불해 드려요."
           },
-          "fee": {
-            "question": "이체 수수료는 언제 붙나요?",
-            "answer": "다른 은행으로 보내는 이체는 한 달에 열 번까지 무료예요. 그 뒤로는 건마다 수수료가 조금 붙어요."
+          "petSafe": {
+            "question": "반려동물에게 안전한 식물은?",
+            "answer": "'반려동물 안전' 배지를 확인해 주세요. 아레카야자, 보스턴고사리, 필레아 페페로미오이데스는 고양이와 강아지에게 안전해요."
           }
         },
         "openAll": "모두 펼치기",
         "closeAll": "모두 접기"
       },
       "item": {
-        "account": {
-          "title": "입출금 통장",
-          "description": "잔액 128만 원"
-        },
-        "card": {
-          "title": "신용카드",
-          "description": "14일 결제 예정"
-        },
-        "savings": {
-          "title": "적금",
-          "description": "연 3.5%"
+        "plants": {
+          "monstera": {
+            "title": "몬스테라 델리시오사",
+            "description": "2일 뒤 물 주기"
+          },
+          "areca": {
+            "title": "아레카야자",
+            "description": "오늘 물 주기"
+          },
+          "rosemary": {
+            "title": "로즈메리",
+            "description": "5일 뒤 물 주기"
+          }
         },
         "sizes": {
           "sm": "작게",
@@ -1250,28 +1267,28 @@
           "text": {
             "title": "스쿼클 안의 글자",
             "description": "variant=\"icon\"",
-            "label": "오늘"
+            "label": "신규"
           }
         },
         "actions": {
           "button": {
-            "title": "알림 받기",
-            "description": "잔액이 바뀌면 알려드려요",
+            "title": "물 주기 알림",
+            "description": "물 줄 때가 되면 알려 드려요",
             "label": "켜기"
           },
           "text": {
-            "title": "커피전문점",
-            "description": "카드 결제",
-            "amount": "-4,500원",
-            "time": "오전 9:41"
+            "title": "몬스테라 델리시오사",
+            "description": "주문번호 LL-2481",
+            "amount": "₩32,000",
+            "status": "배송 완료"
           },
           "arrow": {
-            "title": "거래 내역"
+            "title": "주문 내역"
           }
         },
         "header": {
-          "description": "방금 업데이트됨",
-          "title": "내 계좌",
+          "description": "이번 주 물 주기",
+          "title": "내 식물",
           "action": "편집"
         },
         "footer": "더 보기",
@@ -1283,34 +1300,39 @@
         }
       },
       "dropdownMenu": {
-        "trigger": "메뉴 열기",
-        "label": "편집",
+        "trigger": "식물 관리",
+        "label": "몬스테라 델리시오사",
         "items": {
-          "first": "첫 번째 메뉴",
-          "second": "두 번째 메뉴",
-          "third": "세 번째 메뉴"
+          "water": "물 준 날 기록",
+          "schedule": "관리 일정 수정",
+          "photo": "사진 추가"
         },
         "icons": {
-          "copy": "복사하기",
+          "copy": "링크 복사",
           "share": "공유하기",
-          "settings": "설정",
-          "delete": "삭제하기"
+          "settings": "관리 설정",
+          "delete": "식물 삭제"
         },
         "checkboxes": {
-          "trigger": "보기",
-          "label": "표시할 항목",
-          "statusBar": "상태 표시줄",
-          "activityBar": "활동 표시줄",
-          "panel": "패널"
+          "trigger": "필터",
+          "label": "이 조건만 보기",
+          "easyCare": "초보 추천",
+          "petSafe": "반려동물 안전",
+          "sale": "할인"
         },
         "radio": {
-          "trigger": "선택하기",
-          "label": "항목을 선택하세요"
+          "trigger": "정렬",
+          "label": "정렬 기준",
+          "items": {
+            "recommended": "추천순",
+            "popular": "인기순",
+            "priceLow": "낮은 가격순"
+          }
         }
       },
       "tooltip": {
-        "trigger": "마우스를 올려 보세요",
-        "message": "툴팁이에요.",
+        "trigger": "햇빛 조건",
+        "message": "밝은 간접광이 좋아요",
         "sizes": {
           "sm": "작게",
           "default": "보통",
@@ -1320,43 +1342,43 @@
           "top": "위",
           "bottom": "아래"
         },
-        "controlled": "눌러 보세요"
+        "controlled": "관리 팁 보기"
       },
       "toast": {
         "top": {
           "trigger": "상단 토스트 열기",
-          "message": "상단 토스트 메시지예요"
+          "message": "물 주기 알림을 켰어요"
         },
         "bottom": {
           "trigger": "하단 토스트 열기",
-          "message": "하단 토스트 메시지예요"
+          "message": "몬스테라 델리시오사를 장바구니에 담았어요"
         },
         "types": {
           "success": {
             "trigger": "성공",
-            "message": "저장했어요"
+            "message": "LL-2481 주문을 완료했어요"
           },
           "error": {
             "trigger": "오류",
-            "message": "저장하지 못했어요"
+            "message": "주문하지 못했어요. 다시 시도해 주세요."
           },
           "info": {
             "trigger": "안내",
-            "message": "새 버전이 나왔어요"
+            "message": "LL-2481 주문이 배송을 시작했어요"
           }
         },
         "action": {
-          "trigger": "항목 삭제하기",
-          "message": "항목을 삭제했어요",
+          "trigger": "장바구니에서 빼기",
+          "message": "스킨답서스를 장바구니에서 뺐어요",
           "undo": "되돌리기",
-          "restored": "항목을 되돌렸어요"
+          "restored": "스킨답서스를 다시 담았어요"
         }
       },
       "checkbox": {
         "demo": {
-          "terms": "서비스 이용약관에 동의해요",
-          "privacy": "개인정보 수집 및 이용에 동의해요",
-          "marketing": "마케팅 정보를 받을게요 (선택)"
+          "careCard": "관리 가이드 카드를 함께 받을게요",
+          "plasticFree": "비닐 없이 포장해 주세요",
+          "giftWrap": "선물 포장을 추가할게요 (+₩2,000)"
         },
         "variants": {
           "circle": "원형",
@@ -1368,14 +1390,14 @@
       },
       "switch": {
         "demo": {
-          "notifications": "푸시 알림",
-          "darkMode": "다크 모드"
+          "watering": "물 주기 알림",
+          "newArrivals": "신상품 소식"
         },
-        "disabled": "바꿀 수 없는 설정"
+        "disabled": "주문 상태 알림"
       },
       "slider": {
         "demo": {
-          "label": "음량"
+          "label": "목표 습도"
         },
         "colors": {
           "blue": "파랑",
@@ -1383,17 +1405,17 @@
           "red": "빨강"
         },
         "labels": {
-          "label": "예산",
-          "min": "100 만원",
-          "mid": "150 만원",
-          "max": "200 만원"
+          "label": "식물 키",
+          "min": "100 cm",
+          "mid": "150 cm",
+          "max": "200 cm"
         },
         "tooltip": {
-          "label": "밝기"
+          "label": "식물등 밝기"
         }
       },
       "numberField": {
-        "quantity": "수량",
+        "quantity": "몬스테라 델리시오사 수량",
         "decrease": "상품 수량 줄이기",
         "increase": "상품 수량 늘리기",
         "sizes": {
@@ -1404,14 +1426,815 @@
         }
       },
       "rating": {
-        "label": "별점 평가",
+        "label": "몬스테라 델리시오사 별점 매기기",
         "star": "점",
         "stars": "점",
-        "readOnlyLabel": "5점 만점 중 5점",
+        "readOnlyLabel": "평균 별점 5점 만점에 5점",
         "sizes": {
           "default": "보통",
           "lg": "크게",
           "xl": "아주 크게"
+        }
+      }
+    },
+    "montage": {
+      "button": {
+        "variants": {
+          "default": "default",
+          "secondary": "secondary",
+          "destructive": "destructive",
+          "outline": "outline",
+          "outline-primary": "outline-primary",
+          "ghost": "ghost",
+          "link": "link"
+        },
+        "sizes": {
+          "xs": "아주 작게",
+          "sm": "작게",
+          "default": "보통",
+          "lg": "크게"
+        },
+        "withIcon": {
+          "addToCart": "장바구니 담기",
+          "wishlist": "찜하기",
+          "search": "식물 검색",
+          "notifications": "알림",
+          "settings": "설정"
+        },
+        "states": {
+          "loading": "로딩 중",
+          "disabled": "비활성화"
+        }
+      },
+      "calendar": {
+        "pickDeliveryDate": "배송 희망일 선택",
+        "pickTripDates": "여행 기간 선택"
+      },
+      "badge": {
+        "demo": {
+          "easyCare": "초보 추천",
+          "new": "신상품",
+          "petSafe": "반려동물 안전",
+          "lowStock": "품절 임박"
+        },
+        "variants": {
+          "default": "기본",
+          "outline": "테두리"
+        },
+        "colors": {
+          "neutral": "뉴트럴",
+          "brand": "브랜드",
+          "positive": "긍정",
+          "cautionary": "주의",
+          "destructive": "위험",
+          "lime": "라임",
+          "cyan": "시안",
+          "lightBlue": "라이트 블루",
+          "violet": "바이올렛",
+          "purple": "퍼플",
+          "pink": "핑크"
+        },
+        "sizes": {
+          "xs": "아주 작게",
+          "sm": "작게",
+          "default": "기본"
+        }
+      },
+      "avatar": {
+        "members": {
+          "haneul": "김하늘",
+          "doyun": "이도윤",
+          "seoyeon": "박서연",
+          "minjun": "최민준"
+        },
+        "shopName": "리틀리프",
+        "openProfile": "김하늘 님의 프로필 열기",
+        "openShop": "리틀리프 매장 둘러보기",
+        "initial": "김",
+        "groupCount": "외 12명"
+      },
+      "card": {
+        "alt": "테라코타 화분에 심은 몬스테라 델리시오사",
+        "title": "몬스테라 델리시오사",
+        "price": "₩32,000",
+        "rating": "4.8 · 리뷰 126개",
+        "overlay": "품절 임박",
+        "wishlist": "찜하기",
+        "badges": {
+          "easyCare": "초보 추천",
+          "new": "신상품"
+        },
+        "sizes": {
+          "default": "기본",
+          "sm": "작게"
+        }
+      },
+      "separator": {
+        "title": "내 식물",
+        "description": "식물 5개 중 2개가 오늘 물이 필요해요.",
+        "links": {
+          "schedule": "일정",
+          "tips": "돌봄 팁",
+          "photos": "사진"
+        }
+      },
+      "empty": {
+        "plants": {
+          "title": "아직 등록한 식물이 없어요",
+          "description": "키우는 식물을 등록하면 물 줄 때를 알려 드려요.",
+          "action": "식물 등록하기"
+        },
+        "error": {
+          "title": "주문 내역을 불러오지 못했어요",
+          "description": "인터넷 연결을 확인하고 잠시 뒤 다시 시도해 주세요.",
+          "retry": "다시 시도",
+          "home": "홈으로"
+        },
+        "search": {
+          "title": "찾는 식물이 없어요",
+          "description": "'스킨답서스'처럼 다른 이름으로 찾거나 필터를 줄여 보세요."
+        }
+      },
+      "alert": {
+        "demo": {
+          "title": "몬스테라 델리시오사에 물 줄 시간이에요",
+          "description": "마지막으로 물을 준 지 7일이 지났어요."
+        },
+        "variants": {
+          "default": "해가 짧아지고 있어요. 식물을 창가 가까이 옮겨 주세요.",
+          "positive": "주문 LL-2481이 배송 완료됐어요.",
+          "cautionary": "오늘 밤 서리가 내려요. 로즈메리를 실내로 들여 주세요.",
+          "destructive": "결제하지 못했어요. 카드 정보를 확인하고 다시 시도해 주세요.",
+          "neutral": "내일 식물 시터 이도윤 님이 방문해요."
+        },
+        "action": {
+          "title": "오늘 물 줄 식물이 3개 있어요",
+          "description": "물을 준 뒤 기록하면 다음 차례에 알려 드려요.",
+          "view": "보기",
+          "close": "닫기",
+          "reopen": "알림 다시 보기"
+        }
+      },
+      "spinner": {
+        "variants": {
+          "default": "기본",
+          "brand": "브랜드"
+        }
+      },
+      "progress": {
+        "label": "식물 사진 올리는 중"
+      },
+      "toast": {
+        "demo": {
+          "trigger": "장바구니 담기",
+          "message": "몬스테라 델리시오사를 장바구니에 담았어요."
+        },
+        "types": {
+          "success": {
+            "trigger": "성공",
+            "message": "주문을 완료했어요."
+          },
+          "warning": {
+            "trigger": "주의",
+            "message": "올리브나무 재고가 2개 남았어요."
+          },
+          "error": {
+            "trigger": "오류",
+            "message": "사진을 올리지 못했어요. 다시 시도해 주세요."
+          }
+        },
+        "action": {
+          "trigger": "장바구니에서 빼기",
+          "title": "장바구니에서 스킨답서스를 뺐어요",
+          "description": "몇 초 동안은 되돌릴 수 있어요.",
+          "undo": "되돌리기",
+          "restored": "스킨답서스를 다시 담았어요."
+        }
+      },
+      "tooltip": {
+        "trigger": "반려동물 안전",
+        "message": "고양이·강아지에게 안전해요",
+        "sizes": {
+          "sm": "작게",
+          "default": "기본"
+        },
+        "sides": {
+          "top": "위",
+          "right": "오른쪽",
+          "bottom": "아래",
+          "left": "왼쪽"
+        },
+        "shortcut": {
+          "label": "주문 번호 복사"
+        }
+      },
+      "tabs": {
+        "sections": {
+          "details": "상품 정보",
+          "care": "키우는 법",
+          "reviews": "후기"
+        },
+        "content": {
+          "details": "밝은 거실 한쪽을 채워 줄 큰 잎 식물이에요.",
+          "care": "겉흙 3cm가 마르면 물을 주세요. 보통 일주일에 한 번이에요.",
+          "reviews": "후기 126개, 평균 4.8점이에요."
+        },
+        "periods": {
+          "day": "일",
+          "week": "주",
+          "month": "월"
+        },
+        "categories": {
+          "all": "전체",
+          "foliage": "관엽식물",
+          "succulents": "다육·선인장",
+          "herbs": "허브",
+          "flowers": "꽃",
+          "potsTools": "화분·용품",
+          "easyCare": "초보 추천",
+          "petSafe": "반려동물 안전"
+        },
+        "views": {
+          "list": "목록",
+          "grid": "격자",
+          "map": "지도"
+        }
+      },
+      "accordion": {
+        "faq": {
+          "watering": {
+            "title": "물은 얼마나 자주 줘야 하나요?",
+            "content": "겉흙 2~3cm가 말랐을 때 주세요. 관엽식물은 보통 여름엔 일주일에 한 번, 겨울엔 2주에 한 번이면 충분해요."
+          },
+          "damaged": {
+            "title": "배송 중에 다친 식물은 어떻게 하나요?",
+            "content": "받은 날부터 48시간 안에 사진을 보내 주세요. 새 식물을 다시 보내 드리거나 전액 환불해 드려요."
+          },
+          "petSafe": {
+            "title": "반려동물에게 안전한 식물은?",
+            "content": "반려동물 안전 배지를 확인해 주세요. 필레아 페페로미오이데스, 아레카야자, 보스턴고사리는 고양이와 강아지 곁에 두어도 안전해요."
+          }
+        },
+        "topics": {
+          "account": {
+            "title": "계정",
+            "content": "이메일, 비밀번호, 저장한 배송지를 관리해요."
+          },
+          "notifications": {
+            "title": "알림",
+            "content": "물 주기 알림과 주문 소식 중 받을 알림을 골라요."
+          },
+          "privacy": {
+            "title": "개인정보",
+            "content": "내 식물 사진과 리뷰를 볼 수 있는 사람을 정해요."
+          }
+        }
+      },
+      "table": {
+        "caption": "최근 주문 내역",
+        "headers": {
+          "order": "주문 번호",
+          "item": "상품",
+          "amount": "금액",
+          "status": "상태",
+          "price": "가격"
+        },
+        "status": {
+          "paid": "결제 완료",
+          "preparing": "배송 준비 중",
+          "shipped": "배송 중",
+          "delivered": "배송 완료"
+        },
+        "plants": {
+          "monstera": {
+            "name": "몬스테라 델리시오사",
+            "price": "₩32,000"
+          },
+          "pothos": {
+            "name": "스킨답서스",
+            "price": "₩14,000"
+          },
+          "olive": {
+            "name": "올리브나무",
+            "price": "₩58,000"
+          },
+          "pilea": {
+            "name": "필레아 페페로미오이데스",
+            "price": "₩18,000"
+          },
+          "snakePlant": {
+            "name": "스투키",
+            "price": "₩24,000"
+          },
+          "areca": {
+            "name": "아레카야자",
+            "price": "₩46,000"
+          },
+          "fern": {
+            "name": "보스턴고사리",
+            "price": "₩21,000"
+          },
+          "rosemary": {
+            "name": "로즈메리",
+            "price": "₩9,000"
+          }
+        },
+        "total": "합계",
+        "totalAmount": "₩55,000"
+      },
+      "item": {
+        "settings": {
+          "notifications": {
+            "title": "알림",
+            "description": "물 주기 알림, 주문 소식, 댓글"
+          },
+          "privacy": {
+            "title": "개인정보",
+            "description": "내 식물과 사진을 볼 수 있는 사람"
+          },
+          "account": {
+            "title": "계정",
+            "description": "이메일, 비밀번호, 배송지"
+          }
+        },
+        "reminderTime": "알림 시간",
+        "reminderTimeValue": "09:00",
+        "delivery": {
+          "standard": "일반 배송 (2–3일)",
+          "earlyMorning": "새벽 배송",
+          "storePickup": "매장 픽업",
+          "sameDay": "당일 배송 (배송 불가 지역)"
+        },
+        "plant": {
+          "title": "몬스테라 델리시오사",
+          "description": "관엽식물 · ₩32,000"
+        },
+        "size": {
+          "sm": "작게",
+          "default": "기본",
+          "lg": "크게"
+        }
+      },
+      "dialog": {
+        "demo": {
+          "trigger": "알림 설정하기",
+          "title": "물 주기 알림을 켤까요?",
+          "description": "식물마다 물 줄 때가 되면 알려 드려요.",
+          "cancel": "나중에",
+          "confirm": "켜기"
+        },
+        "singleAction": {
+          "trigger": "공지 보기",
+          "title": "겨울철 배송 안내",
+          "body": "11월 1일부터는 식물이 춥지 않도록 보온재로 감싸 보내서 배송이 하루 더 걸릴 수 있어요. 매장 픽업은 그대로예요.",
+          "confirm": "확인했어요"
+        },
+        "scroll": {
+          "trigger": "약관 읽기",
+          "title": "식물 돌봄 이용 약관",
+          "description": "시터를 예약하기 전에 아래 내용을 읽어 주세요.",
+          "terms": {
+            "booking": "여행 3일 전까지 예약해야 시터를 연결해 드릴 수 있어요.",
+            "notes": "식물마다 물을 얼마나 주는지 등 관리 메모를 남겨 주세요.",
+            "visits": "시터는 일주일에 최대 두 번 방문하고, 방문할 때마다 사진을 보내 드려요.",
+            "supplies": "물뿌리개와 식물 영양제는 시터가 찾기 쉬운 곳에 두어 주세요.",
+            "changes": "첫 방문 24시간 전까지는 여행 기간을 무료로 바꿀 수 있어요.",
+            "cancellation": "첫 방문까지 24시간이 남지 않았을 때 취소하면 요금의 50%를 받아요.",
+            "health": "식물 상태가 좋지 않으면 시터가 손대기 전에 먼저 메시지를 보내요.",
+            "rating": "여행이 끝나면 시터를 평가해 다른 식물 집사들이 고를 수 있게 도와주세요."
+          },
+          "agree": "동의하고 예약하기"
+        }
+      },
+      "alertDialog": {
+        "demo": {
+          "trigger": "주문서 나가기",
+          "title": "주문서에서 나갈까요?",
+          "description": "작성한 선물 메시지는 저장되지 않아요.",
+          "cancel": "취소",
+          "confirm": "나가기"
+        },
+        "destructive": {
+          "trigger": "주문 취소",
+          "title": "주문 LL-2481을 취소할까요?",
+          "description": "취소한 주문은 되돌릴 수 없어요. 환불은 영업일 기준 3~5일 안에 들어와요.",
+          "cancel": "주문 유지",
+          "confirm": "주문 취소"
+        },
+        "descriptionOnly": {
+          "trigger": "배송지 저장",
+          "description": "배송지를 저장했어요.",
+          "confirm": "확인"
+        }
+      },
+      "drawer": {
+        "demo": {
+          "trigger": "시터 예약하기",
+          "title": "이도윤 님에게 돌봄을 맡길까요?",
+          "description": "10월 24일부터 11월 1일까지 일주일에 두 번 방문하고, 방문할 때마다 사진을 보내 드려요.",
+          "confirm": "예약하기"
+        },
+        "twoButtons": {
+          "trigger": "사진 공유",
+          "title": "이 사진 공유하기",
+          "description": "링크가 있으면 리틀리프 계정이 없어도 누구나 사진을 볼 수 있어요.",
+          "cancel": "취소",
+          "confirm": "링크 복사"
+        },
+        "scroll": {
+          "trigger": "관리 가이드 보기",
+          "title": "몬스테라 델리시오사 관리 가이드",
+          "description": "새로 들인 식물이 잘 적응하도록 아래 순서대로 돌봐 주세요.",
+          "steps": {
+            "light": "해가 드는 창가에서 몇 걸음 떨어진 밝은 곳에 두세요.",
+            "rotate": "골고루 자라도록 일주일에 한 번 화분을 4분의 1바퀴씩 돌려 주세요.",
+            "water": "겉흙 2~3cm가 마르면 화분 아래로 물이 흘러나올 때까지 흠뻑 주세요.",
+            "saucer": "물을 준 뒤에는 받침에 고인 물을 버려 뿌리가 물에 잠기지 않게 해 주세요.",
+            "leaves": "2주에 한 번 젖은 천으로 잎을 닦아 주세요.",
+            "food": "봄부터 초가을까지는 한 달에 한 번 식물 영양제를 주세요.",
+            "winter": "겨울에는 찬바람과 난방기를 피해 두세요.",
+            "pets": "잎을 먹으면 탈이 날 수 있으니 고양이와 강아지가 닿지 않는 곳에 두세요."
+          },
+          "done": "확인했어요"
+        }
+      },
+      "popover": {
+        "demo": {
+          "trigger": "팝오버 열기",
+          "title": "물 주기 팁",
+          "description": "겉흙이 2~3cm 정도 말랐을 때 물을 주세요."
+        },
+        "closeButton": {
+          "trigger": "팁 보기",
+          "description": "일주일에 한 번 화분을 4분의 1 바퀴 돌려 주면 고르게 자라요."
+        },
+        "footer": {
+          "trigger": "업데이트 보기",
+          "title": "주문한 식물이 출발했어요",
+          "description": "주문 LL-2481은 2~3일 안에 도착해요.",
+          "dismiss": "나중에",
+          "action": "배송 조회"
+        },
+        "custom": {
+          "trigger": "공유",
+          "title": "링크 공유",
+          "body": "링크가 있으면 누구나 이 식물 사진을 볼 수 있어요.",
+          "copy": "링크 복사"
+        }
+      },
+      "dropdownMenu": {
+        "demo": {
+          "trigger": "메뉴 열기",
+          "label": "주문 LL-2481",
+          "track": "배송 조회",
+          "reorder": "다시 주문하기",
+          "receipt": "영수증 보기"
+        },
+        "icons": {
+          "trigger": "설정",
+          "reminders": "물 주기 알림",
+          "remindersValue": "09:00",
+          "language": "언어",
+          "languageValue": "한국어",
+          "theme": "테마",
+          "themeValue": "시스템"
+        },
+        "radio": {
+          "trigger": "정렬",
+          "label": "정렬 기준",
+          "recommended": "추천순",
+          "popular": "인기순",
+          "priceLow": "낮은 가격순"
+        },
+        "checkboxes": {
+          "trigger": "카테고리",
+          "label": "카테고리",
+          "foliage": "관엽식물",
+          "succulents": "다육·선인장",
+          "herbs": "허브",
+          "flowers": "꽃"
+        },
+        "footer": {
+          "trigger": "필터",
+          "priceLabel": "가격",
+          "under10k": "1만 원 미만",
+          "from10kTo30k": "1만~3만 원",
+          "from30kTo50k": "3만~5만 원",
+          "over50k": "5만 원 이상",
+          "featuresLabel": "특징",
+          "easyCare": "초보 추천",
+          "petSafe": "반려동물 안전",
+          "newArrival": "신상품",
+          "sale": "할인",
+          "reset": "초기화",
+          "apply": "적용"
+        }
+      },
+      "select": {
+        "label": "식물",
+        "placeholder": "식물을 골라 주세요",
+        "plants": {
+          "monstera": "몬스테라 델리시오사",
+          "pothos": "스킨답서스",
+          "oliveTree": "올리브나무",
+          "moneyPlant": "필레아 페페로미오이데스",
+          "snakePlant": "스투키",
+          "bostonFern": "보스턴고사리"
+        },
+        "sizes": {
+          "default": "기본",
+          "sm": "작게"
+        },
+        "language": {
+          "label": "언어",
+          "placeholder": "언어를 골라 주세요",
+          "korean": "한국어",
+          "english": "영어",
+          "japanese": "일본어",
+          "chinese": "중국어"
+        },
+        "groups": {
+          "label": "상품",
+          "placeholder": "상품을 골라 주세요",
+          "plants": "식물",
+          "tools": "화분·용품",
+          "terracottaPot": "테라코타 화분",
+          "wateringCan": "물뿌리개",
+          "pottingMix": "분갈이 흙 2L"
+        },
+        "multiple": {
+          "label": "맡길 식물",
+          "placeholder": "맡길 식물을 골라 주세요"
+        },
+        "states": {
+          "disabled": "사용할 수 없어요",
+          "invalid": "다시 골라 주세요"
+        }
+      },
+      "combobox": {
+        "label": "식물",
+        "placeholder": "식물을 검색해 보세요",
+        "empty": "찾는 식물이 없어요.",
+        "plants": {
+          "monstera": "몬스테라 델리시오사",
+          "pothos": "스킨답서스",
+          "olive": "올리브나무",
+          "pilea": "필레아 페페로미오이데스",
+          "snake": "스투키",
+          "areca": "아레카야자",
+          "fern": "보스턴고사리",
+          "rosemary": "로즈메리"
+        },
+        "groups": {
+          "label": "상품",
+          "placeholder": "식물과 용품을 검색해 보세요",
+          "foliage": "관엽식물",
+          "tools": "화분·용품"
+        },
+        "tools": {
+          "terracottaPot": "테라코타 화분",
+          "wateringCan": "물뿌리개",
+          "pottingMix": "분갈이 흙 2L"
+        },
+        "multiple": {
+          "label": "내 식물",
+          "placeholder": "키우는 식물 추가"
+        },
+        "states": {
+          "disabled": "사용할 수 없어요",
+          "invalid": "다시 골라 주세요"
+        }
+      },
+      "checkbox": {
+        "demo": {
+          "water": "몬스테라 델리시오사 물 주기",
+          "mist": "보스턴고사리 잎에 분무하기",
+          "repot": "스킨답서스 분갈이하기"
+        },
+        "variants": {
+          "default": "default",
+          "circle": "circle",
+          "check": "check"
+        },
+        "sizes": {
+          "default": "보통",
+          "sm": "작게"
+        },
+        "tight": {
+          "default": "기본",
+          "tight": "tight"
+        },
+        "indeterminate": {
+          "all": "전체 선택",
+          "monstera": "몬스테라 델리시오사",
+          "wateringCan": "물뿌리개"
+        },
+        "disabled": {
+          "off": "비활성화",
+          "on": "비활성화 · 선택됨"
+        }
+      },
+      "radioGroup": {
+        "demo": {
+          "label": "물 주기 알림",
+          "daily": "매일",
+          "due": "물이 필요할 때만",
+          "off": "받지 않음"
+        },
+        "sizes": {
+          "default": "보통",
+          "sm": "작게"
+        },
+        "tight": {
+          "default": "기본",
+          "tight": "tight"
+        },
+        "disabled": {
+          "label": "선물 포장",
+          "none": "포장 안 함",
+          "paper": "종이 포장",
+          "box": "선물 상자 (품절)"
+        }
+      },
+      "switch": {
+        "demo": {
+          "watering": "물 주기 알림",
+          "tips": "주간 관리 팁"
+        },
+        "sizes": {
+          "default": "보통",
+          "sm": "작게"
+        },
+        "disabled": {
+          "off": "비활성화",
+          "on": "비활성화 · 켜짐"
+        }
+      },
+      "slider": {
+        "demo": {
+          "label": "식물등 밝기"
+        },
+        "range": {
+          "label": "습도 범위"
+        },
+        "sunlight": {
+          "label": "하루 햇빛 시간",
+          "title": "햇빛",
+          "shade": "그늘",
+          "tenPlus": "10시간 이상",
+          "any": "햇빛 조건 무관",
+          "hoursSuffix": "시간"
+        },
+        "disabled": {
+          "heading": "물 주는 양",
+          "label": "자동"
+        }
+      },
+      "toggle": {
+        "demo": {
+          "label": "반려동물 안전"
+        },
+        "variants": {
+          "default": "default",
+          "outline": "outline"
+        },
+        "sizes": {
+          "xs": "아주 작게",
+          "sm": "작게",
+          "default": "보통",
+          "lg": "크게"
+        },
+        "withIcon": {
+          "add": "추가",
+          "remove": "삭제"
+        },
+        "icon": {
+          "bookmark": "위시리스트에 담기",
+          "like": "게시물 좋아요",
+          "star": "즐겨찾기에 추가"
+        },
+        "disabled": {
+          "off": "비활성화",
+          "on": "비활성화 · 눌림"
+        }
+      },
+      "toggleGroup": {
+        "demo": {
+          "all": "전체",
+          "foliage": "관엽식물",
+          "succulents": "다육·선인장",
+          "herbs": "허브"
+        },
+        "multiple": {
+          "easyCare": "초보 추천",
+          "petSafe": "반려동물 안전",
+          "sale": "할인",
+          "new": "신상품"
+        }
+      },
+      "input": {
+        "demo": {
+          "label": "배송지 주소",
+          "placeholder": "배송받을 주소를 입력해 주세요"
+        },
+        "sizes": {
+          "default": "기본",
+          "sm": "작게",
+          "placeholder": "받는 분 이름을 입력해 주세요",
+          "description": "이 이름이 배송 송장에 적혀요."
+        },
+        "states": {
+          "default": "기본",
+          "invalid": "에러",
+          "readOnly": "읽기 전용",
+          "readOnlyValue": "주문번호 LL-2481",
+          "disabled": "비활성화",
+          "disabledValue": "김하늘"
+        }
+      },
+      "field": {
+        "demo": {
+          "name": "받는 분",
+          "namePlaceholder": "받는 분 이름을 입력해 주세요",
+          "email": "이메일",
+          "emailDescription": "주문 영수증을 이 주소로 보내 드려요.",
+          "message": "선물 메시지",
+          "messagePlaceholder": "식물과 함께 보낼 짧은 메시지를 적어 주세요"
+        },
+        "validation": {
+          "label": "식물 애칭",
+          "placeholder": "예: 초록이",
+          "description": "두 글자 이상 입력해 주세요.",
+          "error": "애칭을 두 글자 이상 입력해 주세요."
+        },
+        "horizontal": {
+          "name": "받는 분",
+          "namePlaceholder": "받는 분 이름을 입력해 주세요",
+          "email": "이메일",
+          "emailDescription": "배송 소식을 이 주소로 보내 드려요.",
+          "phone": "휴대폰 번호"
+        }
+      },
+      "inputGroup": {
+        "search": {
+          "label": "식물 검색",
+          "placeholder": "식물, 화분을 검색해 보세요",
+          "clear": "검색어 지우기"
+        },
+        "addons": {
+          "email": "이메일",
+          "price": "최대 가격",
+          "unit": "원",
+          "nickname": "닉네임",
+          "nicknameValue": "초록하늘",
+          "available": "사용할 수 있는 닉네임이에요."
+        },
+        "button": {
+          "phone": "휴대폰 번호",
+          "send": "인증 요청",
+          "code": "인증번호",
+          "codePlaceholder": "6자리 숫자",
+          "resend": "재전송"
+        },
+        "clear": {
+          "label": "배송 요청사항",
+          "placeholder": "예: 문 앞에 놓아 주세요",
+          "clear": "지우기",
+          "description": "글을 입력하면 지우기 버튼이 보여요."
+        },
+        "password": {
+          "label": "비밀번호",
+          "placeholder": "비밀번호를 입력해 주세요",
+          "show": "비밀번호 보기",
+          "hide": "비밀번호 숨기기",
+          "description": "8자 이상 입력해 주세요."
+        },
+        "textarea": {
+          "label": "식물 상담",
+          "placeholder": "잎이 노랗게 변했나요? 식물 상태를 알려 주세요.",
+          "attach": "사진 첨부",
+          "send": "보내기"
+        }
+      },
+      "textarea": {
+        "demo": {
+          "label": "선물 메시지",
+          "placeholder": "식물과 함께 보낼 메시지를 적어 주세요"
+        },
+        "sizes": {
+          "default": "기본",
+          "sm": "작게",
+          "placeholder": "배송 기사님께 남길 말을 적어 주세요"
+        },
+        "states": {
+          "invalid": "에러",
+          "disabled": "비활성화",
+          "disabledValue": "문 앞에 두고 가 주세요."
+        },
+        "counter": {
+          "label": "후기",
+          "placeholder": "식물이 잘 자리 잡았는지 알려 주세요",
+          "description": "100자까지 쓸 수 있어요."
         }
       }
     }

@@ -1,0 +1,39 @@
+---
+title: Badge
+description: Badge는 콘텐츠의 상태나 속성을 짧게 표시해요.
+---
+
+<Preview registry="montage" demo="badge/badge-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/badge
+```
+
+## 사용법
+
+API 는 shadcn 의 Badge 와 같고 `color` · `size` prop 이 더 있어요. `variant` 로 바탕을 옅게 칠할지 테두리만 두를지 고르고, `color` 로 글자 · 바탕 · 테두리의 색을 한 번에 정해요.
+
+## 예제
+
+### 배리언트
+
+<Preview registry="montage" demo="badge/badge-variants" height={180} />
+
+### 색
+
+<Preview registry="montage" demo="badge/badge-colors" height={240} />
+
+### 크기
+
+글자 앞뒤에 넣은 아이콘은 크기가 알아서 맞춰져요.
+
+<Preview registry="montage" demo="badge/badge-sizes" height={160} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/badge.ts"
+  name="MDXBadgePropsKO"
+/>

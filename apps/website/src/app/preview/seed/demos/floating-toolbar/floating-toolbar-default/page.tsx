@@ -31,21 +31,21 @@ export default function FloatingToolbarDefaultDemo() {
         open={open}
         onDismiss={() => setOpen(false)}
         closeLabel={t.closeLabel}
-        aria-label={t.toolbarLabel}
+        aria-label={t.photos.toolbarLabel}
       >
-        <FloatingToolbarLabel>{t.selected}</FloatingToolbarLabel>
+        <FloatingToolbarLabel>{t.photos.selected}</FloatingToolbarLabel>
         <FloatingToolbarSeparator />
         <FloatingToolbarButton>
           <PrefixIcon svg={<IconPencilLine />} />
-          {t.edit}
+          {t.photos.edit}
         </FloatingToolbarButton>
         <FloatingToolbarButton>
           <PrefixIcon svg={<IconArrowDownLine />} />
-          {t.download}
+          {t.photos.download}
         </FloatingToolbarButton>
         <FloatingToolbarButton tone="critical">
           <PrefixIcon svg={<IconTrashcanLine />} />
-          {t.block}
+          {t.photos.delete}
         </FloatingToolbarButton>
       </FloatingToolbar>
     </div>

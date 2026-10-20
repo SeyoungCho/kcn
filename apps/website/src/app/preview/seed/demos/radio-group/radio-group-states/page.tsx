@@ -15,11 +15,11 @@ export default function RadioGroupStatesDemo() {
           errorMessage={t.errorMessage}
         >
           <RadioGroupItem value="standard" label={t.options.standard} />
-          <RadioGroupItem value="express" label={t.options.express} />
+          <RadioGroupItem value="earlyMorning" label={t.options.earlyMorning} />
         </RadioGroup>
         <RadioGroup label={t.states.disabled} disabled defaultValue="standard">
           <RadioGroupItem value="standard" label={t.options.standard} />
-          <RadioGroupItem value="express" label={t.options.express} />
+          <RadioGroupItem value="earlyMorning" label={t.options.earlyMorning} />
         </RadioGroup>
         <RadioGroup label={t.states.disabledItem} defaultValue="standard">
           <RadioGroupItem value="standard" label={t.options.standard} />

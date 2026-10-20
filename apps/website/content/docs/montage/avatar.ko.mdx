@@ -1,0 +1,68 @@
+---
+title: Avatar
+description: Avatar는 사람이나 회사 · 기관을 이미지로 보여 줘요.
+---
+
+<Preview registry="montage" demo="avatar/avatar-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/avatar
+```
+
+## 사용법
+
+부품은 shadcn 의 Avatar 와 같고 `variant` 와 크기가 더 있어요. 빈 `AvatarFallback` 은 이미지가 없거나 불러오는 동안 실루엣을 그려요.
+
+## 예제
+
+### 크기
+
+<Preview registry="montage" demo="avatar/avatar-sizes" height={220} />
+
+### 로고
+
+`variant="logo"` 는 둥근 네모로 그리고 이미지가 다 보이게 담아요. 회사 · 기관에 써요.
+
+<Preview registry="montage" demo="avatar/avatar-logo" height={220} />
+
+### 대체 내용
+
+`AvatarFallback` 에 아이콘이나 글자를 넣으면 실루엣 대신 보여 줘요.
+
+<Preview registry="montage" demo="avatar/avatar-fallback" height={160} />
+
+### 버튼
+
+`render` 로 `<button>` 을 그리고 `aria-label` 을 꼭 달아 주세요.
+
+<Preview registry="montage" demo="avatar/avatar-button" height={160} />
+
+### 배지
+
+`AvatarBadge` 는 아바타 크기에 맞춘 알림 점을 달아요.
+
+<Preview registry="montage" demo="avatar/avatar-badge" height={220} />
+
+### 묶음
+
+`AvatarGroup` 은 앞의 아바타가 위로 오게 겹치고, `AvatarGroupCount` 는 맨 뒤에 둬요.
+
+<Preview registry="montage" demo="avatar/avatar-group" height={200} />
+
+## API 레퍼런스
+
+### Avatar
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/avatar.ts"
+  name="MDXAvatarPropsKO"
+/>
+
+### AvatarFallback
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/avatar.ts"
+  name="MDXAvatarFallbackPropsKO"
+/>

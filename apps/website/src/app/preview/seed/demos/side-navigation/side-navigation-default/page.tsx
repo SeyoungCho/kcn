@@ -34,7 +34,9 @@ export default function SideNavigationDefaultDemo() {
             <SideNavigationHeader>
               <div
                 className="flex h-x12 items-center overflow-hidden px-x2 pr-x12
-                  text-t5 font-bold whitespace-nowrap text-fg-neutral"
+                  text-t5 font-bold whitespace-nowrap text-fg-neutral
+                  [transition:opacity_200ms]
+                  in-data-[side-navigation-state=collapsed]:opacity-0"
               >
                 {t.brand}
               </div>
@@ -54,7 +56,7 @@ export default function SideNavigationDefaultDemo() {
                 ]}
               />
               <SideNavigationGroup
-                label={t.groups.store}
+                label={t.groups.shop}
                 items={[
                   { label: t.items.orders, prefixIcon: <IconReceiptLine /> },
                   { label: t.items.customers, prefixIcon: <IconPerson2Line /> },
@@ -65,13 +67,13 @@ export default function SideNavigationDefaultDemo() {
                 label={t.groups.marketing}
                 items={[
                   {
-                    label: t.items.ads,
+                    label: t.items.promotions,
                     prefixIcon: <IconMegaphoneLine />,
                     defaultOpen: true,
                     items: [
-                      { label: t.items.campaigns },
-                      { label: t.items.reports },
-                      { label: t.items.billing },
+                      { label: t.items.banners },
+                      { label: t.items.newsletters },
+                      { label: t.items.results },
                     ],
                   },
                   { label: t.items.coupons, prefixIcon: <IconCouponLine /> },

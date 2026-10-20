@@ -1,0 +1,55 @@
+---
+title: Tooltip
+description: A short label or hint that appears when hovering over an element.
+---
+
+<Preview registry="montage" demo="tooltip/tooltip-demo" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/tooltip
+```
+
+## Usage
+
+The API matches shadcn's Tooltip, with an extra `size` prop on `TooltipContent` and a `TooltipShortcut` part. Place one `TooltipProvider` near the root of your app; it sets the open and close delays.
+
+## Examples
+
+### Sizes
+
+<Preview registry="montage" demo="tooltip/tooltip-sizes" height={200} />
+
+### Side
+
+<Preview registry="montage" demo="tooltip/tooltip-side" height={240} />
+
+### Shortcut
+
+`TooltipShortcut` shows a keyboard shortcut after the label.
+
+<Preview registry="montage" demo="tooltip/tooltip-shortcut" height={200} />
+
+## API Reference
+
+### TooltipProvider
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tooltip.ts"
+  name="MDXTooltipProviderProps"
+/>
+
+### Tooltip
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tooltip.ts"
+  name="MDXTooltipProps"
+/>
+
+### TooltipContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/tooltip.ts"
+  name="MDXTooltipContentProps"
+/>

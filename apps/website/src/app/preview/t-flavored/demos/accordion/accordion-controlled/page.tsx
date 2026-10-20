@@ -10,7 +10,7 @@ import {
 import { Button } from "@repo/t-flavored/ui/button";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const questions = ["points", "subscription", "fee"] as const;
+const questions = ["watering", "damaged", "petSafe"] as const;
 
 export default function AccordionControlledDemo() {
   const t = usePreviewDictionary().demos.tFlavored.accordion;

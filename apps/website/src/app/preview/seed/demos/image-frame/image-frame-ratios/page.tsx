@@ -20,7 +20,7 @@ export default function ImageFrameRatiosDemo() {
         <figure key={key} className="m-0 flex w-40 flex-col gap-2">
           <ImageFrame
             ratio={ratio}
-            src="https://picsum.photos/seed/kcn/600/400"
+            src="https://picsum.photos/seed/monstera/600/400"
             alt={t.alt}
             fallback={<ContentPlaceholder />}
           />

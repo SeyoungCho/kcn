@@ -8,14 +8,14 @@ import {
 } from "@repo/t-flavored/ui/accordion";
 import { usePreviewDictionary } from "@/components/preview/preview-dictionary-provider";
 
-const questions = ["points", "subscription", "fee"] as const;
+const questions = ["watering", "damaged", "petSafe"] as const;
 
 export default function AccordionDefaultOpenDemo() {
   const t = usePreviewDictionary().demos.tFlavored.accordion;
 
   return (
     <div className="flex min-h-screen items-center justify-center p-8">
-      <Accordion defaultValue={["points"]} className="max-w-[400px]">
+      <Accordion defaultValue={["watering"]} className="max-w-[400px]">
         {questions.map((question) => (
           <AccordionItem key={question} value={question}>
             <AccordionTrigger>{t.faq[question].question}</AccordionTrigger>

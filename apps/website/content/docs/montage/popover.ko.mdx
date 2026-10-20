@@ -1,0 +1,48 @@
+---
+title: Popover
+description: Popover는 트리거 옆에 떠서 짧은 메시지나 추가 내용을 보여 주는 작은 판이에요.
+---
+
+<Preview registry="montage" demo="popover/popover-demo" height={280} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/popover
+```
+
+## 사용법
+
+API 는 shadcn 의 Popover 와 같아요. 안에 `PopoverHeader` 를 넣으면 짧은 메시지 모양이 되고, `PopoverFooter` 의 글자 버튼과 `showCloseButton` 닫기 버튼을 달 수 있어요. 넣지 않으면 아무 내용이나 담는 판이에요.
+
+## 예제
+
+### 닫기 버튼
+
+<Preview registry="montage" demo="popover/popover-close-button" height={280} />
+
+### 버튼 줄
+
+버튼 줄에는 작은 `link` 버튼을 넣어요.
+
+<Preview registry="montage" demo="popover/popover-footer" height={320} />
+
+### 자유로운 내용
+
+<Preview registry="montage" demo="popover/popover-custom" height={320} />
+
+## API 레퍼런스
+
+### Popover
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/popover.ts"
+  name="MDXPopoverPropsKO"
+/>
+
+### PopoverContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/popover.ts"
+  name="MDXPopoverContentPropsKO"
+/>

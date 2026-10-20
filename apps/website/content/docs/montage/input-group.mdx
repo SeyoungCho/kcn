@@ -1,0 +1,91 @@
+---
+title: Input Group
+description: Icons, text and buttons inside an input.
+---
+
+<Preview registry="montage" demo="input-group/input-group-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-montage/input-group
+```
+
+## Usage
+
+The API matches shadcn's InputGroup, plus `variant` and `size` props. `InputGroup` takes the input's look; put an `InputGroupInput` or `InputGroupTextarea` inside and icons, text or buttons in an `InputGroupAddon`. Icon-only buttons need an `aria-label`.
+
+## Examples
+
+### Search
+
+`variant="secondary"` is a filled search box, and search inputs (`type="search"`) show no focus ring.
+
+<Preview
+  registry="montage"
+  demo="input-group/input-group-search"
+  height={320}
+/>
+
+### Icon and Text
+
+<Preview
+  registry="montage"
+  demo="input-group/input-group-addons"
+  height={400}
+/>
+
+### Button
+
+<Preview
+  registry="montage"
+  demo="input-group/input-group-button"
+  height={260}
+/>
+
+### Clear Button
+
+The clear button shows only while the input has focus and a value.
+
+<Preview registry="montage" demo="input-group/input-group-clear" height={300} />
+
+### Password
+
+<Preview
+  registry="montage"
+  demo="input-group/input-group-password"
+  height={200}
+/>
+
+### Textarea
+
+Put buttons below the text with `align="block-end"`.
+
+<Preview
+  registry="montage"
+  demo="input-group/input-group-textarea"
+  height={260}
+/>
+
+## API Reference
+
+### InputGroup
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/input-group.ts"
+  name="MDXInputGroupProps"
+/>
+
+### InputGroupAddon
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/input-group.ts"
+  name="MDXInputGroupAddonProps"
+/>
+
+### InputGroupButton
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/input-group.ts"
+  name="MDXInputGroupButtonProps"
+/>

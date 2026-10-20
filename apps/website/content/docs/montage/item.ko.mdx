@@ -1,0 +1,75 @@
+---
+title: Item
+description: 목록의 한 줄이에요. 아이콘이나 그림, 글, 오른쪽 끝 내용을 담아요.
+---
+
+<Preview registry="montage" demo="item/item-demo" height={300} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/item
+```
+
+## 사용법
+
+API 는 shadcn 의 Item 과 같아요. `<a>` · `<button>` 으로 그리면 누를 수 있는 줄이 되고, 고른 줄에는 `aria-current`, 쓸 수 없는 줄에는 `aria-disabled` 를 달아요.
+
+```tsx
+<ItemGroup>
+  <Item render={<button type="button" />}>
+    <ItemMedia>
+      <BellIcon />
+    </ItemMedia>
+    <ItemContent>
+      <ItemTitle>알림</ItemTitle>
+      <ItemDescription>물 주기 알림, 주문 소식</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <ChevronRightIcon />
+    </ItemActions>
+  </Item>
+</ItemGroup>
+```
+
+## 예제
+
+### 배리언트
+
+`variant="full"` 은 좌우 여백을 둬서 카드나 화면 너비를 채우는 목록에 어울려요.
+
+<Preview registry="montage" demo="item/item-variants" height={340} />
+
+### 크기
+
+<Preview registry="montage" demo="item/item-sizes" height={240} />
+
+### 그림
+
+<Preview registry="montage" demo="item/item-media" height={280} />
+
+### 오른쪽 내용
+
+`ItemActions` 에 글자를 넣으면 화살표 옆의 값으로 보여요.
+
+<Preview registry="montage" demo="item/item-actions" height={160} />
+
+### 상태
+
+<Preview registry="montage" demo="item/item-states" height={280} />
+
+## API 레퍼런스
+
+### Item
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/item.ts"
+  name="MDXItemPropsKO"
+/>
+
+### ItemMedia
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/item.ts"
+  name="MDXItemMediaPropsKO"
+/>

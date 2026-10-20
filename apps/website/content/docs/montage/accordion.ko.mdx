@@ -1,0 +1,66 @@
+---
+title: Accordion
+description: 제목을 눌러 내용을 펼쳐 봐요. 자주 묻는 질문, 설정처럼 긴 내용에 써요.
+---
+
+<Preview registry="montage" demo="accordion/accordion-demo" height={420} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-montage/accordion
+```
+
+## 사용법
+
+API 는 shadcn 의 Accordion 과 같고, `Accordion` 에 `variant` · `size` 가 더 있어요. `multiple` 을 주지 않으면 한 항목을 펼칠 때 다른 항목은 접혀요.
+
+```tsx
+<Accordion multiple>
+  <AccordionItem value="watering">
+    <AccordionTrigger>물은 얼마나 자주 줘야 하나요?</AccordionTrigger>
+    <AccordionContent>…</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## 예제
+
+### 꽉 채우기
+
+`variant="full"` 은 좌우 여백을 둬서 카드나 시트 안에 넣기 좋아요.
+
+<Preview registry="montage" demo="accordion/accordion-full" height={360} />
+
+### 아이콘 포함
+
+`AccordionTrigger` 안에서 제목 앞에 아이콘을 두면 돼요.
+
+<Preview registry="montage" demo="accordion/accordion-icon" height={340} />
+
+### 비활성
+
+<Preview registry="montage" demo="accordion/accordion-disabled" height={260} />
+
+## API 레퍼런스
+
+### Accordion
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/accordion.ts"
+  name="MDXAccordionPropsKO"
+/>
+
+### AccordionItem
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/accordion.ts"
+  name="MDXAccordionItemPropsKO"
+/>
+
+### AccordionContent
+
+<AutoTypeTable
+  path="src/app/preview/montage/types/accordion.ts"
+  name="MDXAccordionContentPropsKO"
+/>
