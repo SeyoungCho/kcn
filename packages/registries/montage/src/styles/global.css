@@ -1,3 +1,9 @@
+/*
+ * Tailwind CSS 4 의 입구 — 토큰(theme.css)을 Tailwind 클래스로 잇는다.
+ * Tailwind 의 기본 색은 끄고 montage 팔레트(blue-50 · cool-neutral-10 …), 시맨틱 색(text-fg-neutral-primary · bg-surface-brand-primary ·
+ * border-line-neutral-secondary …)과 shadcn 시맨틱 색(bg-primary …)만 둔다.
+ * 글자 크기는 text-display1 ~ text-caption2(크기 · 줄 높이 · 자간), 모서리는 rounded-4 ~ rounded-32.
+ */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./theme.css";
@@ -5,6 +11,256 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: var(--white);
+  --color-black: var(--black);
+
+  /* 팔레트 */
+  --color-blue-10: var(--blue-10);
+  --color-blue-20: var(--blue-20);
+  --color-blue-30: var(--blue-30);
+  --color-blue-40: var(--blue-40);
+  --color-blue-45: var(--blue-45);
+  --color-blue-50: var(--blue-50);
+  --color-blue-55: var(--blue-55);
+  --color-blue-60: var(--blue-60);
+  --color-blue-65: var(--blue-65);
+  --color-blue-70: var(--blue-70);
+  --color-blue-80: var(--blue-80);
+  --color-blue-90: var(--blue-90);
+  --color-blue-95: var(--blue-95);
+  --color-blue-99: var(--blue-99);
+  --color-cool-neutral-5: var(--cool-neutral-5);
+  --color-cool-neutral-7: var(--cool-neutral-7);
+  --color-cool-neutral-10: var(--cool-neutral-10);
+  --color-cool-neutral-15: var(--cool-neutral-15);
+  --color-cool-neutral-17: var(--cool-neutral-17);
+  --color-cool-neutral-20: var(--cool-neutral-20);
+  --color-cool-neutral-22: var(--cool-neutral-22);
+  --color-cool-neutral-23: var(--cool-neutral-23);
+  --color-cool-neutral-25: var(--cool-neutral-25);
+  --color-cool-neutral-30: var(--cool-neutral-30);
+  --color-cool-neutral-40: var(--cool-neutral-40);
+  --color-cool-neutral-50: var(--cool-neutral-50);
+  --color-cool-neutral-60: var(--cool-neutral-60);
+  --color-cool-neutral-70: var(--cool-neutral-70);
+  --color-cool-neutral-80: var(--cool-neutral-80);
+  --color-cool-neutral-90: var(--cool-neutral-90);
+  --color-cool-neutral-95: var(--cool-neutral-95);
+  --color-cool-neutral-96: var(--cool-neutral-96);
+  --color-cool-neutral-97: var(--cool-neutral-97);
+  --color-cool-neutral-98: var(--cool-neutral-98);
+  --color-cool-neutral-99: var(--cool-neutral-99);
+  --color-cyan-10: var(--cyan-10);
+  --color-cyan-20: var(--cyan-20);
+  --color-cyan-30: var(--cyan-30);
+  --color-cyan-40: var(--cyan-40);
+  --color-cyan-50: var(--cyan-50);
+  --color-cyan-60: var(--cyan-60);
+  --color-cyan-70: var(--cyan-70);
+  --color-cyan-80: var(--cyan-80);
+  --color-cyan-90: var(--cyan-90);
+  --color-cyan-95: var(--cyan-95);
+  --color-cyan-99: var(--cyan-99);
+  --color-green-10: var(--green-10);
+  --color-green-20: var(--green-20);
+  --color-green-30: var(--green-30);
+  --color-green-40: var(--green-40);
+  --color-green-50: var(--green-50);
+  --color-green-60: var(--green-60);
+  --color-green-70: var(--green-70);
+  --color-green-80: var(--green-80);
+  --color-green-90: var(--green-90);
+  --color-green-95: var(--green-95);
+  --color-green-99: var(--green-99);
+  --color-light-blue-10: var(--light-blue-10);
+  --color-light-blue-20: var(--light-blue-20);
+  --color-light-blue-30: var(--light-blue-30);
+  --color-light-blue-40: var(--light-blue-40);
+  --color-light-blue-50: var(--light-blue-50);
+  --color-light-blue-60: var(--light-blue-60);
+  --color-light-blue-70: var(--light-blue-70);
+  --color-light-blue-80: var(--light-blue-80);
+  --color-light-blue-90: var(--light-blue-90);
+  --color-light-blue-95: var(--light-blue-95);
+  --color-light-blue-99: var(--light-blue-99);
+  --color-lime-10: var(--lime-10);
+  --color-lime-20: var(--lime-20);
+  --color-lime-30: var(--lime-30);
+  --color-lime-37: var(--lime-37);
+  --color-lime-40: var(--lime-40);
+  --color-lime-50: var(--lime-50);
+  --color-lime-60: var(--lime-60);
+  --color-lime-70: var(--lime-70);
+  --color-lime-80: var(--lime-80);
+  --color-lime-90: var(--lime-90);
+  --color-lime-95: var(--lime-95);
+  --color-lime-99: var(--lime-99);
+  --color-neutral-5: var(--neutral-5);
+  --color-neutral-10: var(--neutral-10);
+  --color-neutral-15: var(--neutral-15);
+  --color-neutral-20: var(--neutral-20);
+  --color-neutral-22: var(--neutral-22);
+  --color-neutral-30: var(--neutral-30);
+  --color-neutral-40: var(--neutral-40);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-60: var(--neutral-60);
+  --color-neutral-70: var(--neutral-70);
+  --color-neutral-80: var(--neutral-80);
+  --color-neutral-90: var(--neutral-90);
+  --color-neutral-95: var(--neutral-95);
+  --color-neutral-99: var(--neutral-99);
+  --color-orange-10: var(--orange-10);
+  --color-orange-20: var(--orange-20);
+  --color-orange-30: var(--orange-30);
+  --color-orange-39: var(--orange-39);
+  --color-orange-40: var(--orange-40);
+  --color-orange-50: var(--orange-50);
+  --color-orange-60: var(--orange-60);
+  --color-orange-70: var(--orange-70);
+  --color-orange-80: var(--orange-80);
+  --color-orange-90: var(--orange-90);
+  --color-orange-95: var(--orange-95);
+  --color-orange-99: var(--orange-99);
+  --color-pink-10: var(--pink-10);
+  --color-pink-20: var(--pink-20);
+  --color-pink-30: var(--pink-30);
+  --color-pink-40: var(--pink-40);
+  --color-pink-46: var(--pink-46);
+  --color-pink-50: var(--pink-50);
+  --color-pink-60: var(--pink-60);
+  --color-pink-70: var(--pink-70);
+  --color-pink-80: var(--pink-80);
+  --color-pink-90: var(--pink-90);
+  --color-pink-95: var(--pink-95);
+  --color-pink-99: var(--pink-99);
+  --color-purple-10: var(--purple-10);
+  --color-purple-20: var(--purple-20);
+  --color-purple-30: var(--purple-30);
+  --color-purple-40: var(--purple-40);
+  --color-purple-50: var(--purple-50);
+  --color-purple-60: var(--purple-60);
+  --color-purple-70: var(--purple-70);
+  --color-purple-80: var(--purple-80);
+  --color-purple-90: var(--purple-90);
+  --color-purple-95: var(--purple-95);
+  --color-purple-99: var(--purple-99);
+  --color-red-10: var(--red-10);
+  --color-red-20: var(--red-20);
+  --color-red-30: var(--red-30);
+  --color-red-40: var(--red-40);
+  --color-red-50: var(--red-50);
+  --color-red-60: var(--red-60);
+  --color-red-70: var(--red-70);
+  --color-red-80: var(--red-80);
+  --color-red-90: var(--red-90);
+  --color-red-95: var(--red-95);
+  --color-red-99: var(--red-99);
+  --color-violet-10: var(--violet-10);
+  --color-violet-20: var(--violet-20);
+  --color-violet-30: var(--violet-30);
+  --color-violet-40: var(--violet-40);
+  --color-violet-45: var(--violet-45);
+  --color-violet-50: var(--violet-50);
+  --color-violet-60: var(--violet-60);
+  --color-violet-70: var(--violet-70);
+  --color-violet-80: var(--violet-80);
+  --color-violet-90: var(--violet-90);
+  --color-violet-95: var(--violet-95);
+  --color-violet-99: var(--violet-99);
+  --color-red-orange-10: var(--red-orange-10);
+  --color-red-orange-20: var(--red-orange-20);
+  --color-red-orange-30: var(--red-orange-30);
+  --color-red-orange-40: var(--red-orange-40);
+  --color-red-orange-48: var(--red-orange-48);
+  --color-red-orange-50: var(--red-orange-50);
+  --color-red-orange-60: var(--red-orange-60);
+  --color-red-orange-70: var(--red-orange-70);
+  --color-red-orange-80: var(--red-orange-80);
+  --color-red-orange-90: var(--red-orange-90);
+  --color-red-orange-95: var(--red-orange-95);
+  --color-red-orange-99: var(--red-orange-99);
+
+  /* 시맨틱 */
+  --color-fg-neutral-primary: var(--fg-neutral-primary);
+  --color-fg-neutral-strong: var(--fg-neutral-strong);
+  --color-fg-neutral-secondary: var(--fg-neutral-secondary);
+  --color-fg-neutral-tertiary: var(--fg-neutral-tertiary);
+  --color-fg-neutral-quaternary: var(--fg-neutral-quaternary);
+  --color-fg-neutral-inverse: var(--fg-neutral-inverse);
+  --color-fg-brand-primary: var(--fg-brand-primary);
+  --color-fg-brand-inverse: var(--fg-brand-inverse);
+  --color-fg-positive-primary: var(--fg-positive-primary);
+  --color-fg-cautionary-primary: var(--fg-cautionary-primary);
+  --color-fg-negative-primary: var(--fg-negative-primary);
+  --color-fg-negative-strong: var(--fg-negative-strong);
+  --color-fg-disable-primary: var(--fg-disable-primary);
+  --color-fg-inactive-primary: var(--fg-inactive-primary);
+  --color-fg-accent-lime: var(--fg-accent-lime);
+  --color-fg-accent-cyan: var(--fg-accent-cyan);
+  --color-fg-accent-light-blue: var(--fg-accent-light-blue);
+  --color-fg-accent-violet: var(--fg-accent-violet);
+  --color-fg-accent-purple: var(--fg-accent-purple);
+  --color-fg-accent-pink: var(--fg-accent-pink);
+  --color-bg-neutral-primary: var(--bg-neutral-primary);
+  --color-bg-neutral-secondary: var(--bg-neutral-secondary);
+  --color-surface-neutral-primary: var(--surface-neutral-primary);
+  --color-surface-neutral-secondary: var(--surface-neutral-secondary);
+  --color-surface-neutral-tertiary: var(--surface-neutral-tertiary);
+  --color-surface-neutral-strong: var(--surface-neutral-strong);
+  --color-surface-neutral-inverse: var(--surface-neutral-inverse);
+  --color-surface-elevated-primary: var(--surface-elevated-primary);
+  --color-surface-elevated-secondary: var(--surface-elevated-secondary);
+  --color-surface-brand-primary: var(--surface-brand-primary);
+  --color-surface-brand-strong: var(--surface-brand-strong);
+  --color-surface-brand-heavy: var(--surface-brand-heavy);
+  --color-surface-brand-subtle: var(--surface-brand-subtle);
+  --color-surface-positive-primary: var(--surface-positive-primary);
+  --color-surface-cautionary-primary: var(--surface-cautionary-primary);
+  --color-surface-negative-primary: var(--surface-negative-primary);
+  --color-surface-negative-strong: var(--surface-negative-strong);
+  --color-surface-disable-primary: var(--surface-disable-primary);
+  --color-surface-accent-lime: var(--surface-accent-lime);
+  --color-surface-accent-lime-opaque: var(--surface-accent-lime-opaque);
+  --color-surface-accent-cyan: var(--surface-accent-cyan);
+  --color-surface-accent-cyan-opaque: var(--surface-accent-cyan-opaque);
+  --color-surface-accent-light-blue: var(--surface-accent-light-blue);
+  --color-surface-accent-light-blue-opaque: var(
+    --surface-accent-light-blue-opaque
+  );
+  --color-surface-accent-violet: var(--surface-accent-violet);
+  --color-surface-accent-violet-opaque: var(--surface-accent-violet-opaque);
+  --color-surface-accent-purple: var(--surface-accent-purple);
+  --color-surface-accent-purple-opaque: var(--surface-accent-purple-opaque);
+  --color-surface-accent-pink: var(--surface-accent-pink);
+  --color-surface-accent-pink-opaque: var(--surface-accent-pink-opaque);
+  --color-line-neutral-primary: var(--line-neutral-primary);
+  --color-line-neutral-primary-opaque: var(--line-neutral-primary-opaque);
+  --color-line-neutral-secondary: var(--line-neutral-secondary);
+  --color-line-neutral-secondary-opaque: var(--line-neutral-secondary-opaque);
+  --color-line-neutral-tertiary: var(--line-neutral-tertiary);
+  --color-line-neutral-tertiary-opaque: var(--line-neutral-tertiary-opaque);
+  --color-line-brand-primary: var(--line-brand-primary);
+  --color-line-brand-strong: var(--line-brand-strong);
+  --color-line-brand-focus: var(--line-brand-focus);
+  --color-line-cautionary-primary: var(--line-cautionary-primary);
+  --color-line-positive-primary: var(--line-positive-primary);
+  --color-line-negative-primary: var(--line-negative-primary);
+  --color-line-negative-strong: var(--line-negative-strong);
+  --color-line-negative-focus: var(--line-negative-focus);
+  --color-line-accent-lime: var(--line-accent-lime);
+  --color-line-accent-cyan: var(--line-accent-cyan);
+  --color-line-accent-light-blue: var(--line-accent-light-blue);
+  --color-line-accent-violet: var(--line-accent-violet);
+  --color-line-accent-purple: var(--line-accent-purple);
+  --color-line-accent-pink: var(--line-accent-pink);
+  --color-effect-dimmer: var(--effect-dimmer);
+  --color-effect-transparent-primary: var(--effect-transparent-primary);
+  --color-effect-transparent-secondary: var(--effect-transparent-secondary);
+
+  /* shadcn 시맨틱 */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -24,37 +280,241 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --color-overlay: var(--overlay);
+
+  /* 글자 */
+  --text-display1: var(--font-size-display1);
+  --text-display1--line-height: var(--line-height-display1);
+  --text-display1--letter-spacing: var(--letter-spacing-display1);
+  --text-display2: var(--font-size-display2);
+  --text-display2--line-height: var(--line-height-display2);
+  --text-display2--letter-spacing: var(--letter-spacing-display2);
+  --text-display3: var(--font-size-display3);
+  --text-display3--line-height: var(--line-height-display3);
+  --text-display3--letter-spacing: var(--letter-spacing-display3);
+  --text-title1: var(--font-size-title1);
+  --text-title1--line-height: var(--line-height-title1);
+  --text-title1--letter-spacing: var(--letter-spacing-title1);
+  --text-title2: var(--font-size-title2);
+  --text-title2--line-height: var(--line-height-title2);
+  --text-title2--letter-spacing: var(--letter-spacing-title2);
+  --text-title3: var(--font-size-title3);
+  --text-title3--line-height: var(--line-height-title3);
+  --text-title3--letter-spacing: var(--letter-spacing-title3);
+  --text-heading1: var(--font-size-heading1);
+  --text-heading1--line-height: var(--line-height-heading1);
+  --text-heading1--letter-spacing: var(--letter-spacing-heading1);
+  --text-heading2: var(--font-size-heading2);
+  --text-heading2--line-height: var(--line-height-heading2);
+  --text-heading2--letter-spacing: var(--letter-spacing-heading2);
+  --text-headline1: var(--font-size-headline1);
+  --text-headline1--line-height: var(--line-height-headline1);
+  --text-headline1--letter-spacing: var(--letter-spacing-headline1);
+  --text-headline2: var(--font-size-headline2);
+  --text-headline2--line-height: var(--line-height-headline2);
+  --text-headline2--letter-spacing: var(--letter-spacing-headline2);
+  --text-body1: var(--font-size-body1);
+  --text-body1--line-height: var(--line-height-body1);
+  --text-body1--letter-spacing: var(--letter-spacing-body1);
+  --text-body1-reading: var(--font-size-body1-reading);
+  --text-body1-reading--line-height: var(--line-height-body1-reading);
+  --text-body1-reading--letter-spacing: var(--letter-spacing-body1-reading);
+  --text-body2: var(--font-size-body2);
+  --text-body2--line-height: var(--line-height-body2);
+  --text-body2--letter-spacing: var(--letter-spacing-body2);
+  --text-body2-reading: var(--font-size-body2-reading);
+  --text-body2-reading--line-height: var(--line-height-body2-reading);
+  --text-body2-reading--letter-spacing: var(--letter-spacing-body2-reading);
+  --text-label1: var(--font-size-label1);
+  --text-label1--line-height: var(--line-height-label1);
+  --text-label1--letter-spacing: var(--letter-spacing-label1);
+  --text-label1-reading: var(--font-size-label1-reading);
+  --text-label1-reading--line-height: var(--line-height-label1-reading);
+  --text-label1-reading--letter-spacing: var(--letter-spacing-label1-reading);
+  --text-label2: var(--font-size-label2);
+  --text-label2--line-height: var(--line-height-label2);
+  --text-label2--letter-spacing: var(--letter-spacing-label2);
+  --text-caption1: var(--font-size-caption1);
+  --text-caption1--line-height: var(--line-height-caption1);
+  --text-caption1--letter-spacing: var(--letter-spacing-caption1);
+  --text-caption2: var(--font-size-caption2);
+  --text-caption2--line-height: var(--line-height-caption2);
+  --text-caption2--letter-spacing: var(--letter-spacing-caption2);
 
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-serif: var(--font-serif);
+  --font-heading: var(--font-sans);
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  /* 모서리 */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-28: 28px;
+  --radius-32: 32px;
 
-  --shadow-2xs: var(--shadow-2xs);
+  /* 그림자 */
   --shadow-xs: var(--shadow-xs);
   --shadow-sm: var(--shadow-sm);
-  --shadow: var(--shadow);
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
+  --shadow-spread-sm: var(--shadow-spread-sm);
+  --shadow-spread-md: var(--shadow-spread-md);
+  --drop-shadow-xs: var(--drop-shadow-xs);
+  --drop-shadow-sm: var(--drop-shadow-sm);
+  --drop-shadow-md: var(--drop-shadow-md);
+  --drop-shadow-lg: var(--drop-shadow-lg);
+  --drop-shadow-xl: var(--drop-shadow-xl);
+}
+
+/* 피드백 부품(spinner · skeleton)의 키프레임 — global.css 맨 아래에 붙인다 */
+
+/* Spinner default — 원호가 늘었다(3/4) 줄었다(0) 하며 네 번에 한 바퀴를 돈다. 둘레 2π·12.5 ≈ 78.54 */
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 0 78.54;
+    stroke-dashoffset: 0;
+  }
+  12.5% {
+    stroke-dasharray: 58.905 19.635;
+    stroke-dashoffset: 0;
+  }
+  25% {
+    stroke-dasharray: 0 78.54;
+    stroke-dashoffset: -58.905;
+  }
+  37.5% {
+    stroke-dasharray: 58.905 19.635;
+    stroke-dashoffset: -58.905;
+  }
+  50% {
+    stroke-dasharray: 0 78.54;
+    stroke-dashoffset: -117.81;
+  }
+  62.5% {
+    stroke-dasharray: 58.905 19.635;
+    stroke-dashoffset: -117.81;
+  }
+  75% {
+    stroke-dasharray: 0 78.54;
+    stroke-dashoffset: -176.715;
+  }
+  87.5% {
+    stroke-dasharray: 58.905 19.635;
+    stroke-dashoffset: -176.715;
+  }
+  100% {
+    stroke-dasharray: 0 78.54;
+    stroke-dashoffset: -235.62;
+  }
+}
+
+@keyframes spinner-rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* Spinner brand — 도형이 0 → 1 → 0 으로 부풀었다 줄고(앞 2/3), 나머지 1/3 은 숨어 있다 */
+@keyframes spinner-pop {
+  0%,
+  66.6667%,
+  100% {
+    scale: 0;
+  }
+  33.3333% {
+    scale: 1;
+  }
+}
+
+@keyframes spinner-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 색은 Spinner 가 정한 --spinner-accent-* 를 쓴다(어두운 화면에서 바뀐다) */
+@keyframes spinner-color {
+  0%,
+  100% {
+    fill: var(--color-fg-brand-primary);
+  }
+  25%,
+  75% {
+    fill: var(--spinner-accent-pink);
+  }
+  50% {
+    fill: var(--spinner-accent-orange);
+  }
+}
+
+/* Skeleton — 반쯤 비쳤다(0.5) 또렷해졌다(1) 다시 비친다 */
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/*
+ * 가로로 스크롤되는 줄(탭 · 칩 탭) — 스크롤이 남은 쪽 가장자리를 48px 에 걸쳐 흐리게 지운다.
+ * 스크롤 위치를 따라가는 애니메이션(animation-timeline: scroll())으로 양쪽 폭을 바꾼다. 넘치지 않으면 지우지 않는다.
+ * 이 기능이 없는 브라우저에서는 지우지 않는다.
+ */
+@property --scroll-fade-start {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --scroll-fade-end {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+@keyframes scroll-fade-x {
+  from {
+    --scroll-fade-start: 0px;
+    --scroll-fade-end: 48px;
+  }
+  1% {
+    --scroll-fade-start: 48px;
+  }
+  99% {
+    --scroll-fade-end: 48px;
+  }
+  to {
+    --scroll-fade-start: 48px;
+    --scroll-fade-end: 0px;
+  }
+}
+
+@utility scroll-fade-x {
+  @supports (animation-timeline: scroll()) {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 var(--scroll-fade-start),
+      #000 calc(100% - var(--scroll-fade-end)),
+      transparent
+    );
+    animation: scroll-fade-x linear both;
+    animation-timeline: scroll(self inline);
+  }
 }
 
 @layer base {
@@ -63,5 +523,8 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans antialiased;
   }
 }

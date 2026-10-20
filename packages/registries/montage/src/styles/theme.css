@@ -1,125 +1,463 @@
+/*
+ * 디자인 토큰 — montage 의 색 · 글자 · 그림자 값.
+ * 팔레트(--blue-50 · --cool-neutral-10 …)는 밝을 때와 어두울 때가 같고, 시맨틱 토큰(--fg-* · --bg-* · --surface-* · --line-*)이 바뀐다.
+ * 글자는 display1 ~ caption2 의 크기 · 줄 높이 · 자간이다.
+ *
+ * 부품은 이 변수를 직접 쓰지 않고 global.css 가 이어 준 Tailwind 클래스(text-fg-neutral-primary · bg-surface-brand-primary · text-body1 …)로 쓴다.
+ * 밝게 · 어둡게 — `:root` 에 밝은 값, `.dark` 에 어두운 값.
+ */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.5635 0.241 260.82);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.81 0.1 252);
-  --chart-2: oklch(0.62 0.19 260);
-  --chart-3: oklch(0.55 0.22 263);
-  --chart-4: oklch(0.49 0.22 264);
-  --chart-5: oklch(0.42 0.18 266);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  color-scheme: light;
+
+  /* 팔레트 — 밝을 때 · 어두울 때 같다 */
+  --white: #ffffff;
+  --black: #000000;
+  /* blue */
+  --blue-10: #001536;
+  --blue-20: #002966;
+  --blue-30: #003e9c;
+  --blue-40: #0054d1;
+  --blue-45: #005eeb;
+  --blue-50: #0066ff;
+  --blue-55: #1a75ff;
+  --blue-60: #3385ff;
+  --blue-65: #4f95ff;
+  --blue-70: #69a5ff;
+  --blue-80: #9ec5ff;
+  --blue-90: #c9defe;
+  --blue-95: #eaf2fe;
+  --blue-99: #f7fbff;
+  /* cool-neutral */
+  --cool-neutral-5: #0f0f10;
+  --cool-neutral-7: #141415;
+  --cool-neutral-10: #171719;
+  --cool-neutral-15: #1b1c1e;
+  --cool-neutral-17: #212225;
+  --cool-neutral-20: #292a2d;
+  --cool-neutral-22: #2e2f33;
+  --cool-neutral-23: #333438;
+  --cool-neutral-25: #37383c;
+  --cool-neutral-30: #46474c;
+  --cool-neutral-40: #5a5c63;
+  --cool-neutral-50: #70737c;
+  --cool-neutral-60: #878a93;
+  --cool-neutral-70: #989ba2;
+  --cool-neutral-80: #aeb0b6;
+  --cool-neutral-90: #c2c4c8;
+  --cool-neutral-95: #dbdcdf;
+  --cool-neutral-96: #e1e2e4;
+  --cool-neutral-97: #eaebec;
+  --cool-neutral-98: #f4f4f5;
+  --cool-neutral-99: #f7f7f8;
+  /* cyan */
+  --cyan-10: #00252b;
+  --cyan-20: #004854;
+  --cyan-30: #006f82;
+  --cyan-40: #0098b2;
+  --cyan-50: #00bdde;
+  --cyan-60: #28d0ed;
+  --cyan-70: #57dff7;
+  --cyan-80: #8aedff;
+  --cyan-90: #b5f4ff;
+  --cyan-95: #defaff;
+  --cyan-99: #f7feff;
+  /* green */
+  --green-10: #00240c;
+  --green-20: #004517;
+  --green-30: #006e25;
+  --green-40: #009632;
+  --green-50: #00bf40;
+  --green-60: #1ed45a;
+  --green-70: #49e57d;
+  --green-80: #7df5a5;
+  --green-90: #acfcc7;
+  --green-95: #d9ffe6;
+  --green-99: #f2fff6;
+  /* light-blue */
+  --light-blue-10: #002130;
+  --light-blue-20: #004261;
+  --light-blue-30: #006796;
+  --light-blue-40: #008dcf;
+  --light-blue-50: #00aeff;
+  --light-blue-60: #3dc2ff;
+  --light-blue-70: #70d2ff;
+  --light-blue-80: #a1e1ff;
+  --light-blue-90: #c4ecfe;
+  --light-blue-95: #e5f6fe;
+  --light-blue-99: #f7fdff;
+  /* lime */
+  --lime-10: #112900;
+  --lime-20: #225200;
+  --lime-30: #347d00;
+  --lime-37: #429e00;
+  --lime-40: #48ad00;
+  --lime-50: #58cf04;
+  --lime-60: #6be016;
+  --lime-70: #88f03e;
+  --lime-80: #aef779;
+  --lime-90: #ccfca9;
+  --lime-95: #e6ffd4;
+  --lime-99: #f8fff2;
+  /* neutral */
+  --neutral-5: #0f0f0f;
+  --neutral-10: #171717;
+  --neutral-15: #1c1c1c;
+  --neutral-20: #2a2a2a;
+  --neutral-22: #303030;
+  --neutral-30: #474747;
+  --neutral-40: #5c5c5c;
+  --neutral-50: #737373;
+  --neutral-60: #8a8a8a;
+  --neutral-70: #9b9b9b;
+  --neutral-80: #b0b0b0;
+  --neutral-90: #c4c4c4;
+  --neutral-95: #dcdcdc;
+  --neutral-99: #f7f7f7;
+  /* orange */
+  --orange-10: #361e00;
+  --orange-20: #663a00;
+  --orange-30: #9c5800;
+  --orange-39: #d17600;
+  --orange-40: #d47800;
+  --orange-50: #ff9200;
+  --orange-60: #ffa938;
+  --orange-70: #ffc06e;
+  --orange-80: #ffd49c;
+  --orange-90: #fee6c6;
+  --orange-95: #fef4e6;
+  --orange-99: #fffcf7;
+  /* pink */
+  --pink-10: #3d0133;
+  --pink-20: #730560;
+  --pink-30: #a81690;
+  --pink-40: #d331b8;
+  --pink-46: #e846cd;
+  --pink-50: #f553da;
+  --pink-60: #fa73e3;
+  --pink-70: #ff94ed;
+  --pink-80: #ffb8f3;
+  --pink-90: #fed3f7;
+  --pink-95: #feecfb;
+  --pink-99: #fffafe;
+  /* purple */
+  --purple-10: #290247;
+  --purple-20: #580a7d;
+  --purple-30: #861cb8;
+  --purple-40: #ad36e3;
+  --purple-50: #cb59ff;
+  --purple-60: #d478ff;
+  --purple-70: #de96ff;
+  --purple-80: #e9baff;
+  --purple-90: #f2d6ff;
+  --purple-95: #f9edff;
+  --purple-99: #fefbff;
+  /* red */
+  --red-10: #3b0101;
+  --red-20: #730303;
+  --red-30: #b00c0c;
+  --red-40: #e52222;
+  --red-50: #ff4242;
+  --red-60: #ff6363;
+  --red-70: #ff8c8c;
+  --red-80: #ffb5b5;
+  --red-90: #fed5d5;
+  --red-95: #feecec;
+  --red-99: #fffafa;
+  /* violet */
+  --violet-10: #11024d;
+  --violet-20: #23098f;
+  --violet-30: #3a16c9;
+  --violet-40: #4f29e5;
+  --violet-45: #5b37ed;
+  --violet-50: #6541f2;
+  --violet-60: #7d5ef7;
+  --violet-70: #9e86fc;
+  --violet-80: #c0b0ff;
+  --violet-90: #dbd3fe;
+  --violet-95: #f0ecfe;
+  --violet-99: #fbfaff;
+  /* red-orange */
+  --red-orange-10: #290f00;
+  --red-orange-20: #592100;
+  --red-orange-30: #913500;
+  --red-orange-40: #c94a00;
+  --red-orange-48: #f55a00;
+  --red-orange-50: #ff5e00;
+  --red-orange-60: #ff7b2e;
+  --red-orange-70: #ff9b61;
+  --red-orange-80: #ffbd96;
+  --red-orange-90: #fed9c4;
+  --red-orange-95: #feeee5;
+  --red-orange-99: #fffaf7;
+
+  /* 시맨틱 — 밝을 때 */
+  /* foreground */
+  --fg-neutral-primary: #171719;
+  --fg-neutral-strong: #000000;
+  --fg-neutral-secondary: #2e2f33e0;
+  --fg-neutral-tertiary: #37383c9c;
+  --fg-neutral-quaternary: #37383c47;
+  --fg-neutral-inverse: #f7f7f8;
+  --fg-brand-primary: #0066ff;
+  --fg-brand-inverse: #3385ff;
+  --fg-positive-primary: #00bf40;
+  --fg-cautionary-primary: #ff9200;
+  --fg-negative-primary: #ff4242;
+  --fg-negative-strong: #e52222;
+  --fg-disable-primary: #37383c29;
+  --fg-inactive-primary: #989ba2;
+  --fg-accent-lime: #429e00;
+  --fg-accent-cyan: #0098b2;
+  --fg-accent-light-blue: #008dcf;
+  --fg-accent-violet: #5b37ed;
+  --fg-accent-purple: #ad36e3;
+  --fg-accent-pink: #e846cd;
+  /* background */
+  --bg-neutral-primary: #ffffff;
+  --bg-neutral-secondary: #f7f7f8;
+  /* surface */
+  --surface-neutral-primary: #ffffff;
+  --surface-neutral-secondary: #70737c14;
+  --surface-neutral-tertiary: #70737c0d;
+  --surface-neutral-strong: #70737c29;
+  --surface-neutral-inverse: #1b1c1e;
+  --surface-elevated-primary: #ffffff;
+  --surface-elevated-secondary: #f7f7f8;
+  --surface-brand-primary: #0066ff;
+  --surface-brand-strong: #005eeb;
+  --surface-brand-heavy: #0054d1;
+  --surface-brand-subtle: #0066ff0d;
+  --surface-positive-primary: #00bf4014;
+  --surface-cautionary-primary: #ff920014;
+  --surface-negative-primary: #ff424214;
+  --surface-negative-strong: #ff42421f;
+  --surface-disable-primary: #f4f4f5;
+  --surface-accent-lime: #58cf0414;
+  --surface-accent-lime-opaque: #58cf04;
+  --surface-accent-cyan: #00bdde14;
+  --surface-accent-cyan-opaque: #00bdde;
+  --surface-accent-light-blue: #00aeff14;
+  --surface-accent-light-blue-opaque: #00aeff;
+  --surface-accent-violet: #6541f214;
+  --surface-accent-violet-opaque: #6541f2;
+  --surface-accent-purple: #cb59ff14;
+  --surface-accent-purple-opaque: #cb59ff;
+  --surface-accent-pink: #f553da14;
+  --surface-accent-pink-opaque: #f553da;
+  /* line */
+  --line-neutral-primary: #70737c38;
+  --line-neutral-primary-opaque: #e1e2e4;
+  --line-neutral-secondary: #70737c29;
+  --line-neutral-secondary-opaque: #eaebec;
+  --line-neutral-tertiary: #70737c14;
+  --line-neutral-tertiary-opaque: #f4f4f5;
+  --line-brand-primary: #0066ff47;
+  --line-brand-strong: #0066ff6e;
+  --line-brand-focus: #0066ff1f;
+  --line-cautionary-primary: #ff92006e;
+  --line-positive-primary: #00bf406e;
+  --line-negative-primary: #ff42426e;
+  --line-negative-strong: #ff424285;
+  --line-negative-focus: #ff42421f;
+  --line-accent-lime: #429e006e;
+  --line-accent-cyan: #0098b26e;
+  --line-accent-light-blue: #008dcf6e;
+  --line-accent-violet: #5b37ed6e;
+  --line-accent-purple: #ad36e36e;
+  --line-accent-pink: #e846cd6e;
+  /* effect */
+  --effect-dimmer: #17171985;
+  --effect-transparent-primary: #ffffff14;
+  --effect-transparent-secondary: #ffffff47;
+
+  /* 글자 — display1(가장 큼) ~ caption2 */
+  --font-size-display1: 3.5rem;
+  --line-height-display1: 4.5rem;
+  --letter-spacing-display1: -0.0319em;
+  --font-size-display2: 2.5rem;
+  --line-height-display2: 3.25rem;
+  --letter-spacing-display2: -0.0282em;
+  --font-size-display3: 2.25rem;
+  --line-height-display3: 3rem;
+  --letter-spacing-display3: -0.027em;
+  --font-size-title1: 2rem;
+  --line-height-title1: 2.75rem;
+  --letter-spacing-title1: -0.0253em;
+  --font-size-title2: 1.75rem;
+  --line-height-title2: 2.375rem;
+  --letter-spacing-title2: -0.0236em;
+  --font-size-title3: 1.5rem;
+  --line-height-title3: 2rem;
+  --letter-spacing-title3: -0.023em;
+  --font-size-heading1: 1.375rem;
+  --line-height-heading1: 1.875rem;
+  --letter-spacing-heading1: -0.0194em;
+  --font-size-heading2: 1.25rem;
+  --line-height-heading2: 1.75rem;
+  --letter-spacing-heading2: -0.012em;
+  --font-size-headline1: 1.125rem;
+  --line-height-headline1: 1.625rem;
+  --letter-spacing-headline1: -0.002em;
+  --font-size-headline2: 1.0625rem;
+  --line-height-headline2: 1.5rem;
+  --letter-spacing-headline2: 0em;
+  --font-size-body1: 1rem;
+  --line-height-body1: 1.5rem;
+  --letter-spacing-body1: 0.0057em;
+  --font-size-body1-reading: 1rem;
+  --line-height-body1-reading: 1.625rem;
+  --letter-spacing-body1-reading: 0.0057em;
+  --font-size-body2: 0.9375rem;
+  --line-height-body2: 1.375rem;
+  --letter-spacing-body2: 0.0096em;
+  --font-size-body2-reading: 0.9375rem;
+  --line-height-body2-reading: 1.5rem;
+  --letter-spacing-body2-reading: 0.0096em;
+  --font-size-label1: 0.875rem;
+  --line-height-label1: 1.25rem;
+  --letter-spacing-label1: 0.0145em;
+  --font-size-label1-reading: 0.875rem;
+  --line-height-label1-reading: 1.375rem;
+  --letter-spacing-label1-reading: 0.0145em;
+  --font-size-label2: 0.8125rem;
+  --line-height-label2: 1.125rem;
+  --letter-spacing-label2: 0.0194em;
+  --font-size-caption1: 0.75rem;
+  --line-height-caption1: 1rem;
+  --letter-spacing-caption1: 0.0252em;
+  --font-size-caption2: 0.6875rem;
+  --line-height-caption2: 0.875rem;
+  --letter-spacing-caption2: 0.0311em;
+
+  /* 그림자 — 밝을 때 · 어두울 때 같다 */
+  --shadow-xs: 0px 1px 2px -1px #1717171a;
+  --shadow-sm: 0px 2px 4px -2px #1717170f, 0px 4px 6px -1px #1717170f;
+  --shadow-md: 0px 4px 6px -2px #17171712, 0px 10px 15px -3px #17171712;
+  --shadow-lg: 0px 6px 10px -4px #17171714, 0px 16px 24px -6px #17171714;
+  --shadow-xl: 0px 10px 15px -5px #1717171a, 0px 24px 38px -10px #1717171f;
+  --shadow-spread-sm: 0px 0px 60px 0px #1717171a;
+  --shadow-spread-md: 0px 15px 75px 0px #17171729;
+  --drop-shadow-xs: drop-shadow(0px 1px 0.5px #1717170d);
+  --drop-shadow-sm: drop-shadow(0px 2px 1px #17171708)
+    drop-shadow(0px 4px 2.5px #17171708);
+  --drop-shadow-md: drop-shadow(0px 4px 2px #17171709)
+    drop-shadow(0px 10px 6px #17171709);
+  --drop-shadow-lg: drop-shadow(0px 6px 3px #1717170a)
+    drop-shadow(0px 16px 9px #17171708);
+  --drop-shadow-xl: drop-shadow(0px 10px 5px #1717170d)
+    drop-shadow(0px 24px 14px #1717170f);
+
   --font-sans:
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  --radius: 0.625rem;
-  --shadow-x: 0;
-  --shadow-y: 1px;
-  --shadow-blur: 3px;
-  --shadow-spread: 0px;
-  --shadow-opacity: 0.1;
-  --shadow-color: oklch(0 0 0);
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-md:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
-  --tracking-normal: 0em;
-  --spacing: 0.25rem;
+    "Pretendard JP Variable", "Pretendard JP", "Pretendard Variable",
+    Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
+
+  /* shadcn 시맨틱 토큰 — 위 시맨틱 토큰을 가리킨다 */
+  --background: var(--bg-neutral-primary);
+  --foreground: var(--fg-neutral-primary);
+  --card: var(--surface-neutral-primary);
+  --card-foreground: var(--fg-neutral-primary);
+  --popover: var(--surface-elevated-primary);
+  --popover-foreground: var(--fg-neutral-primary);
+  --primary: var(--surface-brand-primary);
+  --primary-foreground: var(--white);
+  --secondary: var(--surface-neutral-secondary);
+  --secondary-foreground: var(--fg-neutral-secondary);
+  --muted: var(--surface-neutral-tertiary);
+  --muted-foreground: var(--fg-neutral-tertiary);
+  --accent: var(--surface-neutral-secondary);
+  --accent-foreground: var(--fg-neutral-primary);
+  --destructive: var(--fg-negative-primary);
+  --destructive-foreground: var(--white);
+  --border: var(--line-neutral-secondary);
+  --input: var(--line-neutral-primary);
+  --ring: var(--line-brand-strong);
+  --overlay: var(--effect-dimmer);
+  --radius: 12px;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.269 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.6331 0.198 258.73);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.371 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.275 0 0);
-  --input: oklch(0.325 0 0);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.81 0.1 252);
-  --chart-2: oklch(0.62 0.19 260);
-  --chart-3: oklch(0.55 0.22 263);
-  --chart-4: oklch(0.49 0.22 264);
-  --chart-5: oklch(0.42 0.18 266);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.275 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
-  --font-sans:
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  --radius: 0.625rem;
-  --shadow-x: 0;
-  --shadow-y: 1px;
-  --shadow-blur: 3px;
-  --shadow-spread: 0px;
-  --shadow-opacity: 0.1;
-  --shadow-color: oklch(0 0 0);
-  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
-  --shadow-sm:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
-  --shadow-md:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-  --shadow-xl:
-    0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  color-scheme: dark;
+
+  /* 시맨틱 — 어두울 때 */
+  /* foreground */
+  --fg-neutral-primary: #f7f7f8;
+  --fg-neutral-strong: #ffffff;
+  --fg-neutral-secondary: #c2c4c8e0;
+  --fg-neutral-tertiary: #aeb0b69c;
+  --fg-neutral-quaternary: #aeb0b647;
+  --fg-neutral-inverse: #171719;
+  --fg-brand-primary: #3385ff;
+  --fg-brand-inverse: #0066ff;
+  --fg-positive-primary: #1ed45a;
+  --fg-cautionary-primary: #ffa938;
+  --fg-negative-primary: #ff6363;
+  --fg-negative-strong: #ff6363;
+  --fg-disable-primary: #989ba229;
+  --fg-inactive-primary: #5a5c63;
+  --fg-accent-lime: #58cf04;
+  --fg-accent-cyan: #00bdde;
+  --fg-accent-light-blue: #00aeff;
+  --fg-accent-violet: #9e86fc;
+  --fg-accent-purple: #d478ff;
+  --fg-accent-pink: #fa73e3;
+  /* background */
+  --bg-neutral-primary: #1b1c1e;
+  --bg-neutral-secondary: #0f0f10;
+  /* surface */
+  --surface-neutral-primary: #1b1c1e;
+  --surface-neutral-secondary: #70737c38;
+  --surface-neutral-tertiary: #70737c1f;
+  --surface-neutral-strong: #70737c47;
+  --surface-neutral-inverse: #ffffff;
+  --surface-elevated-primary: #212225;
+  --surface-elevated-secondary: #141415;
+  --surface-brand-primary: #3385ff;
+  --surface-brand-strong: #1a75ff;
+  --surface-brand-heavy: #0066ff;
+  --surface-brand-subtle: #3385ff0d;
+  --surface-positive-primary: #1ed45a14;
+  --surface-cautionary-primary: #ffa93814;
+  --surface-negative-primary: #ff636314;
+  --surface-negative-strong: #ff636338;
+  --surface-disable-primary: #2e2f33;
+  --surface-accent-lime: #6be01614;
+  --surface-accent-lime-opaque: #6be016;
+  --surface-accent-cyan: #28d0ed14;
+  --surface-accent-cyan-opaque: #28d0ed;
+  --surface-accent-light-blue: #3dc2ff14;
+  --surface-accent-light-blue-opaque: #3dc2ff;
+  --surface-accent-violet: #7d5ef714;
+  --surface-accent-violet-opaque: #7d5ef7;
+  --surface-accent-purple: #d478ff14;
+  --surface-accent-purple-opaque: #d478ff;
+  --surface-accent-pink: #fa73e314;
+  --surface-accent-pink-opaque: #fa73e3;
+  /* line */
+  --line-neutral-primary: #70737c52;
+  --line-neutral-primary-opaque: #37383c;
+  --line-neutral-secondary: #70737c47;
+  --line-neutral-secondary-opaque: #333438;
+  --line-neutral-tertiary: #70737c38;
+  --line-neutral-tertiary-opaque: #2e2f33;
+  --line-brand-primary: #3385ff47;
+  --line-brand-strong: #3385ff6e;
+  --line-brand-focus: #3385ff1f;
+  --line-positive-primary: #1ed45a6e;
+  --line-cautionary-primary: #ffa9386e;
+  --line-negative-primary: #ff63636e;
+  --line-negative-strong: #ff636385;
+  --line-negative-focus: #ff63631f;
+  --line-accent-lime: #58cf046e;
+  --line-accent-cyan: #00bdde6e;
+  --line-accent-light-blue: #00aeff6e;
+  --line-accent-violet: #9e86fc6e;
+  --line-accent-purple: #d478ff6e;
+  --line-accent-pink: #fa73e36e;
+  /* effect */
+  --effect-dimmer: #171719bd;
+  --effect-transparent-primary: #2122259c;
+  --effect-transparent-secondary: #2122259c;
 }
