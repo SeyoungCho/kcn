@@ -77,7 +77,7 @@ function inlineDictionary(
   // Drop the `const t = usePreviewDictionary().demos.<section>;` line.
   lines = lines.filter(
     (line) =>
-      !/^\s*const\s+t\s*=\s*usePreviewDictionary\(\)\.demos\.[A-Za-z_$][\w$]*;?\s*$/.test(
+      !/^\s*const\s+t\s*=\s*usePreviewDictionary\(\)\.demos(?:\.[A-Za-z_$][\w$]*)+;?\s*$/.test(
         line,
       ),
   );
@@ -135,6 +135,9 @@ function inlineDictionary(
     },
   );
 
+  // 4. Root indexing (`t[key].title`) → literal section object, keeping the index.
+  out = out.replace(/(?<![\w$.])t(?=\[)/g, () => JSON.stringify(sectionData));
+
   // Collapse the blank line left behind by the removed declaration.
   return out.replace(/\n{3,}/g, "\n\n");
 }
@@ -190,13 +193,22 @@ export async function GET(request: Request) {
   try {
     const raw = await readFile(normalizedPath, "utf8");
 
-    // Detect the dictionary section the demo reads, e.g. `.demos.select`.
+    // Detect the dictionary section the demo reads, e.g. `.demos.select` or
+    // a registry-namespaced one such as `.demos.tFlavored.badge`.
     const sectionMatch = raw.match(
-      /usePreviewDictionary\(\)\.demos\.([A-Za-z_$][\w$]*)/,
+      /usePreviewDictionary\(\)\.demos((?:\.[A-Za-z_$][\w$]*)+)/,
     );
-    const section = sectionMatch?.[1] ?? null;
+    const section = sectionMatch?.[1]?.slice(1) ?? null;
     const sectionData = section
-      ? ((await getDictionary(lang)).demos as Record<string, unknown>)[section]
+      ? section
+          .split(".")
+          .reduce<unknown>(
+            (node, key) =>
+              node && typeof node === "object"
+                ? (node as Record<string, unknown>)[key]
+                : undefined,
+            (await getDictionary(lang)).demos,
+          )
       : null;
 
     const code = toConsumerPreviewCode(

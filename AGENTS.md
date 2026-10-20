@@ -174,7 +174,7 @@ Demo files automatically inherit the registry's isolated theme via the parent `l
 
 **i18n in demos.** Demo previews follow the parent docs language automatically (`<Preview>` forwards it as `?lang=`, and each registry preview `layout.tsx` mounts `PreviewDictionaryProvider`). Localize a demo's static labels instead of hardcoding them:
 
-1. Add the strings to the `demos` section of `apps/website/src/dictionaries/{en,ko}.json` (keep both locales in sync; the `Dictionary` type is derived from `en.json`).
+1. Add the strings to the `demos` section of `apps/website/src/dictionaries/{en,ko}.json` (keep both locales in sync; the `Dictionary` type is derived from `en.json`). Sections are shared by every registry: seed's sit directly under `demos` (`demos.select`), other registries nest theirs under a registry key (`demos.tFlavored.badge`, read as `usePreviewDictionary().demos.tFlavored.badge`) so names like `badge` don't collide. `/api/preview-code` resolves nested sections too.
 2. Make the demo a `"use client"` component that reads the dictionary via the hook, then use `t.*` for every user-facing label:
 
    ```tsx
