@@ -190,9 +190,11 @@ Demo files automatically inherit the registry's isolated theme via the parent `l
 
    This keeps each demo a single file, so function-children demos (e.g. `select/select-format-function`) stay inline with no server/client split.
 
-**Code tab stays copy-paste clean.** Do NOT worry that `usePreviewDictionary`/`t.*` will leak into the Code tab. `/api/preview-code` strips the hook import + `const t = …` line and resolves every `t.<path>` to the literal dictionary value for the active language (so `<SelectItem>{t.fruits.apple}</SelectItem>` shows `{"Apple"}`, and `t.variants[variant]` shows `{…}[variant]`). Always reference labels through the single `const t = usePreviewDictionary().demos.<section>;` binding named `t` so the transform can resolve them.
+**Code tab stays copy-paste clean.** Do NOT worry that `usePreviewDictionary`/`t.*` will leak into the Code tab. `/api/preview-code` strips the hook import + `const t = …` line and resolves every `t.<path>` to the literal dictionary value for the active language (so `<SelectItem>{t.plants.monstera}</SelectItem>` shows `{"Monstera deliciosa"}`, and `t.variants[variant]` shows `{…}[variant]`). Always reference labels through the single `const t = usePreviewDictionary().demos.<section>;` binding named `t` so the transform can resolve them.
 
 Locale-neutral tokens (units, URLs like `https://`, currency codes, size codes such as `md`/`lg`) can stay literal.
+
+**Demo content.** Every registry's demos use one original setting — "Little Leaf", a houseplant shop with a plant-care app — never the sample content of the design system a registry was ported from. Shared vocabulary and writing rules: `.agents/skills/add-registry-component-docs/references/demo-content.md`.
 
 ### Adding a shared dependency
 

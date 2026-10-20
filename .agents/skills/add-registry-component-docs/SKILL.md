@@ -132,6 +132,19 @@ These rules apply to MDX pages (en and ko), the JSDoc in AutoTypeTable type file
 - **Prop JSDoc:** one short sentence per prop plus `@default`.
 - Korean uses 해요체; keep en and ko content equivalent. `apps/website/content/docs/t-flavored/button.mdx` / `button.ko.mdx` show the target length.
 
+## Demo Content
+
+Demos in every registry share one original setting — **Little Leaf**, a houseplant shop with a plant-care app. Read
+[`references/demo-content.md`](references/demo-content.md) before writing demo labels: it fixes the shared vocabulary
+(plants and prices, categories, statuses, delivery options, people, FAQ seeds) and the writing rules.
+
+- Never reuse the source design system's sample content (its products, services, FAQ, people or brand names). Readers should
+  see one kcn world across seed, t-flavored, montage and any new registry.
+- Pick the part of the app that makes the component look natural (shop, checkout & orders, care, plant-sitting, community,
+  account & settings) and reuse the shared vocabulary before inventing new items. The same fact reads the same everywhere
+  (a Monstera is ₩32,000 in every registry).
+- Labels that describe the API stay generic: variant, size and state names (`작게 · 보통 · 크게`, `비활성화`, `로딩 중`).
+
 ## AutoTypeTable Type Wrapper Shape
 
 Use this shape for API Reference type files and adapt the imported prop names to the component.
@@ -211,7 +224,7 @@ The Code tab displays this same demo file with `@repo/<registry-name>/ui/*` impo
 
 **Localize demo labels.** Demo previews follow the parent docs language automatically (`<Preview>` forwards it as a `?lang=` search param; each registry preview `layout.tsx` mounts `PreviewDictionaryProvider`). Do not hardcode user-facing strings in a demo:
 
-1. Add them to the `demos` section of `apps/website/src/dictionaries/{en,ko}.json` (keep both locales in sync; the `Dictionary` type is derived from `en.json`).
+1. Add them to the `demos` section of `apps/website/src/dictionaries/{en,ko}.json` (keep both locales in sync; the `Dictionary` type is derived from `en.json`). seed sections sit at `demos.<section>`; other registries nest under their key (`demos.tFlavored.<section>`, `demos.montage.<section>`). Write the content from the Little Leaf setting (see Demo Content).
 2. Make the demo a `"use client"` component that reads the dictionary via the hook, then use `t.*` for every label. Keep the binding named `t` and assigned on one line so the Code-tab transform can resolve it:
 
    ```tsx
@@ -227,7 +240,7 @@ The Code tab displays this same demo file with `@repo/<registry-name>/ui/*` impo
 
    Each demo stays a single file — function-children demos (e.g. `select/select-format-function`) remain inline with no server/client split.
 
-**The Code tab stays copy-paste clean automatically.** `/api/preview-code` strips the `usePreviewDictionary` import + `const t = …` line and resolves every `t.<path>` to the literal dictionary value for the active language (`{t.fruits.apple}` → `{"Apple"}`; dynamic `t.variants[variant]` → `{…}[variant]`). So write demos with `t.*`; the reader still sees plain literal strings.
+**The Code tab stays copy-paste clean automatically.** `/api/preview-code` strips the `usePreviewDictionary` import + `const t = …` line and resolves every `t.<path>` to the literal dictionary value for the active language (`{t.plants.monstera}` → `{"Monstera deliciosa"}`; dynamic `t.variants[variant]` → `{…}[variant]`). So write demos with `t.*`; the reader still sees plain literal strings.
 
 Locale-neutral tokens (units, URLs, currency/size codes) may stay literal.
 
