@@ -119,6 +119,19 @@ Use `apps/website/content/docs/seed/button.mdx` and `apps/website/content/docs/s
 
 For components without text children, use the same page order but make the heading-less default preview self-closing when appropriate.
 
+An optional `## Usage` section may sit between `## Installation` and `## Examples` when the reader needs to know something the API Reference doesn't make obvious.
+
+## Writing Style
+
+These rules apply to MDX pages (en and ko), the JSDoc in AutoTypeTable type files, and comments in registry component source (users copy those files).
+
+- **Name the source design system only on the registry's intro page.** When a registry is ported from or inspired by an external design system (e.g. t-flavored from the Toss Design System), say so once on `content/docs/<registry>/index.mdx` / `index.ko.mdx` ("inspired by …"). Component pages, prop docs and source comments never mention it — use the registry's own name (`t-flavored`) when a name is needed, and usually none is.
+- **Don't write provenance.** Skip sentences like "follows X", "taken from X", "behaves like X", and mapping notes such as "X's `BottomSheet.CTA` becomes `DrawerFooter`" or "X's `large` is our `default`". They add length without helping the reader.
+- **No precise design numbers in prose.** Leave out durations (`260ms`, `0.67초`), pixel sizes (`10px`, `양옆 32px`), opacities, scale factors (`0.96배`), easing curves and gesture thresholds. Describe qualitatively ("살짝 줄어들어요") or drop it. Prop values in code (`size="sm"`, `max={5}`), `@default` values and counts that describe what a demo does ("type three or more characters") are fine.
+- **Keep it short.** `## Usage`: 1–3 sentences — how the API relates to shadcn's component, extra or unusual props, required accessibility (e.g. `aria-label`), non-obvious gotchas. Each example: at most one sentence, often none. No motion or sizing narration.
+- **Prop JSDoc:** one short sentence per prop plus `@default`.
+- Korean uses 해요체; keep en and ko content equivalent. `apps/website/content/docs/t-flavored/button.mdx` / `button.ko.mdx` show the target length.
+
 ## AutoTypeTable Type Wrapper Shape
 
 Use this shape for API Reference type files and adapt the imported prop names to the component.

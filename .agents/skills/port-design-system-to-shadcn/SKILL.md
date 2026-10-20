@@ -82,6 +82,11 @@ kcn 은 레지스트리마다 패키지가 따로 있다. hm-admin 의 경로를
   갤러리에서 그 칸을 빼거나 `known` 으로 적는다. 어느 쪽이든 기록한다.
 - **API 모양.** shadcn 은 납작한 이름을 쓴다: `Field.Root` → `Field`, `TextField.PrefixIcon` → `TextFieldPrefixIcon`. `asChild` → Base UI 의 `render`.
   소비자가 고칠 곳 목록(이름 변경 · prop 이동)을 진행 문서에 같이 적는다.
+- **이름은 shadcn 의 것으로.** 원본과 같은 일을 하는 shadcn 부품이 있으면 원본 이름 대신 그 이름 · 그 부위 이름을 쓴다:
+  BoardRow → `Accordion`(`AccordionItem` · `AccordionTrigger` · `AccordionContent`), BottomSheet → `Drawer*`, Modal → `Dialog*`,
+  Menu → `DropdownMenu*`, ListRow → `Item*`, Loader → `Spinner`, Result → `Empty*`, SegmentedControl · Tab → `Tabs`(variant).
+  prop 도 shadcn 의 이름(`variant` · `size` · `render`)과 값(`default` · `secondary` · `destructive` · `outline` · `ghost` · `link`)을 먼저 쓰고,
+  shadcn 에 없는 것만 원본의 뜻을 살린 값을 더한다(t-flavored 의 Button `weak` · `dark`).
 
 ## 3. shadcn 부품처럼 보이게 — 반드시 지킬 짜임
 
