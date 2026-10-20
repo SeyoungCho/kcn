@@ -1,3 +1,8 @@
+/*
+ * Tailwind CSS 4 의 입구 — 토큰(theme.css)을 Tailwind 클래스로 잇는다.
+ * Tailwind 의 기본 색은 끄고 t-flavored 팔레트(grey · blue · red · orange · yellow · green · teal · purple, 50~900)와
+ * shadcn 시맨틱 색(bg-primary · text-muted-foreground …)만 둔다. 글자 크기는 text-t1 ~ text-t7, text-st1 ~ text-st13.
+ */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./theme.css";
@@ -5,46 +10,289 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* 팔레트: bg-grey-100 · text-blue-500 */
+  --color-grey-50: var(--grey-50);
+  --color-grey-100: var(--grey-100);
+  --color-grey-200: var(--grey-200);
+  --color-grey-300: var(--grey-300);
+  --color-grey-400: var(--grey-400);
+  --color-grey-500: var(--grey-500);
+  --color-grey-600: var(--grey-600);
+  --color-grey-700: var(--grey-700);
+  --color-grey-800: var(--grey-800);
+  --color-grey-900: var(--grey-900);
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
+  --color-blue-400: var(--blue-400);
+  --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
+  --color-blue-700: var(--blue-700);
+  --color-blue-800: var(--blue-800);
+  --color-blue-900: var(--blue-900);
+  --color-red-50: var(--red-50);
+  --color-red-100: var(--red-100);
+  --color-red-200: var(--red-200);
+  --color-red-300: var(--red-300);
+  --color-red-400: var(--red-400);
+  --color-red-500: var(--red-500);
+  --color-red-600: var(--red-600);
+  --color-red-700: var(--red-700);
+  --color-red-800: var(--red-800);
+  --color-red-900: var(--red-900);
+  --color-orange-50: var(--orange-50);
+  --color-orange-100: var(--orange-100);
+  --color-orange-200: var(--orange-200);
+  --color-orange-300: var(--orange-300);
+  --color-orange-400: var(--orange-400);
+  --color-orange-500: var(--orange-500);
+  --color-orange-600: var(--orange-600);
+  --color-orange-700: var(--orange-700);
+  --color-orange-800: var(--orange-800);
+  --color-orange-900: var(--orange-900);
+  --color-yellow-50: var(--yellow-50);
+  --color-yellow-100: var(--yellow-100);
+  --color-yellow-200: var(--yellow-200);
+  --color-yellow-300: var(--yellow-300);
+  --color-yellow-400: var(--yellow-400);
+  --color-yellow-500: var(--yellow-500);
+  --color-yellow-600: var(--yellow-600);
+  --color-yellow-700: var(--yellow-700);
+  --color-yellow-800: var(--yellow-800);
+  --color-yellow-900: var(--yellow-900);
+  --color-green-50: var(--green-50);
+  --color-green-100: var(--green-100);
+  --color-green-200: var(--green-200);
+  --color-green-300: var(--green-300);
+  --color-green-400: var(--green-400);
+  --color-green-500: var(--green-500);
+  --color-green-600: var(--green-600);
+  --color-green-700: var(--green-700);
+  --color-green-800: var(--green-800);
+  --color-green-900: var(--green-900);
+  --color-teal-50: var(--teal-50);
+  --color-teal-100: var(--teal-100);
+  --color-teal-200: var(--teal-200);
+  --color-teal-300: var(--teal-300);
+  --color-teal-400: var(--teal-400);
+  --color-teal-500: var(--teal-500);
+  --color-teal-600: var(--teal-600);
+  --color-teal-700: var(--teal-700);
+  --color-teal-800: var(--teal-800);
+  --color-teal-900: var(--teal-900);
+  --color-purple-50: var(--purple-50);
+  --color-purple-100: var(--purple-100);
+  --color-purple-200: var(--purple-200);
+  --color-purple-300: var(--purple-300);
+  --color-purple-400: var(--purple-400);
+  --color-purple-500: var(--purple-500);
+  --color-purple-600: var(--purple-600);
+  --color-purple-700: var(--purple-700);
+  --color-purple-800: var(--purple-800);
+  --color-purple-900: var(--purple-900);
+  --color-grey-opacity-50: var(--grey-opacity-50);
+  --color-grey-opacity-100: var(--grey-opacity-100);
+  --color-grey-opacity-200: var(--grey-opacity-200);
+  --color-grey-opacity-300: var(--grey-opacity-300);
+  --color-grey-opacity-400: var(--grey-opacity-400);
+  --color-grey-opacity-500: var(--grey-opacity-500);
+  --color-grey-opacity-600: var(--grey-opacity-600);
+  --color-grey-opacity-700: var(--grey-opacity-700);
+  --color-grey-opacity-800: var(--grey-opacity-800);
+  --color-grey-opacity-900: var(--grey-opacity-900);
+
+  /* 바탕: bg-surface-grey · border-hairline · bg-dimmed */
+  --color-surface: var(--surface);
+  --color-surface-grey: var(--surface-grey);
+  --color-surface-layered: var(--surface-layered);
+  --color-surface-float: var(--surface-float);
+  --color-surface-level-1: var(--surface-level-1);
+  --color-surface-level-2: var(--surface-level-2);
+  --color-dimmed: var(--dimmed);
+  --color-hairline: var(--hairline);
+  --color-disabled-blue: var(--disabled-blue);
+
+  /* shadcn 시맨틱 색 */
   --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-overlay: var(--overlay);
+
+  /* 글자 크기: text-t5 · text-st11 */
+  --text-t1: var(--font-size-t1);
+  --text-t1--line-height: var(--line-height-t1);
+  --text-t2: var(--font-size-t2);
+  --text-t2--line-height: var(--line-height-t2);
+  --text-t3: var(--font-size-t3);
+  --text-t3--line-height: var(--line-height-t3);
+  --text-t4: var(--font-size-t4);
+  --text-t4--line-height: var(--line-height-t4);
+  --text-t5: var(--font-size-t5);
+  --text-t5--line-height: var(--line-height-t5);
+  --text-t6: var(--font-size-t6);
+  --text-t6--line-height: var(--line-height-t6);
+  --text-t7: var(--font-size-t7);
+  --text-t7--line-height: var(--line-height-t7);
+  --text-st1: var(--font-size-st1);
+  --text-st1--line-height: var(--line-height-st1);
+  --text-st2: var(--font-size-st2);
+  --text-st2--line-height: var(--line-height-st2);
+  --text-st3: var(--font-size-st3);
+  --text-st3--line-height: var(--line-height-st3);
+  --text-st4: var(--font-size-st4);
+  --text-st4--line-height: var(--line-height-st4);
+  --text-st5: var(--font-size-st5);
+  --text-st5--line-height: var(--line-height-st5);
+  --text-st6: var(--font-size-st6);
+  --text-st6--line-height: var(--line-height-st6);
+  --text-st7: var(--font-size-st7);
+  --text-st7--line-height: var(--line-height-st7);
+  --text-st8: var(--font-size-st8);
+  --text-st8--line-height: var(--line-height-st8);
+  --text-st9: var(--font-size-st9);
+  --text-st9--line-height: var(--line-height-st9);
+  --text-st10: var(--font-size-st10);
+  --text-st10--line-height: var(--line-height-st10);
+  --text-st11: var(--font-size-st11);
+  --text-st11--line-height: var(--line-height-st11);
+  --text-st12: var(--font-size-st12);
+  --text-st12--line-height: var(--line-height-st12);
+  --text-st13: var(--font-size-st13);
+  --text-st13--line-height: var(--line-height-st13);
+
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-sans);
+
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.625);
+  --radius-lg: calc(var(--radius) * 0.75);
+  --radius-xl: calc(var(--radius) * 0.875);
+  --radius-2xl: var(--radius);
+  --radius-3xl: calc(var(--radius) * 1.5);
+
+  /* 그림자 — 떠 있는 것(토스트 · 메뉴 · 툴팁). 어두울 때도 색이 바뀌지 않는다(밝은 그림자가 번지지 않게) */
+  --shadow-sm: 0 2px 30px rgb(0 27 55 / 0.1);
+  --shadow-md: 0 16px 60px rgb(0 27 55 / 0.1);
+  --shadow-lg: 0 16px 60px rgb(0 29 58 / 0.18);
+}
+
+/* Button 의 loading — 점 세 개가 차례로 커지며 진해진다 */
+@keyframes button-loader {
+  from {
+    opacity: 0.2;
+    scale: 0.8;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Spinner — 원은 1.8s 에 한 바퀴 돌고, 그동안 호가 늘었다 줄었다 하며 원 안에서 한 번 더 돈다 */
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dashoffset: 180;
+  }
+  50% {
+    stroke-dashoffset: 45;
+    transform: rotate(108deg);
+  }
+  100% {
+    stroke-dashoffset: 180;
+    transform: rotate(360deg);
+  }
+}
+
+/* Spinner — 짧게 끝나는 로딩에 깜빡이지 않도록 0.7s 기다렸다가 나타난다 */
+@keyframes spinner-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Skeleton — 흐린(0.2 · 0.96배) 상태와 또렷한(1 · 1배) 상태를 오간다. alternate 로 되돌아올 때는 이징도 거꾸로 걸린다 */
+@keyframes skeleton-pulse {
+  from {
+    opacity: 0.2;
+    scale: 0.96;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Input · InputGroup · Textarea 의 aria-invalid — 오류가 되는 순간 칸이 좌우로 한 번 짧게 흔들린다(0.36s, 2px → -2px → 1px) */
+@keyframes input-shake {
+  0%,
+  100% {
+    translate: 0;
+  }
+  25% {
+    translate: 2px;
+  }
+  50% {
+    translate: -2px;
+  }
+  75% {
+    translate: 1px;
+  }
+}
+
+/* AlertDialog — 바깥(딤)을 눌러도 닫히지 않고 좌우로 한 번 흔들린다(2px → -2px → 1px, 350ms) */
+@keyframes alert-dialog-wiggle {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(1px);
+  }
+}
+
+/* Drawer — 열릴 때 제목 · 설명 · 본문이 80px 아래에서 차례로 올라온다 */
+@keyframes drawer-content-rise {
+  from {
+    translate: 0 80px;
+  }
 }
 
 @layer base {
@@ -55,6 +303,6 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans antialiased;
   }
 }

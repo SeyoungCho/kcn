@@ -39,6 +39,7 @@
     "@types/react-dom": "catalog:",
     "class-variance-authority": "catalog:",
     "cn": "catalog:",
+    "lucide-react": "catalog:",
     "postcss": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-classnames": "catalog:",

@@ -1,58 +1,74 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 
-import { cn } from "cn";
+import { cn } from "@/lib/utils";
 
+// shadcn Button 에 t-flavored 의 모양을 입혔다. weak · dark · destructive-weak 는 shadcn 에 없는 variant 다.
+// 누르면 살짝 줄어들고 위에 딤(::after)이 깔린다. loading 은 글자를 감추고(폭은 그대로) 점 세 개를 띄운다.
 const buttonVariants = cva(
-  `group/button inline-flex shrink-0 items-center justify-center rounded-lg
-  border border-transparent bg-clip-padding text-sm font-medium
-  whitespace-nowrap transition-all outline-none select-none
-  focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50
-  active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none
-  disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3
-  aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50
-  dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none
-  [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4`,
+  `group/button relative isolate inline-flex shrink-0 items-center
+  justify-center overflow-hidden border border-transparent font-semibold
+  whitespace-nowrap
+  transition-[color,background-color,border-color,opacity,scale] duration-100
+  ease-in-out outline-none select-none after:pointer-events-none after:absolute
+  after:inset-0 after:-z-10 after:bg-(--button-dimmer) after:opacity-0
+  after:transition-opacity after:duration-100 focus-visible:ring-3
+  focus-visible:ring-ring/50 active:scale-[0.96] [--button-dimmer-opacity:0.26]
+  active:after:opacity-(--button-dimmer-opacity) disabled:pointer-events-none
+  disabled:opacity-30 aria-busy:pointer-events-none [&_svg]:pointer-events-none
+  [&_svg]:shrink-0`,
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
-        outline: `border-border bg-background hover:bg-muted
-        hover:text-foreground aria-expanded:bg-muted
-        aria-expanded:text-foreground dark:border-input dark:bg-input/30
-        dark:hover:bg-input/50`,
-        secondary: `bg-secondary text-secondary-foreground hover:bg-secondary/80
-        aria-expanded:bg-secondary aria-expanded:text-secondary-foreground`,
-        ghost: `hover:bg-muted hover:text-foreground aria-expanded:bg-muted
-        aria-expanded:text-foreground dark:hover:bg-muted/50`,
-        destructive: `bg-destructive/10 text-destructive hover:bg-destructive/20
-        focus-visible:border-destructive/40 focus-visible:ring-destructive/20
-        dark:bg-destructive/20 dark:hover:bg-destructive/30
-        dark:focus-visible:ring-destructive/40`,
-        link: "text-primary underline-offset-4 hover:underline",
+        default: `bg-primary text-primary-foreground
+        [--button-dimmer:var(--color-black)]
+        [--button-loader:var(--color-white)]`,
+        weak: `bg-blue-300/15 text-blue-600
+        [--button-dimmer:var(--color-blue-500)]
+        [--button-loader:var(--color-blue-500)]`,
+        dark: `bg-grey-700 text-white [--button-dimmer:var(--color-black)]
+        [--button-loader:var(--color-white)]`,
+        secondary: `bg-secondary text-secondary-foreground
+        [--button-dimmer:var(--color-grey-700)]
+        [--button-loader:var(--color-grey-700)]`,
+        destructive: `bg-destructive text-destructive-foreground
+        [--button-dimmer:var(--color-black)]
+        [--button-loader:var(--color-white)]`,
+        "destructive-weak": `bg-red-300/15 text-red-600
+        [--button-dimmer:var(--color-red-500)]
+        [--button-loader:var(--color-red-500)]`,
+        outline: `border-grey-opacity-100 bg-transparent text-grey-700
+        [--button-dimmer-opacity:1]
+        [--button-dimmer:var(--color-grey-opacity-100)]
+        [--button-loader:var(--color-grey-700)]`,
+        ghost: `bg-transparent text-grey-700 [--button-dimmer-opacity:1]
+        [--button-dimmer:var(--color-grey-opacity-100)]
+        [--button-loader:var(--color-grey-700)]`,
+        link: `overflow-visible border-0 font-medium text-grey-600
+        after:-inset-x-[9px] after:-inset-y-1 after:rounded-[9px]
+        [--button-dimmer-opacity:1]
+        [--button-dimmer:var(--color-grey-opacity-100)]
+        [--button-loader:var(--color-grey-600)] active:scale-100`,
       },
       size: {
-        default: `h-8 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2
-        has-data-[icon=inline-start]:pl-2`,
-        xs: `h-6 gap-1 rounded-[min(var(--radius-md),10px)] px-2 text-xs
-        in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5
-        has-data-[icon=inline-start]:pl-1.5
-        [&_svg:not([class*='size-'])]:size-3`,
-        sm: `h-7 gap-1 rounded-[min(var(--radius-md),12px)] px-2.5 text-[0.8rem]
-        in-data-[slot=button-group]:rounded-lg has-data-[icon=inline-end]:pr-1.5
-        has-data-[icon=inline-start]:pl-1.5
-        [&_svg:not([class*='size-'])]:size-3.5`,
-        lg: `h-9 gap-1.5 px-2.5 has-data-[icon=inline-end]:pr-2
-        has-data-[icon=inline-start]:pl-2`,
-        icon: "size-8",
-        "icon-xs": `size-6 rounded-[min(var(--radius-md),10px)]
-        in-data-[slot=button-group]:rounded-lg
-        [&_svg:not([class*='size-'])]:size-3`,
-        "icon-sm": `size-7 rounded-[min(var(--radius-md),12px)]
-        in-data-[slot=button-group]:rounded-lg`,
-        "icon-lg": "size-9",
+        sm: `min-h-8 min-w-13 gap-1 rounded-sm px-2.5 text-t7
+        [&_svg:not([class*='size-'])]:size-4`,
+        default: `min-h-[38px] min-w-16 gap-1.5 rounded-md px-4 text-t6
+        [&_svg:not([class*='size-'])]:size-[18px]`,
+        lg: `min-h-12 min-w-20 gap-1.5 rounded-xl px-4 text-t5
+        [&_svg:not([class*='size-'])]:size-5`,
+        xl: `min-h-14 min-w-24 gap-2 rounded-2xl px-7 text-t5
+        [&_svg:not([class*='size-'])]:size-5`,
+        icon: "size-12 rounded-lg p-3 [&_svg:not([class*='size-'])]:size-6",
       },
     },
+    compoundVariants: [
+      // link 는 글자 크기만 갖는다 — 높이 · 여백 · 최소 폭을 떼고 크기별 글자 크기만 남긴다
+      {
+        variant: "link",
+        className: "min-h-0 min-w-0 rounded-none px-0",
+      },
+    ],
     defaultVariants: {
       variant: "default",
       size: "default",
@@ -60,21 +76,54 @@ const buttonVariants = cva(
   },
 );
 
+type ButtonProps = ButtonPrimitive.Props &
+  VariantProps<typeof buttonVariants> & {
+    /** 글자를 감추고 점 세 개를 띄운다. 폭은 그대로이고 누를 수 없다. */
+    loading?: boolean;
+  };
+
 function Button({
   className,
   variant = "default",
   size = "default",
+  loading = false,
+  children,
   ...props
-}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+}: ButtonProps) {
   return (
     <ButtonPrimitive
       data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      aria-busy={loading || undefined}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
-    />
+    >
+      {loading ? (
+        <>
+          <span className="invisible contents">{children}</span>
+          <span
+            data-slot="button-loader"
+            aria-hidden
+            className="absolute inset-0 flex items-center justify-center
+              gap-[7px]"
+          >
+            {[0, 1, 2].map((index) => (
+              <span
+                key={index}
+                className="size-2
+                  animate-[button-loader_0.9s_ease-in-out_infinite_alternate]
+                  rounded-full bg-(--button-loader)"
+                style={{ animationDelay: `${index * 150}ms` }}
+              />
+            ))}
+          </span>
+        </>
+      ) : (
+        children
+      )}
+    </ButtonPrimitive>
   );
 }
 
-export { Button, buttonVariants };
-
-export default Button;
+export { Button, buttonVariants, type ButtonProps };
