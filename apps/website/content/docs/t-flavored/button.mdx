@@ -1,31 +1,47 @@
 ---
 title: Button
-description: Button Component
+description: Buttons trigger immediate actions.
 ---
 
-## Code Block
+<Preview registry="t-flavored" component="Button">
+  Button
+</Preview>
 
-```js
-console.log("Hello World");
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/button
 ```
 
-## T-flavored (Isolated Iframe Preview)
+## Usage
 
-<div className="space-y-4">
-  <Preview registry="t-flavored" component="Button">Click me</Preview>
+The API matches shadcn's Button, with three extra variants: `weak`, `dark` and `destructive-weak`.
 
-  <Preview
-    registry="t-flavored"
-    component="Button"
-    props={{ variant: "destructive", size: "lg" }}
-  >
-    Delete Me
-  </Preview>
-</div>
+## Examples
 
-## Cards
+### Variants
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+<Preview registry="t-flavored" demo="button/button-variants" height={320} />
+
+### Sizes
+
+<Preview registry="t-flavored" demo="button/button-sizes" height={200} />
+
+### With Icon
+
+Icon-only buttons use `size="icon"` and need an `aria-label`.
+
+<Preview registry="t-flavored" demo="button/button-with-icon" height={240} />
+
+### States
+
+`loading` swaps the label for a loader and blocks presses.
+
+<Preview registry="t-flavored" demo="button/button-states" height={200} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/button.ts"
+  name="MDXButtonProps"
+/>

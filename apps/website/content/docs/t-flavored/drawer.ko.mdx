@@ -1,0 +1,48 @@
+---
+title: Drawer
+description: Drawer는 화면 아래에서 올라와 페이지를 벗어나지 않고 설명이나 동작을 보여 주는 시트예요.
+---
+
+<Preview registry="t-flavored" demo="drawer/drawer-demo" height={480} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/drawer
+```
+
+## 사용법
+
+API 는 shadcn 의 Drawer 와 같지만 아래에서만 올라와요. `DrawerFooter` 에는 `xl` 버튼을 넣고, 머리와 버튼 줄 사이에 넣은 것은 본문이 돼요. 시트가 너무 길어지면 본문이 스크롤돼요.
+
+## 예제
+
+### 부제목
+
+<Preview registry="t-flavored" demo="drawer/drawer-description" height={400} />
+
+### 버튼 두 개
+
+버튼이 한 줄을 나눠 가져요.
+
+<Preview registry="t-flavored" demo="drawer/drawer-double-cta" height={480} />
+
+### 스크롤
+
+<Preview registry="t-flavored" demo="drawer/drawer-scroll" height={640} />
+
+## API 레퍼런스
+
+### Drawer
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/drawer.ts"
+  name="MDXDrawerPropsKO"
+/>
+
+### DrawerContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/drawer.ts"
+  name="MDXDrawerContentPropsKO"
+/>

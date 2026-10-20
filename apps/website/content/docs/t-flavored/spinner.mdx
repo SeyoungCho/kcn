@@ -1,0 +1,41 @@
+---
+title: Spinner
+description: Spinners show that something is loading.
+---
+
+<Preview registry="t-flavored" demo="spinner/spinner-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/spinner
+```
+
+## Usage
+
+The API matches shadcn's Spinner (an `<svg>` with `role="status"`), with extra `variant` and `size` props. It waits a moment before fading in, so quick loads don't flash. The stroke is `currentColor`, so `text-*` classes recolor it.
+
+## Examples
+
+### Sizes
+
+<Preview registry="t-flavored" demo="spinner/spinner-sizes" height={160} />
+
+### Variants
+
+`light` is for dark backgrounds.
+
+<Preview registry="t-flavored" demo="spinner/spinner-variants" height={160} />
+
+### With Label
+
+For a label, place text under the spinner.
+
+<Preview registry="t-flavored" demo="spinner/spinner-with-label" height={200} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/spinner.ts"
+  name="MDXSpinnerProps"
+/>

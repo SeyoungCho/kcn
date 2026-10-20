@@ -1,0 +1,49 @@
+---
+title: Separator
+description: Draws a line between list items or a band between sections.
+---
+
+<Preview registry="t-flavored" demo="separator/separator-demo" height={200} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/separator
+```
+
+## Usage
+
+The API matches shadcn's Separator, built on Base UI's Separator, with an extra `variant` prop.
+
+## Examples
+
+### Inset
+
+`inset` leaves space before the line so it lines up with the row text.
+
+<Preview registry="t-flavored" demo="separator/separator-inset" height={240} />
+
+### Section
+
+`section` splits sections with a thick grey band; change its thickness with `h-*`.
+
+<Preview
+  registry="t-flavored"
+  demo="separator/separator-section"
+  height={200}
+/>
+
+### Vertical
+
+<Preview
+  registry="t-flavored"
+  demo="separator/separator-vertical"
+  height={140}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/separator.ts"
+  name="MDXSeparatorProps"
+/>

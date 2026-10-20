@@ -1,0 +1,73 @@
+---
+title: Alert Dialog
+description: Alert Dialog는 중요한 내용을 알리고 사용자의 답을 기다리는 다이얼로그예요.
+---
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-demo"
+  height={400}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/alert-dialog
+```
+
+## 사용법
+
+API 는 shadcn 의 AlertDialog 와 같아요. 알리기만 할 때는 `<AlertDialogAction variant="link">` 하나를, 선택을 받을 때는 `AlertDialogCancel` 과 `AlertDialogAction` 을 함께 써요. `AlertDialogAction` 은 다이얼로그를 닫지 않으니 동작이 끝나면 직접 닫아 주세요.
+
+## 예제
+
+### 확인 다이얼로그
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-confirm"
+  height={400}
+/>
+
+### 긴 버튼
+
+글자가 길어 나란히 들어가지 않으면 버튼이 한 줄씩 쌓여요.
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-long-buttons"
+  height={440}
+/>
+
+### 긴 설명
+
+글이 길면 버튼 줄은 그대로 두고 글만 스크롤돼요.
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-long-description"
+  height={560}
+/>
+
+## API 레퍼런스
+
+### AlertDialog
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/alert-dialog.ts"
+  name="MDXAlertDialogPropsKO"
+/>
+
+### AlertDialogAction
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/alert-dialog.ts"
+  name="MDXAlertDialogActionPropsKO"
+/>
+
+### AlertDialogCancel
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/alert-dialog.ts"
+  name="MDXAlertDialogCancelPropsKO"
+/>

@@ -1,0 +1,73 @@
+---
+title: Tabs
+description: Switches between views in the same place, as a segmented control or underlined tabs.
+---
+
+<Preview registry="t-flavored" demo="tabs/tabs-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/tabs
+```
+
+## Usage
+
+The API matches shadcn's Tabs. On `TabsList`, `variant="default"` is a segmented control and `variant="line"` is underlined tabs; the sliding indicator is drawn for you.
+
+```tsx
+<Tabs defaultValue="day">
+  <TabsList>
+    <TabsTrigger value="day">Day</TabsTrigger>
+    <TabsTrigger value="week">Week</TabsTrigger>
+  </TabsList>
+  <TabsContent value="day">…</TabsContent>
+  <TabsContent value="week">…</TabsContent>
+</Tabs>
+```
+
+## Examples
+
+### Line
+
+<Preview registry="t-flavored" demo="tabs/tabs-line" height={180} />
+
+### Sizes
+
+<Preview registry="t-flavored" demo="tabs/tabs-sizes" height={440} />
+
+### Scrollable
+
+`fluid` fits each tab to its label and scrolls the list sideways when it overflows.
+
+<Preview registry="t-flavored" demo="tabs/tabs-fluid" height={200} />
+
+## API Reference
+
+### Tabs
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsProps"
+/>
+
+### TabsList
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsListProps"
+/>
+
+### TabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsTriggerProps"
+/>
+
+### TabsContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsContentProps"
+/>

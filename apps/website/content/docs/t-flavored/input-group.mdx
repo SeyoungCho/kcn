@@ -1,0 +1,61 @@
+---
+title: Input Group
+description: Text, icons and buttons inside an input.
+---
+
+<Preview registry="t-flavored" demo="input-group/input-group-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/input-group
+```
+
+## Usage
+
+The API matches shadcn's InputGroup. `InputGroup` takes `Input`'s look and variants; put an `InputGroupInput` inside and text, icons or buttons in an `InputGroupAddon` on either side. `variant="search"` is a grey search box; show its clear button only while there is a value.
+
+## Examples
+
+### Prefix and Suffix
+
+A suffix such as a unit stays light while the input is empty.
+
+<Preview registry="t-flavored" demo="input-group/input-group-affix" height={320} />
+
+### Button
+
+<Preview registry="t-flavored" demo="input-group/input-group-button" height={320} />
+
+### Clear Button
+
+The clear button shows only while the input has focus and a value.
+
+<Preview registry="t-flavored" demo="input-group/input-group-clearable" height={320} />
+
+### Password
+
+<Preview registry="t-flavored" demo="input-group/input-group-password" height={320} />
+
+## API Reference
+
+### InputGroup
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input-group.ts"
+  name="MDXInputGroupProps"
+/>
+
+### InputGroupAddon
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input-group.ts"
+  name="MDXInputGroupAddonProps"
+/>
+
+### InputGroupButton
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input-group.ts"
+  name="MDXInputGroupButtonProps"
+/>

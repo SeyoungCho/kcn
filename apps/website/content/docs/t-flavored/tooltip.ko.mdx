@@ -1,0 +1,48 @@
+---
+title: Tooltip
+description: Tooltip은 요소에 대한 보조 정보를 작은 말풍선으로 보여줘요.
+---
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-demo" height={240} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/tooltip
+```
+
+## 사용법
+
+API 는 shadcn 의 Tooltip 과 같고, `TooltipContent` 에 `size` 가 더 있어요. `side` 는 `top` · `bottom` 만 되고 기본은 `bottom` 이에요. 제어하지 않는 툴팁은 한 번에 하나만 열리니, 여러 개를 열어 두려면 `open` 을 넘겨요.
+
+## 예제
+
+### 크기
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-sizes" height={220} />
+
+### 위치
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-side" height={300} />
+
+### 직접 제어하기
+
+버튼이 `open` 을 바꾸고, `onOpenChange` 가 없으니 다른 방법으로는 닫히지 않아요.
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-controlled" height={240} />
+
+## API 레퍼런스
+
+### Tooltip
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tooltip.ts"
+  name="MDXTooltipPropsKO"
+/>
+
+### TooltipContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tooltip.ts"
+  name="MDXTooltipContentPropsKO"
+/>

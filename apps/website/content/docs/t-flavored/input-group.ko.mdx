@@ -1,0 +1,61 @@
+---
+title: Input Group
+description: 입력 칸 안에 글 · 아이콘 · 버튼을 넣어요.
+---
+
+<Preview registry="t-flavored" demo="input-group/input-group-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/input-group
+```
+
+## 사용법
+
+API 는 shadcn 의 InputGroup 과 같아요. `InputGroup` 이 `Input` 의 모양 · 배리언트를 지고, 안에는 `InputGroupInput` 을, 양옆의 `InputGroupAddon` 에는 글 · 아이콘 · 버튼을 넣어요. `variant="search"` 는 회색 검색창이고, 지우기 버튼은 값이 있을 때만 보여 주세요.
+
+## 예제
+
+### 접두사와 접미사
+
+단위 같은 접미사는 칸이 비어 있는 동안 옅어요.
+
+<Preview registry="t-flavored" demo="input-group/input-group-affix" height={320} />
+
+### 버튼
+
+<Preview registry="t-flavored" demo="input-group/input-group-button" height={320} />
+
+### 지우기 버튼
+
+칸에 초점이 있고 값이 있을 때만 지우기 버튼이 보여요.
+
+<Preview registry="t-flavored" demo="input-group/input-group-clearable" height={320} />
+
+### 비밀번호
+
+<Preview registry="t-flavored" demo="input-group/input-group-password" height={320} />
+
+## API 레퍼런스
+
+### InputGroup
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input-group.ts"
+  name="MDXInputGroupPropsKO"
+/>
+
+### InputGroupAddon
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input-group.ts"
+  name="MDXInputGroupAddonPropsKO"
+/>
+
+### InputGroupButton
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input-group.ts"
+  name="MDXInputGroupButtonPropsKO"
+/>

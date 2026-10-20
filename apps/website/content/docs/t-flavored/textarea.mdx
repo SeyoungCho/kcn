@@ -1,0 +1,29 @@
+---
+title: Textarea
+description: A multi-line text input that grows with its content.
+---
+
+<Preview registry="t-flavored" demo="textarea/textarea-demo" height={260} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/textarea
+```
+
+## Usage
+
+The API matches shadcn's Textarea, with the same variants and states as `Input`, and it works inside `Field` the same way. The height follows the content (CSS `field-sizing`); set a minimum with `min-h-*` or fix it with `h-*`.
+
+## Examples
+
+### Fixed Height
+
+<Preview registry="t-flavored" demo="textarea/textarea-fixed-height" height={340} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/textarea.ts"
+  name="MDXTextareaProps"
+/>

@@ -1,29 +1,41 @@
 ---
 title: Input
-description: Input Component
+description: A text input in box, underline and large styles.
 ---
 
-## Code Block
+<Preview registry="t-flavored" demo="input/input-demo" height={200} />
 
-```js
-console.log("Hello World");
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/input
 ```
 
-## T-flavored (Isolated Iframe Preview)
+## Usage
 
-<div className="space-y-4">
-  <Preview registry="t-flavored" component="Input" />
+The API matches shadcn's Input. Add a label and help text with `Field`, and prefixes, suffixes or buttons inside the field with `InputGroup`. `aria-invalid` shows the error state; `<Field invalid>` sets it for you.
 
-  <Preview
-    registry="t-flavored"
-    component="Input"
-    props={{ placeholder: "Type something..." }}
-  />
-</div>
+## Examples
 
-## Cards
+### Variants
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+`default` is a box, `line` and `big` are underlined, and `hero` has no border.
+
+<Preview registry="t-flavored" demo="input/input-variants" height={560} />
+
+### Invalid
+
+Type three or more characters to see the error state.
+
+<Preview registry="t-flavored" demo="input/input-invalid" height={320} />
+
+### Disabled
+
+<Preview registry="t-flavored" demo="input/input-disabled" height={320} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input.ts"
+  name="MDXInputProps"
+/>

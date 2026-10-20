@@ -1,0 +1,41 @@
+---
+title: Badge
+description: Badge는 짧은 이름표로 상태를 보여줘요.
+---
+
+<Preview registry="t-flavored" demo="badge/badge-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/badge
+```
+
+## 사용법
+
+API 는 shadcn 의 Badge 와 같고 `size` 가 더 있어요. `variant` 하나로 색과 세기를 함께 골라요. 색마다 채운 모양과 연한 `-weak` 가 짝을 이뤄요(`default` · `weak` 는 파랑, `dark` · `secondary` 는 회색).
+
+## 예제
+
+### 배리언트
+
+채운 모양 옆에 같은 색의 weak 를 놓았어요.
+
+<Preview registry="t-flavored" demo="badge/badge-variants" height={280} />
+
+### 크기
+
+<Preview registry="t-flavored" demo="badge/badge-sizes" height={160} />
+
+### 링크
+
+`render` 로 링크 같은 다른 요소로 그릴 수 있어요.
+
+<Preview registry="t-flavored" demo="badge/badge-link" height={160} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/badge.ts"
+  name="MDXBadgePropsKO"
+/>

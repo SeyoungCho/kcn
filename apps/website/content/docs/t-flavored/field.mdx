@@ -1,0 +1,46 @@
+---
+title: Field
+description: Label, help text and error message around a form control.
+---
+
+<Preview registry="t-flavored" demo="field/field-demo" height={480} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/field
+```
+
+## Usage
+
+The API matches shadcn's Field. `FieldLabel` and `FieldDescription` link to the control on their own, and `invalid` on `Field` reaches the control as `aria-invalid`. Stack fields in a `FieldGroup`.
+
+## Examples
+
+### Validation
+
+An empty `<FieldError />` shows the message `validate` returns; without `validate`, use `<Field invalid>` and `<FieldError>…</FieldError>`.
+
+<Preview registry="t-flavored" demo="field/field-validation" height={200} />
+
+### Label on input
+
+The label keeps its space but shows only once the field has a value (Base UI sets `data-filled`).
+
+<Preview registry="t-flavored" demo="field/field-label-appear" height={200} />
+
+## API Reference
+
+### Field
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/field.ts"
+  name="MDXFieldProps"
+/>
+
+### FieldError
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/field.ts"
+  name="MDXFieldErrorProps"
+/>

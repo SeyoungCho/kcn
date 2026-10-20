@@ -1,13 +1,20 @@
 ---
-title: Hello World
-description: Your first document
+title: Introduction
+description: A shadcn/ui registry inspired by the Toss Design System.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+t-flavored is a shadcn/ui registry inspired by the Toss Design System (TDS). Its components are built on Base UI and Tailwind CSS 4 and keep shadcn's API, so they fit into any shadcn project.
 
-## What is Next?
+## Installation
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+Add the style first. It sets up the color, typography and radius tokens, including dark mode.
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/t-flavored-style
+```
+
+Then add the components you need.
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/button
+```

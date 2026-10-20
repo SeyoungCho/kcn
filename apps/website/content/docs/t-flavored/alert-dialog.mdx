@@ -1,0 +1,73 @@
+---
+title: Alert Dialog
+description: A dialog that interrupts the user with an important message and waits for an answer.
+---
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-demo"
+  height={400}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/alert-dialog
+```
+
+## Usage
+
+The API matches shadcn's AlertDialog. Use one `<AlertDialogAction variant="link">` to acknowledge a message, or pair `AlertDialogCancel` with `AlertDialogAction` to ask for a choice. `AlertDialogAction` doesn't close the dialog — close it yourself when the action is done.
+
+## Examples
+
+### Confirm Dialog
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-confirm"
+  height={400}
+/>
+
+### Long Buttons
+
+Buttons stack when their labels don't fit side by side.
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-long-buttons"
+  height={440}
+/>
+
+### Long Description
+
+Long text scrolls while the buttons stay in place.
+
+<Preview
+  registry="t-flavored"
+  demo="alert-dialog/alert-dialog-long-description"
+  height={560}
+/>
+
+## API Reference
+
+### AlertDialog
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/alert-dialog.ts"
+  name="MDXAlertDialogProps"
+/>
+
+### AlertDialogAction
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/alert-dialog.ts"
+  name="MDXAlertDialogActionProps"
+/>
+
+### AlertDialogCancel
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/alert-dialog.ts"
+  name="MDXAlertDialogCancelProps"
+/>

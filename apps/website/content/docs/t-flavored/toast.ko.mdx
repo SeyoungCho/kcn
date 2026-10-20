@@ -1,0 +1,56 @@
+---
+title: Toast
+description: Toast는 화면 위나 아래에 잠깐 나타났다가 저절로 사라지는 짧은 알림이에요.
+---
+
+<Preview registry="t-flavored" demo="toast/toast-demo" height={240} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/toast
+```
+
+## 사용법
+
+`<Toaster />` 를 한 번 두고, 어디서든 `toast.add()` 를 불러요.
+
+```tsx
+import { Toaster, toast } from "@/components/ui/toast";
+
+<Toaster />;
+
+toast.add({ title: "저장했어요", type: "success", data: { position: "top" } });
+```
+
+한 번에 하나만 보여요. `position` 은 `Toaster` 에 정하고, 토스트마다 `data.position` 으로 바꿀 수 있어요.
+
+## 예제
+
+### 종류
+
+`type` 을 주면 왼쪽에 색 아이콘이 생겨요.
+
+<Preview registry="t-flavored" demo="toast/toast-types" height={240} />
+
+### 액션
+
+`actionProps` 로 작은 버튼을 붙이고, 누를 시간이 있게 `timeout` 은 길게 잡아 주세요.
+
+<Preview registry="t-flavored" demo="toast/toast-action" height={240} />
+
+## API 레퍼런스
+
+### Toaster
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/toast.ts"
+  name="MDXToasterPropsKO"
+/>
+
+### toast.add
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/toast.ts"
+  name="MDXToastPropsKO"
+/>

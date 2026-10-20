@@ -1,0 +1,46 @@
+---
+title: Field
+description: 입력 칸 둘레의 라벨 · 도움말 · 에러 메시지예요.
+---
+
+<Preview registry="t-flavored" demo="field/field-demo" height={480} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/field
+```
+
+## 사용법
+
+API 는 shadcn 의 Field 와 같아요. `FieldLabel` 과 `FieldDescription` 은 안의 칸과 저절로 이어지고, `Field` 의 `invalid` 는 칸의 `aria-invalid` 로 내려가요. 여러 필드는 `FieldGroup` 으로 쌓아요.
+
+## 예제
+
+### 검사
+
+비어 있는 `<FieldError />` 는 `validate` 가 돌려준 메시지를 보여 주고, `validate` 없이는 `<Field invalid>` 와 `<FieldError>…</FieldError>` 를 써요.
+
+<Preview registry="t-flavored" demo="field/field-validation" height={200} />
+
+### 값이 있을 때만 라벨 보이기
+
+라벨은 자리를 지키다가 값이 생기면 보여요(Base UI 가 `data-filled` 를 붙여요).
+
+<Preview registry="t-flavored" demo="field/field-label-appear" height={200} />
+
+## API 레퍼런스
+
+### Field
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/field.ts"
+  name="MDXFieldPropsKO"
+/>
+
+### FieldError
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/field.ts"
+  name="MDXFieldErrorPropsKO"
+/>

@@ -1,0 +1,80 @@
+---
+title: Dropdown Menu
+description: Dropdown Menu는 버튼을 눌러 여는 동작 · 선택지 목록이에요.
+---
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-demo"
+  height={420}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/dropdown-menu
+```
+
+## 사용법
+
+API 는 shadcn 의 DropdownMenu 와 같고, `DropdownMenuSub*` 는 없어요. `DropdownMenuLabel` 은 `DropdownMenuGroup` 안에 넣어요.
+
+## 예제
+
+### 아이콘
+
+오른쪽 아이콘은 `DropdownMenuShortcut` 에 넣어요.
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-icons"
+  height={500}
+/>
+
+### 체크박스
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-checkboxes"
+  height={420}
+/>
+
+### 라디오 그룹
+
+하나만 고를 때 쓰고, 이 예제는 `align="center"` 로 가운데에 맞춰 열려요.
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-radio-group"
+  height={420}
+/>
+
+## API 레퍼런스
+
+### DropdownMenu
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuPropsKO"
+/>
+
+### DropdownMenuContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuContentPropsKO"
+/>
+
+### DropdownMenuItem
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuItemPropsKO"
+/>
+
+### DropdownMenuCheckboxItem
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuCheckboxItemPropsKO"
+/>

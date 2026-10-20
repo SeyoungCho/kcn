@@ -1,0 +1,39 @@
+---
+title: Skeleton
+description: Skeleton은 콘텐츠를 불러오는 동안 그 자리의 모양을 미리 보여줘요.
+---
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-demo" height={380} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/skeleton
+```
+
+## 사용법
+
+API 는 shadcn 의 Skeleton 과 같아요. 막대 하나이고 크기와 둥글기는 `className` 으로 줘요. 줄마다 `--skeleton-delay` 를 조금씩 늘려 주면 위에서 아래로 차례로 깜빡여요(조상에 줘도 안의 막대가 따라요).
+
+## 예제
+
+### 리스트
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-list" height={440} />
+
+### 카드
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-card" height={420} />
+
+### 배리언트
+
+회색 바탕 위에서는 `white` 를 써요.
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-variants" height={360} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/skeleton.ts"
+  name="MDXSkeletonPropsKO"
+/>

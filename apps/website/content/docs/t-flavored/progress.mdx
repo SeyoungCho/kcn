@@ -1,0 +1,45 @@
+---
+title: Progress
+description: Shows how far a task has progressed.
+---
+
+<Preview registry="t-flavored" demo="progress/progress-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/progress
+```
+
+## Usage
+
+The API matches shadcn's Progress, built on Base UI's Progress, with an extra `size` prop for the bar's thickness. Name the bar with `aria-label` or `ProgressLabel`.
+
+## Examples
+
+### Sizes
+
+<Preview registry="t-flavored" demo="progress/progress-sizes" height={200} />
+
+### Colors
+
+Recolor the bar with a `bg-*` class on the indicator.
+
+<Preview registry="t-flavored" demo="progress/progress-colors" height={200} />
+
+### Animated
+
+<Preview registry="t-flavored" demo="progress/progress-animated" height={200} />
+
+### With Label
+
+`ProgressLabel` names the bar and `ProgressValue` prints the percentage.
+
+<Preview registry="t-flavored" demo="progress/progress-label" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/progress.ts"
+  name="MDXProgressProps"
+/>

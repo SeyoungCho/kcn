@@ -1,0 +1,48 @@
+---
+title: Tooltip
+description: A small speech bubble with extra information about an element.
+---
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-demo" height={240} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/tooltip
+```
+
+## Usage
+
+The API matches shadcn's Tooltip, with an extra `size` prop on `TooltipContent` and `side` limited to `top` or `bottom` (`bottom` by default). Only one uncontrolled tooltip stays open at a time — pass `open` to keep several open.
+
+## Examples
+
+### Sizes
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-sizes" height={220} />
+
+### Side
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-side" height={300} />
+
+### Controlled
+
+The button toggles `open`; without `onOpenChange`, nothing else closes it.
+
+<Preview registry="t-flavored" demo="tooltip/tooltip-controlled" height={240} />
+
+## API Reference
+
+### Tooltip
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tooltip.ts"
+  name="MDXTooltipProps"
+/>
+
+### TooltipContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tooltip.ts"
+  name="MDXTooltipContentProps"
+/>

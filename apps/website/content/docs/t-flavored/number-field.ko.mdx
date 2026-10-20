@@ -1,0 +1,57 @@
+---
+title: Number Field
+description: 빼기 · 더하기 버튼으로 정수를 하나씩 줄이고 늘려요.
+---
+
+<Preview
+  registry="t-flavored"
+  demo="number-field/number-field-demo"
+  height={180}
+/>
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/number-field
+```
+
+## 사용법
+
+Base UI 의 NumberField 위에 만들고, shadcn 처럼 부품으로 나눴어요.
+
+```tsx
+<NumberField size="lg" defaultValue={0}>
+  <NumberFieldGroup>
+    <NumberFieldDecrement aria-label="상품 수량 줄이기" />
+    <NumberFieldInput aria-label="수량" />
+    <NumberFieldIncrement aria-label="상품 수량 늘리기" />
+  </NumberFieldGroup>
+</NumberField>
+```
+
+부품마다 `aria-label` 을 꼭 달아 주세요. 안 달면 버튼 이름이 Base UI 의 영어 "Decrease" / "Increase" 가 돼요.
+
+## 예제
+
+### 크기
+
+<Preview
+  registry="t-flavored"
+  demo="number-field/number-field-sizes"
+  height={180}
+/>
+
+### 비활성화
+
+<Preview
+  registry="t-flavored"
+  demo="number-field/number-field-disabled"
+  height={180}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/number-field.ts"
+  name="MDXNumberFieldPropsKO"
+/>

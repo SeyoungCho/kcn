@@ -1,29 +1,41 @@
 ---
 title: Input
-description: Input 컴포넌트
+description: 상자 · 밑줄 · 큰 글씨 모양의 텍스트 입력 칸이에요.
 ---
 
-## 코드 블록
+<Preview registry="t-flavored" demo="input/input-demo" height={200} />
 
-```js
-console.log("Hello World");
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/input
 ```
 
-## T-flavored (격리 iframe 미리보기)
+## 사용법
 
-<div className="space-y-4">
-  <Preview registry="t-flavored" component="Input" />
+API 는 shadcn 의 Input 과 같아요. 라벨과 도움말은 `Field` 로, 칸 안의 접두사 · 접미사 · 버튼은 `InputGroup` 으로 붙여요. `aria-invalid` 가 붙으면 에러 상태가 되고, `<Field invalid>` 안에서는 저절로 붙어요.
 
-  <Preview
-    registry="t-flavored"
-    component="Input"
-    props={{ placeholder: "내용을 입력하세요..." }}
-  />
-</div>
+## 예제
 
-## 카드
+### 배리언트
 
-<Cards>
-  <Card title="Next.js 더 알아보기" href="https://nextjs.org/docs" />
-  <Card title="Fumadocs 더 알아보기" href="https://fumadocs.dev" />
-</Cards>
+`default` 는 상자, `line` · `big` 은 밑줄, `hero` 는 테두리 없는 모양이에요.
+
+<Preview registry="t-flavored" demo="input/input-variants" height={560} />
+
+### 에러 상태
+
+세 글자 이상 입력하면 에러 상태가 돼요.
+
+<Preview registry="t-flavored" demo="input/input-invalid" height={320} />
+
+### 비활성화
+
+<Preview registry="t-flavored" demo="input/input-disabled" height={320} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/input.ts"
+  name="MDXInputPropsKO"
+/>

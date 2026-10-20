@@ -1,0 +1,49 @@
+---
+title: Separator
+description: Separator는 항목 사이에 선을, 구간 사이에 띠를 그어 나눠요.
+---
+
+<Preview registry="t-flavored" demo="separator/separator-demo" height={200} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/separator
+```
+
+## 사용법
+
+API 는 shadcn 의 Separator 와 같고 Base UI 의 Separator 위에 만들었어요. `variant` 가 더 있어요.
+
+## 예제
+
+### 왼쪽에 여백 주기
+
+`inset` 은 선 앞을 띄워 항목의 글과 줄을 맞춰요.
+
+<Preview registry="t-flavored" demo="separator/separator-inset" height={240} />
+
+### 구간 나누기
+
+`section` 은 굵은 회색 띠로 구간을 나누고, 두께는 `h-*` 로 바꿔요.
+
+<Preview
+  registry="t-flavored"
+  demo="separator/separator-section"
+  height={200}
+/>
+
+### 세로
+
+<Preview
+  registry="t-flavored"
+  demo="separator/separator-vertical"
+  height={140}
+/>
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/separator.ts"
+  name="MDXSeparatorPropsKO"
+/>

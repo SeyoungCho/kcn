@@ -1,0 +1,48 @@
+---
+title: Drawer
+description: A sheet that slides up from the bottom of the screen with more detail or actions, without leaving the page.
+---
+
+<Preview registry="t-flavored" demo="drawer/drawer-demo" height={480} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/drawer
+```
+
+## Usage
+
+The API matches shadcn's Drawer, but it only opens from the bottom. Put `xl` buttons in `DrawerFooter`; anything between the header and the footer becomes the body, which scrolls when the sheet gets too tall.
+
+## Examples
+
+### Description
+
+<Preview registry="t-flavored" demo="drawer/drawer-description" height={400} />
+
+### Two Buttons
+
+Buttons share the row.
+
+<Preview registry="t-flavored" demo="drawer/drawer-double-cta" height={480} />
+
+### Scrolling
+
+<Preview registry="t-flavored" demo="drawer/drawer-scroll" height={640} />
+
+## API Reference
+
+### Drawer
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/drawer.ts"
+  name="MDXDrawerProps"
+/>
+
+### DrawerContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/drawer.ts"
+  name="MDXDrawerContentProps"
+/>

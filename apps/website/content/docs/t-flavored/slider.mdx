@@ -1,0 +1,43 @@
+---
+title: Slider
+description: Picks a number in a range by dragging a thumb along a track.
+---
+
+<Preview registry="t-flavored" demo="slider/slider-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/slider
+```
+
+## Usage
+
+The API matches shadcn's Slider, plus `labels` and `tooltip`. Label it with `Field` (as in the examples) or `aria-labelledby`, so screen readers can name the thumb.
+
+## Examples
+
+### Colors
+
+Set the fill color with the `--slider-color` variable, e.g. `className="[--slider-color:var(--color-red-500)]"`.
+
+<Preview registry="t-flavored" demo="slider/slider-colors" height={320} />
+
+### Labels
+
+`labels` puts text under the track: `min` at the left end, `max` at the right end and an optional `mid` in the middle.
+
+<Preview registry="t-flavored" demo="slider/slider-labels" height={200} />
+
+### Tooltip
+
+`tooltip` shows the value in a bubble above the thumb (leave room for it); pass a function, e.g. ``tooltip={(value) => `${value}%`}``, for your own text.
+
+<Preview registry="t-flavored" demo="slider/slider-tooltip" height={240} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/slider.ts"
+  name="MDXSliderProps"
+/>

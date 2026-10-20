@@ -1,0 +1,68 @@
+---
+title: Accordion
+description: Rows that expand to show more, for Q&A, notices and other long content.
+---
+
+<Preview registry="t-flavored" demo="accordion/accordion-demo" height={460} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/accordion
+```
+
+## Usage
+
+The API matches shadcn's Accordion. Opening a row closes the others unless you pass `multiple`.
+
+For a prefix such as `Q`, put it before the title inside `AccordionTrigger`:
+
+```tsx
+<Accordion multiple>
+  <AccordionItem value="points">
+    <AccordionTrigger>
+      <span className="text-primary">Q</span>
+      What are points?
+    </AccordionTrigger>
+    <AccordionContent>…</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## Examples
+
+### Open by default
+
+`defaultValue` sets the rows that start open.
+
+<Preview
+  registry="t-flavored"
+  demo="accordion/accordion-default-open"
+  height={460}
+/>
+
+### Controlled
+
+Control the open rows with `value` and `onValueChange`.
+
+<Preview
+  registry="t-flavored"
+  demo="accordion/accordion-controlled"
+  height={540}
+/>
+
+## API Reference
+
+### Accordion
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/accordion.ts"
+  name="MDXAccordionProps"
+/>
+
+### AccordionItem
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/accordion.ts"
+  name="MDXAccordionItemProps"
+/>

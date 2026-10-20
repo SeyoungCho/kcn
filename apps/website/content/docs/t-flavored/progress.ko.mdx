@@ -1,0 +1,45 @@
+---
+title: Progress
+description: Progress는 작업이 얼마나 진행됐는지 보여줘요.
+---
+
+<Preview registry="t-flavored" demo="progress/progress-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/progress
+```
+
+## 사용법
+
+API 는 shadcn 의 Progress 와 같고 Base UI 의 Progress 위에 만들었어요. 막대 두께를 고르는 `size` 가 더 있어요. `aria-label` 이나 `ProgressLabel` 로 막대에 이름을 붙여 주세요.
+
+## 예제
+
+### 크기
+
+<Preview registry="t-flavored" demo="progress/progress-sizes" height={200} />
+
+### 색
+
+막대 색은 indicator 에 `bg-*` 클래스를 줘서 바꿔요.
+
+<Preview registry="t-flavored" demo="progress/progress-colors" height={200} />
+
+### 애니메이션
+
+<Preview registry="t-flavored" demo="progress/progress-animated" height={200} />
+
+### 레이블과 함께
+
+`ProgressLabel` 로 이름을 붙이고 `ProgressValue` 로 퍼센트를 보여줘요.
+
+<Preview registry="t-flavored" demo="progress/progress-label" height={160} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/progress.ts"
+  name="MDXProgressPropsKO"
+/>

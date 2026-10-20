@@ -1,0 +1,80 @@
+---
+title: Dropdown Menu
+description: A menu of actions or options that opens from a button.
+---
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-demo"
+  height={420}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/dropdown-menu
+```
+
+## Usage
+
+The API matches shadcn's DropdownMenu, without the `DropdownMenuSub*` parts. Put `DropdownMenuLabel` inside a `DropdownMenuGroup`.
+
+## Examples
+
+### Icons
+
+Put a right-hand icon in `DropdownMenuShortcut`.
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-icons"
+  height={500}
+/>
+
+### Checkboxes
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-checkboxes"
+  height={420}
+/>
+
+### Radio Group
+
+For a single choice; this one opens centered with `align="center"`.
+
+<Preview
+  registry="t-flavored"
+  demo="dropdown-menu/dropdown-menu-radio-group"
+  height={420}
+/>
+
+## API Reference
+
+### DropdownMenu
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuProps"
+/>
+
+### DropdownMenuContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuContentProps"
+/>
+
+### DropdownMenuItem
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuItemProps"
+/>
+
+### DropdownMenuCheckboxItem
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dropdown-menu.ts"
+  name="MDXDropdownMenuCheckboxItemProps"
+/>

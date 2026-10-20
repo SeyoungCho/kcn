@@ -1,0 +1,57 @@
+---
+title: Number Field
+description: Steps an integer up and down with minus and plus buttons.
+---
+
+<Preview
+  registry="t-flavored"
+  demo="number-field/number-field-demo"
+  height={180}
+/>
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/number-field
+```
+
+## Usage
+
+Built on Base UI's NumberField and split into shadcn-style parts:
+
+```tsx
+<NumberField size="lg" defaultValue={0}>
+  <NumberFieldGroup>
+    <NumberFieldDecrement aria-label="Decrease quantity" />
+    <NumberFieldInput aria-label="Quantity" />
+    <NumberFieldIncrement aria-label="Increase quantity" />
+  </NumberFieldGroup>
+</NumberField>
+```
+
+Give every part an `aria-label` — otherwise the buttons fall back to Base UI's English "Decrease" / "Increase".
+
+## Examples
+
+### Sizes
+
+<Preview
+  registry="t-flavored"
+  demo="number-field/number-field-sizes"
+  height={180}
+/>
+
+### Disabled
+
+<Preview
+  registry="t-flavored"
+  demo="number-field/number-field-disabled"
+  height={180}
+/>
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/number-field.ts"
+  name="MDXNumberFieldProps"
+/>

@@ -1,0 +1,41 @@
+---
+title: Badge
+description: Badges show a short status label.
+---
+
+<Preview registry="t-flavored" demo="badge/badge-demo" height={160} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/badge
+```
+
+## Usage
+
+The API matches shadcn's Badge, with an extra `size` prop. `variant` sets color and weight together: each color comes as a fill and a lighter `-weak` tint (`default` / `weak` are blue, `dark` / `secondary` grey).
+
+## Examples
+
+### Variants
+
+Each fill sits next to its weak partner.
+
+<Preview registry="t-flavored" demo="badge/badge-variants" height={280} />
+
+### Sizes
+
+<Preview registry="t-flavored" demo="badge/badge-sizes" height={160} />
+
+### Link
+
+Use `render` to draw the badge as another element, such as a link.
+
+<Preview registry="t-flavored" demo="badge/badge-link" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/badge.ts"
+  name="MDXBadgeProps"
+/>

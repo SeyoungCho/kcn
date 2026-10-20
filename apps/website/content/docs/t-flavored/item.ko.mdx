@@ -1,0 +1,81 @@
+---
+title: Item
+description: 그림 · 글 · 동작을 담은 목록의 한 줄이고, 목록의 머리 · 꼬리도 함께 있어요.
+---
+
+<Preview registry="t-flavored" demo="item/item-demo" height={280} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/item
+```
+
+## 사용법
+
+API 는 shadcn 의 Item 과 같아요. `render` 로 `<a>` · `<button>` 을 그리면 누를 수 있는 줄이 돼요.
+
+```tsx
+<ItemGroup>
+  <Item render={<button type="button" />}>
+    <ItemMedia variant="icon">
+      <WalletIcon />
+    </ItemMedia>
+    <ItemContent>
+      <ItemTitle>입출금 통장</ItemTitle>
+      <ItemDescription>잔액 128만 원</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <ChevronRightIcon />
+    </ItemActions>
+  </Item>
+</ItemGroup>
+```
+
+## 예제
+
+### 크기
+
+`size` 로 위아래 여백을 정하고, `ItemSeparator` 로 줄 사이에 들여 쓴 구분선을 그어요.
+
+<Preview registry="t-flavored" demo="item/item-sizes" height={300} />
+
+### 그림
+
+`ItemMedia` 는 아이콘을 그대로 보여 주거나(`default`), 회색 스쿼클 안에 넣거나(`icon`), `<img>` 를 같은 스쿼클로 잘라요(`image`).
+
+<Preview registry="t-flavored" demo="item/item-media" height={280} />
+
+### 동작
+
+`ItemActions` 에 버튼이나 화살표를 넣고, 두 번째 `ItemContent` 는 오른쪽 정렬된 글이 돼요.
+
+<Preview registry="t-flavored" demo="item/item-actions" height={260} />
+
+### 머리와 꼬리
+
+`ItemGroup` 안에서 `ItemHeader` 는 목록의 제목, `ItemFooter` 는 "더 보기" 줄이 되고, `ItemFooter` 를 `<button>` 으로 그리면 누를 수 있어요.
+
+<Preview registry="t-flavored" demo="item/item-header-footer" height={420} />
+
+### 배리언트
+
+`outline` · `muted` 는 shadcn 처럼 줄을 상자 모양으로 그려요.
+
+<Preview registry="t-flavored" demo="item/item-variants" height={300} />
+
+## API 레퍼런스
+
+### Item
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/item.ts"
+  name="MDXItemPropsKO"
+/>
+
+### ItemMedia
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/item.ts"
+  name="MDXItemMediaPropsKO"
+/>

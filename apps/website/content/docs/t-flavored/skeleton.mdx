@@ -1,0 +1,39 @@
+---
+title: Skeleton
+description: Skeletons show the shape of content while it loads.
+---
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-demo" height={380} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/skeleton
+```
+
+## Usage
+
+The API matches shadcn's Skeleton: one bar, sized and rounded with `className`. To make rows pulse one after another from top to bottom, give each row a slightly larger `--skeleton-delay` — bars inherit it from any ancestor.
+
+## Examples
+
+### List
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-list" height={440} />
+
+### Card
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-card" height={420} />
+
+### Variants
+
+Use `white` on grey surfaces.
+
+<Preview registry="t-flavored" demo="skeleton/skeleton-variants" height={360} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/skeleton.ts"
+  name="MDXSkeletonProps"
+/>

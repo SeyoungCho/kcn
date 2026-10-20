@@ -1,0 +1,81 @@
+---
+title: Item
+description: A list row with media, text and actions, plus a list header and footer.
+---
+
+<Preview registry="t-flavored" demo="item/item-demo" height={280} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/item
+```
+
+## Usage
+
+The API matches shadcn's Item. Render the row as an `<a>` or `<button>` with `render` to make it pressable.
+
+```tsx
+<ItemGroup>
+  <Item render={<button type="button" />}>
+    <ItemMedia variant="icon">
+      <WalletIcon />
+    </ItemMedia>
+    <ItemContent>
+      <ItemTitle>Checking account</ItemTitle>
+      <ItemDescription>Balance $1,280</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <ChevronRightIcon />
+    </ItemActions>
+  </Item>
+</ItemGroup>
+```
+
+## Examples
+
+### Sizes
+
+`size` sets the vertical padding; `ItemSeparator` draws an indented divider between rows.
+
+<Preview registry="t-flavored" demo="item/item-sizes" height={300} />
+
+### Media
+
+`ItemMedia` shows an icon as is (`default`), puts it in a grey squircle (`icon`), or crops an `<img>` to that squircle (`image`).
+
+<Preview registry="t-flavored" demo="item/item-media" height={280} />
+
+### Actions
+
+Put buttons or a chevron in `ItemActions`; a second `ItemContent` becomes right-aligned text.
+
+<Preview registry="t-flavored" demo="item/item-actions" height={260} />
+
+### Header and footer
+
+Inside `ItemGroup`, `ItemHeader` titles the list and `ItemFooter` adds a "see more" row — render it as a `<button>` to make it pressable.
+
+<Preview registry="t-flavored" demo="item/item-header-footer" height={420} />
+
+### Variants
+
+`outline` and `muted` draw the row as a box, as in shadcn.
+
+<Preview registry="t-flavored" demo="item/item-variants" height={300} />
+
+## API Reference
+
+### Item
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/item.ts"
+  name="MDXItemProps"
+/>
+
+### ItemMedia
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/item.ts"
+  name="MDXItemMediaProps"
+/>

@@ -1,0 +1,40 @@
+---
+title: Dialog
+description: A window over the page that holds the user's attention until they close it.
+---
+
+<Preview registry="t-flavored" demo="dialog/dialog-demo" height={480} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/dialog
+```
+
+## Usage
+
+The API matches shadcn's Dialog, except the close button is hidden by default — pass `showCloseButton` to show it.
+
+## Examples
+
+### Header and Footer
+
+Footer buttons share the row and stack when their labels don't fit side by side.
+
+<Preview registry="t-flavored" demo="dialog/dialog-header" height={400} />
+
+## API Reference
+
+### Dialog
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dialog.ts"
+  name="MDXDialogProps"
+/>
+
+### DialogContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dialog.ts"
+  name="MDXDialogContentProps"
+/>

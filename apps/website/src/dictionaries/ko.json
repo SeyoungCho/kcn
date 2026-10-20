@@ -83,6 +83,514 @@
         "disabled": "비활성화",
         "readOnly": "읽기 전용"
       }
+    },
+    "tFlavored": {
+      "button": {
+        "label": "버튼",
+        "variants": {
+          "default": "default",
+          "weak": "weak",
+          "dark": "dark",
+          "secondary": "secondary",
+          "destructive": "destructive",
+          "destructive-weak": "destructive-weak",
+          "outline": "outline",
+          "ghost": "ghost",
+          "link": "link"
+        },
+        "sizes": {
+          "sm": "작게",
+          "default": "보통",
+          "lg": "크게",
+          "xl": "아주 크게"
+        },
+        "withIcon": {
+          "add": "추가",
+          "search": "검색",
+          "notifications": "알림",
+          "settings": "설정"
+        },
+        "states": {
+          "loading": "로딩 중",
+          "disabled": "비활성화"
+        }
+      },
+      "badge": {
+        "demo": {
+          "new": "신규",
+          "event": "이벤트",
+          "soldOut": "품절",
+          "pending": "대기 중"
+        },
+        "variants": {
+          "default": "default",
+          "weak": "weak",
+          "dark": "dark",
+          "secondary": "secondary",
+          "destructive": "destructive",
+          "destructive-weak": "destructive-weak",
+          "teal": "teal",
+          "teal-weak": "teal-weak",
+          "green": "green",
+          "green-weak": "green-weak",
+          "yellow": "yellow",
+          "yellow-weak": "yellow-weak"
+        },
+        "sizes": {
+          "xs": "아주 작게",
+          "sm": "작게",
+          "default": "보통",
+          "lg": "크게"
+        },
+        "link": "혜택 보기"
+      },
+      "spinner": {
+        "loading": "로딩 중",
+        "label": "카드를\n불러오고 있어요."
+      },
+      "skeleton": {
+        "loading": "로딩 중"
+      },
+      "progress": {
+        "label": "업로드 중",
+        "start": "애니메이션 시작",
+        "reset": "애니메이션 리셋"
+      },
+      "separator": {
+        "rows": {
+          "first": "계정 설정",
+          "second": "알림",
+          "third": "연결된 계좌"
+        },
+        "vertical": {
+          "home": "홈",
+          "cards": "카드",
+          "benefits": "혜택"
+        }
+      },
+      "empty": {
+        "retry": {
+          "title": "다시 접속해 주세요",
+          "description": "페이지를 불러올 수 없어요. 다시 시도해 주세요.",
+          "action": "재시도"
+        },
+        "preparing": {
+          "title": "라이브 쇼핑 준비 중",
+          "description": "준비가 끝나면 알림을 보내드릴게요."
+        }
+      },
+      "input": {
+        "demo": {
+          "label": "이름",
+          "placeholder": "이름을 입력해주세요",
+          "description": "신분증에 적힌 이름을 입력해주세요."
+        },
+        "variants": {
+          "description": "도움말",
+          "placeholder": "플레이스홀더",
+          "labels": {
+            "default": "default",
+            "line": "line",
+            "big": "big",
+            "hero": "hero"
+          }
+        },
+        "invalid": {
+          "label": "닉네임",
+          "placeholder": "3글자 이상 입력하면 에러 상태가 적용돼요.",
+          "error": "3글자 미만으로 입력해주세요."
+        },
+        "disabled": {
+          "emptyLabel": "값이 없는 경우",
+          "filledLabel": "값이 있는 경우",
+          "placeholder": "플레이스홀더",
+          "value": "안녕하세요.",
+          "description": "이 필드는 현재 비활성화 상태예요."
+        }
+      },
+      "field": {
+        "demo": {
+          "name": "이름",
+          "namePlaceholder": "이름을 입력해주세요",
+          "email": "이메일",
+          "emailDescription": "이 주소로 영수증을 보내드려요.",
+          "memo": "메시지",
+          "memoPlaceholder": "판매자에게 남길 말을 적어주세요."
+        },
+        "validation": {
+          "label": "닉네임",
+          "placeholder": "3글자 이상 입력해보세요",
+          "description": "2글자까지 쓸 수 있어요.",
+          "error": "3글자 미만으로 입력해주세요."
+        },
+        "appear": {
+          "label": "계좌번호",
+          "description": "입력을 시작하면 라벨이 보여요."
+        }
+      },
+      "inputGroup": {
+        "search": {
+          "label": "검색",
+          "placeholder": "검색어를 입력하세요",
+          "clear": "검색어 삭제"
+        },
+        "affix": {
+          "prefixLabel": "금액",
+          "suffixLabel": "가격",
+          "placeholder": "0",
+          "suffix": "원",
+          "description": "금액이나 단위를 입력해주세요."
+        },
+        "button": {
+          "label": "인증번호",
+          "placeholder": "6자리 숫자를 입력해주세요",
+          "action": "전송",
+          "description": "휴대폰으로 인증번호를 보내드려요."
+        },
+        "clearable": {
+          "label": "이름",
+          "placeholder": "이름을 입력해주세요",
+          "clear": "지우기",
+          "description": "값을 입력한 뒤 오른쪽 지우기 버튼을 눌러보세요."
+        },
+        "password": {
+          "label": "비밀번호",
+          "placeholder": "비밀번호를 입력해주세요",
+          "show": "비밀번호 보기",
+          "hide": "비밀번호 숨기기",
+          "description": "8자 이상 입력해주세요."
+        }
+      },
+      "textarea": {
+        "demo": {
+          "label": "후기",
+          "placeholder": "텍스트를 길게 입력하거나 엔터를 눌러보세요.",
+          "description": "내용에 맞춰 높이가 늘어나요."
+        },
+        "fixed": {
+          "label": "메모",
+          "placeholder": "텍스트를 입력해보세요.",
+          "description": "높이가 고정돼 있고, 넘치는 글은 스크롤돼요."
+        }
+      },
+      "dialog": {
+        "demo": {
+          "trigger": "모달 열기",
+          "body": "모달은 다른 화면 위에 떠서 사용자의 집중을 모아요. 아래 버튼을 누르거나 바깥을 누르면 닫혀요.",
+          "confirm": "확인"
+        },
+        "header": {
+          "trigger": "닉네임 바꾸기",
+          "title": "닉네임을 바꿀까요?",
+          "description": "바꾼 닉네임은 친구에게 바로 보여요.",
+          "cancel": "취소",
+          "confirm": "바꾸기"
+        }
+      },
+      "alertDialog": {
+        "title": "소중한 의견이\n잘 전달되었어요",
+        "description": "의견을 바탕으로 더 간편한\n서비스를 만들게요.",
+        "demo": {
+          "trigger": "알림 다이얼로그",
+          "confirm": "확인"
+        },
+        "confirm": {
+          "trigger": "확인 다이얼로그",
+          "cancel": "아니오",
+          "confirm": "예"
+        },
+        "longButtons": {
+          "trigger": "긴 버튼",
+          "cancel": "아니오, 취소해주세요",
+          "confirm": "예, 알겠습니다"
+        },
+        "longDescription": {
+          "trigger": "긴 설명",
+          "line": "소중한 의견을 바탕으로 더 간편한 서비스를 만들게요."
+        }
+      },
+      "drawer": {
+        "trigger": "바텀시트 열기",
+        "title": "저는 바텀시트 제목이에요.",
+        "description": "저는 바텀시트 부제목이에요.",
+        "body": "저는 바텀시트 내용이에요.",
+        "confirm": "확인",
+        "close": "닫기",
+        "scroll": {
+          "trigger": "이용약관",
+          "title": "약관에 동의해 주세요",
+          "description": "계속하기 전에 끝까지 읽어 주세요.",
+          "terms": [
+            "서비스를 제공하는 데 꼭 필요한 정보만 모아요.",
+            "모은 정보는 탈퇴하고 1년이 지나면 지워요.",
+            "동의 없이 다른 곳에 정보를 넘기지 않아요.",
+            "내 정보는 설정에서 언제든 보고 고치고 지울 수 있어요.",
+            "약관이 바뀌면 적용되기 7일 전에 알려 드려요.",
+            "쓰지 않은 결제는 7일 안에 환불받을 수 있어요.",
+            "규칙을 어긴 계정은 미리 알리지 않고 멈출 수 있어요.",
+            "약관에 대한 궁금한 점은 고객센터에서 답해 드려요.",
+            "이 약관은 동의한 날부터 적용돼요."
+          ],
+          "agree": "동의하기"
+        }
+      },
+      "tabs": {
+        "period": {
+          "day": "일간",
+          "week": "주간",
+          "month": "월간"
+        },
+        "periodContent": {
+          "day": "오늘 2만 4천 원을 썼어요.",
+          "week": "이번 주에 18만 2천 원을 썼어요.",
+          "month": "이번 달에 76만 원을 썼어요."
+        },
+        "sections": {
+          "home": "홈",
+          "benefits": "혜택",
+          "payments": "결제"
+        },
+        "sectionContent": {
+          "home": "내 계좌와 최근 거래를 볼 수 있어요.",
+          "benefits": "지금 쓸 수 있는 포인트와 쿠폰이에요.",
+          "payments": "곧 나갈 요금과 카드 대금이에요."
+        },
+        "items": {
+          "first": "탭1",
+          "second": "탭2",
+          "third": "탭3"
+        },
+        "sizes": {
+          "default": "기본",
+          "sm": "작게"
+        },
+        "categories": {
+          "all": "전체",
+          "food": "식비",
+          "shopping": "쇼핑",
+          "transport": "교통",
+          "cafe": "카페",
+          "living": "생활",
+          "travel": "여행",
+          "health": "의료",
+          "education": "교육",
+          "culture": "문화"
+        }
+      },
+      "accordion": {
+        "prefix": "Q",
+        "faq": {
+          "points": {
+            "question": "포인트가 뭐예요?",
+            "answer": "결제나 이벤트로 모으는 혜택이에요. 제휴 매장에서 현금처럼 쓸 수 있어요."
+          },
+          "subscription": {
+            "question": "구독은 어떻게 해지하나요?",
+            "answer": "설정에서 구독을 고른 뒤 해지를 누르세요. 이번 결제 기간이 끝날 때까지는 혜택이 그대로 유지돼요."
+          },
+          "fee": {
+            "question": "이체 수수료는 언제 붙나요?",
+            "answer": "다른 은행으로 보내는 이체는 한 달에 열 번까지 무료예요. 그 뒤로는 건마다 수수료가 조금 붙어요."
+          }
+        },
+        "openAll": "모두 펼치기",
+        "closeAll": "모두 접기"
+      },
+      "item": {
+        "account": {
+          "title": "입출금 통장",
+          "description": "잔액 128만 원"
+        },
+        "card": {
+          "title": "신용카드",
+          "description": "14일 결제 예정"
+        },
+        "savings": {
+          "title": "적금",
+          "description": "연 3.5%"
+        },
+        "sizes": {
+          "sm": "작게",
+          "default": "기본",
+          "lg": "크게",
+          "xl": "아주 크게"
+        },
+        "media": {
+          "default": {
+            "title": "아이콘만",
+            "description": "variant=\"default\""
+          },
+          "icon": {
+            "title": "스쿼클 안의 아이콘",
+            "description": "variant=\"icon\""
+          },
+          "text": {
+            "title": "스쿼클 안의 글자",
+            "description": "variant=\"icon\"",
+            "label": "오늘"
+          }
+        },
+        "actions": {
+          "button": {
+            "title": "알림 받기",
+            "description": "잔액이 바뀌면 알려드려요",
+            "label": "켜기"
+          },
+          "text": {
+            "title": "커피전문점",
+            "description": "카드 결제",
+            "amount": "-4,500원",
+            "time": "오전 9:41"
+          },
+          "arrow": {
+            "title": "거래 내역"
+          }
+        },
+        "header": {
+          "description": "방금 업데이트됨",
+          "title": "내 계좌",
+          "action": "편집"
+        },
+        "footer": "더 보기",
+        "variants": {
+          "default": "기본",
+          "outline": "테두리",
+          "muted": "옅은 바탕",
+          "description": "따로 떨어진 바탕 위의 줄"
+        }
+      },
+      "dropdownMenu": {
+        "trigger": "메뉴 열기",
+        "label": "편집",
+        "items": {
+          "first": "첫 번째 메뉴",
+          "second": "두 번째 메뉴",
+          "third": "세 번째 메뉴"
+        },
+        "icons": {
+          "copy": "복사하기",
+          "share": "공유하기",
+          "settings": "설정",
+          "delete": "삭제하기"
+        },
+        "checkboxes": {
+          "trigger": "보기",
+          "label": "표시할 항목",
+          "statusBar": "상태 표시줄",
+          "activityBar": "활동 표시줄",
+          "panel": "패널"
+        },
+        "radio": {
+          "trigger": "선택하기",
+          "label": "항목을 선택하세요"
+        }
+      },
+      "tooltip": {
+        "trigger": "마우스를 올려 보세요",
+        "message": "툴팁이에요.",
+        "sizes": {
+          "sm": "작게",
+          "default": "보통",
+          "lg": "크게"
+        },
+        "sides": {
+          "top": "위",
+          "bottom": "아래"
+        },
+        "controlled": "눌러 보세요"
+      },
+      "toast": {
+        "top": {
+          "trigger": "상단 토스트 열기",
+          "message": "상단 토스트 메시지예요"
+        },
+        "bottom": {
+          "trigger": "하단 토스트 열기",
+          "message": "하단 토스트 메시지예요"
+        },
+        "types": {
+          "success": {
+            "trigger": "성공",
+            "message": "저장했어요"
+          },
+          "error": {
+            "trigger": "오류",
+            "message": "저장하지 못했어요"
+          },
+          "info": {
+            "trigger": "안내",
+            "message": "새 버전이 나왔어요"
+          }
+        },
+        "action": {
+          "trigger": "항목 삭제하기",
+          "message": "항목을 삭제했어요",
+          "undo": "되돌리기",
+          "restored": "항목을 되돌렸어요"
+        }
+      },
+      "checkbox": {
+        "demo": {
+          "terms": "서비스 이용약관에 동의해요",
+          "privacy": "개인정보 수집 및 이용에 동의해요",
+          "marketing": "마케팅 정보를 받을게요 (선택)"
+        },
+        "variants": {
+          "circle": "원형",
+          "line": "체크만",
+          "checked": "선택됨",
+          "unchecked": "선택 안 됨"
+        },
+        "disabled": "선택할 수 없는 항목"
+      },
+      "switch": {
+        "demo": {
+          "notifications": "푸시 알림",
+          "darkMode": "다크 모드"
+        },
+        "disabled": "바꿀 수 없는 설정"
+      },
+      "slider": {
+        "demo": {
+          "label": "음량"
+        },
+        "colors": {
+          "blue": "파랑",
+          "green": "초록",
+          "red": "빨강"
+        },
+        "labels": {
+          "label": "예산",
+          "min": "100 만원",
+          "mid": "150 만원",
+          "max": "200 만원"
+        },
+        "tooltip": {
+          "label": "밝기"
+        }
+      },
+      "numberField": {
+        "quantity": "수량",
+        "decrease": "상품 수량 줄이기",
+        "increase": "상품 수량 늘리기",
+        "sizes": {
+          "xs": "아주 작게",
+          "sm": "작게",
+          "default": "보통",
+          "lg": "크게"
+        }
+      },
+      "rating": {
+        "label": "별점 평가",
+        "star": "점",
+        "stars": "점",
+        "readOnlyLabel": "5점 만점 중 5점",
+        "sizes": {
+          "default": "보통",
+          "lg": "크게",
+          "xl": "아주 크게"
+        }
+      }
     }
   }
 }

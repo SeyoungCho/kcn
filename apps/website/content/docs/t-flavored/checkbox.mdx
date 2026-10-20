@@ -1,0 +1,41 @@
+---
+title: Checkbox
+description: Lets the user pick one or more options.
+---
+
+<Preview registry="t-flavored" demo="checkbox/checkbox-demo" height={220} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/checkbox
+```
+
+## Usage
+
+The API matches shadcn's Checkbox, plus a `variant`: `circle` (the default) draws the check inside a ring, `line` draws the check alone. Wrap it in a `<label>` (or use `Field`) so the text toggles it too — otherwise give it an `aria-label`.
+
+```tsx
+<label className="flex items-center gap-3">
+  <Checkbox defaultChecked />I agree to the Terms of Service
+</label>
+```
+
+## Examples
+
+### Variants
+
+<Preview registry="t-flavored" demo="checkbox/checkbox-variants" height={180} />
+
+### Disabled
+
+Pressing a disabled checkbox shakes it instead of toggling it.
+
+<Preview registry="t-flavored" demo="checkbox/checkbox-disabled" height={140} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/checkbox.ts"
+  name="MDXCheckboxProps"
+/>

@@ -1,0 +1,47 @@
+---
+title: Rating
+description: Lets the user give a star score, or shows one.
+---
+
+<Preview registry="t-flavored" demo="rating/rating-demo" height={180} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/rating
+```
+
+## Usage
+
+Base UI has no rating primitive, so the interactive rating is a RadioGroup with one Radio per star: arrow keys move between stars and screen readers announce the choice. Give it an `aria-label`, and `getItemLabel` to name each star.
+
+## Examples
+
+### Sizes
+
+<Preview registry="t-flavored" demo="rating/rating-sizes" height={180} />
+
+### Read-only
+
+`readOnly` only shows a score, laid out by `variant`: `default` (stars + score), `compact` (one star + score) or `icon-only` (stars only).
+
+<Preview registry="t-flavored" demo="rating/rating-read-only" height={160} />
+
+Read-only ratings also come in `xs` and `sm`.
+
+<Preview
+  registry="t-flavored"
+  demo="rating/rating-read-only-sizes"
+  height={320}
+/>
+
+### Disabled
+
+<Preview registry="t-flavored" demo="rating/rating-disabled" height={160} />
+
+## API Reference
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/rating.ts"
+  name="MDXRatingProps"
+/>

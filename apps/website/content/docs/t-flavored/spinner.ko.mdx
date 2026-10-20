@@ -1,0 +1,41 @@
+---
+title: Spinner
+description: Spinner는 무언가를 불러오고 있다고 알려줘요.
+---
+
+<Preview registry="t-flavored" demo="spinner/spinner-demo" height={160} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/spinner
+```
+
+## 사용법
+
+API 는 shadcn 의 Spinner 와 같고(`role="status"` 를 가진 `<svg>`), `variant` 와 `size` 가 더 있어요. 금방 끝나는 로딩에 깜빡이지 않도록 잠깐 기다렸다가 나타나요. 선이 `currentColor` 라 `text-*` 클래스로도 색을 바꿀 수 있어요.
+
+## 예제
+
+### 크기
+
+<Preview registry="t-flavored" demo="spinner/spinner-sizes" height={160} />
+
+### 배리언트
+
+`light` 는 어두운 바탕에서 써요.
+
+<Preview registry="t-flavored" demo="spinner/spinner-variants" height={160} />
+
+### 레이블과 함께
+
+레이블은 Spinner 아래에 글을 따로 놓아 만들어요.
+
+<Preview registry="t-flavored" demo="spinner/spinner-with-label" height={200} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/spinner.ts"
+  name="MDXSpinnerPropsKO"
+/>

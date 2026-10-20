@@ -1,0 +1,43 @@
+---
+title: Slider
+description: 손잡이를 끌어 범위 안의 숫자를 골라요.
+---
+
+<Preview registry="t-flavored" demo="slider/slider-demo" height={180} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/slider
+```
+
+## 사용법
+
+API 는 shadcn 의 Slider 와 같고, `labels` · `tooltip` 이 더 있어요. 스크린 리더가 손잡이 이름을 읽을 수 있게 예제처럼 `Field` 로 이름표를 달거나 `aria-labelledby` 를 줘요.
+
+## 예제
+
+### 색
+
+채움 색은 `--slider-color` 변수로 바꿔요(예: `className="[--slider-color:var(--color-red-500)]"`).
+
+<Preview registry="t-flavored" demo="slider/slider-colors" height={320} />
+
+### 라벨
+
+`labels` 로 막대 아래 왼쪽 끝(`min`) · 오른쪽 끝(`max`) · 가운데(`mid`, 생략 가능)에 글자를 놓아요.
+
+<Preview registry="t-flavored" demo="slider/slider-labels" height={200} />
+
+### 툴팁
+
+`tooltip` 은 손잡이 위 말풍선에 값을 띄우고(위쪽에 자리를 비워 두세요), 함수(예: ``tooltip={(value) => `${value}%`}``)를 주면 원하는 글을 띄워요.
+
+<Preview registry="t-flavored" demo="slider/slider-tooltip" height={240} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/slider.ts"
+  name="MDXSliderPropsKO"
+/>

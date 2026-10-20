@@ -1,0 +1,73 @@
+---
+title: Tabs
+description: 같은 자리에서 여러 화면을 오가요. 세그먼트 컨트롤이나 밑줄 탭으로 쓸 수 있어요.
+---
+
+<Preview registry="t-flavored" demo="tabs/tabs-demo" height={180} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/tabs
+```
+
+## 사용법
+
+API 는 shadcn 의 Tabs 와 같아요. `TabsList` 의 `variant="default"` 는 세그먼트 컨트롤, `variant="line"` 은 밑줄 탭이고, 움직이는 표시는 알아서 그려져요.
+
+```tsx
+<Tabs defaultValue="day">
+  <TabsList>
+    <TabsTrigger value="day">일간</TabsTrigger>
+    <TabsTrigger value="week">주간</TabsTrigger>
+  </TabsList>
+  <TabsContent value="day">…</TabsContent>
+  <TabsContent value="week">…</TabsContent>
+</Tabs>
+```
+
+## 예제
+
+### 밑줄
+
+<Preview registry="t-flavored" demo="tabs/tabs-line" height={180} />
+
+### 크기
+
+<Preview registry="t-flavored" demo="tabs/tabs-sizes" height={440} />
+
+### 스크롤
+
+`fluid` 를 주면 탭 폭이 글자에 맞춰지고, 넘치면 가로로 스크롤돼요.
+
+<Preview registry="t-flavored" demo="tabs/tabs-fluid" height={200} />
+
+## API 레퍼런스
+
+### Tabs
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsPropsKO"
+/>
+
+### TabsList
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsListPropsKO"
+/>
+
+### TabsTrigger
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsTriggerPropsKO"
+/>
+
+### TabsContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/tabs.ts"
+  name="MDXTabsContentPropsKO"
+/>

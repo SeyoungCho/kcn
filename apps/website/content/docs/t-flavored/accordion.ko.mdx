@@ -1,0 +1,68 @@
+---
+title: Accordion
+description: 펼치고 접는 줄로 Q&A · 공지처럼 긴 내용을 좁은 자리에 정리해요.
+---
+
+<Preview registry="t-flavored" demo="accordion/accordion-demo" height={460} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/accordion
+```
+
+## 사용법
+
+API 는 shadcn 의 Accordion 과 같아요. `multiple` 을 주지 않으면 한 줄을 펼칠 때 다른 줄이 접혀요.
+
+`Q` 같은 프리픽스는 `AccordionTrigger` 안에서 제목 앞에 두면 돼요.
+
+```tsx
+<Accordion multiple>
+  <AccordionItem value="points">
+    <AccordionTrigger>
+      <span className="text-primary">Q</span>
+      포인트가 뭐예요?
+    </AccordionTrigger>
+    <AccordionContent>…</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+## 예제
+
+### 처음부터 펼치기
+
+`defaultValue` 로 처음부터 펼쳐 둘 줄을 정해요.
+
+<Preview
+  registry="t-flavored"
+  demo="accordion/accordion-default-open"
+  height={460}
+/>
+
+### 제어하기
+
+`value` 와 `onValueChange` 로 펼친 줄을 직접 다뤄요.
+
+<Preview
+  registry="t-flavored"
+  demo="accordion/accordion-controlled"
+  height={540}
+/>
+
+## API 레퍼런스
+
+### Accordion
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/accordion.ts"
+  name="MDXAccordionPropsKO"
+/>
+
+### AccordionItem
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/accordion.ts"
+  name="MDXAccordionItemPropsKO"
+/>

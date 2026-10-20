@@ -1,0 +1,47 @@
+---
+title: Rating
+description: 별점을 매기거나 보여 줘요.
+---
+
+<Preview registry="t-flavored" demo="rating/rating-demo" height={180} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/rating
+```
+
+## 사용법
+
+Base UI 에는 별점 부품이 없어서, 점수를 매기는 Rating 은 RadioGroup 위에 별마다 Radio 를 하나씩 놓았어요. 화살표 키로 별을 옮겨 다니고 스크린 리더가 고른 점수를 읽어요. `aria-label` 을 달고, `getItemLabel` 로 별마다 이름을 붙여 주세요.
+
+## 예제
+
+### 크기
+
+<Preview registry="t-flavored" demo="rating/rating-sizes" height={180} />
+
+### 읽기 전용
+
+`readOnly` 는 점수를 보여 주기만 하고, 모양은 `variant` 로 `default`(별 + 점수) · `compact`(별 하나 + 점수) · `icon-only`(별만) 중에서 골라요.
+
+<Preview registry="t-flavored" demo="rating/rating-read-only" height={160} />
+
+읽기 전용은 `xs` · `sm` 크기도 있어요.
+
+<Preview
+  registry="t-flavored"
+  demo="rating/rating-read-only-sizes"
+  height={320}
+/>
+
+### 비활성화
+
+<Preview registry="t-flavored" demo="rating/rating-disabled" height={160} />
+
+## API 레퍼런스
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/rating.ts"
+  name="MDXRatingPropsKO"
+/>

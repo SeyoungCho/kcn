@@ -1,0 +1,40 @@
+---
+title: Dialog
+description: Dialog는 화면 위에 떠서 닫기 전까지 사용자의 집중을 모으는 창이에요.
+---
+
+<Preview registry="t-flavored" demo="dialog/dialog-demo" height={480} />
+
+## 설치
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/dialog
+```
+
+## 사용법
+
+API 는 shadcn 의 Dialog 와 같아요. 다만 닫기 버튼은 기본으로 감춰져 있어서, 보이려면 `showCloseButton` 을 넘겨요.
+
+## 예제
+
+### 머리와 버튼 줄
+
+버튼 줄의 버튼은 한 줄을 나눠 갖고, 나란히 들어가지 않으면 한 줄씩 쌓여요.
+
+<Preview registry="t-flavored" demo="dialog/dialog-header" height={400} />
+
+## API 레퍼런스
+
+### Dialog
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dialog.ts"
+  name="MDXDialogPropsKO"
+/>
+
+### DialogContent
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/dialog.ts"
+  name="MDXDialogContentPropsKO"
+/>

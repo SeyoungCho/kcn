@@ -83,6 +83,514 @@
         "disabled": "Disabled",
         "readOnly": "Read only"
       }
+    },
+    "tFlavored": {
+      "button": {
+        "label": "Button",
+        "variants": {
+          "default": "Default",
+          "weak": "Weak",
+          "dark": "Dark",
+          "secondary": "Secondary",
+          "destructive": "Destructive",
+          "destructive-weak": "Destructive weak",
+          "outline": "Outline",
+          "ghost": "Ghost",
+          "link": "Link"
+        },
+        "sizes": {
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large",
+          "xl": "X-large"
+        },
+        "withIcon": {
+          "add": "Add",
+          "search": "Search",
+          "notifications": "Notifications",
+          "settings": "Settings"
+        },
+        "states": {
+          "loading": "Loading",
+          "disabled": "Disabled"
+        }
+      },
+      "badge": {
+        "demo": {
+          "new": "New",
+          "event": "Event",
+          "soldOut": "Sold out",
+          "pending": "Pending"
+        },
+        "variants": {
+          "default": "default",
+          "weak": "weak",
+          "dark": "dark",
+          "secondary": "secondary",
+          "destructive": "destructive",
+          "destructive-weak": "destructive-weak",
+          "teal": "teal",
+          "teal-weak": "teal-weak",
+          "green": "green",
+          "green-weak": "green-weak",
+          "yellow": "yellow",
+          "yellow-weak": "yellow-weak"
+        },
+        "sizes": {
+          "xs": "X-small",
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large"
+        },
+        "link": "View benefits"
+      },
+      "spinner": {
+        "loading": "Loading",
+        "label": "Loading\nyour cards."
+      },
+      "skeleton": {
+        "loading": "Loading"
+      },
+      "progress": {
+        "label": "Uploading",
+        "start": "Start animation",
+        "reset": "Reset animation"
+      },
+      "separator": {
+        "rows": {
+          "first": "Account settings",
+          "second": "Notifications",
+          "third": "Linked accounts"
+        },
+        "vertical": {
+          "home": "Home",
+          "cards": "Cards",
+          "benefits": "Benefits"
+        }
+      },
+      "empty": {
+        "retry": {
+          "title": "Please try again",
+          "description": "We couldn't load this page. Please try again.",
+          "action": "Retry"
+        },
+        "preparing": {
+          "title": "Live shopping is coming soon",
+          "description": "We'll send you a notification when it's ready."
+        }
+      },
+      "input": {
+        "demo": {
+          "label": "Name",
+          "placeholder": "Enter your name",
+          "description": "Enter the name shown on your ID."
+        },
+        "variants": {
+          "description": "Help text",
+          "placeholder": "Placeholder",
+          "labels": {
+            "default": "default",
+            "line": "line",
+            "big": "big",
+            "hero": "hero"
+          }
+        },
+        "invalid": {
+          "label": "Nickname",
+          "placeholder": "Type 3 or more characters to see the error.",
+          "error": "Enter fewer than 3 characters."
+        },
+        "disabled": {
+          "emptyLabel": "Without a value",
+          "filledLabel": "With a value",
+          "placeholder": "Placeholder",
+          "value": "Hello.",
+          "description": "This field is disabled."
+        }
+      },
+      "field": {
+        "demo": {
+          "name": "Name",
+          "namePlaceholder": "Enter your name",
+          "email": "Email",
+          "emailDescription": "We'll send the receipt to this address.",
+          "memo": "Message",
+          "memoPlaceholder": "Leave a message for the seller."
+        },
+        "validation": {
+          "label": "Nickname",
+          "placeholder": "Type 3 or more characters",
+          "description": "Use up to 2 characters.",
+          "error": "Enter fewer than 3 characters."
+        },
+        "appear": {
+          "label": "Account number",
+          "description": "The label appears once you start typing."
+        }
+      },
+      "inputGroup": {
+        "search": {
+          "label": "Search",
+          "placeholder": "Search",
+          "clear": "Clear search"
+        },
+        "affix": {
+          "prefixLabel": "Amount",
+          "suffixLabel": "Price",
+          "placeholder": "0",
+          "suffix": "won",
+          "description": "Enter an amount."
+        },
+        "button": {
+          "label": "Verification code",
+          "placeholder": "Enter the 6-digit code",
+          "action": "Send",
+          "description": "We'll text the code to your phone."
+        },
+        "clearable": {
+          "label": "Name",
+          "placeholder": "Enter your name",
+          "clear": "Clear",
+          "description": "Type, then press the clear button on the right."
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "show": "Show password",
+          "hide": "Hide password",
+          "description": "Use 8 or more characters."
+        }
+      },
+      "textarea": {
+        "demo": {
+          "label": "Review",
+          "placeholder": "Write a long text or press Enter.",
+          "description": "The field grows with its content."
+        },
+        "fixed": {
+          "label": "Memo",
+          "placeholder": "Enter some text.",
+          "description": "The height stays fixed; longer text scrolls."
+        }
+      },
+      "dialog": {
+        "demo": {
+          "trigger": "Open modal",
+          "body": "A modal floats above the rest of the screen to hold the user's attention. Close it with the button below or by tapping outside.",
+          "confirm": "Confirm"
+        },
+        "header": {
+          "trigger": "Change nickname",
+          "title": "Change your nickname?",
+          "description": "Your friends will see the new nickname right away.",
+          "cancel": "Cancel",
+          "confirm": "Change"
+        }
+      },
+      "alertDialog": {
+        "title": "Your feedback\nhas been delivered",
+        "description": "We'll use it to make\nthe service simpler.",
+        "demo": {
+          "trigger": "Alert dialog",
+          "confirm": "OK"
+        },
+        "confirm": {
+          "trigger": "Confirm dialog",
+          "cancel": "No",
+          "confirm": "Yes"
+        },
+        "longButtons": {
+          "trigger": "Long buttons",
+          "cancel": "No, please cancel",
+          "confirm": "Yes, I understand"
+        },
+        "longDescription": {
+          "trigger": "Long description",
+          "line": "We'll use your feedback to make the service simpler."
+        }
+      },
+      "drawer": {
+        "trigger": "Open bottom sheet",
+        "title": "I'm the bottom sheet title.",
+        "description": "I'm the bottom sheet subtitle.",
+        "body": "I'm the bottom sheet content.",
+        "confirm": "Confirm",
+        "close": "Close",
+        "scroll": {
+          "trigger": "Terms of service",
+          "title": "Please agree to the terms",
+          "description": "Read them through before you continue.",
+          "terms": [
+            "We collect only the information needed to provide the service.",
+            "Collected information is kept for one year after you leave and then deleted.",
+            "We never share your information with third parties without your consent.",
+            "You can view, change or delete your information at any time in Settings.",
+            "We notify you seven days before any change to these terms takes effect.",
+            "Payments can be refunded within seven days if the service was not used.",
+            "Accounts that break the rules may be suspended without notice.",
+            "Questions about these terms are answered by customer support.",
+            "These terms take effect on the day you agree to them."
+          ],
+          "agree": "Agree"
+        }
+      },
+      "tabs": {
+        "period": {
+          "day": "Day",
+          "week": "Week",
+          "month": "Month"
+        },
+        "periodContent": {
+          "day": "You spent $24 today.",
+          "week": "You spent $182 this week.",
+          "month": "You spent $760 this month."
+        },
+        "sections": {
+          "home": "Home",
+          "benefits": "Benefits",
+          "payments": "Payments"
+        },
+        "sectionContent": {
+          "home": "Your accounts and recent activity.",
+          "benefits": "Points and coupons you can use now.",
+          "payments": "Upcoming bills and card payments."
+        },
+        "items": {
+          "first": "Tab 1",
+          "second": "Tab 2",
+          "third": "Tab 3"
+        },
+        "sizes": {
+          "default": "Default",
+          "sm": "Small"
+        },
+        "categories": {
+          "all": "All",
+          "food": "Food",
+          "shopping": "Shopping",
+          "transport": "Transport",
+          "cafe": "Cafe",
+          "living": "Living",
+          "travel": "Travel",
+          "health": "Health",
+          "education": "Education",
+          "culture": "Culture"
+        }
+      },
+      "accordion": {
+        "prefix": "Q",
+        "faq": {
+          "points": {
+            "question": "What are points?",
+            "answer": "Points are rewards you collect from purchases and events. You can spend them like cash at partner stores."
+          },
+          "subscription": {
+            "question": "How do I cancel my subscription?",
+            "answer": "Open Settings, choose Subscription and tap Cancel. You keep the benefits until the end of the current billing period."
+          },
+          "fee": {
+            "question": "When is the transfer fee charged?",
+            "answer": "Transfers to other banks are free up to ten times a month. After that, a small fee is charged per transfer."
+          }
+        },
+        "openAll": "Open all",
+        "closeAll": "Close all"
+      },
+      "item": {
+        "account": {
+          "title": "Checking account",
+          "description": "Balance $1,280"
+        },
+        "card": {
+          "title": "Credit card",
+          "description": "Due on the 14th"
+        },
+        "savings": {
+          "title": "Savings",
+          "description": "3.5% interest"
+        },
+        "sizes": {
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large",
+          "xl": "X-large"
+        },
+        "media": {
+          "default": {
+            "title": "Plain icon",
+            "description": "variant=\"default\""
+          },
+          "icon": {
+            "title": "Icon in a squircle",
+            "description": "variant=\"icon\""
+          },
+          "text": {
+            "title": "Text in a squircle",
+            "description": "variant=\"icon\"",
+            "label": "New"
+          }
+        },
+        "actions": {
+          "button": {
+            "title": "Get alerts",
+            "description": "When your balance changes",
+            "label": "Turn on"
+          },
+          "text": {
+            "title": "Coffee shop",
+            "description": "Card payment",
+            "amount": "-$4.50",
+            "time": "9:41 AM"
+          },
+          "arrow": {
+            "title": "Transaction history"
+          }
+        },
+        "header": {
+          "description": "Updated just now",
+          "title": "My accounts",
+          "action": "Edit"
+        },
+        "footer": "See more",
+        "variants": {
+          "default": "Default",
+          "outline": "Outline",
+          "muted": "Muted",
+          "description": "A row on its own surface"
+        }
+      },
+      "dropdownMenu": {
+        "trigger": "Open menu",
+        "label": "Edit",
+        "items": {
+          "first": "First item",
+          "second": "Second item",
+          "third": "Third item"
+        },
+        "icons": {
+          "copy": "Copy",
+          "share": "Share",
+          "settings": "Settings",
+          "delete": "Delete"
+        },
+        "checkboxes": {
+          "trigger": "View",
+          "label": "Show",
+          "statusBar": "Status bar",
+          "activityBar": "Activity bar",
+          "panel": "Panel"
+        },
+        "radio": {
+          "trigger": "Choose",
+          "label": "Pick one"
+        }
+      },
+      "tooltip": {
+        "trigger": "Hover me",
+        "message": "This is a tooltip.",
+        "sizes": {
+          "sm": "Small",
+          "default": "Medium",
+          "lg": "Large"
+        },
+        "sides": {
+          "top": "Top",
+          "bottom": "Bottom"
+        },
+        "controlled": "Click me"
+      },
+      "toast": {
+        "top": {
+          "trigger": "Top toast",
+          "message": "This toast shows at the top"
+        },
+        "bottom": {
+          "trigger": "Bottom toast",
+          "message": "This toast shows at the bottom"
+        },
+        "types": {
+          "success": {
+            "trigger": "Success",
+            "message": "Saved"
+          },
+          "error": {
+            "trigger": "Error",
+            "message": "Couldn't save"
+          },
+          "info": {
+            "trigger": "Info",
+            "message": "A new version is available"
+          }
+        },
+        "action": {
+          "trigger": "Delete item",
+          "message": "Item deleted",
+          "undo": "Undo",
+          "restored": "Item restored"
+        }
+      },
+      "checkbox": {
+        "demo": {
+          "terms": "I agree to the Terms of Service",
+          "privacy": "I agree to the collection of personal information",
+          "marketing": "Send me marketing messages (optional)"
+        },
+        "variants": {
+          "circle": "Circle",
+          "line": "Line",
+          "checked": "Checked",
+          "unchecked": "Unchecked"
+        },
+        "disabled": "Disabled option"
+      },
+      "switch": {
+        "demo": {
+          "notifications": "Push notifications",
+          "darkMode": "Dark mode"
+        },
+        "disabled": "Disabled setting"
+      },
+      "slider": {
+        "demo": {
+          "label": "Volume"
+        },
+        "colors": {
+          "blue": "Blue",
+          "green": "Green",
+          "red": "Red"
+        },
+        "labels": {
+          "label": "Budget",
+          "min": "$100",
+          "mid": "$150",
+          "max": "$200"
+        },
+        "tooltip": {
+          "label": "Brightness"
+        }
+      },
+      "numberField": {
+        "quantity": "Quantity",
+        "decrease": "Decrease quantity",
+        "increase": "Increase quantity",
+        "sizes": {
+          "xs": "X-small",
+          "sm": "Small",
+          "default": "Default",
+          "lg": "Large"
+        }
+      },
+      "rating": {
+        "label": "Rate this place",
+        "star": " star",
+        "stars": " stars",
+        "readOnlyLabel": "Rated 5 out of 5",
+        "sizes": {
+          "default": "Default",
+          "lg": "Large",
+          "xl": "X-large"
+        }
+      }
     }
   }
 }

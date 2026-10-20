@@ -1,0 +1,56 @@
+---
+title: Toast
+description: A short message that slides in at the top or bottom of the screen and closes by itself.
+---
+
+<Preview registry="t-flavored" demo="toast/toast-demo" height={240} />
+
+## Installation
+
+```npm
+npx shadcn@latest add @kcn-t-flavored/toast
+```
+
+## Usage
+
+Mount `<Toaster />` once, then call `toast.add()` from anywhere:
+
+```tsx
+import { Toaster, toast } from "@/components/ui/toast";
+
+<Toaster />;
+
+toast.add({ title: "Saved", type: "success", data: { position: "top" } });
+```
+
+One toast shows at a time. Set `position` on the `Toaster`, or per toast with `data.position`.
+
+## Examples
+
+### Types
+
+`type` adds a colored icon on the left.
+
+<Preview registry="t-flavored" demo="toast/toast-types" height={240} />
+
+### Action
+
+`actionProps` adds a small button; give these toasts a longer `timeout` so there's time to press it.
+
+<Preview registry="t-flavored" demo="toast/toast-action" height={240} />
+
+## API Reference
+
+### Toaster
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/toast.ts"
+  name="MDXToasterProps"
+/>
+
+### toast.add
+
+<AutoTypeTable
+  path="src/app/preview/t-flavored/types/toast.ts"
+  name="MDXToastProps"
+/>
