@@ -1,13 +1,22 @@
 ---
 title: 소개
-description: 첫 번째 문서
+description: 당근의 디자인 시스템 SEED Design 에서 영감을 받은 shadcn/ui 레지스트리예요.
 ---
 
-문서에 오신 것을 환영합니다. `/content/docs`에서 문서 작성을 시작할 수 있습니다.
+seed 는 당근의 디자인 시스템 [SEED Design](https://seed-design.io/)에서 영감을 받아 만든 shadcn/ui 레지스트리예요. 컴포넌트는 Base UI 와 Tailwind CSS 4 로 만들었고 shadcn 의 API 를 그대로 따라서, 어떤 shadcn 프로젝트에도 바로 넣을 수 있어요.
 
-## Next.js란?
+## 설치
 
-<Cards>
-  <Card title="Next.js 더 알아보기" href="https://nextjs.org/docs" />
-  <Card title="Fumadocs 더 알아보기" href="https://fumadocs.dev" />
-</Cards>
+먼저 스타일을 추가하세요. 다크 모드를 포함한 색 · 글자 · 간격 · 모서리 · 그림자 · 움직임 토큰이 설정돼요.
+
+```npm
+npx shadcn@latest add @kcn-seed/seed-style
+```
+
+그다음 필요한 컴포넌트를 추가하세요.
+
+```npm
+npx shadcn@latest add @kcn-seed/action-button
+```
+
+아이콘은 `@karrotmarket/react-monochrome-icon` 을 써요. 아이콘이 필요한 컴포넌트를 추가하면 CLI 가 함께 설치해요.

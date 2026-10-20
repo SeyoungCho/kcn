@@ -1,13 +1,22 @@
 ---
-title: Hello World
-description: Your first document
+title: Introduction
+description: A shadcn/ui registry inspired by SEED Design, Karrot's design system.
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+seed is a shadcn/ui registry inspired by [SEED Design](https://seed-design.io/), the design system of Karrot. Its components are built on Base UI and Tailwind CSS 4 and keep shadcn's API, so they fit into any shadcn project.
 
-## What is Next?
+## Installation
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.dev" />
-</Cards>
+Add the style first. It sets up the color, typography, spacing, radius, shadow and motion tokens, including dark mode.
+
+```npm
+npx shadcn@latest add @kcn-seed/seed-style
+```
+
+Then add the components you need.
+
+```npm
+npx shadcn@latest add @kcn-seed/action-button
+```
+
+Icons come from `@karrotmarket/react-monochrome-icon`, which the CLI installs along with the components that use it.
