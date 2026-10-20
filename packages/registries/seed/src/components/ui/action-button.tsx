@@ -1,3 +1,5 @@
+"use client";
+
 import type * as React from "react";
 import { Button } from "@base-ui/react/button";
 import { useRender } from "@base-ui/react/use-render";

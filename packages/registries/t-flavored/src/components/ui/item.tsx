@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { mergeProps } from "@base-ui/react/merge-props";
 import { Separator as SeparatorPrimitive } from "@base-ui/react/separator";

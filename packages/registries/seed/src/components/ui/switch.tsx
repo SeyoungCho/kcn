@@ -1,3 +1,5 @@
+"use client";
+
 import type * as React from "react";
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
 import { cva } from "class-variance-authority";

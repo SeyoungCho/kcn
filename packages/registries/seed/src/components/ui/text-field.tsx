@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import IconExclamationmarkCircleFill from "@karrotmarket/react-monochrome-icon/IconExclamationmarkCircleFill";
 import { cva } from "class-variance-authority";

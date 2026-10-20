@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { WheelPicker as WheelPrimitive } from "@ncdai/react-wheel-picker";
 import type { WheelPickerOption as WheelPrimitiveOption } from "@ncdai/react-wheel-picker";

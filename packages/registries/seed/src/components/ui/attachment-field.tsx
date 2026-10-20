@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import IconArrowClockwiseCircularFill from "@karrotmarket/react-monochrome-icon/IconArrowClockwiseCircularFill";
 import IconArrowUpBracketDownFill from "@karrotmarket/react-monochrome-icon/IconArrowUpBracketDownFill";

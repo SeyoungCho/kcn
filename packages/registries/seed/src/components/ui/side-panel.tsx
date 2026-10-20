@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "@base-ui/react/drawer";
 import IconXmarkLine from "@karrotmarket/react-monochrome-icon/IconXmarkLine";

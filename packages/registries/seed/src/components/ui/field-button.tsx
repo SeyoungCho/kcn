@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import IconExclamationmarkCircleFill from "@karrotmarket/react-monochrome-icon/IconExclamationmarkCircleFill";
 import IconXmarkCircleFill from "@karrotmarket/react-monochrome-icon/IconXmarkCircleFill";

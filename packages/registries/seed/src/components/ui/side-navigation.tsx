@@ -1,3 +1,5 @@
+"use client";
+
 import * as React from "react";
 import IconChevronUpSmallFill from "@karrotmarket/react-monochrome-icon/IconChevronUpSmallFill";
 import IconSquareSplitedVerticalLeftLine from "@karrotmarket/react-monochrome-icon/IconSquareSplitedVerticalLeftLine";

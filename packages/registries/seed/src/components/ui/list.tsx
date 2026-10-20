@@ -1,3 +1,5 @@
+"use client";
+
 import type * as React from "react";
 import { Checkbox as CheckboxPrimitive } from "@base-ui/react/checkbox";
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
